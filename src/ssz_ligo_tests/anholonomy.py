@@ -205,3 +205,91 @@ def near_detector_ssz_correction_estimate(r_detector_m=6.371e6,
     s = 1.0 + xi_e
     ratio = s / d - 1.0
     return xi_e, ratio
+
+
+def gr_strain_from_phase_transport(h_plus_t, arm_length_m, wavelength_m):
+    """Recover GR strain from arm phase transport formula (unit test / verification).
+
+    From the TT-gauge null geodesic:
+        Φ_x = (4π L / λ) · (1 + h_+(t)/2)
+        Φ_y = (4π L / λ) · (1 - h_+(t)/2)
+        ΔΦ  = (4π L / λ) · h_+(t)
+        h   = ΔΦ · λ / (4π L) = h_+(t)  ✓
+
+    This function verifies the round-trip holds: should return h_plus_t unchanged.
+
+    NOTE on float64 precision: phi0 = 4πL/λ ~ 4.7e10. At h ~ 1e-21,
+    phi0 * h/2 ~ 2.4e-11, which is at the float64 round-off floor
+    (eps ~ 2.2e-16 * phi0 ~ 1e-5). Use h >= 1e-10 for numerical verification.
+    The analytical formula is exact; the numerical test requires h >> eps*phi0/phi0.
+    Real LIGO signals at h~1e-21 are measured via homodyne lock-in, not by
+    direct phase subtraction — this limitation is only in the test, not in LIGO.
+
+    Parameters
+    ----------
+    h_plus_t : float or array
+        GW strain (+ polarisation) [dimensionless]
+    arm_length_m : float
+        Interferometer arm length [m]
+    wavelength_m : float
+        Laser wavelength [m]
+
+    Returns
+    -------
+    h_recovered : float or array
+        Recovered strain — should equal h_plus_t to numerical precision
+    phi_x : float or array
+        Phase along arm x [rad]
+    phi_y : float or array
+        Phase along arm y [rad]
+    """
+    phi0 = 4.0 * np.pi * arm_length_m / wavelength_m
+    phi_x = phi0 * (1.0 + h_plus_t / 2.0)
+    phi_y = phi0 * (1.0 - h_plus_t / 2.0)
+    delta_phi = phi_x - phi_y
+    h_recovered = strain_from_phase_difference(delta_phi, wavelength_m,
+                                               arm_length_m)
+    return h_recovered, phi_x, phi_y
+
+
+def ssz_arm_strain_correction(r_det_m, r_s_det_m, h_plus_t,
+                               arm_length_m, wavelength_m):
+    """SSZ correction to LIGO strain from near-detector arm modification.
+
+    In SSZ, the null geodesic along arm x picks up a factor s(r)/D(r):
+        Φ_x^SSZ = (4π L / λ) · [s/D]_arm · (1 + h_+(t)/2)
+        ΔΦ^SSZ  = (4π L / λ) · [s/D]_arm · h_+(t)
+        h_SSZ   = [s/D]_arm · h_+(t)
+
+    The correction [s/D - 1] at Earth surface is ~1.4e-9, negligible.
+    This function makes the smallness explicit.
+
+    Parameters
+    ----------
+    r_det_m : float
+        Detector radial coordinate from Earth centre [m]
+    r_s_det_m : float
+        Schwarzschild radius of Earth [m] (= 8.87e-3 m)
+    h_plus_t : float or array
+        GR strain (+ polarisation) [dimensionless]
+    arm_length_m : float
+        Interferometer arm length [m]
+    wavelength_m : float
+        Laser wavelength [m]
+
+    Returns
+    -------
+    h_ssz : float or array
+        SSZ-corrected strain [dimensionless]
+    s_over_d : float
+        [s/D]_arm correction factor
+    delta_h : float or array
+        Absolute SSZ arm correction h_SSZ - h_GR
+    """
+    xi = r_s_det_m / (2.0 * r_det_m)
+    s = 1.0 + xi
+    d = 1.0 / (1.0 + xi)
+    s_over_d = s / d
+    h_ssz = s_over_d * h_plus_t
+    delta_h = h_ssz - h_plus_t
+    return h_ssz, s_over_d, delta_h
