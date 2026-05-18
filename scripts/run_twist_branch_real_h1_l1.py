@@ -423,7 +423,7 @@ def theta_table(res, label):
     return "\n".join(rows)
 
 
-report = f"""# TWIST_BRANCH Real H1/L1 Exploratory Report
+report = """# TWIST_BRANCH Real H1/L1 Exploratory Report
 
 Generated: {NOW}  
 Event: GW240925 (trigger GPS {TRIGGER_GPS})  

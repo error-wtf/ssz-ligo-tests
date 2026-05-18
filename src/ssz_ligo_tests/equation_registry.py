@@ -3,7 +3,7 @@
 Tracks all SSZ equations and their status for LIGO forward model.
 """
 from dataclasses import dataclass
-from typing import Optional, List
+from typing import List
 from enum import Enum
 
 
@@ -202,35 +202,35 @@ def get_all_equations() -> List[Equation]:
 
 def get_locked_equations() -> List[Equation]:
     """Get only locked equations."""
-    return [eq for eq in get_all_equations() 
+    return [eq for eq in get_all_equations()
             if eq.status == EquationStatus.LOCKED]
 
 
 def get_missing_equations() -> List[Equation]:
     """Get only missing equations."""
-    return [eq for eq in get_all_equations() 
+    return [eq for eq in get_all_equations()
             if eq.status == EquationStatus.MISSING]
 
 
 def check_ready_for_numerical_test() -> tuple:
     """Check if ready for numerical LIGO test."""
     missing = get_missing_equations()
-    exploratory = [eq for eq in get_all_equations() 
+    exploratory = [eq for eq in get_all_equations()
                    if eq.status == EquationStatus.EXPLORATORY_ONLY]
-    
+
     if missing:
         return False, f"MISSING_EQUATIONS: {[eq.name for eq in missing]}"
-    
+
     if exploratory:
         return False, f"EXPLORATORY_ONLY: {[eq.name for eq in exploratory]}"
-    
+
     return True, "ALL_EQUATIONS_LOCKED"
 
 
 def generate_registry_report() -> str:
     """Generate markdown report of equation registry."""
     lines = ["# SSZ Equation Registry\n\n"]
-    
+
     lines.append("## LOCKED CORE EQUATIONS\n\n")
     for eq in LOCKED_CORE_EQUATIONS:
         lines.append(f"### {eq.name}\n")
@@ -238,7 +238,7 @@ def generate_registry_report() -> str:
         lines.append(f"- **Source:** {eq.source_path}\n")
         lines.append(f"- **Status:** {eq.status.value}\n")
         lines.append(f"- **Usable:** {eq.usable_in_test}\n\n")
-    
+
     lines.append("## MISSING FORWARD MODEL EQUATIONS\n\n")
     for eq in MISSING_FORWARD_EQUATIONS:
         lines.append(f"### {eq.name}\n")
@@ -247,19 +247,19 @@ def generate_registry_report() -> str:
         lines.append(f"- **Excerpt:** {eq.source_excerpt}\n")
         lines.append(f"- **Status:** {eq.status.value}\n")
         lines.append(f"- **Risk:** {eq.anti_circularity_risk}\n\n")
-    
+
     lines.append("## EXPLORATORY EQUATIONS\n\n")
     for eq in EXPLORATORY_EQUATIONS:
         lines.append(f"### {eq.name}\n")
         lines.append(f"- **Formula:** {eq.formula}\n")
         lines.append(f"- **Status:** {eq.status.value}\n\n")
-    
+
     # Readiness check
     ready, reason = check_ready_for_numerical_test()
     lines.append("\n## READINESS CHECK\n\n")
     lines.append(f"**Ready for numerical test:** {ready}\n")
     lines.append(f"**Reason:** {reason}\n")
-    
+
     return "".join(lines)
 
 

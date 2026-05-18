@@ -56,7 +56,7 @@ def run():
     log(f"  strain: {len(strain)} samples @ {fs} Hz | PSD bins: {len(freqs_psd)}")
 
     Mc_kg=MC_MSUN*M_SUN; M_kg=Mc_kg/ETA**(3./5.); mu_kg=ETA*M_kg
-    rs_m=2.*G*M_kg/C**2; dL_m=DL_MPC*3.086e22
+    dL_m=DL_MPC*3.086e22
 
     ffd=np.fft.rfftfreq(len(strain),1./fs)
     mask=(ffd>=F_LOW)&(ffd<=F_HIGH)&(ffd>0)
@@ -95,7 +95,7 @@ def run():
         interp="DERIVED_V0_PROXY_NUMERICALLY_DISTINCT_BUT_NO_PHYSICS_CLAIM"
     log(f"  INTERPRETATION: {interp}")
 
-    report=f"""# Derived-V0 Strain Pipeline Report
+    report="""# Derived-V0 Strain Pipeline Report
 Generated: {NOW}
 
 ## Formula Status

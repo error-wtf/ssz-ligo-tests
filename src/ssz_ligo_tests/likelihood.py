@@ -15,9 +15,9 @@ def residual(data: np.ndarray, model: np.ndarray) -> np.ndarray:
     return data - model
 
 
-def noise_weighted_inner_product(a: np.ndarray, 
-                                 b: np.ndarray, 
-                                 psd: np.ndarray, 
+def noise_weighted_inner_product(a: np.ndarray,
+                                 b: np.ndarray,
+                                 psd: np.ndarray,
                                  freqs: np.ndarray) -> float:
     """Noise-weighted inner product ⟨a|b⟩.
     
@@ -36,9 +36,9 @@ def noise_weighted_inner_product(a: np.ndarray,
     return 4 * np.real(np.trapz(integrand, freqs))
 
 
-def log_likelihood_gaussian(data: np.ndarray, 
-                           model: np.ndarray, 
-                           psd: np.ndarray, 
+def log_likelihood_gaussian(data: np.ndarray,
+                           model: np.ndarray,
+                           psd: np.ndarray,
                            freqs: np.ndarray) -> float:
     """Log-likelihood for Gaussian noise.
     
@@ -57,10 +57,10 @@ def log_likelihood_gaussian(data: np.ndarray,
     return -0.5 * noise_weighted_inner_product(r, r, psd, freqs)
 
 
-def delta_log_likelihood(data: np.ndarray, 
-                        model_a: np.ndarray, 
-                        model_b: np.ndarray, 
-                        psd: np.ndarray, 
+def delta_log_likelihood(data: np.ndarray,
+                        model_a: np.ndarray,
+                        model_b: np.ndarray,
+                        psd: np.ndarray,
                         freqs: np.ndarray) -> float:
     """Difference in log-likelihood between two models.
     

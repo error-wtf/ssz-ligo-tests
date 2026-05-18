@@ -17,7 +17,6 @@ Rules:
 
 READY_FOR_REAL_LIGO_SSZ_CLAIM: NO
 """
-import sys
 import csv
 import datetime
 import numpy as np
@@ -106,7 +105,7 @@ def analyse_detector(label, path):
         # --------------------------------------------------------
         log("\n  --- DQ mask ---")
         dq_meta = read_dataset_with_attrs(f, "quality/simple/DQmask")
-        log(f"  DQ mask attrs:")
+        log("  DQ mask attrs:")
         for k, v in dq_meta["attrs"].items():
             log(f"    {k}: {v}")
 
@@ -166,7 +165,7 @@ def analyse_detector(label, path):
             log("  NO injection mask in this file")
         else:
             inj_meta = read_dataset_with_attrs(f, "quality/injections/Injmask")
-            log(f"  Inj mask attrs:")
+            log("  Inj mask attrs:")
             for k, v in inj_meta["attrs"].items():
                 log(f"    {k}: {v}")
 
@@ -190,7 +189,7 @@ def analyse_detector(label, path):
 
             inj_nbits = int(inj_meta["attrs"].get("Bits", len(inj_names)))
             log(f"  inj_nbits={inj_nbits}  name_source={inj_names_source}")
-            log(f"  Inj unique mask values (whole file): "
+            log("  Inj unique mask values (whole file): "
                 f"{np.unique(inj_mask).tolist()}")
             log(f"  Inj mask at trigger: {int(inj_mask[i_inj_trig])}")
 
@@ -417,7 +416,7 @@ def inj_provenance_table(res):
     return "\n".join(rows)
 
 
-report = f"""# DQ State-Vector Bit Provenance Report
+report = """# DQ State-Vector Bit Provenance Report
 
 Generated: {NOW}  
 Event: GW240925 (trigger GPS {TRIGGER_GPS})  
@@ -576,13 +575,13 @@ If these are not available in the release:
 (REPORTS / "DQ_STATE_VECTOR_BIT_PROVENANCE_REPORT.md").write_text(
     report, encoding="utf-8"
 )
-log(f"  -> reports/DQ_STATE_VECTOR_BIT_PROVENANCE_REPORT.md")
+log("  -> reports/DQ_STATE_VECTOR_BIT_PROVENANCE_REPORT.md")
 
 flush_log()
-log(f"  -> logs/dq_bit_provenance.log")
-log(f"\nFINAL GATE:")
-log(f"  DQ_BIT_MAPPING_STATUS:         VERIFIED_FROM_HDF5")
+log("  -> logs/dq_bit_provenance.log")
+log("\nFINAL GATE:")
+log("  DQ_BIT_MAPPING_STATUS:         VERIFIED_FROM_HDF5")
 log(f"  L1_DQ_INTERPRETATION:          {l1_dq_interp}")
 log(f"  INJECTION_STATUS:              {inj_status}")
-log(f"  L1_BROADBAND_EXCESS_EXPLAINED: NO")
-log(f"  READY_FOR_REAL_LIGO_SSZ_CLAIM: NO")
+log("  L1_BROADBAND_EXCESS_EXPLAINED: NO")
+log("  READY_FOR_REAL_LIGO_SSZ_CLAIM: NO")

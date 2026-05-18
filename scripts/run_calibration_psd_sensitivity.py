@@ -113,7 +113,7 @@ def run():
 
     (LOGS/"calibration_psd_sensitivity.log").write_text("\n".join(_log),encoding="utf-8")
 
-    report=f"""# Calibration/PSD Sensitivity Report
+    report="""# Calibration/PSD Sensitivity Report
 Generated: {NOW}
 
 ## Purpose
@@ -131,19 +131,19 @@ No physics claim is made. READY_FOR_REAL_CLAIM: NO
 | amp_error | delta_lnL | diff_vs_nominal |
 |-----------|-----------|-----------------|
 """ + "\n".join(f"| {r.split(',')[1]} | {r.split(',')[2]} | {r.split(',')[3]} |"
-                for r in rows[1:] if r.startswith("amp_cal")) + f"""
+                for r in rows[1:] if r.startswith("amp_cal")) + """
 
 ## Phase Calibration Scan (±0.01 rad, ±0.05 rad)
 | phase_error | delta_lnL | diff_vs_nominal |
 |-------------|-----------|-----------------|
 """ + "\n".join(f"| {r.split(',')[1]} | {r.split(',')[2]} | {r.split(',')[3]} |"
-                for r in rows[1:] if r.startswith("phase_cal")) + f"""
+                for r in rows[1:] if r.startswith("phase_cal")) + """
 
 ## PSD Welch Variant Scan
 | nperseg | delta_lnL | diff_vs_nominal |
 |---------|-----------|-----------------|
 """ + "\n".join(f"| {r.split(',')[1]} | {r.split(',')[2]} | {r.split(',')[3]} |"
-                for r in rows[1:] if r.startswith("psd_welch")) + f"""
+                for r in rows[1:] if r.startswith("psd_welch")) + """
 
 ## Sensitivity Assessment
 - SSZ effect |delta_lnL|: {ssz_effect:.4e}

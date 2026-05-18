@@ -20,7 +20,6 @@ import numpy as np
 from typing import Optional, Tuple
 from .constants import G, C
 from .ssz_core import get_xi
-from .radial_scaling import s_scale
 
 FORMULA_STATUS = "DERIVED_V0_PROXY"
 READY_FOR_REAL_CLAIM = "NO"
@@ -36,7 +35,6 @@ def _rs(M_kg: float) -> float:
 
 def _correction_factor(r: float, rs: float) -> float:
     """(1+Xi)^6 - 1 from rdot ratio s^4/D^2."""
-    from .ssz_core import d_ssz
     xi = get_xi(r, rs)
     return (1.0 + xi) ** 6 - 1.0
 

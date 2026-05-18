@@ -121,7 +121,6 @@ results["pytest_exit"] = int(pytest_exit)
 passed = failed = errors = skipped = xfailed = 0
 for line in pytest_output.splitlines():
     if " passed" in line:
-        import re
         m = re.search(r"(\d+) passed", line)
         if m:
             passed = int(m.group(1))
@@ -148,11 +147,11 @@ results.update({"passed": passed, "failed": failed, "errors": errors,
 # Write pytest report
 pytest_status = "PASS" if pytest_exit == 0 else f"FAIL_EXIT_{pytest_exit}"
 with open(os.path.join(REPORTS, "PYTEST_FULL_RUN_REPORT.md"), "w", encoding="utf-8") as f:
-    f.write(f"# PYTEST FULL RUN REPORT\n")
+    f.write("# PYTEST FULL RUN REPORT\n")
     f.write(f"Generated: {datetime.datetime.now()}\n\n")
-    f.write(f"## Command\n```\npytest -ra -v --tb=short tests\n```\n\n")
+    f.write("## Command\n```\npytest -ra -v --tb=short tests\n```\n\n")
     f.write(f"## Exit Code\n{pytest_exit}\n\n")
-    f.write(f"## Counts\n")
+    f.write("## Counts\n")
     f.write(f"- Passed:  {passed}\n- Failed:  {failed}\n")
     f.write(f"- Errors:  {errors}\n- Skipped: {skipped}\n- XFailed: {xfailed}\n\n")
     f.write(f"## Status\n{pytest_status}\n\n")
@@ -170,7 +169,7 @@ HDF5_FILES = [
     os.path.join(LIGO_ROOT, "GW250207_combinedPHM_cal_metafile.hdf5"),
 ]
 SEARCH_TERMS = ["H1_only","L1_only","ringdown","qnm","final_mass",
-                "final_spin","chi","/f","/m"]
+                "final_spin","chi","/","/m"]
 hdf5_opened = 0
 hdf5_rows = []
 
@@ -191,7 +190,7 @@ for hdf5_file in HDF5_FILES:
     try:
         all_paths = []
         with h5py.File(hdf5_file, "r") as f:
-            print(f"  h5py OPEN: OK")
+            print("  h5py OPEN: OK")
             top_groups = list(f.keys())
             print(f"  Top groups: {top_groups[:10]}")
             f.visititems(lambda n, o: collect_paths(n, o, all_paths))
@@ -233,7 +232,7 @@ print("\n" + "=" * 70)
 print("F. PRODUCT INVENTORY")
 print("=" * 70)
 SCAN_FOLDERS = [
-    "ringdown","qnmrf","pca","pseobnr",
+    "ringdown","qnmr","pca","pseobnr",
     "GW240925-C00-Strain","combined_samples","fti","tiger"
 ]
 inv_rows = []
@@ -265,7 +264,7 @@ for folder in SCAN_FOLDERS:
         try:
             with h5py.File(hf, "r") as _:
                 open_ok += 1
-        except:
+        except Exception:
             open_fail += 1
     print(f"  h5py open OK/FAIL: {open_ok}/{open_fail}")
     row.update({"total_files": len(all_files), "hdf5_count": len(hdf5_files),
@@ -330,7 +329,7 @@ if os.path.exists(strain_folder):
                                     "inf_count": int(np.sum(np.isinf(data)))})
                         print(f"    {n}: shape={s} min={row['min']:.3e} max={row['max']:.3e}")
                         break
-                    except:
+                    except Exception:
                         continue
                 row["status"] = "OK"
                 strain_opened += 1
@@ -369,8 +368,8 @@ dry_run_status = "NOT_ATTEMPTED"
 dry_results = {}
 
 try:
-    from ssz_ligo_tests import xi_weak, xi_strong, d_ssz
-    from ssz_ligo_tests import s_scale, rho_rsg, phase_accounting_factor_ssz
+    from ssz_ligo_tests import xi_weak, d_ssz
+    from ssz_ligo_tests import rho_rsg
     from ssz_ligo_tests import frequency_to_radius_proxy, delta_phase_ssz_minus_gr
 
     G = 6.674e-11
@@ -428,7 +427,7 @@ with open(os.path.join(REPORTS, "SYNTHETIC_FORWARD_DRY_RUN_REPORT.md"), "w", enc
     f.write(f"## Status\n{dry_run_status}\n\n")
     f.write("## Parameters\n")
     f.write(f"- M1={M1} M_sun, M2={M2} M_sun\n")
-    f.write(f"- freqs: 20..1024 Hz, 500 points\n\n")
+    f.write("- freqs: 20..1024 Hz, 500 points\n\n")
     f.write("## Results\n")
     for k, v in dry_results.items():
         f.write(f"- {k}: {v}\n")
@@ -478,7 +477,7 @@ else:
 
 print(f"FINAL STATUS: {final_status}")
 
-master = f"""# REAL TEST VERIFICATION MASTER REPORT
+master = """# REAL TEST VERIFICATION MASTER REPORT
 Generated: {datetime.datetime.now()}
 
 ## Environment

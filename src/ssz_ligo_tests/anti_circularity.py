@@ -108,8 +108,8 @@ def classify_observable_source(source_description: str) -> CircularityStatus:
     return CircularityStatus.UNKNOWN
 
 
-def check_independence(prediction_source: str, 
-                      measured_source: str, 
+def check_independence(prediction_source: str,
+                      measured_source: str,
                       reference_source: str) -> CircularityStatus:
     """Check independence of prediction, measurement, and reference.
     
@@ -118,15 +118,15 @@ def check_independence(prediction_source: str,
     # Same source = circular
     if prediction_source == measured_source:
         return CircularityStatus.CIRCULARITY_RISK
-    
+
     # Posterior field measured from model that uses same reference = circular
     if "posterior" in measured_source and reference_source in prediction_source:
         return CircularityStatus.CIRCULARITY_RISK
-    
+
     # Strain is independent
     if "strain" in measured_source:
         return CircularityStatus.VALID_INDEPENDENT
-    
+
     return CircularityStatus.UNKNOWN
 
 
@@ -151,10 +151,10 @@ def produce_anti_circularity_record(test_name: str,
                                   measured_source: str,
                                   reference_model: str) -> Dict:
     """Produce complete anti-circularity record for a test."""
-    
+
     independence = check_independence(prediction_source, measured_source, reference_model)
     posterior_risk = flag_posterior_self_consistency_risk(measured_obs)
-    
+
     record = {
         "test_name": test_name,
         "prediction_equation": prediction_eq,
@@ -166,14 +166,14 @@ def produce_anti_circularity_record(test_name: str,
         "posterior_risk": posterior_risk,
         "usable": independence == CircularityStatus.VALID_INDEPENDENT and posterior_risk is None
     }
-    
+
     return record
 
 
 def validate_test_design(test_design: Dict) -> List[str]:
     """Validate complete test design for circularity risks."""
     issues = []
-    
+
     for test_name, design in test_design.items():
         record = produce_anti_circularity_record(
             test_name=test_name,
@@ -183,14 +183,14 @@ def validate_test_design(test_design: Dict) -> List[str]:
             measured_source=design.get("measured_source", ""),
             reference_model=design.get("reference_model", "")
         )
-        
+
         if not record["usable"]:
             issues.append(
                 f"{test_name}: {record['independence_status']}"
             )
             if record["posterior_risk"]:
                 issues.append(f"  -> {record['posterior_risk']}")
-    
+
     return issues
 
 

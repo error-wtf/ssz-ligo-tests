@@ -8,7 +8,7 @@ HARD RULES:
 
 All reports written to reports/  |  Log to logs/full_strain_pipeline.log
 """
-import sys, os, datetime, numpy as np, h5py
+import sys, datetime, numpy as np, h5py
 from pathlib import Path
 from scipy import signal
 
@@ -76,15 +76,15 @@ def step_A():
     log("=" * 60)
 
     ac_assert("H1/strain")
-    log(f"  Anti-circularity check: H1/strain -> VALID_INDEPENDENT")
+    log("  Anti-circularity check: H1/strain -> VALID_INDEPENDENT")
 
     if not H1_STRAIN.exists():
-        log(f"  STATUS: BLOCKED_STRAIN_NOT_READABLE")
+        log("  STATUS: BLOCKED_STRAIN_NOT_READABLE")
         log(f"  File not found: {H1_STRAIN}")
         return None, None, None
 
     log(f"  File:    {H1_STRAIN}")
-    log(f"  Dataset: strain/Strain")
+    log("  Dataset: strain/Strain")
 
     with h5py.File(str(H1_STRAIN), 'r') as f:
         gps0     = float(f['meta/GPSstart'][()])
@@ -158,12 +158,12 @@ def step_B(gps0, fs):
     log(f"  Off-source offset:  {OFFSOURCE_OFFSET_S} s before trigger")
     log(f"  Off-source length:  {OFFSOURCE_DUR_S} s  ({len(offsrc)} samples)")
     log(f"  Welch nperseg:      {PSD_NPERSEG}")
-    log(f"  Welch overlap:      50%")
-    log(f"  Window:             Hann")
+    log("  Welch overlap:      50%")
+    log("  Window:             Hann")
     log(f"  PSD bins:           {len(freqs)}")
     log(f"  Freq range:         {freqs[1]:.3f} – {freqs[-1]:.1f} Hz")
     log(f"  PSD median (20-800 Hz): {np.median(psd[(freqs>=20)&(freqs<=800)]):.3e} 1/Hz")
-    log(f"  Source:             RAW STRAIN (no posterior PSD used)")
+    log("  Source:             RAW STRAIN (no posterior PSD used)")
     log("  STATUS: PASS — PSD estimated from off-source strain")
     return freqs, psd
 
@@ -225,7 +225,7 @@ def step_D(freqs_fd, h_gr, M_kg, rs_m):
 
     band = dpsi[mask]
     log(f"  Schwarzschild r_s:  {rs_m/1e3:.2f} km")
-    log(f"  kappa_phase:        1.0 (locked exploratory)")
+    log("  kappa_phase:        1.0 (locked exploratory)")
     log(f"  dpsi range (band):  [{band.min():.4f}, {band.max():.4f}] rad")
     log(f"  dpsi mean (band):   {band.mean():.4f} rad")
     log(f"  |h_SSZ| max:        {np.abs(h_ssz).max():.3e}")
@@ -310,11 +310,8 @@ def step_E(strain, fs, freqs_psd, psd, h_gr, h_ssz):
 # ---------------------------------------------------------------------------
 def write_reports(strain, fs, gps0, freqs_psd, psd, h_gr, h_ssz,
                   dpsi, stats, M_kg, rs_m):
-    ffd = np.fft.rfftfreq(len(strain), 1.0/fs)
-    mask = (ffd >= F_LOW) & (ffd <= F_HIGH)
-
     # ---- A: REAL_STRAIN_LOAD_REPORT ----
-    (REPORTS / "REAL_STRAIN_LOAD_REPORT.md").write_text(f"""# Real Strain Load Report
+    (REPORTS / "REAL_STRAIN_LOAD_REPORT.md").write_text("""# Real Strain Load Report
 Generated: {NOW}
 
 ## File
@@ -349,8 +346,7 @@ Generated: {NOW}
 """, encoding="utf-8")
 
     # ---- B: PSD_WELCH_REPORT ----
-    band_m = (freqs_psd >= F_LOW) & (freqs_psd <= F_HIGH)
-    (REPORTS / "PSD_WELCH_REPORT.md").write_text(f"""# PSD Welch Estimation Report
+    (REPORTS / "PSD_WELCH_REPORT.md").write_text("""# PSD Welch Estimation Report
 Generated: {NOW}
 
 ## Method
@@ -377,7 +373,7 @@ Generated: {NOW}
 """, encoding="utf-8")
 
     # ---- C: GR_CONTROL_WAVEFORM_REPORT ----
-    (REPORTS / "GR_CONTROL_WAVEFORM_REPORT.md").write_text(f"""# GR Control Waveform Report
+    (REPORTS / "GR_CONTROL_WAVEFORM_REPORT.md").write_text("""# GR Control Waveform Report
 Generated: {NOW}
 
 ## LABEL: GR_CONTROL_TEMPLATE_LIMITED
@@ -405,7 +401,7 @@ It is used ONLY as a sanity control reference.
 """, encoding="utf-8")
 
     # ---- D: SSZ_FORWARD_APPLICATION_REPORT ----
-    (REPORTS / "SSZ_FORWARD_APPLICATION_REPORT.md").write_text(f"""# SSZ Forward Model Application Report
+    (REPORTS / "SSZ_FORWARD_APPLICATION_REPORT.md").write_text("""# SSZ Forward Model Application Report
 Generated: {NOW}
 
 ## LABEL: SSZ_FORWARD_V0_PROXY
@@ -443,7 +439,7 @@ h_SSZ   = h_GR * exp(i * dPsi(f))
 """, encoding="utf-8")
 
     # ---- E: RESIDUAL_LIKELIHOOD_REPORT ----
-    (REPORTS / "RESIDUAL_LIKELIHOOD_REPORT.md").write_text(f"""# Residual and Log-Likelihood Report
+    (REPORTS / "RESIDUAL_LIKELIHOOD_REPORT.md").write_text("""# Residual and Log-Likelihood Report
 Generated: {NOW}
 
 ## Computation
@@ -478,7 +474,7 @@ POSTERIOR_RF_TEST:             INVALID_FOR_SSZ
 """, encoding="utf-8")
 
     # ---- F: ANTI_CIRCULARITY_FINAL_GATE ----
-    (REPORTS / "ANTI_CIRCULARITY_FINAL_GATE.md").write_text(f"""# Anti-Circularity Final Gate
+    (REPORTS / "ANTI_CIRCULARITY_FINAL_GATE.md").write_text("""# Anti-Circularity Final Gate
 Generated: {NOW}
 
 ## Observable Classification Audit
@@ -562,7 +558,6 @@ def run():
         log("\nFINAL: BLOCKED_PSD_INVALID")
         flush_log(); return
 
-    mask = (ffd >= F_LOW) & (ffd <= F_HIGH)
     write_reports(strain, fs, gps0, freqs_psd, psd,
                   h_gr, h_ssz, dpsi, stats, M_kg, rs_m)
 
@@ -579,7 +574,7 @@ def run():
     log("  ANTI_CIRCULARITY_GATE:        CLEAR")
 
     flush_log()
-    log(f"\n  Log: logs/full_strain_pipeline.log")
+    log("\n  Log: logs/full_strain_pipeline.log")
 
 
 if __name__ == "__main__":

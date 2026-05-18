@@ -28,8 +28,6 @@ from ssz_ligo_tests.analytic_polarizations_2pn import (
 )
 from ssz_ligo_tests.source_propagation_twist import (
     rotate_polarizations, detector_projection,
-    synthetic_asd_ligo,
-    SOURCE_PROPAGATION_TWIST_STATUS,
 )
 from ssz_ligo_tests.source_propagation_twist import (
     theta_xi_proxy, theta_rsg_proxy,
@@ -110,7 +108,7 @@ for theta in THETA_SCAN:
     r2 = h1_l1_ratio(hp2, hx2, theta)
     s0 = abs(r0 - ratio0_gr)
     s2 = abs(r2 - ratio2_gr)
-    impr = s2 / s0 if s0 > 1e-20 else float("inf")
+    impr = s2 / s0 if s0 > 1e-20 else float("in")
     print(f"{theta:>12.4f} {r0:>12.6f} {s0:>12.4e} "
           f"{r2:>12.6f} {s2:>12.4e} {impr:>12.2f}")
     csv_rows.append({
@@ -143,10 +141,10 @@ for alpha in [0.01, 0.05, 0.1, 0.5, 1.0]:
              np.sqrt(np.mean(np.abs(h_l1_2)**2)))
     s0 = abs(r0_tw - ratio0_gr)
     s2 = abs(r2_tw - ratio2_gr)
-    impr = s2 / s0 if s0 > 1e-20 else float("inf")
+    impr = s2 / s0 if s0 > 1e-20 else float("in")
     print(f"{alpha:>8.2f} {s0:>12.4e} {s2:>12.4e} {impr:>12.2f}")
     csv_rows.append({
-        "scan": "xi_proxy_theta_f",
+        "scan": "xi_proxy_theta_",
         "pn_order": "0PN_vs_2PN",
         "theta_rad": alpha,
         "ratio_0pn": r0_tw,
@@ -176,11 +174,11 @@ for alpha in [0.01, 0.1, 0.5, 1.0]:
              np.sqrt(np.mean(np.abs(h_l1_2)**2)))
     s0 = abs(r0_tw - ratio0_gr)
     s2 = abs(r2_tw - ratio2_gr)
-    impr = s2 / s0 if s0 > 1e-20 else float("inf")
+    impr = s2 / s0 if s0 > 1e-20 else float("in")
     print(f"{alpha:>8.2f} {xi_char:>8.3f} {f_char:>8.1f} "
           f"{s0:>12.4e} {s2:>12.4e} {impr:>12.2f}")
     csv_rows.append({
-        "scan": "rsg_proxy_theta_f",
+        "scan": "rsg_proxy_theta_",
         "pn_order": "0PN_vs_2PN",
         "theta_rad": alpha,
         "ratio_0pn": r0_tw,
@@ -232,7 +230,7 @@ def twist_table(rows_filtered):
 
 const_rows = [r for r in csv_rows if r["scan"] == "constant_theta"]
 
-report = f"""# TWIST_BRANCH_2PN Synthetic Scan Report
+report = """# TWIST_BRANCH_2PN Synthetic Scan Report
 
 Generated: {NOW}
 Branch: ANALYTIC_2PN_POLARIZATION_CONTROL
@@ -322,9 +320,9 @@ With 2PN templates (or full IMRPhenomD when available):
 (REPORTS / "TWIST_BRANCH_2PN_SYNTHETIC_REPORT.md").write_text(
     report, encoding="utf-8"
 )
-print(f"\n  -> reports/TWIST_BRANCH_2PN_SYNTHETIC_REPORT.md")
+print("\n  -> reports/TWIST_BRANCH_2PN_SYNTHETIC_REPORT.md")
 print(f"  -> {csv_path}")
-print(f"\nFINAL GATE:")
+print("\nFINAL GATE:")
 print(f"  TWIST_BRANCH_2PN_STATUS: {twist_status}")
 print(f"  POLARIZATION_CONTROL: {POLARIZATION_CONTROL_STATUS}")
-print(f"  READY_FOR_REAL_LIGO_SSZ_CLAIM: NO")
+print("  READY_FOR_REAL_LIGO_SSZ_CLAIM: NO")

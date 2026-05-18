@@ -3,9 +3,9 @@ import numpy as np
 from typing import Tuple
 
 
-def detector_response(h_plus: np.ndarray, 
-                     h_cross: np.ndarray, 
-                     F_plus: float, 
+def detector_response(h_plus: np.ndarray,
+                     h_cross: np.ndarray,
+                     F_plus: float,
                      F_cross: float) -> np.ndarray:
     """Compute detector response for given polarization.
     
@@ -23,8 +23,8 @@ def detector_response(h_plus: np.ndarray,
     return F_plus * h_plus + F_cross * h_cross
 
 
-def time_shift_signal(signal: np.ndarray, 
-                     dt: float, 
+def time_shift_signal(signal: np.ndarray,
+                     dt: float,
                      sample_rate: float) -> np.ndarray:
     """Apply time shift to signal.
     

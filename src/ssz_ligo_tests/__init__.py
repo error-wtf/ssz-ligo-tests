@@ -12,14 +12,14 @@ Anti-circularity:
 __version__ = "0.2.0"
 
 # Constants
-from .constants import (
+from .constants import (  # noqa: F401
     PHI, XI_MAX, D_MIN, N0,
     C, G, M_SUN,
     REGIME_WEAK_THRESHOLD, REGIME_STRONG_THRESHOLD
 )
 
 # Core SSZ equations
-from .ssz_core import (
+from .ssz_core import (  # noqa: F401
     schwarzschild_radius,
     xi_max, d_min,
     xi_weak, xi_strong,
@@ -30,7 +30,7 @@ from .ssz_core import (
 )
 
 # Radial Scaling Gauge
-from .radial_scaling import (
+from .radial_scaling import (  # noqa: F401
     s_scale,
     rho_rsg,
     drho_dr,
@@ -42,7 +42,7 @@ from .radial_scaling import (
 )
 
 # Inspiral forward model
-from .ssz_inspiral import (
+from .ssz_inspiral import (  # noqa: F401
     gw_power_gr,
     gw_power_ssz,
     rdot_gr,
@@ -55,30 +55,29 @@ from .ssz_inspiral import (
 )
 
 # Phase mapping
-from .ssz_phase import (
+from .ssz_phase import (  # noqa: F401
     frequency_to_radius_proxy,
     radius_to_frequency_proxy,
     delta_phi_at_radius,
-    delta_psi_ssz,
     phase_correction_window,
     apply_ssz_phase_to_waveform,
     estimate_phase_magnitude
 )
 
 # Ringdown (BLOCKED - conflicting sources)
-from .ssz_ringdown import (
+from .ssz_ringdown import (  # noqa: F401
     RINGDOWN_MODEL_STATUS,
     CONFLICTING_SOURCES,
     get_ringdown_conflict_report,
     check_ringdown_usable,
     ringdown_damped_sinusoid,
-    ssz_ringdown_frequency_shift,  # Raises ValueError
-    ssz_ringdown_tau_shift,         # Raises ValueError
-    epsilon_220_from_corpus         # Raises NotImplementedError
+    ssz_ringdown_frequency_shift,
+    ssz_ringdown_tau_shift,
+    epsilon_220_from_corpus
 )
 
 # Waveform deformation
-from .ssz_waveform import (
+from .ssz_waveform import (  # noqa: F401
     h_plus_h_cross_ssz,
     waveform_transform_ssz,
     delta_psi_ssz,
@@ -89,16 +88,16 @@ from .ssz_waveform import (
 )
 
 # Detector and likelihood
-from .detector_response import (
+from .detector_response import (  # noqa: F401
     detector_response,
     time_shift_signal,
     combine_detectors
 )
 
 # Forward model
-from .forward_model import SSZForwardModel
+from .forward_model import SSZForwardModel  # noqa: F401
 
-from .likelihood import (
+from .likelihood import (  # noqa: F401
     residual,
     noise_weighted_inner_product,
     log_likelihood_gaussian,
@@ -106,7 +105,7 @@ from .likelihood import (
 )
 
 # Anti-circularity
-from .anti_circularity import (
+from .anti_circularity import (  # noqa: F401
     CircularityStatus,
     classify_observable_source,
     check_independence,
@@ -116,7 +115,7 @@ from .anti_circularity import (
 )
 
 # Equation registry
-from .equation_registry import (
+from .equation_registry import (  # noqa: F401
     Equation, EquationStatus,
     LOCKED_CORE_EQUATIONS,
     MISSING_FORWARD_EQUATIONS,
@@ -129,40 +128,40 @@ from .equation_registry import (
 __all__ = [
     # Version
     '__version__',
-    
+
     # Constants
     'PHI', 'XI_MAX', 'D_MIN', 'N0', 'C', 'G', 'M_SUN',
-    
+
     # Core
     'schwarzschild_radius', 'xi_weak', 'xi_strong', 'd_ssz', 'd_gr_schwarzschild',
     'get_xi', 'regime_label', 's_scale',
-    
+
     # Radial Scaling
     'rho_rsg', 'drho_dr', 'phase_accounting_factor_ssz', 'phase_accounting_factor_gr',
     'blend_strong_to_weak', 'xi_blended', 'delta_rsg_coordinate',
-    
+
     # Inspiral
     'gw_power_ssz', 'rdot_ssz', 'orbital_frequency', 'dphi_dr',
     'accumulated_phase', 'delta_phase_ssz_minus_gr', 'r_isco',
-    
+
     # Phase
     'frequency_to_radius_proxy', 'delta_psi_ssz', 'phase_correction_window',
     'apply_ssz_phase_to_waveform', 'estimate_phase_magnitude',
-    
+
     # Ringdown (BLOCKED)
     'RINGDOWN_MODEL_STATUS', 'CONFLICTING_SOURCES', 'get_ringdown_conflict_report',
     'check_ringdown_usable',
-    
+
     # Detector
     'detector_response',
-    
+
     # Likelihood
     'residual', 'log_likelihood_gaussian', 'delta_log_likelihood',
-    
+
     # Anti-circularity
     'CircularityStatus', 'check_independence',
     'FORBIDDEN_POSTERIOR_FIELDS', 'ALLOWED_OBSERVABLES',
-    
+
     # Registry
     'EquationStatus', 'get_locked_equations', 'get_missing_equations',
     'check_ready_for_numerical_test',

@@ -32,7 +32,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from ssz_ligo_tests.analytic_polarizations_2pn import (
+from ssz_ligo_tests.analytic_polarizations_2pn import (  # noqa: E402
     h_plus_0pn,
     h_cross_0pn,
     h_plus_2pn,
@@ -42,9 +42,9 @@ from ssz_ligo_tests.analytic_polarizations_2pn import (
     polarization_amplitude_ratio,
     polarization_degeneracy_metric,
     POLARIZATION_CONTROL_STATUS,
-    G_NEWTON, C_LIGHT, M_SUN,
+    M_SUN,
 )
-from ssz_ligo_tests.source_propagation_twist import (
+from ssz_ligo_tests.source_propagation_twist import (  # noqa: E402
     rotate_polarizations,
     detector_projection,
 )
@@ -153,7 +153,6 @@ class Test0PNDegeneracy:
     def test_0pn_edge_on_cross_zero(self):
         _, _ = h_plus_0pn(F, MC_KG, M_TOT_KG, ETA, IOTA_EDGE, DL_M)
         hx, _ = h_cross_0pn(F, MC_KG, M_TOT_KG, ETA, IOTA_EDGE, DL_M)
-        A0 = amplitude_0pn(F, MC_KG, DL_M)
         # H×_0 = cos(pi/2) = 0
         npt.assert_allclose(np.abs(hx), 0.0, atol=1e-30)
 

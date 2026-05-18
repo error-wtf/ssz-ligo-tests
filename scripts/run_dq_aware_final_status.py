@@ -98,7 +98,7 @@ Questions:
 # -----------------------------------------------------------------------
 # Report 1: DQ_AWARE_FINAL_LIGO_STATUS.md
 # -----------------------------------------------------------------------
-r1 = f"""# DQ-Aware Final LIGO Status — GW240925
+r1 = """# DQ-Aware Final LIGO Status — GW240925
 
 Generated: {NOW}  
 Event: GW240925 (trigger GPS {TRIGGER_GPS})
@@ -193,7 +193,7 @@ log("  -> reports/DQ_AWARE_FINAL_LIGO_STATUS.md")
 bp_ratio_h1 = h1d["bp_ratio"]
 peak_snr_h1 = h1d["snr_proxy"]
 
-r2 = f"""# H1-Only Exploratory Strain Report — GW240925
+r2 = """# H1-Only Exploratory Strain Report — GW240925
 
 Generated: {NOW}  
 Detector: H1 (LIGO Hanford)  
@@ -268,7 +268,7 @@ log("  -> reports/H1_ONLY_EXPLORATORY_STRAIN_REPORT.md")
 # -----------------------------------------------------------------------
 # Report 3: L1_EXCLUDED_OR_DIAGNOSTIC_REPORT.md
 # -----------------------------------------------------------------------
-r3 = f"""# L1 Excluded / Diagnostic Report — GW240925
+r3 = """# L1 Excluded / Diagnostic Report — GW240925
 
 Generated: {NOW}  
 Detector: L1 (LIGO Livingston)  

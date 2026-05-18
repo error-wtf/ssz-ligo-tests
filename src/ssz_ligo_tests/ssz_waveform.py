@@ -3,8 +3,8 @@ import numpy as np
 from typing import Optional
 
 
-def apply_phase_deformation(h_gr_f: np.ndarray, 
-                          freqs: np.ndarray, 
+def apply_phase_deformation(h_gr_f: np.ndarray,
+                          freqs: np.ndarray,
                           delta_psi: np.ndarray) -> np.ndarray:
     """Apply phase deformation to GR waveform in frequency domain.
     
@@ -13,7 +13,7 @@ def apply_phase_deformation(h_gr_f: np.ndarray,
     return h_gr_f * np.exp(1j * delta_psi)
 
 
-def apply_amplitude_deformation(h_gr_f: np.ndarray, 
+def apply_amplitude_deformation(h_gr_f: np.ndarray,
                                 delta_amp: np.ndarray) -> np.ndarray:
     """Apply amplitude deformation to GR waveform.
     
@@ -22,9 +22,9 @@ def apply_amplitude_deformation(h_gr_f: np.ndarray,
     return h_gr_f * (1 + delta_amp)
 
 
-def h_ssz_from_gr(h_gr_f: np.ndarray, 
-                  freqs: np.ndarray, 
-                  delta_psi: Optional[np.ndarray] = None, 
+def h_ssz_from_gr(h_gr_f: np.ndarray,
+                  freqs: np.ndarray,
+                  delta_psi: Optional[np.ndarray] = None,
                   delta_amp: Optional[np.ndarray] = None) -> np.ndarray:
     """Construct SSZ waveform from GR waveform.
     
@@ -41,14 +41,14 @@ def h_ssz_from_gr(h_gr_f: np.ndarray,
         delta_psi = np.zeros_like(freqs)
     if delta_amp is None:
         delta_amp = np.zeros_like(freqs)
-    
+
     h = apply_amplitude_deformation(h_gr_f, delta_amp)
     h = apply_phase_deformation(h, freqs, delta_psi)
     return h
 
 
-def delta_psi_ssz(freqs: np.ndarray, 
-                  M: float, 
+def delta_psi_ssz(freqs: np.ndarray,
+                  M: float,
                   rs: float,
                   kappa: Optional[float] = None) -> np.ndarray:
     """SSZ phase correction δΨ_SSZ(f).

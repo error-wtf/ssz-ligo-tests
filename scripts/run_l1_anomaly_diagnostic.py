@@ -82,7 +82,7 @@ def load_windows(path, trigger_gps, win_s, off_offset, off_dur):
         off = f["strain/Strain"][j0:j1]
 
     return {
-        "on": on, "pre": pre, "post": post, "off": off,
+        "on": on, "pre": pre, "post": post, "of": off,
         "fs": fs, "gps0": gps0, "t_ev": t_ev,
         "n_total": n, "dur_total": dur,
     }
@@ -104,7 +104,7 @@ def strain_stats(arr, label):
         f"near_clip={clipped}  n={len(arr)}")
     return {
         "label": label, "rms": rms, "peak": peak, "p99": p99,
-        "has_nan": has_nan, "has_inf": has_inf, "near_clip": clipped,
+        "has_nan": has_nan, "has_in": has_inf, "near_clip": clipped,
         "n": len(arr),
     }
 
@@ -157,17 +157,17 @@ def process_detector(label, path, Mc, M, mu, dL):
         f"fs={fs} Hz  n_total={ww['n_total']}")
 
     stats = {}
-    for key in ("on", "pre", "post", "off"):
+    for key in ("on", "pre", "post", "of"):
         stats[key] = strain_stats(ww[key], f"{label}_{key}")
 
     # Anomaly flags
     anomalies = []
-    if stats["on"].get("has_nan") or stats["on"].get("has_inf"):
+    if stats["on"].get("has_nan") or stats["on"].get("has_in"):
         anomalies.append("NAN_OR_INF_IN_TRIGGER_WINDOW")
     if stats["on"].get("near_clip", 0) > 10:
         anomalies.append("POSSIBLE_CLIPPING")
     rms_on = stats["on"].get("rms", 0)
-    rms_off = stats["off"].get("rms", 0)
+    rms_off = stats["of"].get("rms", 0)
     rms_ratio = rms_on / rms_off if rms_off > 0 else 999.0
     log(f"  rms_on/rms_off ratio: {rms_ratio:.2f}"
         f"  ({'OK' if rms_ratio < 5.0 else 'ANOMALOUS — high noise in trigger window'})")
@@ -176,7 +176,7 @@ def process_detector(label, path, Mc, M, mu, dL):
 
     # PSD from off-source
     fp, psd = signal.welch(
-        ww["off"], fs=fs, nperseg=NPERSEG, window="hann", noverlap=NPERSEG // 2
+        ww["of"], fs=fs, nperseg=NPERSEG, window="hann", noverlap=NPERSEG // 2
     )
 
     # MF-SNR with correct normalization
@@ -215,7 +215,7 @@ def process_detector(label, path, Mc, M, mu, dL):
     if snr_gr > 200:
         anomalies.append(f"MF_SNR_GR_ANOMALOUS ({snr_gr:.0f})")
         log(f"  ANOMALY: MF-SNR GR={snr_gr:.0f} >> expected (~10-50)")
-        log(f"  Likely cause: off-source PSD underestimates trigger-window noise")
+        log("  Likely cause: off-source PSD underestimates trigger-window noise")
 
     # Determine L1 status
     if not anomalies:
@@ -278,7 +278,6 @@ def run():
         sa = np.std(a2) + 1e-300
         sb = np.std(b2) + 1e-300
         xc_old = np.correlate(a2 / sa, b2 / sb, mode="full")
-        lags = np.arange(-(n - 1), n)
         pk = np.argmax(np.abs(xc_old))
         old_val = float(xc_old[pk]) / n
         log(f"  Previous std-norm xcorr = {old_val:.6f}  "
@@ -286,7 +285,7 @@ def run():
 
     # H1/L1 RMS comparison table
     log("\n  === H1 / L1 RMS COMPARISON ===")
-    for key in ("on", "pre", "post", "off"):
+    for key in ("on", "pre", "post", "of"):
         rms_h = rh["stats"][key].get("rms", 0) if rh else 0
         rms_l = rl["stats"][key].get("rms", 0) if rl else 0
         ratio = rms_l / rms_h if rms_h > 0 else 999.0
@@ -315,7 +314,7 @@ def run():
         "|--------|--------|--------|-------|-------|",
     ]
     if rh and rl:
-        for key in ("on", "pre", "post", "off"):
+        for key in ("on", "pre", "post", "of"):
             rms_h = rh["stats"][key].get("rms", 0)
             rms_l = rl["stats"][key].get("rms", 0)
             ratio = rms_l / rms_h if rms_h > 0 else 999.0
@@ -356,7 +355,7 @@ def run():
         "",
         "## Corrected Cross-Correlation",
         "",
-        f"- Method: Cauchy-Schwarz normalisation",
+        "- Method: Cauchy-Schwarz normalisation",
         f"- xcorr_corrected = {xcorr_val:.6f}" if xcorr_val is not None
         else "- xcorr: BLOCKED",
         f"- lag = {xcorr_lag} samples" if xcorr_lag is not None else "",

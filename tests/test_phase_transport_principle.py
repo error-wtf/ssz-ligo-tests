@@ -23,8 +23,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from ssz_ligo_tests.phase_transport import (
-    photon_phase_arm,
+from ssz_ligo_tests.phase_transport import photon_phase_arm  # noqa: E402, F401
+from ssz_ligo_tests.phase_transport import (  # noqa: E402
     relative_phase,
     phase_to_strain,
     transport_operator_u1,

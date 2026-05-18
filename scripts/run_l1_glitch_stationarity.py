@@ -172,7 +172,7 @@ def try_plot(t_h1, bp_h1, t_l1, bp_l1, label="on"):
         out = PLOTS_DIR / "H1_L1_BANDPOWER_TIMESERIES.png"
         fig.savefig(str(out), dpi=100)
         plt.close(fig)
-        log(f"  -> plots/H1_L1_BANDPOWER_TIMESERIES.png")
+        log("  -> plots/H1_L1_BANDPOWER_TIMESERIES.png")
         return str(out)
     except Exception as e:
         log(f"  [plot skipped: {e}]")
@@ -226,7 +226,7 @@ def run():
         off_bps, fs = multi_window_psd(
             path, TRIGGER_GPS, OFF_WINDOWS, OFF_DUR_S, F_LOW, F_HIGH
         )
-        log(f"  Off-source bandpowers:")
+        log("  Off-source bandpowers:")
         for k, v in off_bps.items():
             log(f"    {k}: {v:.3e}" if v else f"    {k}: N/A")
 
@@ -321,12 +321,12 @@ def run():
     with open(str(csv_path), "w", newline="") as f:
         writer = csv.writer(f)
         writer.writerows(csv_rows)
-    log(f"\n  -> data_manifest/l1_20_210hz_diagnostics.csv")
+    log("\n  -> data_manifest/l1_20_210hz_diagnostics.csv")
 
     # Write report
     off_h1 = results_h1.get("off_bps", {})
     off_l1 = results_l1.get("off_bps", {})
-    report = f"""# L1 Glitch and Stationarity Diagnostic Report
+    report = """# L1 Glitch and Stationarity Diagnostic Report
 
 Generated: {NOW}  
 Band: {F_LOW}–{F_HIGH} Hz | Trigger GPS: {TRIGGER_GPS}  
@@ -365,7 +365,7 @@ Diagnose whether the L1 anomalous MF-SNR=647 is caused by:
         f"| {bl_on:.3e} | {r_on:.2f} |\n"
     )
 
-    report += f"""
+    report += """
 ## Bandpower Ratio: trigger / off-source
 
 | Detector | bp_trigger / bp_off(-500s) | MAD z-score | Classification |

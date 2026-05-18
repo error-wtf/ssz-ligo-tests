@@ -169,7 +169,7 @@ def check_detector(label, path):
                     inj_flags_trigger[name] = is_set  # True = clean
 
         # --- Spectral check: look for lines in trigger window ---
-        log(f"\n  Spectral line check in trigger window:")
+        log("\n  Spectral line check in trigger window:")
         j0 = max(0, int((t_ev - WIN_FULL_S / 2) * fs))
         j1 = min(n_strain, int((t_ev + WIN_FULL_S / 2) * fs))
         strain_seg = f["strain/Strain"][j0:j1].copy()
@@ -203,7 +203,7 @@ def check_detector(label, path):
         bp_trig = float(np.mean(psd[band_m]))
         bp_off = float(np.mean(psd_off[band_m]))
         bp_ratio = bp_trig / bp_off if bp_off > 0 else float("nan")
-        log(f"\n  Band power ratio (trigger/off-source):")
+        log("\n  Band power ratio (trigger/off-source):")
         log(f"    trigger  PSD_mean = {bp_trig:.4e}")
         log(f"    off-src  PSD_mean = {bp_off:.4e}")
         log(f"    ratio    = {bp_ratio:.2f}")
@@ -215,7 +215,7 @@ def check_detector(label, path):
         "dq_mask_unique": unique_dq.tolist(),
         "dq_flags": dq_flag_summary,
         "inj_flags": inj_flags_trigger,
-        "bp_ratio_trig_vs_off": bp_ratio,
+        "bp_ratio_trig_vs_of": bp_ratio,
         "line_results": line_results,
         "file_dq_names": file_dq_names,
     }
@@ -272,7 +272,7 @@ if h1 and l1:
         log("  *** BOTH H1 and L1 have CW_HW_INJ NOT clean at trigger time ***")
         log("  *** This means a CW hardware injection was active at BOTH detectors ***")
 
-    log(f"\n  Band power ratio (trigger/off-200s):")
+    log("\n  Band power ratio (trigger/off-200s):")
     log(f"    H1: {h1['bp_ratio_trig_vs_off']:.2f}")
     log(f"    L1: {l1['bp_ratio_trig_vs_off']:.2f}")
 
@@ -370,7 +370,7 @@ def inj_table(res):
     return "\n".join(rows)
 
 
-report = f"""# L1 DQ Flag Check Report
+report = """# L1 DQ Flag Check Report
 
 Generated: {NOW}  
 Event: GW240925 (trigger GPS {TRIGGER_GPS})  
@@ -514,7 +514,7 @@ log("  -> reports/L1_DQ_FLAG_CHECK_REPORT.md")
 
 flush_log()
 log("  -> logs/l1_dq_flag_check.log")
-log(f"\nFINAL GATE:")
+log("\nFINAL GATE:")
 log(f"  L1_DQ_STATUS: {l1_dq_status}")
 log(f"  COHERENCE_STATUS: {coherence_status}")
-log(f"  READY_FOR_REAL_LIGO_SSZ_CLAIM: NO")
+log("  READY_FOR_REAL_LIGO_SSZ_CLAIM: NO")

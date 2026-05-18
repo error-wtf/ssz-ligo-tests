@@ -52,18 +52,18 @@ def get_ringdown_conflict_report() -> str:
     """
     lines = ["# SSZ Ringdown Source Status Report\n\n"]
     lines.append(f"**Status:** {RINGDOWN_MODEL_STATUS}\n\n")
-    
+
     lines.append("## Authoritative Source\n\n")
     v51 = CONFLICTING_SOURCES["source_a_3_percent"]
-    lines.append(f"**V51 PDF / Book Ch.30:**\n")
+    lines.append("**V51 PDF / Book Ch.30:**\n")
     lines.append(f"- Value: ~{v51['value']*100:.0f}%\n")
     lines.append(f"- Context: {v51['context']}\n")
     lines.append(f"- Status: {v51['status']}\n\n")
-    
+
     lines.append("## Important Note\n\n")
     lines.append("The ~3% shift is BELOW current single-event detector precision.\n")
     lines.append("Testable via stacking or next-gen detectors (ET/CE).\n\n")
-    
+
     lines.append("## Discarded/Outdated Sources\n\n")
     lines.append("- 39% photon-sphere value: NOT FOR LIGO\n")
     lines.append("- 31% D_min^2 interpretation: Possibly different regime\n\n")
@@ -87,10 +87,10 @@ def check_ringdown_usable() -> tuple:
     )
 
 
-def ringdown_damped_sinusoid(t: np.ndarray, 
-                             A: float, 
-                             f: float, 
-                             tau: float, 
+def ringdown_damped_sinusoid(t: np.ndarray,
+                             A: float,
+                             f: float,
+                             tau: float,
                              phi0: float = 0) -> np.ndarray:
     """Standard damped sinusoid for ringdown (model-agnostic)."""
     return A * np.exp(-t / tau) * np.cos(2 * np.pi * f * t + phi0)
@@ -144,10 +144,10 @@ def epsilon_220_from_corpus(source_choice: Optional[str] = None) -> float:
     This will ALWAYS fail with conflict report until sources are resolved.
     """
     raise NotImplementedError(
-        f"Cannot retrieve epsilon_220: CONFLICTING_SSZ_SOURCES\n\n"
-        f"Conflicting values:\n"
-        f"  - Source A (Book text): ~3%\n"
-        f"  - Source B (D_min²): ~31%\n"
-        f"  - Source C (Photon sphere): ~39%\n\n"
-        f"Resolution required from SSZ authors."
+        "Cannot retrieve epsilon_220: CONFLICTING_SSZ_SOURCES\n\n"
+        "Conflicting values:\n"
+        "  - Source A (Book text): ~3%\n"
+        "  - Source B (D_min\u00b2): ~31%\n"
+        "  - Source C (Photon sphere): ~39%\n\n"
+        "Resolution required from SSZ authors."
     )

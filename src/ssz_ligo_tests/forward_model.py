@@ -1,6 +1,5 @@
 """SSZ Forward Model - anti-circularity enforcing wrapper."""
 import numpy as np
-from typing import Optional
 from .ssz_ringdown import ssz_ringdown_frequency_shift, ssz_ringdown_tau_shift
 from .ssz_phase import frequency_to_radius_proxy
 from .ssz_core import xi_weak, d_ssz

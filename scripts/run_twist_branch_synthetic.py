@@ -26,9 +26,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from ssz_ligo_tests.ssz_twist import (
-    rotate_polarizations,
     apply_ssz_scale_and_twist,
-    detector_strain_with_twist,
     theta_constant,
     theta_xi_proxy,
     theta_rsg_proxy,
@@ -251,7 +249,7 @@ thresh_str = (f"{threshold_theta:.3f} rad"
               if threshold_theta is not None
               else ">0.1 rad (not reached in scan)")
 
-report = f"""# Twist Branch Synthetic Comparison Report
+report = """# Twist Branch Synthetic Comparison Report
 
 Generated: {NOW}  
 Status: DERIVED_V0_CONCEPTUAL  
@@ -310,7 +308,7 @@ Under twist, this ratio changes:
     f"| {r['theta_rad']:.3f} | {r['h1_l1_ratio_tw']:.4f}"
     f" | {r['h1_l1_ratio_delta']:+.4f} |"
     for r in rows_const
-) + f"""
+) + """
 
 The H1/L1 ratio changes because the rotation mixes h+ and hx differently
 into each detector's F+/Fx projection. This is the distinctive signature
@@ -360,5 +358,5 @@ SSZ_FALSIFICATION_CLAIM_MADE:   NO
 
 out_path = REPORTS / "TWIST_BRANCH_SYNTHETIC_REPORT.md"
 out_path.write_text(report, encoding="utf-8")
-print(f"\n-> reports/TWIST_BRANCH_SYNTHETIC_REPORT.md")
+print("\n-> reports/TWIST_BRANCH_SYNTHETIC_REPORT.md")
 print("DONE — READY_FOR_REAL_CLAIM: NO")

@@ -17,7 +17,6 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 from ssz_ligo_tests.source_propagation_twist import (
-    theta_constant,
     theta_xi_proxy,
     theta_rsg_proxy,
     compare_scale_only_vs_scale_twist,
@@ -189,7 +188,7 @@ for r in res_v0:
     })
 for r in res_xi:
     rows_csv.append({
-        "scan": "xi_proxy_theta_f",
+        "scan": "xi_proxy_theta_",
         "param": f"alpha={r['alpha']:.2f}",
         "h1_l1_ratio_tw": r["h1_l1_ratio"],
         "h1_l1_ratio_gr": r["h1_l1_ratio_gr"],
@@ -199,7 +198,7 @@ for r in res_xi:
     })
 for r in res_rsg:
     rows_csv.append({
-        "scan": "rsg_proxy_theta_f",
+        "scan": "rsg_proxy_theta_",
         "param": f"alpha={r['alpha']:.2f}",
         "h1_l1_ratio_tw": r["h1_l1_ratio"],
         "h1_l1_ratio_gr": None,
@@ -259,7 +258,7 @@ def table_proxy(res_list, extra_col=None):
     return "\n".join(rows)
 
 
-report = f"""# SOURCE_PROPAGATION_TWIST Synthetic Scan Report
+report = """# SOURCE_PROPAGATION_TWIST Synthetic Scan Report
 
 Generated: {NOW}  
 Branch: SOURCE_PROPAGATION_TWIST_BRANCH  
@@ -357,9 +356,9 @@ SSZ_FALSIFICATION_CLAIM_MADE:        NO
 (REPORTS / "SOURCE_PROPAGATION_TWIST_SYNTHETIC_REPORT.md").write_text(
     report, encoding="utf-8"
 )
-print(f"\n  -> reports/SOURCE_PROPAGATION_TWIST_SYNTHETIC_REPORT.md")
+print("\n  -> reports/SOURCE_PROPAGATION_TWIST_SYNTHETIC_REPORT.md")
 print(f"  -> {csv_path}")
-print(f"\nFINAL GATE:")
+print("\nFINAL GATE:")
 print(f"  SOURCE_PROPAGATION_TWIST_STATUS: {SOURCE_PROPAGATION_TWIST_STATUS}")
 print(f"  LOCAL_ARM_TWIST_STATUS: {LOCAL_ARM_TWIST_STATUS}")
-print(f"  READY_FOR_REAL_LIGO_SSZ_CLAIM: NO")
+print("  READY_FOR_REAL_LIGO_SSZ_CLAIM: NO")

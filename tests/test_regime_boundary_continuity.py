@@ -12,9 +12,9 @@ Source: docs/REGIME_BOUNDARY_LOCK.md
 """
 import numpy as np
 from ssz_ligo_tests.ssz_core import (
-    xi_weak, xi_strong_saturation, get_xi, d_ssz, regime_label
+    get_xi, d_ssz, regime_label
 )
-from ssz_ligo_tests.constants import BLEND_START, BLEND_END, PHI, XI_MAX
+from ssz_ligo_tests.constants import BLEND_START, BLEND_END
 
 
 RS = 1.0  # reference Schwarzschild radius

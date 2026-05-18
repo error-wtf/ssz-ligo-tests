@@ -144,7 +144,7 @@ for f_test, ret_rms in rows_e:
     e_rows_md.append(f"| {f_test:.0f} | {ret_rms:.4e} |")
 
 nl = "\n"
-report = f"""# GA Interferometer Synthetic Report
+report = """# GA Interferometer Synthetic Report
 
 Generated: {NOW}  
 Branch: GA_INTERFEROMETER_BRANCH  
@@ -249,5 +249,5 @@ SSZ_FALSIFICATION_CLAIM_MADE:   NO
 
 out = REPORTS / "GA_INTERFEROMETER_SYNTHETIC_REPORT.md"
 out.write_text(report, encoding="utf-8")
-print(f"\n-> reports/GA_INTERFEROMETER_SYNTHETIC_REPORT.md")
+print("\n-> reports/GA_INTERFEROMETER_SYNTHETIC_REPORT.md")
 print("DONE — READY_FOR_REAL_CLAIM: NO")

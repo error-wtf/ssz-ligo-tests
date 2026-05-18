@@ -17,19 +17,16 @@ Test map:
 """
 import sys
 import numpy as np
-import pytest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from ssz_ligo_tests.geometric_algebra_interferometer import (
+from ssz_ligo_tests.geometric_algebra_interferometer import (  # noqa: E402
     rotate_arm_basis,
     scale_and_twist_basis,
     phase_integral_arm,
-    interferometer_phase_difference,
     strain_from_phase_difference,
     synthetic_gr_wave_plus,
-    synthetic_gr_wave_cross,
     synthetic_ssz_scale,
     synthetic_ssz_twist,
     michelson_response,

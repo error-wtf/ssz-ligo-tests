@@ -1,6 +1,6 @@
 """SSZ core equations - canonical implementation."""
 import numpy as np
-from typing import Union, Optional
+from typing import Union
 
 # SSZ Constants - from SSZ_BOOK_DE_CLEAN.md
 PHI = (1 + np.sqrt(5)) / 2  # Golden ratio ≈ 1.618
@@ -9,7 +9,7 @@ D_MIN = 1 / (1 + XI_MAX)    # ≈ 0.555
 N0 = 4  # Base segmentation
 
 
-def xi_weak(r: Union[float, np.ndarray], 
+def xi_weak(r: Union[float, np.ndarray],
             rs: float) -> Union[float, np.ndarray]:
     """Weak field regime formula.
     
@@ -20,7 +20,7 @@ def xi_weak(r: Union[float, np.ndarray],
     return rs / (2 * r)
 
 
-def xi_strong(r: Union[float, np.ndarray], 
+def xi_strong(r: Union[float, np.ndarray],
               rs: float,
               phi: float = PHI) -> Union[float, np.ndarray]:
     """Strong field regime formula with saturation.
@@ -60,7 +60,7 @@ def D_ssz(xi: Union[float, np.ndarray]) -> Union[float, np.ndarray]:
     return 1 / (1 + xi)
 
 
-def D_gr(r: Union[float, np.ndarray], 
+def D_gr(r: Union[float, np.ndarray],
          rs: float) -> Union[float, np.ndarray]:
     """GR time dilation factor (Schwarzschild).
     
@@ -83,7 +83,7 @@ def get_xi(r: float, rs: float) -> float:
         return xi_blend(r, rs)
 
 
-def ssz_scaling(r: Union[float, np.ndarray], 
+def ssz_scaling(r: Union[float, np.ndarray],
                 rs: float) -> Union[float, np.ndarray]:
     """SSZ scaling function D_SSZ(r)."""
     xi = get_xi(r, rs) if np.isscalar(r) else np.array([get_xi(ri, rs) for ri in r])

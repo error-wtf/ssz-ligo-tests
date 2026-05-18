@@ -1,6 +1,5 @@
 """Test 01: Source of truth inventory verification."""
 import pytest
-import os
 from pathlib import Path
 
 
@@ -30,7 +29,7 @@ def test_source_root_has_content(root_name, root_path):
     root = Path(root_path)
     if not root.exists():
         pytest.skip(f"Root not found: {root_path}")
-    
+
     files = list(root.rglob('*'))
     assert len(files) > 0, f"No files found in {root_path}"
 
@@ -42,7 +41,7 @@ def test_critical_ssz_book_exists():
     assert Path(book_path).exists(), "SSZ_BOOK_DE_CLEAN.md not found"
 
 
-@pytest.mark.corpus  
+@pytest.mark.corpus
 def test_critical_pdf_exists():
     """SSZ PDF version must exist."""
     pdf_path = r"E:\clone\book-full\05_OUTPUT\V7_BUILD\06_final_v7\SSZ_BOOK_DE_FINAL_V51_PERFECT.pdf"

@@ -1,7 +1,7 @@
 """Provenance tracking for all SSZ-LIGO tests."""
 from dataclasses import dataclass
 from datetime import datetime
-from typing import Optional, List
+from typing import List
 
 
 @dataclass
@@ -16,10 +16,10 @@ class ProvenanceRecord:
 
 class ProvenanceLog:
     """Track all decisions about equations and tests."""
-    
+
     def __init__(self):
         self.records: List[ProvenanceRecord] = []
-    
+
     def log_equation_lock(self, equation_name: str, source_file: str, notes: str = ""):
         """Log when an equation is locked from corpus."""
         record = ProvenanceRecord(
@@ -31,7 +31,7 @@ class ProvenanceLog:
             notes=notes
         )
         self.records.append(record)
-    
+
     def log_equation_missing(self, equation_name: str, notes: str = ""):
         """Log when an equation is found missing."""
         record = ProvenanceRecord(
@@ -43,7 +43,7 @@ class ProvenanceLog:
             notes=notes
         )
         self.records.append(record)
-    
+
     def log_test_blocked(self, test_name: str, reason: str):
         """Log when a test is blocked."""
         record = ProvenanceRecord(
@@ -55,7 +55,7 @@ class ProvenanceLog:
             notes=reason
         )
         self.records.append(record)
-    
+
     def log_test_design(self, test_name: str, design_notes: str):
         """Log test design decisions."""
         record = ProvenanceRecord(
@@ -67,7 +67,7 @@ class ProvenanceLog:
             notes=design_notes
         )
         self.records.append(record)
-    
+
     def export_markdown(self, filepath: str):
         """Export provenance log as markdown."""
         with open(filepath, 'w') as f:

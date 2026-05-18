@@ -1,5 +1,4 @@
 """SSZ metric - placeholder until full equations locked."""
-import numpy as np
 
 
 def ssz_metric_perturbation(r, theta, phi, t):

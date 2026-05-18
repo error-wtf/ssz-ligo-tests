@@ -64,8 +64,6 @@ def run():
     rs=2.*G*M/C**2
     log(f"  r/rs@20Hz={((G*M/(np.pi*F_LOW)**2)**(1./3.))/rs:.0f}  r/rs@800Hz={((G*M/(np.pi*F_HIGH)**2)**(1./3.))/rs:.0f}  (weak-field)")
     rh=proc("H1",H1,Mc,M,mu); rl=proc("L1",L1,Mc,M,mu)
-    h1s=rh["status"] if rh else "BLOCKED"
-    l1s=rl["status"] if rl else "BLOCKED"
     xcv=xclag=None; coh="BLOCKED"
     if rh and rl:
         a=np.real(rh["resid"]); b=np.real(rl["resid"]); n=min(len(a),len(b))
@@ -81,7 +79,7 @@ def run():
         f"L1,{L1},{TRIGGER_GPS},{WIN_S},welch_off_source,VALID_INDEPENDENT\n",
         encoding="utf-8")
     def v(x): return f"{x:.4e}" if x is not None else "BLOCKED"
-    report=f"""# H1/L1 Coherence Pipeline Report
+    report="""# H1/L1 Coherence Pipeline Report
 Generated: {NOW}
 
 ## Anti-Circularity

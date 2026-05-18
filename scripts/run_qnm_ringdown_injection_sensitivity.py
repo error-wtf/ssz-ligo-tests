@@ -205,18 +205,17 @@ def run():
             f"{snr_ssz:.3f},{det}")
 
     # Summarise 3% branch specifically
-    eps3 = 0.03
     row3 = [r for r in rows[1:] if r.startswith("0.0300")]
     det3 = row3[0].split(",")[-1] if row3 else "UNKNOWN"
     dl3 = float(row3[0].split(",")[6]) if row3 else 0.0
     log("")
-    log(f"  === 3% BRANCH SUMMARY ===")
+    log("  === 3% BRANCH SUMMARY ===")
     log(f"  epsilon=0.03 -> delta_lnL={dl3:.3e} -> {det3}")
     log(f"  Analytic resolution: {delta_f_frac*100:.2f}%  vs  3% shift")
     if delta_f_frac < 0.03:
-        log(f"  Analytic: 3% shift is ABOVE frequency resolution threshold")
+        log("  Analytic: 3% shift is ABOVE frequency resolution threshold")
     else:
-        log(f"  Analytic: 3% shift is BELOW frequency resolution threshold")
+        log("  Analytic: 3% shift is BELOW frequency resolution threshold")
 
     # Write CSV
     csv_path = Path(__file__).parent.parent / "data_manifest" / "qnm_injection_scan.csv"
@@ -224,7 +223,7 @@ def run():
     csv_path.write_text("\n".join(rows), encoding="utf-8")
 
     # Write report
-    report = f"""# QNM Ringdown Injection Sensitivity Report
+    report = """# QNM Ringdown Injection Sensitivity Report
 
 Generated: {NOW}
 
@@ -264,7 +263,7 @@ This is a SENSITIVITY test only. No real ringdown signal is claimed.
         f"| {r.split(',')[0]} | {r.split(',')[1]} | {r.split(',')[3]}% "
         f"| {r.split(',')[6]} | {r.split(',')[8]} |"
         for r in rows[1:]
-    ) + f"""
+    ) + """
 
 ## 3% Branch Assessment
 

@@ -153,7 +153,6 @@ def _amp_corrections_hcross(x, eta, iota):
     """
     ci = np.cos(iota)
     si = np.sin(iota)
-    ci2 = ci**2
     si2 = si**2
 
     # 0PN

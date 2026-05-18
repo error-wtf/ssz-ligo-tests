@@ -7,14 +7,13 @@ Source: SSZ Book Ch.31-32 (Lagrangian/Wirkungsprinzip section)
 """
 import numpy as np
 from scipy import integrate
-from typing import Tuple
 from .constants import G, C
 from .ssz_core import get_xi, d_ssz
 from .radial_scaling import s_scale
 
 
-def gw_power_gr(r: float, 
-                M: float, 
+def gw_power_gr(r: float,
+                M: float,
                 mu: float) -> float:
     """GR gravitational wave power (luminosity).
     
@@ -38,14 +37,14 @@ def gw_power_gr(r: float,
     # Leading order quadrupole formula
     # P = (32/5) * (G/c)^5 * (M^3 * mu^2) / r^5
     # But this needs careful factor
-    
+
     # More standard: P = (32/5) * (G^4 / c^5) * (M^3 * mu^2) / r^5
     return (32/5) * (G**4 / C**5) * (M**3 * mu**2) / (r**5)
 
 
-def gw_power_ssz(r: float, 
-                M: float, 
-                mu: float, 
+def gw_power_ssz(r: float,
+                M: float,
+                mu: float,
                 rs: float) -> float:
     """SSZ gravitational wave power with radial scaling correction.
     
@@ -64,18 +63,18 @@ def gw_power_ssz(r: float,
         SSZ GW power [W]
     """
     p_gr = gw_power_gr(r, M, mu)
-    
+
     # SSZ correction
     xi = get_xi(r, rs)
     d = d_ssz(xi)
     s = s_scale(xi)
-    
+
     correction = (d ** 2) / (s ** 2)
     return p_gr * correction
 
 
-def rdot_gr(r: float, 
-            M: float, 
+def rdot_gr(r: float,
+            M: float,
             mu: float) -> float:
     """GR radial inspiral rate (dr/dt).
     
@@ -87,18 +86,13 @@ def rdot_gr(r: float,
           = -P_GW × (2r²) / (G*M*mu)
     """
     p_gr = gw_power_gr(r, M, mu)
-    dedr = G * M * mu / (2 * r**2)  # dE/dr (positive, so use carefully)
-    
-    # dr/dt = -P / (dE/dr) with sign
-    # Actually E = -G*M*mu/(2r), so dE = G*M*mu/(2r²) dr
-    # So dr = (2r²)/(G*M*mu) dE
-    # And dE/dt = -P, so dr/dt = -P × (2r²)/(G*M*mu)
+    # dE/dr = G*M*mu/(2r²); dr/dt = -P_GW * (2r²)/(G*M*mu)
     return -p_gr * (2 * r**2) / (G * M * mu)
 
 
-def rdot_ssz(r: float, 
-            M: float, 
-            mu: float, 
+def rdot_ssz(r: float,
+            M: float,
+            mu: float,
             rs: float) -> float:
     """SSZ radial inspiral rate with correction.
     
@@ -118,12 +112,12 @@ def rdot_ssz(r: float,
         SSZ radial inspiral rate [m/s]
     """
     rdot_gr_val = rdot_gr(r, M, mu)
-    
+
     # SSZ correction
     xi = get_xi(r, rs)
     d = d_ssz(xi)
     s = s_scale(xi)
-    
+
     correction = (d ** 2) / (s ** 4)
     return rdot_gr_val * correction
 
@@ -143,9 +137,9 @@ def orbital_frequency(r: float, M: float) -> float:
     return np.sqrt(G * M / r**3)
 
 
-def dphi_dr(r: float, 
-            M: float, 
-            mu: float, 
+def dphi_dr(r: float,
+            M: float,
+            mu: float,
             rs: float,
             model: str = "ssz") -> float:
     """Orbital phase accumulation per radial step.
@@ -163,16 +157,16 @@ def dphi_dr(r: float,
         dφ/dr [rad/m]
     """
     omega = orbital_frequency(r, M)
-    
+
     if model == "ssz":
         rdot = rdot_ssz(r, M, mu, rs)
     else:  # "gr"
         rdot = rdot_gr(r, M, mu)
-    
+
     # Avoid division by very small numbers near ISCO
     if abs(rdot) < 1e-10:
         return 0.0
-    
+
     return omega / rdot
 
 
@@ -199,7 +193,7 @@ def accumulated_phase(r_start: float,
     """
     def integrand(r):
         return dphi_dr(r, M, mu, rs, model)
-    
+
     # Integration from r_start to r_end (going inward, so r_end < r_start)
     result, _ = integrate.quad(integrand, r_start, r_end, limit=200)
     return result

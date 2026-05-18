@@ -2,7 +2,6 @@
 
 This module inventories all 8 SSZ source roots.
 """
-import os
 import csv
 from pathlib import Path
 from datetime import datetime
@@ -30,7 +29,7 @@ def classify_role(filename: str) -> str:
     """Classify file role based on name and extension."""
     fname_lower = filename.lower()
     ext = Path(filename).suffix.lower()
-    
+
     if 'test' in fname_lower:
         return 'test'
     elif ext == '.pdf':
@@ -63,7 +62,7 @@ def inventory_root(root_name: str, root_path: str) -> List[Dict]:
     """Inventory a single source root."""
     records = []
     root = Path(root_path)
-    
+
     if not root.exists():
         return [{
             'root': root_name,
@@ -71,7 +70,7 @@ def inventory_root(root_name: str, root_path: str) -> List[Dict]:
             'error': 'PATH_NOT_FOUND',
             'file_count': 0
         }]
-    
+
     for item in root.rglob('*'):
         if item.is_file():
             ext = item.suffix.lower()
@@ -100,7 +99,7 @@ def inventory_root(root_name: str, root_path: str) -> List[Dict]:
                         'role': 'unknown',
                         'error': str(e)
                     })
-    
+
     return records
 
 
@@ -116,11 +115,11 @@ def run_inventory() -> Tuple[List[Dict], Dict]:
         'by_extension': {},
         'by_role': {}
     }
-    
+
     for root_name, root_path in SOURCE_ROOTS:
         records = inventory_root(root_name, root_path)
         all_records.extend(records)
-        
+
         summary['roots_scanned'] += 1
         if records and records[0].get('error') != 'PATH_NOT_FOUND':
             summary['roots_found'] += 1
@@ -128,15 +127,15 @@ def run_inventory() -> Tuple[List[Dict], Dict]:
             summary['total_files'] += len(records)
         else:
             summary['by_root'][root_name] = 0
-    
+
     # Count by extension and role
     for record in all_records:
         ext = record.get('extension', 'none')
         summary['by_extension'][ext] = summary['by_extension'].get(ext, 0) + 1
-        
+
         role = record.get('role', 'unknown')
         summary['by_role'][role] = summary['by_role'].get(role, 0) + 1
-    
+
     return all_records, summary
 
 
@@ -144,10 +143,10 @@ def save_inventory_csv(records: List[Dict], output_path: str):
     """Save inventory to CSV."""
     if not records:
         return
-    
-    fieldnames = ['root', 'full_path', 'relative_path', 'extension', 
+
+    fieldnames = ['root', 'full_path', 'relative_path', 'extension',
                   'size_bytes', 'modified_time', 'role', 'error']
-    
+
     with open(output_path, 'w', newline='', encoding='utf-8') as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
@@ -162,31 +161,31 @@ def save_summary_md(summary: Dict, output_path: str):
         f.write(f"**Roots Scanned:** {summary['roots_scanned']}\n")
         f.write(f"**Roots Found:** {summary['roots_found']}\n")
         f.write(f"**Total Files:** {summary['total_files']}\n\n")
-        
+
         f.write("## Files by Root\n\n")
         for root, count in summary['by_root'].items():
             f.write(f"- **{root}:** {count} files\n")
-        
+
         f.write("\n## Files by Extension\n\n")
-        for ext, count in sorted(summary['by_extension'].items(), 
+        for ext, count in sorted(summary['by_extension'].items(),
                                   key=lambda x: x[1], reverse=True)[:20]:
             f.write(f"- **{ext or '(none)'}:** {count}\n")
-        
+
         f.write("\n## Files by Role\n\n")
-        for role, count in sorted(summary['by_role'].items(), 
+        for role, count in sorted(summary['by_role'].items(),
                                    key=lambda x: x[1], reverse=True):
             f.write(f"- **{role}:** {count}\n")
 
 
 if __name__ == "__main__":
     records, summary = run_inventory()
-    
+
     # Save outputs
-    save_inventory_csv(records, 
+    save_inventory_csv(records,
         r"E:\clone\ssz-ligo-tests\data_manifest\source_of_truth_inventory.csv")
-    save_summary_md(summary, 
+    save_summary_md(summary,
         r"E:\clone\ssz-ligo-tests\docs\SOURCE_OF_TRUTH_INVENTORY.md")
-    
-    print(f"Inventory complete:")
+
+    print("Inventory complete:")
     print(f"  Roots: {summary['roots_found']}/{summary['roots_scanned']}")
     print(f"  Files: {summary['total_files']}")

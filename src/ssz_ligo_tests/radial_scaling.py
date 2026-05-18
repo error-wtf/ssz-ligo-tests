@@ -6,7 +6,7 @@ not a new local dynamics law. Analogous to tortoise/Regge-Wheeler coordinates.
 import numpy as np
 from scipy import integrate
 from typing import Union
-from .constants import PHI, G, C
+from .constants import PHI
 from .ssz_core import xi_weak, xi_strong, get_xi, d_ssz, d_gr_schwarzschild
 
 
@@ -19,8 +19,8 @@ def s_scale(xi: Union[float, np.ndarray]) -> Union[float, np.ndarray]:
     return 1 + xi
 
 
-def rho_rsg(r: float, 
-            rs: float, 
+def rho_rsg(r: float,
+            rs: float,
             phi: float = PHI) -> float:
     """Radial Scaling Gauge coordinate - tortoise-like.
     
@@ -42,17 +42,17 @@ def rho_rsg(r: float,
     """
     # Proxy implementation: integrate from r_s to r
     # This is a simplified first version, not the final claim
-    
+
     def integrand(r_prime):
         xi = get_xi(r_prime, rs)
         d = d_ssz(xi)
         s = s_scale(xi)
         return d / s
-    
+
     # Numerical integration from rs to r
     if r <= rs:
         return 0.0
-    
+
     result, _ = integrate.quad(integrand, rs, r, limit=100)
     return result
 
@@ -111,7 +111,7 @@ def blend_strong_to_weak(r: float, rs: float) -> float:
     From SSZ Book Ch.1: Hermite C² interpolation in blend zone.
     """
     ratio = r / rs
-    
+
     if ratio < 0.8:
         return 1.0  # Pure strong
     elif ratio > 2.2:
@@ -146,9 +146,9 @@ def delta_rsg_coordinate(r: float, rs: float) -> float:
         a_ssz = phase_accounting_factor_ssz(rp, rs)
         a_gr = phase_accounting_factor_gr(rp, rs)
         return a_ssz - a_gr
-    
+
     if r <= rs:
         return 0.0
-    
+
     result, _ = integrate.quad(integrand, rs, r, limit=100)
     return result

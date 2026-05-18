@@ -11,7 +11,6 @@ Verifies:
 Source: docs/XI_STRONG_BRANCH_LOCK.md
 """
 import numpy as np
-import pytest
 from ssz_ligo_tests.ssz_core import (
     xi_strong,
     xi_strong_saturation,

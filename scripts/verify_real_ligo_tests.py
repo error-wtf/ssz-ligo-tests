@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import sys, os, subprocess, json, csv, h5py, time
+import sys, h5py
 from pathlib import Path
 BASE = Path(r'E:\clone\ssz-ligo-tests')
 LIGO = Path(r'E:\clone\ligo-gw240925-gw250207-release\18600070')

@@ -1,5 +1,4 @@
 """Test 00: Environment and basic imports."""
-import pytest
 
 
 def test_import_ssz_ligo():
@@ -20,8 +19,7 @@ def test_constants_available():
 def test_core_functions_available():
     """Core functions are importable."""
     from ssz_ligo_tests import (
-        xi_weak, xi_strong, d_ssz, d_gr_schwarzschild,
-        detector_response, residual, log_likelihood_gaussian
+        xi_weak, xi_strong, d_ssz
     )
     assert callable(xi_weak)
     assert callable(xi_strong)
@@ -34,15 +32,15 @@ def test_equation_registry_available():
         get_locked_equations, get_missing_equations,
         check_ready_for_numerical_test
     )
-    
+
     locked = get_locked_equations()
-    missing = get_missing_equations()
-    
+    _ = get_missing_equations()
+
     # Should have locked core equations
     assert len(locked) > 0
-    
+
     # Check if ready for numerical test
     ready, reason = check_ready_for_numerical_test()
     # Should NOT be ready (missing forward equations)
-    assert ready == False
+    assert not ready
     assert "MISSING" in reason or "EXPLORATORY" in reason

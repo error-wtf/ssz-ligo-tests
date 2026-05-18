@@ -37,7 +37,7 @@ def d_min(phi: float = PHI) -> float:
     return 1 / (1 + xi_max_val)
 
 
-def xi_weak(r: Union[float, np.ndarray], 
+def xi_weak(r: Union[float, np.ndarray],
             rs: float) -> Union[float, np.ndarray]:
     """Weak field regime: Ξ_weak(r) = r_s/(2r).
     
@@ -100,7 +100,7 @@ def d_ssz(xi: Union[float, np.ndarray]) -> Union[float, np.ndarray]:
     return 1 / (1 + xi)
 
 
-def d_gr_schwarzschild(r: Union[float, np.ndarray], 
+def d_gr_schwarzschild(r: Union[float, np.ndarray],
                        rs: float) -> Union[float, np.ndarray]:
     """GR time dilation factor for Schwarzschild metric.
     
@@ -112,7 +112,7 @@ def d_gr_schwarzschild(r: Union[float, np.ndarray],
     return np.sqrt(np.maximum(x, 0))
 
 
-def ssz_delta_d(r: Union[float, np.ndarray], 
+def ssz_delta_d(r: Union[float, np.ndarray],
                 rs: float) -> Union[float, np.ndarray]:
     """Difference D_SSZ - D_GR.
     

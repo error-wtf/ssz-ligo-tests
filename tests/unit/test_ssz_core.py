@@ -3,7 +3,6 @@
 Tests against values from SSZ_BOOK_DE_CLEAN.md
 """
 import numpy as np
-import pytest
 from ssz_ligo_tests import (
     PHI, XI_MAX, D_MIN, N0,
     xi_weak, xi_strong, d_ssz, d_gr,
@@ -13,25 +12,25 @@ from ssz_ligo_tests import (
 
 class TestSSZConstants:
     """Test SSZ constants from canonical source."""
-    
+
     def test_phi_value(self):
         """Golden ratio φ = (1 + √5)/2"""
         expected = (1 + np.sqrt(5)) / 2
         assert np.isclose(PHI, expected)
         assert np.isclose(PHI, 1.618033988749895, rtol=1e-10)
-    
+
     def test_xi_max_value(self):
         """Ξ_max = 1 - exp(-φ) ≈ 0.802"""
         expected = 1 - np.exp(-PHI)
         assert np.isclose(XI_MAX, expected)
         assert np.isclose(XI_MAX, 0.802, rtol=0.01)
-    
+
     def test_d_min_value(self):
         """D_min = 1/(1 + Ξ_max) ≈ 0.555"""
         expected = 1 / (1 + XI_MAX)
         assert np.isclose(D_MIN, expected)
         assert np.isclose(D_MIN, 0.555, rtol=0.01)
-    
+
     def test_n0_value(self):
         """Base segmentation N0 = 4"""
         assert N0 == 4
@@ -39,14 +38,14 @@ class TestSSZConstants:
 
 class TestXiWeak:
     """Test weak field formula Ξ_weak = r_s/(2r)"""
-    
+
     def test_formula_at_large_r(self):
         """At r = 10r_s: Ξ = 0.05"""
         rs = 1.0
         r = 10.0
         xi = xi_weak(r, rs)
         assert np.isclose(xi, 0.05)
-    
+
     def test_asymptotic_behavior(self):
         """As r → ∞: Ξ → 0"""
         rs = 1.0
@@ -54,7 +53,7 @@ class TestXiWeak:
         xi_values = xi_weak(r_values, rs)
         assert np.all(xi_values > 0)
         assert np.all(np.diff(xi_values) < 0)  # Decreasing
-    
+
     def test_matches_gr_at_weak_field(self):
         """Ξ_weak matches GR limit at large r"""
         rs = 1.0
@@ -66,14 +65,14 @@ class TestXiWeak:
 
 class TestXiStrong:
     """Test strong field formula with saturation."""
-    
+
     def test_saturation_at_horizon(self):
         """At r = r_s: Ξ = Ξ_max"""
         rs = 1.0
         r = rs
         xi = xi_strong(r, rs)
         assert np.isclose(xi, XI_MAX, rtol=1e-6)
-    
+
     def test_finite_value_at_horizon(self):
         """Ξ is finite at horizon (not infinite like GR)"""
         rs = 1.0
@@ -81,7 +80,7 @@ class TestXiStrong:
         xi = xi_strong(r, rs)
         assert np.isfinite(xi)
         assert xi < 1.0
-    
+
     def test_increases_with_depth(self):
         """Ξ_saturation increases with r (more field at larger r up to Xi_max).
 
@@ -93,7 +92,7 @@ class TestXiStrong:
         xi_values = xi_strong(r_values, rs)
         # unsaturated range: should be increasing with r
         assert np.all(np.diff(xi_values) >= 0)  # non-decreasing
-    
+
     def test_saturates_at_xi_max(self):
         """Ξ never exceeds Ξ_max"""
         rs = 1.0
@@ -104,10 +103,9 @@ class TestXiStrong:
 
 class TestDSSZ:
     """Test SSZ time dilation D_SSZ = 1/(1 + Ξ)"""
-    
+
     def test_at_horizon(self):
         """At r = r_s: D = D_min ≈ 0.555"""
-        rs = 1.0
         xi = XI_MAX
         d = d_ssz(xi)
         assert np.isclose(d, D_MIN, rtol=1e-6)
@@ -134,7 +132,7 @@ class TestDSSZ:
 
 class TestDGR:
     """Test GR time dilation D_GR = sqrt(1 - r_s/r)"""
-    
+
     def test_zero_at_horizon(self):
         """GR: D_GR(r_s) = 0"""
         rs = 1.0
@@ -162,7 +160,7 @@ class TestDGR:
 
 class TestRegimeDetection:
     """Test automatic regime detection."""
-    
+
     def test_strong_regime_at_horizon(self):
         """At r = r_s: use strong formula"""
         rs = 1.0
@@ -170,7 +168,7 @@ class TestRegimeDetection:
         xi = get_xi(r, rs)
         # Should be close to XI_max
         assert np.isclose(xi, XI_MAX, rtol=0.1)
-    
+
     def test_weak_regime_far_out(self):
         """At r = 10r_s: use weak formula"""
         rs = 1.0
@@ -182,7 +180,7 @@ class TestRegimeDetection:
 
 class TestSSZScaling:
     """Test complete SSZ scaling function."""
-    
+
     def test_finite_at_horizon(self):
         """SSZ scaling is finite everywhere"""
         rs = 1.0

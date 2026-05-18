@@ -26,7 +26,6 @@ from pathlib import Path
 from scipy import signal
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
-from ssz_ligo_tests.ssz_core import xi_weak, d_ssz
 from ssz_ligo_tests.derived_waveform import apply_ssz_v0_to_frequency_waveform
 
 NOW = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -179,7 +178,7 @@ def process_detector(label, path):
 
     strain_on, fs, gps0 = load_trigger_window(path)
     if not np.all(np.isfinite(strain_on)) or len(strain_on) == 0:
-        log(f"  BLOCKED: trigger window not finite")
+        log("  BLOCKED: trigger window not finite")
         return None
 
     log(f"  GPS0={gps0}  t_ev={TRIGGER_GPS-gps0:.1f}s  fs={fs}Hz")
@@ -249,7 +248,7 @@ def process_detector(label, path):
     # --- Trigger bandpower vs PSD ---
     bp_trigger = band_power(strain_on, fs)
     bp_noise_est = med_robust * (F_HIGH - F_LOW)
-    bp_ratio = bp_trigger / bp_noise_est if bp_noise_est > 0 else float("inf")
+    bp_ratio = bp_trigger / bp_noise_est if bp_noise_est > 0 else float("in")
     log(f"\n  Trigger bandpower: {bp_trigger:.4e}")
     log(f"  Noise estimate (robust PSD * BW): {bp_noise_est:.4e}")
     log(f"  bp_trigger / bp_noise = {bp_ratio:.2f}")
@@ -276,7 +275,7 @@ def process_detector(label, path):
     lnl_ssz = -0.5 * nwip(dfd - h_ssz, dfd - h_ssz, ffd, pi_robust, df)
     delta_lnl = lnl_ssz - lnl_gr
 
-    log(f"\n  With robust PSD:")
+    log("\n  With robust PSD:")
     log(f"    MF-SNR GR  = {snr_gr_robust:.2f}")
     log(f"    MF-SNR SSZ = {snr_ssz_robust:.2f}")
     log(f"    lnL_GR     = {lnl_gr:.4e}")
@@ -383,7 +382,7 @@ def fmt(v, fmt_str=".4e"):
         return str(v)
 
 
-h1_block = "BLOCKED (file not found)" if not h1 else f"""
+h1_block = "BLOCKED (file not found)" if not h1 else """
 | PSD status | {h1['psd_status']} |
 | n windows used | {h1['n_windows']} |
 | PSD_robust band median | {fmt(h1['med_robust'])} 1/Hz |
@@ -400,7 +399,7 @@ h1_block = "BLOCKED (file not found)" if not h1 else f"""
 | SNR_STATUS | {h1['snr_status']} |
 """
 
-l1_block = "BLOCKED (file not found)" if not l1 else f"""
+l1_block = "BLOCKED (file not found)" if not l1 else """
 | PSD status | {l1['psd_status']} |
 | n windows used | {l1['n_windows']} |
 | PSD_robust band median | {fmt(l1['med_robust'])} 1/Hz |
@@ -417,7 +416,7 @@ l1_block = "BLOCKED (file not found)" if not l1 else f"""
 | SNR_STATUS | {l1['snr_status']} |
 """
 
-report_main = f"""# Robust Multi-Window PSD Report
+report_main = """# Robust Multi-Window PSD Report
 
 Generated: {NOW}  
 Event: GW240925 (trigger GPS {TRIGGER_GPS})  
@@ -483,7 +482,7 @@ SSZ_FALSIFICATION_CLAIM_MADE:   NO
 log("\n  -> reports/ROBUST_MULTIWINDOW_PSD_REPORT.md")
 
 # --- Write coherence recheck report ---
-coh_report = f"""# H1/L1 Coherence Recheck — Robust PSD
+coh_report = """# H1/L1 Coherence Recheck — Robust PSD
 
 Generated: {NOW}  
 Follows: ROBUST_MULTIWINDOW_PSD_REPORT.md
@@ -504,10 +503,10 @@ See: `data_manifest/robust_psd_windows_used.csv`
 |--------|-----|-----|
 | PSD_status | {h1['psd_status'] if h1 else 'BLOCKED'} | {l1['psd_status'] if l1 else 'BLOCKED'} |
 | n_windows_used | {h1['n_windows'] if h1 else 'N/A'} | {l1['n_windows'] if l1 else 'N/A'} |
-| robust/single ratio | {fmt(h1['ratio_robust_vs_single'], '.3f') if h1 else 'N/A'} | {fmt(l1['ratio_robust_vs_single'], '.3f') if l1 else 'N/A'} |
-| MF-SNR GR | {fmt(h1['snr_gr_robust'], '.2f') if h1 else 'N/A'} | {fmt(l1['snr_gr_robust'], '.2f') if l1 else 'N/A'} |
+| robust/single ratio | {fmt(h1['ratio_robust_vs_single'], '.3') if h1 else 'N/A'} | {fmt(l1['ratio_robust_vs_single'], '.3') if l1 else 'N/A'} |
+| MF-SNR GR | {fmt(h1['snr_gr_robust'], '.2') if h1 else 'N/A'} | {fmt(l1['snr_gr_robust'], '.2') if l1 else 'N/A'} |
 | delta_lnL (SSZ-GR) | {fmt(h1['delta_lnl']) if h1 else 'N/A'} | {fmt(l1['delta_lnl']) if l1 else 'N/A'} |
-| bp_ratio (trigger/noise) | {fmt(h1['bp_ratio'], '.1f') if h1 else 'N/A'} | {fmt(l1['bp_ratio'], '.1f') if l1 else 'N/A'} |
+| bp_ratio (trigger/noise) | {fmt(h1['bp_ratio'], '.1') if h1 else 'N/A'} | {fmt(l1['bp_ratio'], '.1') if l1 else 'N/A'} |
 
 ## Status
 
