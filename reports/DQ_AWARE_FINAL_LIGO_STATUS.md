@@ -69,13 +69,37 @@ a file-level property, not a trigger artifact. Until this is
 clarified by offline DQ tools, L1 should not be used as a coherence
 partner for SSZ claim-level tests.
 
-## What This Does NOT Mean
+## Data Context — Precise Interpretation
+
+The GWOSC release products are calibrated, quality-classified products
+intended for specific analysis classes (primarily CBC/GR detection).
 
 ```
-NOT: SSZ explains the L1 anomaly
-NOT: LIGO data is incorrect
+CBC_CAT2/CAT3 clean means:
+  For CBC/compact-binary analysis, no vetoed glitch by these criteria.
+
+CBC_CAT2/CAT3 clean does NOT mean:
+  This segment is neutral in every frequency band and for
+  every alternative analysis metric.
+```
+
+The correct framing for our situation:
+
+```
+The released products are suitable for their intended CBC/GR
+analysis context, but not sufficient for our anti-circular
+non-GR forward-model test without additional DQ/line/injection
+clarification for L1.
+```
+
+This is NOT:
+
+```
+NOT: LIGO data is wrong or manipulated
 NOT: GW240925 is not a real event
+NOT: SSZ explains the L1 anomaly
 NOT: The pipeline is wrong
+NOT: LIGO has misrepresented the data
 ```
 
 ## Path Forward
@@ -100,23 +124,27 @@ Option D: Wait for offline DQ products
 ## LIGO Question (ready to send)
 
 ```
+@LIGO We do not claim the data are wrong. But for our non-GR forward-model
+test (non-circular, source-propagation twist branch) we found that L1 has
+a persistent 20-210 Hz band-power excess (ratio trigger/off-source ~ 2.28
+vs H1 ~ 0.76), while CBC_CAT2/CAT3 are clean at both detectors.
 
-@LIGO We found a strong 20-210 Hz in-band power excess in L1 at the GW240925
-trigger time (GPS 1411261107.984) after robust multi-window off-source PSD
-checks (band-power ratio L1/off-source ~ 2.28 vs H1 ~ 0.76).
+Our state-vector check (bit names verified from HDF5 file directly):
+  - CBC_CAT1/2/3: passing for both detectors
+  - NO_CW_HW_INJ: unset for both detectors over full 4096-second segment
+    (constant, not trigger-specific)
+  - H1 CW_CAT1: 0 (file-wide); L1 CW_CAT1: 1 (file-wide)
 
-DQ verification (VERIFIED_FROM_HDF5):
-  - CBC_CAT2/CAT3: passing for both detectors
-  - NO_CW_HW_INJ: unset (not certified injection-free) for both
-    detectors over the entire 4096-second release segment
-  - L1 CW_CAT1: passes; H1 CW_CAT1: fails (file-wide, constant)
+We understand the release products are optimized for CBC/GR analyses.
+For our specific use case (broadband H1/L1 coherence as a forward-model
+differential test) we need additional context:
 
-Questions:
-  1. Is L1 intended for broadband H1/L1 coherence analysis in this release?
-  2. Are offline DQ products (omicron, iDQ, hveto) available for GW240925?
-  3. Is the L1 segment affected by any known environmental coupling or
-     non-stationarity not captured in the simple DQ bitmask?
-  4. Is there a recommended off-source PSD window strategy for L1 in
-     this event?
+  1. Is L1 intended for broadband H1/L1 coherence tests in this release?
+  2. Are offline DQ products (omicron, iDQ, hveto, line-noise) available
+     for GW240925?
+  3. Is the L1 segment affected by known non-stationarity or environmental
+     coupling not captured in the simple DQ bitmask?
+  4. Is there a recommended off-source PSD window strategy for L1 here?
 
+Thank you.
 ```
