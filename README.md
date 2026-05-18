@@ -246,5 +246,14 @@ ANTI-CAPITALIST SOFTWARE LICENSE v1.4
 
 ---
 
+## Contributors
+
+| Name | Role |
+|------|------|
+| **Carmen Wrede** | Theory Development — SSZ framework, formula derivation, physics interpretation |
+| **Lino Casu** | Programming & Testing — pipeline implementation, test suite, data analysis |
+
+---
+
 *Part of the SSZ (Segmented Spacetime) research project.*  
 *Related repositories: [ssz-complete-documentation](https://github.com/error-wtf/ssz-complete-documentation) | [ssz-all-tests](https://github.com/error-wtf/ssz-all-tests)*
