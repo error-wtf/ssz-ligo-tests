@@ -77,9 +77,6 @@ def twist_angle_v0(freqs, M_kg, rs_m, branch="rsg"):
         3. Integrate holonomy along null path: U(gamma) in SO(2)
         4. Extract rotation angle theta from U
     """
-    G = 6.674e-11
-    C = 2.998e8
-
     if branch == "rsg":
         r_isco_factor = 3.0
         r_char = r_isco_factor * rs_m
@@ -275,3 +272,102 @@ def twist_sensitivity_scan(h_plus_gr, h_cross_gr, scale,
             "detectability": det,
         })
     return results
+
+
+# ---------------------------------------------------------------------------
+# Theta parametrisations — sensitivity test forms (no physics claim)
+# ---------------------------------------------------------------------------
+
+def theta_constant(freqs, theta0):
+    """Constant twist angle for sensitivity scanning.
+
+    The simplest test form: frequency-independent rotation by theta0 rad.
+    Not physically motivated — used only to probe what twist angle would
+    be detectable.
+
+    Parameters
+    ----------
+    freqs : array
+        Frequency array [Hz]
+    theta0 : float
+        Constant twist angle [rad]
+
+    Returns
+    -------
+    theta : array
+        Constant array theta0, shape matching freqs
+    """
+    return np.full_like(np.asarray(freqs, dtype=float), float(theta0))
+
+
+def theta_xi_proxy(freqs, M_kg, rs_m, alpha=1.0):
+    """Frequency-dependent twist angle proportional to Xi(r(f)).
+
+    Proxy form: theta(f) = alpha * Xi(r_ISCO)
+    where r_ISCO = 3 * rs_m (for Schwarzschild).
+
+    The frequency dependence is flat here (Xi at ISCO is constant),
+    unless a frequency-to-radius mapping is supplied.
+
+    NOT derived from spin connection — sensitivity test only.
+    No LIGO claim.
+
+    Parameters
+    ----------
+    freqs : array
+        Frequency array [Hz]
+    M_kg : float
+        Total binary mass [kg] (unused currently — for future r(f) map)
+    rs_m : float
+        Schwarzschild radius [m]
+    alpha : float
+        Proportionality constant (dimensionless, default 1.0)
+
+    Returns
+    -------
+    theta : array
+        Twist angle [rad], shape matching freqs
+    xi_char : float
+        Xi at r_ISCO used as amplitude
+    """
+    r_isco = 3.0 * rs_m
+    xi_char = float(get_xi(r_isco, rs_m))
+    theta_val = alpha * xi_char
+    return np.full_like(np.asarray(freqs, dtype=float), theta_val), xi_char
+
+
+def theta_rsg_proxy(freqs, M_kg, rs_m, alpha=1.0):
+    """Frequency-dependent twist: alpha * gradient of Xi at r_ISCO.
+
+    Proxy for the RSG-like holonomy integral dXi/dr evaluated at r_ISCO.
+    In the weak-field limit: Xi = rs/(2r), dXi/dr = -rs/(2r^2).
+    The characteristic value at r_ISCO = 3*rs is:
+        dXi/dr|_ISCO = -rs / (2*(3*rs)^2) = -1/(18*rs)
+
+    Twist amplitude: |dXi/dr| * rs = 1/18 ~ 0.056
+
+    This is CONCEPTUAL only — not derived from spin connection.
+
+    Parameters
+    ----------
+    freqs : array
+        Frequency array [Hz]
+    M_kg : float
+        Total binary mass [kg]
+    rs_m : float
+        Schwarzschild radius [m]
+    alpha : float
+        Proportionality constant
+
+    Returns
+    -------
+    theta : array
+        Twist angle [rad], shape matching freqs
+    dxi_dr_char : float
+        |dXi/dr| * rs at r_ISCO
+    """
+    r_isco = 3.0 * rs_m
+    dxi_dr = rs_m / (2.0 * r_isco**2)
+    dxi_dr_char = float(dxi_dr * rs_m)
+    theta_val = alpha * dxi_dr_char
+    return np.full_like(np.asarray(freqs, dtype=float), theta_val), dxi_dr_char
