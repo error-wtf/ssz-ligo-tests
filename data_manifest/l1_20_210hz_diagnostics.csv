@@ -1,0 +1,9 @@
+detector,window,bandpower_hz-1,mad_zscore,bp_ratio_vs_minus500,classification
+H1,minus500s,1.492e-45,,,
+H1,minus300s,7.475e-46,,,
+H1,minus100s,1.434e-45,,,
+H1,trigger_median,1.146e-41,-0.61,7683.3,L1_OK_SIGNAL_LIKE
+L1,minus500s,5.478e-46,,,
+L1,minus300s,3.946e-46,,,
+L1,minus100s,1.809e-45,,,
+L1,trigger_median,4.150e-41,1.26,75772.1,L1_PSD_WINDOW_NOT_REPRESENTATIVE
