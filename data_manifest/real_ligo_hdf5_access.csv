@@ -1,0 +1,3 @@
+file,size_mb,status,obj_count,top_groups,candidate_hits
+GW240925_combinedPHM_envcalC01_metafile.hdf5,200.08,OK,1898,"['C01:IMRPhenomXPHM-SpinTaylor', 'C01:IMRPhenomXPNR', 'C01:Mixed', 'C01:SEOBNRv5PHM', 'history']",50
+GW250207_combinedPHM_cal_metafile.hdf5,306.69,OK,3105,"['C00:IMRPhenomXAS', 'C00:IMRPhenomXPHM-SpinTaylor', 'C00:IMRPhenomXPNR', 'C00:Mixed', 'C00:NRSur7dq4']",50

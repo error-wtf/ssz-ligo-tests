@@ -1,0 +1,5 @@
+AUDIT FREEZE TIMESTAMP
+======================
+Timestamp: 2026-05-18 14:39 UTC+02:00
+Working directory: E:\clone\ssz-ligo-tests
+Statement: This repo is under forced verification. Previous PASS/COMPLETE claims are not trusted unless reproduced by logs.

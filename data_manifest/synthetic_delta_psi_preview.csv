@@ -1,0 +1,9 @@
+status,key,value
+PASS,freqs_count,500
+PASS,radii_min,94120.61037350666
+PASS,radii_max,1297770.931428208
+PASS,delta_psi_min,0.5793638874641447
+PASS,delta_psi_max,57.78139927054279
+PASS,delta_psi_median,15.131266279424192
+PASS,finite_count,24
+PASS,nan_count,0

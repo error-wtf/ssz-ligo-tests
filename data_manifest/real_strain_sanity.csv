@@ -1,0 +1,6 @@
+file,dataset,shape,dtype,min,max,mean,std,nan_count,inf_count,status
+H-H1_GWOSC_O4b4DiscC00_16KHZ_R1-1411260416-4096.hdf5,quality/injections/Injmask,"(4096,)",uint32,23.0,23.0,23.0,0.0,0,0,OK
+L-L1_GWOSC_O4b4DiscC00_16KHZ_R1-1411260416-4096.hdf5,quality/injections/Injmask,"(4096,)",uint32,23.0,23.0,23.0,0.0,0,0,OK
+V-V1_GWOSC_O4b4DiscC00_16KHZ_R1-1411260416-4096.hdf5,quality/injections/Injmask,"(4096,)",uint32,31.0,31.0,31.0,0.0,0,0,OK
+H-H1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5,quality/injections/Injmask,"(4096,)",uint32,23.0,23.0,23.0,0.0,0,0,OK
+L-L1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5,quality/injections/Injmask,"(4096,)",uint32,23.0,23.0,23.0,0.0,0,0,OK

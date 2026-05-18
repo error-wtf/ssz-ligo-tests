@@ -1,0 +1,7 @@
+role,path,mode,dataset_used,anti_circularity_status
+H1_strain,E:\clone\ligo-gw240925-gw250207-release\18600070\GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF\H1\1410334720\H-H1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5,read-only,strain/Strain,VALID_INDEPENDENT
+H1_meta,same as above,read-only,meta/GPSstart;meta/Duration,VALID_INDEPENDENT
+metafile,E:\clone\ligo-gw240925-gw250207-release\18600070\GW240925_combinedPHM_envcalC01_metafile.hdf5,read-only,groups_only,CIRCULARITY_RISK_NOT_USED_FOR_PSD
+posterior,NONE,not_opened,NONE,INVALID_FOR_SSZ
+pseobnr,NONE,not_opened,NONE,INVALID_FOR_SSZ
+pca_tiger,NONE,not_opened,NONE,INVALID_FOR_SSZ

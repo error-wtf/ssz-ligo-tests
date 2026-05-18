@@ -1,0 +1,9 @@
+folder,exists,total_files,hdf5_count,zero_byte,h5py_ok,h5py_fail
+ringdown,True,3,1,0,1,0
+qnmrf,True,4,2,0,2,0
+pca,True,8,8,0,8,0
+pseobnr,True,6,6,0,6,0
+GW240925-C00-Strain,True,16,6,0,6,0
+combined_samples,True,8,8,0,1,7
+fti,True,50,50,0,0,20
+tiger,True,72,72,0,0,20

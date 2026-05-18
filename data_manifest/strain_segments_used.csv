@@ -1,0 +1,2 @@
+detector,gps_start,gps_end,trigger_gps,window_s,sample_rate_hz,psd_method,psd_segment,psd_nfft
+H1,1411261107.984,1411261111.984,1411261107.984,4.0,4096,welch_off_source,first_512s_of_file,4096
