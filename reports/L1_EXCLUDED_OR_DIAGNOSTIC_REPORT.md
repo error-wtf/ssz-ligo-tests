@@ -50,17 +50,41 @@ excess.
    elevated in-band power. This may simply be the signal.
    -> Would require matched-filter SNR comparison vs H1.
 
-2. Non-stationary noise transient
+2. Non-stationary noise transient (unvetoed glitch)
    A noise event not captured by the 1Hz DQ bitmask.
-   -> Needs offline omicron/iDQ to rule out.
+   CBC_CAT2/CAT3 only veto known, classified glitch families.
+   A glitch present but not in the veto list would remain unflagged.
+   -> Needs offline omicron time-frequency scan to distinguish from signal.
 
-3. PSD estimation mismatch
+3. PSD estimation mismatch / non-stationarity
    Off-source window at -200s may not represent noise at trigger time.
    -> Robust multi-window PSD (already done) showed consistent excess.
+   -> iDQ glitch probability at trigger time would clarify.
 
 4. CW hardware injection contribution
    Narrow-band only — cannot explain broadband excess.
    -> Already ruled out by bandwidth argument.
+```
+
+## Why CBC_CAT2/CAT3 Clean Is Not Sufficient Here
+
+```
+CBC_CAT2/CAT3 vetoes cover known, pre-classified glitch families.
+They do NOT cover:
+  - Novel or uncatalogued transients
+  - Excess power in frequency bands not covered by veto templates
+  - Non-stationary noise not flagged by any CAT criterion
+
+The only products that can distinguish:
+  signal / unvetoed glitch / line / PSD non-stationarity
+are offline tools:
+  - Omicron: time-frequency excess power scan
+  - iDQ:     glitch probability at specific GPS times
+  - hveto:   correlation with environmental monitors
+  - line-noise monitors: persistent narrow features
+
+These are NOT included in the GWOSC release DQ bitmask.
+Without them, L1 cannot be definitively assessed for our purpose.
 ```
 
 ## What L1 Can Be Used For
