@@ -33,6 +33,13 @@ DEFAULT_XI_STRONG_BRANCH = g2_decay
 STATUS = LOCKED (formula_compendium.md §B.1, "operative g2 branch")
 ```
 
+**TERMINOLOGY NOTE (2026-05-18, Audit DERIVED_FORMULAS_CODE_CONSISTENCY_AUDIT.md):**
+"g2_decay" here = `1 - exp(-phi*rs/r)` (decay-asymptotic, segcalc operative).
+XI_STRONG_BRANCH_LOCK.md calls `1 - exp(-phi*r/rs)` CANONICAL_OPERATIONAL.
+Both docs agree: deprecated `(rs/r)^2*exp(...)` = FORBIDDEN.
+ssz_core.py follows XI_STRONG_BRANCH_LOCK.md (saturation = canonical default).
+LIGO inspiral band (r/rs >> 10): both reduce to Xi_weak = rs/(2r) — numerically irrelevant.
+
 ### Behavior Comparison
 
 | Form | r→0 | r=rs | r→∞ | Monotone |
