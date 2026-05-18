@@ -92,6 +92,33 @@ non-GR forward-model test without additional DQ/line/injection
 clarification for L1.
 ```
 
+Additional structural reasons this data cannot serve as final evidence:
+
+```
+1. LIGO measures detector strain, not direct telescope observables.
+2. PE/QNM posterior products are model-dependent (GR/Kerr-oriented);
+   they cannot be treated as metric-neutral inputs for an SSZ test.
+3. L1 shows an unexplained broadband power anomaly.
+4. CW-HW-injection/DQ context is active and not fully resolved.
+5. H1/L1 coherence is therefore only partially usable.
+6. SSZ has no final locked interferometer forward model yet.
+```
+
+What the data CAN be used for:
+
+```
+VALID USES:
+  - Pipeline construction, access, PSD estimation
+  - H1/L1 strain diagnostics and residual checks
+  - Exploratory SSZ forward-model branches (synthetic)
+  - H1-only single-detector exploratory tests
+
+NOT VALID FOR (currently):
+  - Final SSZ proof or falsification
+  - H1/L1 coherence-based SSZ claim
+  - Treating PE posteriors as metric-neutral SSZ inputs
+```
+
 This is NOT:
 
 ```
@@ -124,27 +151,26 @@ Option D: Wait for offline DQ products
 ## LIGO Question (ready to send)
 
 ```
-@LIGO We do not claim the data are wrong. But for our non-GR forward-model
-test (non-circular, source-propagation twist branch) we found that L1 has
-a persistent 20-210 Hz band-power excess (ratio trigger/off-source ~ 2.28
-vs H1 ~ 0.76), while CBC_CAT2/CAT3 are clean at both detectors.
+@LIGO We do not claim the data are wrong. But for a non-GR forward-model
+test (source-propagation twist branch, anti-circular) we cannot treat
+current PE/QNM posterior products as metric-neutral, and L1 shows a
+DQ/injection-context ambiguity in our state-vector check:
 
-Our state-vector check (bit names verified from HDF5 file directly):
-  - CBC_CAT1/2/3: passing for both detectors
-  - NO_CW_HW_INJ: unset for both detectors over full 4096-second segment
-    (constant, not trigger-specific)
-  - H1 CW_CAT1: 0 (file-wide); L1 CW_CAT1: 1 (file-wide)
+  - L1 has a persistent 20-210 Hz band-power excess
+    (trigger/off-source ratio ~2.28 vs H1 ~0.76)
+  - CBC_CAT2/CAT3 are clean at both detectors
+  - NO_CW_HW_INJ is unset for both detectors over the full
+    4096-second segment (constant, file-wide, not trigger-specific)
+  - Bit names verified directly from HDF5 DQShortnames/InjShortnames
 
-We understand the release products are optimized for CBC/GR analyses.
-For our specific use case (broadband H1/L1 coherence as a forward-model
-differential test) we need additional context:
-
-  1. Is L1 intended for broadband H1/L1 coherence tests in this release?
-  2. Are offline DQ products (omicron, iDQ, hveto, line-noise) available
-     for GW240925?
-  3. Is the L1 segment affected by known non-stationarity or environmental
-     coupling not captured in the simple DQ bitmask?
-  4. Is there a recommended off-source PSD window strategy for L1 here?
+Questions:
+  1. Which GWOSC products are recommended for the most anti-circular
+     strain-level test (i.e., least GR/Kerr-model-dependent)?
+  2. Are offline DQ products (omicron, iDQ, hveto, line-noise)
+     available for GW240925?
+  3. Is L1 intended for broadband H1/L1 coherence tests in this
+     release, or should it be treated as diagnostic only?
+  4. Is the L1 band-power excess a known feature of this segment?
 
 Thank you.
 ```
