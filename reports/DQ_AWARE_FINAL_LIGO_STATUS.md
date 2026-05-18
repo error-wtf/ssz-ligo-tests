@@ -23,6 +23,38 @@ SSZ_SUPPORT_CLAIM_MADE:             NO
 SSZ_FALSIFICATION_CLAIM_MADE:       NO
 ```
 
+## Technically Reproducible Finding
+
+```
+STATUS:
+  Technically reproducible L1 bandpower excess.
+
+WHAT IS ESTABLISHED:
+  - The pipeline loads and processes real LIGO strain data.
+  - H1 behaves broadly as expected in the current analysis.
+  - L1 shows a reproducible excess in the 20-210 Hz band
+    (band-power ratio trigger/off-source ~ 2.28 vs H1 ~ 0.76).
+  - CBC_CAT2/CAT3 release flags do not veto the segment.
+  - Public release DQ products are insufficient to fully
+    explain the L1 excess.
+
+WHAT IS NOT ESTABLISHED:
+  - No SSZ support claim.
+  - No SSZ falsification claim.
+  - No confirmed detector glitch.
+  - No confirmed astrophysical residual.
+  - No confirmed non-GR signature.
+
+CURRENT INTERPRETATION:
+  Open. The L1 excess must pass artifact, DQ, off-source,
+  line, injection and standard-model checks before any physics
+  interpretation is allowed.
+
+NEXT STEP:
+  Offline DQ / Omicron / iDQ / line-check or clarification
+  from LIGO.
+```
+
 ## Pipeline Status Summary
 
 | Component | Status | Basis |
@@ -157,26 +189,24 @@ Option D: Wait for offline DQ products
 ## LIGO Question (ready to send)
 
 ```
-@LIGO We do not claim the data are wrong. But for a non-GR forward-model
-test (source-propagation twist branch, anti-circular) we cannot treat
-current PE/QNM posterior products as metric-neutral, and L1 shows a
-DQ/injection-context ambiguity in our state-vector check:
+@LIGO We found a technically reproducible L1 20-210 Hz bandpower excess
+in the released GW240925 strain (band-power ratio trigger/off-source
+~2.28 vs H1 ~0.76, robust across multiple off-source windows).
 
-  - L1 has a persistent 20-210 Hz band-power excess
-    (trigger/off-source ratio ~2.28 vs H1 ~0.76)
-  - CBC_CAT2/CAT3 are clean at both detectors
-  - NO_CW_HW_INJ is unset for both detectors over the full
-    4096-second segment (constant, file-wide, not trigger-specific)
-  - Bit names verified directly from HDF5 DQShortnames/InjShortnames
+DQ state-vector check (bit names verified from HDF5 metadata directly):
+  - CBC_CAT2/CAT3: clean at both detectors
+  - CW-related flags (CW_CAT1, NO_CW_HW_INJ): file-wide constants,
+    not trigger-specific, do not explain the broadband excess
+
+We are not making a physics claim. The excess must pass artifact,
+off-source, line, injection and standard-model checks first.
 
 Questions:
-  1. Which GWOSC products are recommended for the most anti-circular
-     strain-level test (i.e., least GR/Kerr-model-dependent)?
-  2. Are offline DQ products (omicron, iDQ, hveto, line-noise)
+  1. Are offline DQ products (Omicron, iDQ, hveto, line monitors)
      available for GW240925?
-  3. Is L1 intended for broadband H1/L1 coherence tests in this
+  2. Is L1 intended for broadband H1/L1 coherence tests in this
      release, or should it be treated as diagnostic only?
-  4. Is the L1 band-power excess a known feature of this segment?
+  3. Is the L1 band-power excess a known feature of this segment?
 
 Thank you.
 ```
