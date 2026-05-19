@@ -1,0 +1,1 @@
+CIRCULAR: f,m,chi from same model fit. R_f~1 by construction. Not SSZ test.

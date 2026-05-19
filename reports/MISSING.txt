@@ -1,0 +1,1 @@
+SSZ LIGO test invalid. Missing interferometer forward model. LIGO is lab strain data, not telescope. Need SSZ equations for GW propagation, detector response, strain h(t).

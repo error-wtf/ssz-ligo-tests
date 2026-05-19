@@ -1,0 +1,160 @@
+FullName,Exists,Length,Attributes,LinkType,Target,can_open,open_error,classification,archive_source
+,True,200078148,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,306692287,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,200078148,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,306692287,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\sylvia.biscoveanu\gw240925_and_gw250207\data\combined_samples\S240925n\combinedPHM_envcalC00_metafile.hdf5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\sylvia.biscoveanu\gw240925_and_gw250207\data\combined_samples\S240925n\combinedPHM_envcalC01_metafile.hdf5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\sylvia.biscoveanu\gw240925_and_gw250207\data\combined_samples\S240925n\combinedPHM_flatcalC00_metafile.hdf5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\sylvia.biscoveanu\gw240925_and_gw250207\data\combined_samples\S240925n\combinedPHM_nocalC00_metafile.hdf5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,13503280,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\sylvia.biscoveanu\gw240925_and_gw250207\data\combined_samples\S250207bg\combinedPHM_cal_metafile.hdf5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\sylvia.biscoveanu\gw240925_and_gw250207\data\combined_samples\S250207bg\combinedPHM_H1cal_metafile.hdf5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\sylvia.biscoveanu\gw240925_and_gw250207\data\combined_samples\S250207bg\combinedPHM_nocal_metafile.hdf5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi0-1\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi1\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi2\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi3NS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi4NS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi5lNS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi6l\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi6NS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi7NS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchiMinus2\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi0-1\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi1\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi2\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi3NS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi4NS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi5lNS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi6l\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi6NS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi7NS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchiMinus2\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi0-1\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi1\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi2\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi3NS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi4NS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi5lNS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi6l\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi6NS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi7NS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchiMinus2\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi0\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi1\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi2\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi3NS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi4NS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi5lNS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi6l\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi6NS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi7NS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchiMinus2\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi0\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi1\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi2\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi3NS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi4NS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi5lNS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi6l\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi6NS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi7NS\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchiMinus2\posterior_samples.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,213750734,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,509585056,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,289345875,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,53995910,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,128708079,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,70508053,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,41790405,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,100406361,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,82663984,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,26446248,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,102977169,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,87775728,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,42201960,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,112028560,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,17809352,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,42334240,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,17333456,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,326144,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,41572480,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,326144,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,1000288,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,1000288,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,1286528,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\db_1\\samples\tiger_GW240925_db_1.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\db_2\\samples\tiger_GW240925_db_2.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\db_3\\samples\tiger_GW240925_db_3.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\db_4\\samples\tiger_GW240925_db_4.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_0\\samples\tiger_GW240925_dchi_0.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_1\\samples\tiger_GW240925_dchi_1.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_2\\samples\tiger_GW240925_dchi_2.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_3\\samples\tiger_GW240925_dchi_3.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_4\\samples\tiger_GW240925_dchi_4.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_5l\\samples\tiger_GW240925_dchi_5l.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_6\\samples\tiger_GW240925_dchi_6.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_6l\\samples\tiger_GW240925_dchi_6l.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_7\\samples\tiger_GW240925_dchi_7.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_minus2\\samples\tiger_GW240925_dchi_minus2.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dc_1\\samples\tiger_GW240925_dc_1.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dc_2\\samples\tiger_GW240925_dc_2.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dc_4\\samples\tiger_GW240925_dc_4.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dc_l\\samples\tiger_GW240925_dc_l.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\db_1\\samples\tiger_GW240925_db_1.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\db_2\\samples\tiger_GW240925_db_2.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\db_3\\samples\tiger_GW240925_db_3.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\db_4\\samples\tiger_GW240925_db_4.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_0\\samples\tiger_GW240925_dchi_0.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_1\\samples\tiger_GW240925_dchi_1.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_2\\samples\tiger_GW240925_dchi_2.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_3\\samples\tiger_GW240925_dchi_3.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_4\\samples\tiger_GW240925_dchi_4.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_5l\\samples\tiger_GW240925_dchi_5l.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_6\\samples\tiger_GW240925_dchi_6.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_6l\\samples\tiger_GW240925_dchi_6l.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_7\\samples\tiger_GW240925_dchi_7.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_minus2\\samples\tiger_GW240925_dchi_minus2.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dc_1\\samples\tiger_GW240925_dc_1.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dc_2\\samples\tiger_GW240925_dc_2.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dc_4\\samples\tiger_GW240925_dc_4.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dc_l\\samples\tiger_GW240925_dc_l.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\db_1\\samples\tiger_GW250207_db_1.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\db_2\\samples\tiger_GW250207_db_2.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\db_3\\samples\tiger_GW250207_db_3.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\db_4\\samples\tiger_GW250207_db_4.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_0\\samples\tiger_GW250207_dchi_0.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_1\\samples\tiger_GW250207_dchi_1.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_2\\samples\tiger_GW250207_dchi_2.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_3\\samples\tiger_GW250207_dchi_3.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_4\\samples\tiger_GW250207_dchi_4.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_5l\\samples\tiger_GW250207_dchi_5l.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_6\\samples\tiger_GW250207_dchi_6.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_6l\\samples\tiger_GW250207_dchi_6l.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_7\\samples\tiger_GW250207_dchi_7.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_minus2\\samples\tiger_GW250207_dchi_minus2.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dc_1\\samples\tiger_GW250207_dc_1.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dc_2\\samples\tiger_GW250207_dc_2.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dc_4\\samples\tiger_GW250207_dc_4.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dc_l\\samples\tiger_GW250207_dc_l.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\db_1\\samples\tiger_GW250207_db_1.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\db_2\\samples\tiger_GW250207_db_2.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\db_3\\samples\tiger_GW250207_db_3.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\db_4\\samples\tiger_GW250207_db_4.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_0\\samples\tiger_GW250207_dchi_0.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_1\\samples\tiger_GW250207_dchi_1.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_2\\samples\tiger_GW250207_dchi_2.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_3\\samples\tiger_GW250207_dchi_3.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_4\\samples\tiger_GW250207_dchi_4.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_5l\\samples\tiger_GW250207_dchi_5l.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_6\\samples\tiger_GW250207_dchi_6.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_6l\\samples\tiger_GW250207_dchi_6l.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_7\\samples\tiger_GW250207_dchi_7.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_minus2\\samples\tiger_GW250207_dchi_minus2.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dc_1\\samples\tiger_GW250207_dc_1.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dc_2\\samples\tiger_GW250207_dc_2.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dc_4\\samples\tiger_GW250207_dc_4.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,0,"Archive, ReparsePoint",SymbolicLink,\home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dc_l\\samples\tiger_GW250207_dc_l.h5,False,[Errno 2] No such file or directory: '',BROKEN_LINUX_ABSOLUTE_SYMLINK,UNKNOWN
+,True,200078148,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN
+,True,306692287,Archive,,,False,[Errno 2] No such file or directory: '',REGULAR_FILE,UNKNOWN

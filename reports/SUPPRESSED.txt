@@ -1,0 +1,5 @@
+INVALIDATED 2026-05-14
+SSZ corpus not read
+Kerr used without SSZ model lock
+R_f ~ 1 = Kerr consistency only
+NOT SSZ falsification

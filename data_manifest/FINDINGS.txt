@@ -1,0 +1,6 @@
+KEY FINDINGS:
+
+1. GW ECHOS: DISCARDED in SSZ Book Ch.30
+2. RINGDOWN: +3% (not 39%)
+3. NO LIGO Forward Model in SSZ
+4. Need h_SSZ(t) derivation

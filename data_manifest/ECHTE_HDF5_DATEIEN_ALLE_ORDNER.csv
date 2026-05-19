@@ -1,0 +1,311 @@
+rel_path,size_mb,h5py_open,is_symlink,error,total_items,has_posterior,has_ringdown,has_strain
+GW240925_combinedPHM_envcalC01_metafile.hdf5,190.81,True,False,,1898,True,False,False
+GW250207_combinedPHM_cal_metafile.hdf5,292.48,True,False,,3105,True,False,False
+combined_samples\combined_samples\S240925n\combinedPHM_envcalC00_metafile.hdf5,0,False,True,Symlink: \home\sylvia.biscoveanu\gw240925_and_gw250207\data\combined_samples\S240925n\combinedPHM_envcalC00_metafile.hdf5,0,False,False,False
+combined_samples\combined_samples\S240925n\combinedPHM_envcalC01_metafile.hdf5,0,False,True,Symlink: \home\sylvia.biscoveanu\gw240925_and_gw250207\data\combined_samples\S240925n\combinedPHM_envcalC01_metafile.hdf5,0,False,False,False
+combined_samples\combined_samples\S240925n\combinedPHM_flatcalC00_metafile.hdf5,0,False,True,Symlink: \home\sylvia.biscoveanu\gw240925_and_gw250207\data\combined_samples\S240925n\combinedPHM_flatcalC00_metafile.hdf5,0,False,False,False
+combined_samples\combined_samples\S240925n\combinedPHM_nocalC00_metafile.hdf5,0,False,True,Symlink: \home\sylvia.biscoveanu\gw240925_and_gw250207\data\combined_samples\S240925n\combinedPHM_nocalC00_metafile.hdf5,0,False,False,False
+combined_samples\combined_samples\S250207bg\combinedPHM_cal_metafile.hdf5,0,False,True,Symlink: \home\sylvia.biscoveanu\gw240925_and_gw250207\data\combined_samples\S250207bg\combinedPHM_cal_metafile.hdf5,0,False,False,False
+combined_samples\combined_samples\S250207bg\combinedPHM_H1cal_metafile.hdf5,0,False,True,Symlink: \home\sylvia.biscoveanu\gw240925_and_gw250207\data\combined_samples\S250207bg\combinedPHM_H1cal_metafile.hdf5,0,False,False,False
+combined_samples\combined_samples\S250207bg\combinedPHM_nocal_metafile.hdf5,0,False,True,Symlink: \home\sylvia.biscoveanu\gw240925_and_gw250207\data\combined_samples\S250207bg\combinedPHM_nocal_metafile.hdf5,0,False,False,False
+GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_16KHZ_R1\STRAIN_HDF\H1\1410334720\H-H1_GWOSC_O4b4DiscC00_16KHZ_R1-1411260416-4096.hdf5,203.85,True,False,,26,False,False,True
+GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_16KHZ_R1\STRAIN_HDF\L1\1410334720\L-L1_GWOSC_O4b4DiscC00_16KHZ_R1-1411260416-4096.hdf5,485.98,True,False,,26,False,False,True
+GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_16KHZ_R1\STRAIN_HDF\V1\1410334720\V-V1_GWOSC_O4b4DiscC00_16KHZ_R1-1411260416-4096.hdf5,275.94,True,False,,26,False,False,True
+GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF\H1\1410334720\H-H1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5,51.49,True,False,,26,False,False,True
+GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF\L1\1410334720\L-L1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5,122.75,True,False,,26,False,False,True
+GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF\V1\1410334720\V-V1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5,67.24,True,False,,26,False,False,True
+pseobnr\pseobnr\22_44_NoCal.hdf5,16.98,True,False,,379,True,False,True
+pseobnr\pseobnr\22_44_WideCal.hdf5,40.37,True,False,,469,True,False,True
+pseobnr\pseobnr\22_NoCal.hdf5,16.53,True,False,,379,True,False,True
+pseobnr\pseobnr\22_WideCal.hdf5,39.65,True,False,,469,True,False,True
+ringdown\ringdown\rd_GW250207_Kerr220_8M_singleIFO_prod_2048Hz_evol_20Ksamps.hdf5,1.23,True,False,,10,False,False,True
+combined_samples\combined_samples\S240925n\online_posterior_samples.h5,12.88,True,False,,874,False,False,False
+fti\fti\S240925n_correct_cal\fti_dchi0.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi0-1\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_correct_cal\fti_dchi1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi1\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_correct_cal\fti_dchi2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi2\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_correct_cal\fti_dchi3NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi3NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_correct_cal\fti_dchi4NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi4NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_correct_cal\fti_dchi5lNS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi5lNS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_correct_cal\fti_dchi6l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi6l\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_correct_cal\fti_dchi6NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi6NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_correct_cal\fti_dchi7NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi7NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_correct_cal\fti_dchiMinus2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchiMinus2\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_no_cal\fti_dchi0.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi0-1\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_no_cal\fti_dchi1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi1\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_no_cal\fti_dchi2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi2\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_no_cal\fti_dchi3NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi3NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_no_cal\fti_dchi4NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi4NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_no_cal\fti_dchi5lNS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi5lNS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_no_cal\fti_dchi6l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi6l\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_no_cal\fti_dchi6NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi6NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_no_cal\fti_dchi7NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi7NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_no_cal\fti_dchiMinus2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchiMinus2\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_wide_cal\fti_dchi0.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi0-1\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_wide_cal\fti_dchi1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi1\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_wide_cal\fti_dchi2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi2\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_wide_cal\fti_dchi3NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi3NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_wide_cal\fti_dchi4NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi4NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_wide_cal\fti_dchi5lNS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi5lNS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_wide_cal\fti_dchi6l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi6l\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_wide_cal\fti_dchi6NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi6NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_wide_cal\fti_dchi7NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi7NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_wide_cal\fti_dchiMinus2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchiMinus2\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_no_cal\fti_dchi0.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi0\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_no_cal\fti_dchi1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi1\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_no_cal\fti_dchi2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi2\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_no_cal\fti_dchi3NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi3NS\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_no_cal\fti_dchi4NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi4NS\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_no_cal\fti_dchi5lNS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi5lNS\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_no_cal\fti_dchi6l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi6l\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_no_cal\fti_dchi6NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi6NS\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_no_cal\fti_dchi7NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi7NS\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_no_cal\fti_dchiMinus2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchiMinus2\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_wide_cal\fti_dchi0.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi0\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_wide_cal\fti_dchi1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi1\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_wide_cal\fti_dchi2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi2\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_wide_cal\fti_dchi3NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi3NS\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_wide_cal\fti_dchi4NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi4NS\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_wide_cal\fti_dchi5lNS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi5lNS\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_wide_cal\fti_dchi6l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi6l\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_wide_cal\fti_dchi6NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi6NS\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_wide_cal\fti_dchi7NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi7NS\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_wide_cal\fti_dchiMinus2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchiMinus2\posterior_samples.h5,0,False,False,False
+pca\pca\pca_fti_GW250207_115645_C00_none_dchi_3NS_dchi_4NS_dchi_5lNS_dchi_6NS_dchi_6l_dchi_7NS.h5,39.85,True,False,,629,False,False,True
+pca\pca\pca_fti_GW250207_115645_C00_wide_dchi_3NS_dchi_4NS_dchi_5lNS_dchi_6NS_dchi_6l_dchi_7NS.h5,95.75,True,False,,816,False,False,True
+pca\pca\pca_tiger_GW240925_005809_C00_envelope_dchi_3_dchi_4_dchi_5l_dchi_6_dchi_6l_dchi_7.h5,78.83,True,False,,764,False,False,True
+pca\pca\pca_tiger_GW240925_005809_C00_none_dchi_3_dchi_4_dchi_5l_dchi_6_dchi_6l_dchi_7.h5,25.22,True,False,,577,False,False,True
+pca\pca\pca_tiger_GW240925_005809_C00_wide_dchi_3_dchi_4_dchi_5l_dchi_6_dchi_6l_dchi_7.h5,98.21,True,False,,764,False,False,True
+pca\pca\pca_tiger_GW240925_005809_C01_envelope_dchi_3_dchi_4_dchi_5l_dchi_6_dchi_6l_dchi_7.h5,83.71,True,False,,764,False,False,True
+pca\pca\pca_tiger_GW250207_115645_C00_none_dchi_3_dchi_4_dchi_5l_dchi_6_dchi_6l_dchi_7.h5,40.25,True,False,,577,False,False,True
+pca\pca\pca_tiger_GW250207_115645_C00_wide_dchi_3_dchi_4_dchi_5l_dchi_6_dchi_6l_dchi_7.h5,106.84,True,False,,764,False,False,True
+pseobnr\pseobnr\22_NoCal_ftau.h5,0.31,True,False,,2,False,False,False
+pseobnr\pseobnr\22_WideCal_ftau.h5,0.31,True,False,,2,False,False,False
+qnmrf\qnmrf\QNMRF_GW250207_Hanford_220_t=8.0M.h5,0.95,True,False,,1,False,False,False
+qnmrf\qnmrf\QNMRF_GW250207_Livingston_220_t=8.0M.h5,0.95,True,False,,1,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_db_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\db_1\samples\tiger_GW240925_db_1.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_db_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\db_2\samples\tiger_GW240925_db_2.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_db_3.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\db_3\samples\tiger_GW240925_db_3.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_db_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\db_4\samples\tiger_GW240925_db_4.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dchi_0.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_0\samples\tiger_GW240925_dchi_0.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dchi_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_1\samples\tiger_GW240925_dchi_1.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dchi_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_2\samples\tiger_GW240925_dchi_2.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dchi_3.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_3\samples\tiger_GW240925_dchi_3.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dchi_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_4\samples\tiger_GW240925_dchi_4.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dchi_5l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_5l\samples\tiger_GW240925_dchi_5l.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dchi_6.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_6\samples\tiger_GW240925_dchi_6.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dchi_6l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_6l\samples\tiger_GW240925_dchi_6l.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dchi_7.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_7\samples\tiger_GW240925_dchi_7.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dchi_minus2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_minus2\samples\tiger_GW240925_dchi_minus2.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dc_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dc_1\samples\tiger_GW240925_dc_1.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dc_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dc_2\samples\tiger_GW240925_dc_2.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dc_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dc_4\samples\tiger_GW240925_dc_4.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dc_l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dc_l\samples\tiger_GW240925_dc_l.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_db_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\db_1\samples\tiger_GW240925_db_1.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_db_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\db_2\samples\tiger_GW240925_db_2.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_db_3.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\db_3\samples\tiger_GW240925_db_3.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_db_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\db_4\samples\tiger_GW240925_db_4.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dchi_0.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_0\samples\tiger_GW240925_dchi_0.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dchi_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_1\samples\tiger_GW240925_dchi_1.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dchi_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_2\samples\tiger_GW240925_dchi_2.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dchi_3.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_3\samples\tiger_GW240925_dchi_3.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dchi_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_4\samples\tiger_GW240925_dchi_4.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dchi_5l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_5l\samples\tiger_GW240925_dchi_5l.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dchi_6.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_6\samples\tiger_GW240925_dchi_6.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dchi_6l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_6l\samples\tiger_GW240925_dchi_6l.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dchi_7.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_7\samples\tiger_GW240925_dchi_7.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dchi_minus2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_minus2\samples\tiger_GW240925_dchi_minus2.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dc_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dc_1\samples\tiger_GW240925_dc_1.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dc_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dc_2\samples\tiger_GW240925_dc_2.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dc_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dc_4\samples\tiger_GW240925_dc_4.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dc_l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dc_l\samples\tiger_GW240925_dc_l.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_db_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\db_1\samples\tiger_GW250207_db_1.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_db_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\db_2\samples\tiger_GW250207_db_2.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_db_3.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\db_3\samples\tiger_GW250207_db_3.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_db_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\db_4\samples\tiger_GW250207_db_4.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dchi_0.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_0\samples\tiger_GW250207_dchi_0.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dchi_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_1\samples\tiger_GW250207_dchi_1.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dchi_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_2\samples\tiger_GW250207_dchi_2.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dchi_3.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_3\samples\tiger_GW250207_dchi_3.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dchi_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_4\samples\tiger_GW250207_dchi_4.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dchi_5l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_5l\samples\tiger_GW250207_dchi_5l.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dchi_6.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_6\samples\tiger_GW250207_dchi_6.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dchi_6l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_6l\samples\tiger_GW250207_dchi_6l.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dchi_7.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_7\samples\tiger_GW250207_dchi_7.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dchi_minus2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_minus2\samples\tiger_GW250207_dchi_minus2.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dc_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dc_1\samples\tiger_GW250207_dc_1.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dc_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dc_2\samples\tiger_GW250207_dc_2.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dc_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dc_4\samples\tiger_GW250207_dc_4.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dc_l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dc_l\samples\tiger_GW250207_dc_l.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_db_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\db_1\samples\tiger_GW250207_db_1.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_db_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\db_2\samples\tiger_GW250207_db_2.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_db_3.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\db_3\samples\tiger_GW250207_db_3.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_db_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\db_4\samples\tiger_GW250207_db_4.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dchi_0.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_0\samples\tiger_GW250207_dchi_0.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dchi_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_1\samples\tiger_GW250207_dchi_1.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dchi_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_2\samples\tiger_GW250207_dchi_2.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dchi_3.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_3\samples\tiger_GW250207_dchi_3.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dchi_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_4\samples\tiger_GW250207_dchi_4.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dchi_5l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_5l\samples\tiger_GW250207_dchi_5l.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dchi_6.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_6\samples\tiger_GW250207_dchi_6.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dchi_6l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_6l\samples\tiger_GW250207_dchi_6l.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dchi_7.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_7\samples\tiger_GW250207_dchi_7.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dchi_minus2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_minus2\samples\tiger_GW250207_dchi_minus2.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dc_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dc_1\samples\tiger_GW250207_dc_1.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dc_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dc_2\samples\tiger_GW250207_dc_2.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dc_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dc_4\samples\tiger_GW250207_dc_4.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dc_l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dc_l\samples\tiger_GW250207_dc_l.h5,0,False,False,False
+combined_samples\combined_samples\S240925n\online_posterior_samples.h5,12.88,True,False,,874,False,False,False
+fti\fti\S240925n_correct_cal\fti_dchi0.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi0-1\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_correct_cal\fti_dchi1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi1\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_correct_cal\fti_dchi2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi2\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_correct_cal\fti_dchi3NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi3NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_correct_cal\fti_dchi4NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi4NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_correct_cal\fti_dchi5lNS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi5lNS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_correct_cal\fti_dchi6l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi6l\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_correct_cal\fti_dchi6NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi6NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_correct_cal\fti_dchi7NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchi7NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_correct_cal\fti_dchiMinus2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_correct_cal\fti_dchiMinus2\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_no_cal\fti_dchi0.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi0-1\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_no_cal\fti_dchi1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi1\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_no_cal\fti_dchi2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi2\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_no_cal\fti_dchi3NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi3NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_no_cal\fti_dchi4NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi4NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_no_cal\fti_dchi5lNS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi5lNS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_no_cal\fti_dchi6l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi6l\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_no_cal\fti_dchi6NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi6NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_no_cal\fti_dchi7NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchi7NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_no_cal\fti_dchiMinus2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_no_cal\fti_dchiMinus2\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_wide_cal\fti_dchi0.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi0-1\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_wide_cal\fti_dchi1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi1\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_wide_cal\fti_dchi2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi2\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_wide_cal\fti_dchi3NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi3NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_wide_cal\fti_dchi4NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi4NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_wide_cal\fti_dchi5lNS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi5lNS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_wide_cal\fti_dchi6l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi6l\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_wide_cal\fti_dchi6NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi6NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_wide_cal\fti_dchi7NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchi7NS\posterior_samples.h5,0,False,False,False
+fti\fti\S240925n_wide_cal\fti_dchiMinus2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S240925n_wide_cal\fti_dchiMinus2\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_no_cal\fti_dchi0.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi0\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_no_cal\fti_dchi1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi1\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_no_cal\fti_dchi2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi2\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_no_cal\fti_dchi3NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi3NS\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_no_cal\fti_dchi4NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi4NS\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_no_cal\fti_dchi5lNS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi5lNS\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_no_cal\fti_dchi6l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi6l\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_no_cal\fti_dchi6NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi6NS\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_no_cal\fti_dchi7NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchi7NS\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_no_cal\fti_dchiMinus2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_no_cal\fti_dchiMinus2\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_wide_cal\fti_dchi0.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi0\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_wide_cal\fti_dchi1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi1\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_wide_cal\fti_dchi2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi2\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_wide_cal\fti_dchi3NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi3NS\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_wide_cal\fti_dchi4NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi4NS\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_wide_cal\fti_dchi5lNS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi5lNS\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_wide_cal\fti_dchi6l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi6l\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_wide_cal\fti_dchi6NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi6NS\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_wide_cal\fti_dchi7NS.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchi7NS\posterior_samples.h5,0,False,False,False
+fti\fti\S250207bg_wide_cal\fti_dchiMinus2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\FTI\asimov\results\S250207bg_wide_cal\fti_dchiMinus2\posterior_samples.h5,0,False,False,False
+pca\pca\pca_fti_GW250207_115645_C00_none_dchi_3NS_dchi_4NS_dchi_5lNS_dchi_6NS_dchi_6l_dchi_7NS.h5,39.85,True,False,,629,False,False,True
+pca\pca\pca_fti_GW250207_115645_C00_wide_dchi_3NS_dchi_4NS_dchi_5lNS_dchi_6NS_dchi_6l_dchi_7NS.h5,95.75,True,False,,816,False,False,True
+pca\pca\pca_tiger_GW240925_005809_C00_envelope_dchi_3_dchi_4_dchi_5l_dchi_6_dchi_6l_dchi_7.h5,78.83,True,False,,764,False,False,True
+pca\pca\pca_tiger_GW240925_005809_C00_none_dchi_3_dchi_4_dchi_5l_dchi_6_dchi_6l_dchi_7.h5,25.22,True,False,,577,False,False,True
+pca\pca\pca_tiger_GW240925_005809_C00_wide_dchi_3_dchi_4_dchi_5l_dchi_6_dchi_6l_dchi_7.h5,98.21,True,False,,764,False,False,True
+pca\pca\pca_tiger_GW240925_005809_C01_envelope_dchi_3_dchi_4_dchi_5l_dchi_6_dchi_6l_dchi_7.h5,83.71,True,False,,764,False,False,True
+pca\pca\pca_tiger_GW250207_115645_C00_none_dchi_3_dchi_4_dchi_5l_dchi_6_dchi_6l_dchi_7.h5,40.25,True,False,,577,False,False,True
+pca\pca\pca_tiger_GW250207_115645_C00_wide_dchi_3_dchi_4_dchi_5l_dchi_6_dchi_6l_dchi_7.h5,106.84,True,False,,764,False,False,True
+pseobnr\pseobnr\22_NoCal_ftau.h5,0.31,True,False,,2,False,False,False
+pseobnr\pseobnr\22_WideCal_ftau.h5,0.31,True,False,,2,False,False,False
+qnmrf\qnmrf\QNMRF_GW250207_Hanford_220_t=8.0M.h5,0.95,True,False,,1,False,False,False
+qnmrf\qnmrf\QNMRF_GW250207_Livingston_220_t=8.0M.h5,0.95,True,False,,1,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_db_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\db_1\samples\tiger_GW240925_db_1.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_db_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\db_2\samples\tiger_GW240925_db_2.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_db_3.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\db_3\samples\tiger_GW240925_db_3.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_db_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\db_4\samples\tiger_GW240925_db_4.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dchi_0.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_0\samples\tiger_GW240925_dchi_0.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dchi_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_1\samples\tiger_GW240925_dchi_1.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dchi_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_2\samples\tiger_GW240925_dchi_2.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dchi_3.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_3\samples\tiger_GW240925_dchi_3.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dchi_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_4\samples\tiger_GW240925_dchi_4.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dchi_5l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_5l\samples\tiger_GW240925_dchi_5l.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dchi_6.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_6\samples\tiger_GW240925_dchi_6.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dchi_6l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_6l\samples\tiger_GW240925_dchi_6l.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dchi_7.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_7\samples\tiger_GW240925_dchi_7.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dchi_minus2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dchi_minus2\samples\tiger_GW240925_dchi_minus2.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dc_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dc_1\samples\tiger_GW240925_dc_1.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dc_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dc_2\samples\tiger_GW240925_dc_2.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dc_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dc_4\samples\tiger_GW240925_dc_4.h5,0,False,False,False
+tiger\tiger\GW240925_cal\tiger_GW240925_dc_l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_cal\dc_l\samples\tiger_GW240925_dc_l.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_db_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\db_1\samples\tiger_GW240925_db_1.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_db_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\db_2\samples\tiger_GW240925_db_2.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_db_3.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\db_3\samples\tiger_GW240925_db_3.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_db_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\db_4\samples\tiger_GW240925_db_4.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dchi_0.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_0\samples\tiger_GW240925_dchi_0.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dchi_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_1\samples\tiger_GW240925_dchi_1.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dchi_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_2\samples\tiger_GW240925_dchi_2.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dchi_3.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_3\samples\tiger_GW240925_dchi_3.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dchi_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_4\samples\tiger_GW240925_dchi_4.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dchi_5l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_5l\samples\tiger_GW240925_dchi_5l.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dchi_6.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_6\samples\tiger_GW240925_dchi_6.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dchi_6l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_6l\samples\tiger_GW240925_dchi_6l.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dchi_7.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_7\samples\tiger_GW240925_dchi_7.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dchi_minus2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dchi_minus2\samples\tiger_GW240925_dchi_minus2.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dc_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dc_1\samples\tiger_GW240925_dc_1.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dc_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dc_2\samples\tiger_GW240925_dc_2.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dc_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dc_4\samples\tiger_GW240925_dc_4.h5,0,False,False,False
+tiger\tiger\GW240925_no_cal\tiger_GW240925_dc_l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW240925_no_cal\dc_l\samples\tiger_GW240925_dc_l.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_db_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\db_1\samples\tiger_GW250207_db_1.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_db_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\db_2\samples\tiger_GW250207_db_2.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_db_3.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\db_3\samples\tiger_GW250207_db_3.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_db_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\db_4\samples\tiger_GW250207_db_4.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dchi_0.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_0\samples\tiger_GW250207_dchi_0.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dchi_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_1\samples\tiger_GW250207_dchi_1.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dchi_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_2\samples\tiger_GW250207_dchi_2.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dchi_3.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_3\samples\tiger_GW250207_dchi_3.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dchi_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_4\samples\tiger_GW250207_dchi_4.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dchi_5l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_5l\samples\tiger_GW250207_dchi_5l.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dchi_6.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_6\samples\tiger_GW250207_dchi_6.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dchi_6l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_6l\samples\tiger_GW250207_dchi_6l.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dchi_7.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_7\samples\tiger_GW250207_dchi_7.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dchi_minus2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dchi_minus2\samples\tiger_GW250207_dchi_minus2.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dc_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dc_1\samples\tiger_GW250207_dc_1.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dc_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dc_2\samples\tiger_GW250207_dc_2.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dc_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dc_4\samples\tiger_GW250207_dc_4.h5,0,False,False,False
+tiger\tiger\GW250207_cal\tiger_GW250207_dc_l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_cal\dc_l\samples\tiger_GW250207_dc_l.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_db_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\db_1\samples\tiger_GW250207_db_1.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_db_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\db_2\samples\tiger_GW250207_db_2.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_db_3.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\db_3\samples\tiger_GW250207_db_3.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_db_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\db_4\samples\tiger_GW250207_db_4.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dchi_0.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_0\samples\tiger_GW250207_dchi_0.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dchi_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_1\samples\tiger_GW250207_dchi_1.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dchi_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_2\samples\tiger_GW250207_dchi_2.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dchi_3.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_3\samples\tiger_GW250207_dchi_3.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dchi_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_4\samples\tiger_GW250207_dchi_4.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dchi_5l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_5l\samples\tiger_GW250207_dchi_5l.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dchi_6.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_6\samples\tiger_GW250207_dchi_6.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dchi_6l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_6l\samples\tiger_GW250207_dchi_6l.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dchi_7.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_7\samples\tiger_GW250207_dchi_7.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dchi_minus2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dchi_minus2\samples\tiger_GW250207_dchi_minus2.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dc_1.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dc_1\samples\tiger_GW250207_dc_1.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dc_2.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dc_2\samples\tiger_GW250207_dc_2.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dc_4.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dc_4\samples\tiger_GW250207_dc_4.h5,0,False,False,False
+tiger\tiger\GW250207_no_cal\tiger_GW250207_dc_l.h5,0,False,True,Symlink: \home\tgr.o4\GW240925_GW250207\TIGER\GW250207_no_cal\dc_l\samples\tiger_GW250207_dc_l.h5,0,False,False,False
+GW240925_combinedPHM_envcalC01_metafile.hdf5,190.81,True,False,,1898,True,False,False
+GW250207_combinedPHM_cal_metafile.hdf5,292.48,True,False,,3105,True,False,False
+combined_samples\combined_samples\S240925n\combinedPHM_envcalC00_metafile.hdf5,0,False,True,Symlink: \home\sylvia.biscoveanu\gw240925_and_gw250207\data\combined_samples\S240925n\combinedPHM_envcalC00_metafile.hdf5,0,False,False,False
+combined_samples\combined_samples\S240925n\combinedPHM_envcalC01_metafile.hdf5,0,False,True,Symlink: \home\sylvia.biscoveanu\gw240925_and_gw250207\data\combined_samples\S240925n\combinedPHM_envcalC01_metafile.hdf5,0,False,False,False
+combined_samples\combined_samples\S240925n\combinedPHM_flatcalC00_metafile.hdf5,0,False,True,Symlink: \home\sylvia.biscoveanu\gw240925_and_gw250207\data\combined_samples\S240925n\combinedPHM_flatcalC00_metafile.hdf5,0,False,False,False
+combined_samples\combined_samples\S240925n\combinedPHM_nocalC00_metafile.hdf5,0,False,True,Symlink: \home\sylvia.biscoveanu\gw240925_and_gw250207\data\combined_samples\S240925n\combinedPHM_nocalC00_metafile.hdf5,0,False,False,False
+combined_samples\combined_samples\S250207bg\combinedPHM_cal_metafile.hdf5,0,False,True,Symlink: \home\sylvia.biscoveanu\gw240925_and_gw250207\data\combined_samples\S250207bg\combinedPHM_cal_metafile.hdf5,0,False,False,False
+combined_samples\combined_samples\S250207bg\combinedPHM_H1cal_metafile.hdf5,0,False,True,Symlink: \home\sylvia.biscoveanu\gw240925_and_gw250207\data\combined_samples\S250207bg\combinedPHM_H1cal_metafile.hdf5,0,False,False,False
+combined_samples\combined_samples\S250207bg\combinedPHM_nocal_metafile.hdf5,0,False,True,Symlink: \home\sylvia.biscoveanu\gw240925_and_gw250207\data\combined_samples\S250207bg\combinedPHM_nocal_metafile.hdf5,0,False,False,False
+GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_16KHZ_R1\STRAIN_HDF\H1\1410334720\H-H1_GWOSC_O4b4DiscC00_16KHZ_R1-1411260416-4096.hdf5,203.85,True,False,,26,False,False,True
+GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_16KHZ_R1\STRAIN_HDF\L1\1410334720\L-L1_GWOSC_O4b4DiscC00_16KHZ_R1-1411260416-4096.hdf5,485.98,True,False,,26,False,False,True
+GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_16KHZ_R1\STRAIN_HDF\V1\1410334720\V-V1_GWOSC_O4b4DiscC00_16KHZ_R1-1411260416-4096.hdf5,275.94,True,False,,26,False,False,True
+GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF\H1\1410334720\H-H1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5,51.49,True,False,,26,False,False,True
+GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF\L1\1410334720\L-L1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5,122.75,True,False,,26,False,False,True
+GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF\V1\1410334720\V-V1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5,67.24,True,False,,26,False,False,True
+pseobnr\pseobnr\22_44_NoCal.hdf5,16.98,True,False,,379,True,False,True
+pseobnr\pseobnr\22_44_WideCal.hdf5,40.37,True,False,,469,True,False,True
+pseobnr\pseobnr\22_NoCal.hdf5,16.53,True,False,,379,True,False,True
+pseobnr\pseobnr\22_WideCal.hdf5,39.65,True,False,,469,True,False,True
+ringdown\ringdown\rd_GW250207_Kerr220_8M_singleIFO_prod_2048Hz_evol_20Ksamps.hdf5,1.23,True,False,,10,False,False,True

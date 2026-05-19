@@ -1,0 +1,1 @@
+SSZ GW: Has QNM 1.39x, holonomy D_GW. Missing: full waveform, h(t) model. Cannot test LIGO yet.

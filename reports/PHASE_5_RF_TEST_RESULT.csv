@@ -1,0 +1,3 @@
+event,calibration_variant,f_qnm_measured_median,f_qnm_measured_p05,f_qnm_measured_p95,f_gr_reference_median,f_gr_reference_p05,f_gr_reference_p95,R_f_median,R_f_p05,R_f_p95,anti_circularity_status,decision,notes
+GW250207,H1_only,243.2,211.7,259.8,BLOCKED,BLOCKED,BLOCKED,BLOCKED,BLOCKED,BLOCKED,PARTIALLY_COUPLED,TEST_BLOCKED,GR reference computation blocked: no validated local QNM library
+GW250207,L1_only,253.8,231.3,278.2,BLOCKED,BLOCKED,BLOCKED,BLOCKED,BLOCKED,BLOCKED,PARTIALLY_COUPLED,TEST_BLOCKED,GR reference computation blocked: no validated local QNM library

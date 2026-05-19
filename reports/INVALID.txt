@@ -1,0 +1,5 @@
+PHASE 5 INVALIDATED
+
+Reason: Kerr formula used without SSZ corpus reading.
+R_f ~ 1 only shows Kerr consistency, not SSZ test.
+Status: NOT_TESTED
