@@ -715,6 +715,156 @@ This is the central methodological result of this project.
 
 ---
 
+### 16. What We Can and Cannot Say — Precisely
+
+This section separates claims by evidential strength.
+
+**What we can say with confidence:**
+
+```text
+1. We built and ran a reproducible, anti-circular LIGO strain pipeline.
+2. It uses real H1 GWOSC strain, off-source PSD, an analytic GR control
+   template, and an SSZ V0/V1 forward proxy.
+3. It does NOT use PE posteriors, PE-derived PSD, or Kerr self-tests.
+4. PE/QNM posterior-based R_f tests are methodologically invalid for SSZ
+   because posterior products are model-dependent.
+5. The anti-circularity gate explicitly marks posterior samples, PE-PSD,
+   and pSEOBNR products as invalid inputs; strain, off-source PSD, and
+   the SSZ V0 proxy were used instead.
+6. Formal open data is not the same as full open reproducibility.
+```
+
+**What we can say about SSZ/LIGO:**
+
+```text
+The current V0/V1 strain pipeline produces no measurable deviation
+from the GR control template in the tested range:
+
+  delta_lnL ~= 0
+  |delta_lnL| < 1  ->  indistinguishable
+
+This does NOT mean SSZ is confirmed.
+This does NOT mean SSZ is falsified.
+It means:
+  With the current V0/V1 inspiral forward proxy and the limited
+  0PN GR control, SSZ is indistinguishable in this setup.
+```
+
+**What we can say about GW240925:**
+
+```text
+H1: USABLE_EXPLORATORY
+L1: DIAGNOSTIC_ONLY
+  -> reproducible 20-40 Hz non-Gaussianity
+  -> trigger excess kurtosis: +44.9  vs. off-source: +1.1
+  -> trigger-specific, not chronic broadband
+  -> without Omicron/iDQ/offline DQ: not claimable
+
+GW240925 tests the method. It does not adjudicate SSZ.
+```
+
+**What we must NOT say:**
+
+```text
+SSZ is confirmed by LIGO.
+SSZ is falsified by LIGO.
+LIGO data are fake.
+LIGO manipulated the results.
+The 39% branch is refuted.
+L1 shows SSZ.
+```
+
+**Best public short statement:**
+
+> We built an anti-circular strain-level pipeline for SSZ-like non-GR
+> forward models. PE/QNM posteriors are not used as metric-neutral
+> observables. For GW240925, H1 is usable exploratorily; L1 remains
+> diagnostic-only due to reproducible 20-40 Hz non-Gaussianity without
+> offline Omicron/iDQ/DQ context. The current V0/V1 SSZ pipeline is
+> technically operational but not at claim level.
+
+---
+
+### 17. Paper-Ready Status Statement
+
+> GW240925 supports method validation, not physical adjudication of SSZ.
+> The strain-level pipeline is reproducible and anti-circular, but the
+> event is DQ-limited for H1/L1 non-GR coherence tests, and the SSZ
+> interferometer forward model remains V0/V1, not LOCKED_FINAL.
+
+This is the most defensible single-sentence summary of the project's current state.
+
+**The data access hierarchy:**
+
+| Level | What it is | Publicly available | Sufficient for non-GR test |
+|-------|-----------|--------------------|--------------------------|
+| Level 1: Strain `h(t)` | Calibrated interferometer output | Yes (GWOSC) | Partially |
+| Level 2: DQ bits CAT1-3 | Standardized quality flags | Yes (GWOSC) | Partially |
+| Level 3: Omicron / iDQ | Glitch triggers, glitch probability | No (internal / AR only) | Yes, critical |
+| Level 4: Aux channels | Environmental/control monitors | Very limited | Often needed |
+| Level 5: Posteriors, QNM | GR/Kerr model-inferred parameters | Yes (GWOSC) | **NOT metric-neutral** |
+
+The public LIGO release is strong at Level 1-2 and 5, but weak at Level 3-4.
+For standard GR/CBC: Level 1-2 is sufficient.
+For anti-circular non-GR tests: Level 3-4 is often decisive, and Level 5 is methodologically invalid as input.
+
+---
+
+### 18. Petition / Public Criticism Context
+
+A public petition signed by ~3000 people questioning aspects of the LIGO
+experiment (including researchers) is not, by itself, scientific proof that
+LIGO is wrong. It is a **transparency and trust signal**.
+
+```text
+petition = transparency and trust signal
+not:
+petition = physical disproof of LIGO
+```
+
+The right way to evaluate it:
+
+```text
+Which technical questions does it raise?
+Which are already answered by official LIGO/GWOSC documentation?
+Which reflect misunderstandings?
+Which point to real reproducibility gaps?
+Which require unavailable Omicron/iDQ/Aux/Offline-DQ products to answer?
+```
+
+This project does not use the petition as evidence against LIGO. It uses the
+existence of organized public scrutiny as evidence that:
+
+> The boundaries between what LIGO data can prove and what requires
+> collaboration-internal context deserve clearer public communication.
+
+For policymakers and funders, the issue is not whether LIGO is fraudulent.
+The issue is whether a publicly funded experiment provides enough material
+for independent verification outside its preferred model family.
+
+**The epistemic asymmetry:**
+
+```text
+Formal openness:  strain + some metadata + posterior products available.
+Actual openness:  decisive non-standard checks require Omicron/iDQ/
+                  Aux/Line/Offline-DQ context not in the public release.
+```
+
+This creates an impression of complete openness while leaving specific
+non-standard analyses incomplete. That is a legitimate open-science concern
+— not a fraud accusation.
+
+Strongest fair single sentence:
+
+> The public LIGO releases are formally open but epistemically asymmetric:
+> strain and derived products are available, yet central detector
+> characterization, Omicron/iDQ, auxiliary channels, and offline DQ
+> context are typically missing as a complete reproducibility package,
+> meaning external groups can reproduce standard analyses but can only
+> partially verify non-GR forward models independently.
+
+---
+
 ## License
 
 ANTI-CAPITALIST SOFTWARE LICENSE v1.4
