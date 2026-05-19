@@ -1,7 +1,7 @@
 # SSZ-LIGO Test Suite — Current Status
 
-**Version:** 0.3.0  
-**Date:** 2026-05-18  
+**Version:** 0.4.0  
+**Date:** 2026-05-19  
 **Data:** GW240925 O4b — GWOSC [https://zenodo.org/records/18600070](https://zenodo.org/records/18600070)
 
 ---
@@ -56,14 +56,42 @@ SSZ_FALSIFICATION_CLAIM_MADE:  NO
 
 ---
 
+## Artifact Gate Summary (GW240925)
+
+```
+Unit/Normalization Audit:          7/7 PASS
+PSD normalization:                 CORRECT
+Bandpower values:                  TRUSTWORTHY
+Artifact score:                    10/24 (MEDIUM)
+Claim gate verdict:                NO
+
+H1 status:                         USABLE_EXPLORATORY
+L1 status:                         DIAGNOSTIC_ONLY
+  L1 20-40 Hz trigger ex_kurtosis: +44.9  (off-source: +1.1)  delta=+43.7
+  L1 excess class:                 CHRONIC_NON_GAUSSIAN_BAND_NOISE
+  Trigger-specific burst:          NO
+  Lines explain part:              YES (~55% bandpower in lines)
+  Broadband remainder:             YES
+H1/L1 coherence:                   BLOCKED (L1 DQ unresolved)
+```
+
+---
+
 ## Open Blockers
 
-1. **delta_psi**: 0PN only → need 3.5PN r(f) for real claim
-2. **L1 noise**: anomalous SNR=647 in trigger window → check stationarity
-3. **Coherence**: xcorr>1 (normalisation failure) → frequency-domain coherence needed
-4. **epsilon_220**: 3 conflicting branches, all different observables — needs author resolution
-5. **GR control**: 0PN only → needs matched 3.5PN
-6. **Detector propagation**: RSG phase not included
+**Not solvable by local code — require external data or DQ clarification:**
+
+1. **GW250207 strain**: O4c event not yet in public GWOSC release → download when available, run full artifact gate
+2. **L1 DQ clarification**: offline Omicron/iDQ/line/AUX context needed to classify L1 20-40 Hz excess
+3. **LIGO DQ question**: formal inquiry to LIGO/DQ team with concise question (see LIGO_QUESTION_REPORT.md)
+
+**Solvable internally when physics is ready:**
+
+4. **delta_psi**: 0PN only → need 3.5PN r(f) for real inspiral claim
+5. **epsilon_220**: 3 conflicting branches (3%/31%/39%), all different observables — needs author resolution
+6. **GR control**: 0PN only → needs matched 3.5PN when delta_psi is upgraded
+7. **Detector propagation**: RSG phase not included in current forward model
+8. **Injection-Recovery**: defer until clean template and injection setup confirmed
 
 ---
 
@@ -76,3 +104,7 @@ SSZ_FALSIFICATION_CLAIM_MADE:  NO
 | CALIBRATION_PSD_SENSITIVITY_REPORT.md | 2026-05-18 |
 | FINAL_INTERPRETATION_LOCK.md | 2026-05-18 |
 | ANTI_CIRCULARITY_FINAL_GATE.md | 2026-05-18 |
+| L1_ARTIFACT_GATE_FINAL_STATUS.md | 2026-05-19 |
+| LIGO_QUESTION_REPORT.md | 2026-05-19 |
+| PHYSICS_CLARIFICATION_NOTE.md | 2026-05-19 |
+| OPEN_DATA_METHODOLOGY_POSITION.md | 2026-05-19 |
