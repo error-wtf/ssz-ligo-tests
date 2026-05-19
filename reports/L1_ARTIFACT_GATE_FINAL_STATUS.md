@@ -1,6 +1,6 @@
 # L1 Artifact Gate — Final Status Lock
 
-Generated: 2026-05-19  
+Generated: 2026-05-19 (updated 2026-05-19 sub-band revision)  
 Status: LOCKED — Do not modify without explicit author decision  
 Event: GW240925 (trigger GPS 1411261107.984, O4b GWOSC)
 
@@ -10,11 +10,13 @@ Event: GW240925 (trigger GPS 1411261107.984, O4b GWOSC)
 
 ```
 GAUSSIANITY_ARTIFACT_GATE:   FAIL_L1_NON_GAUSSIAN
-L1_EXCESS_CLASS:             CHRONIC_NON_GAUSSIAN_BAND_NOISE
+L1_EXCESS_CLASS:             TRIGGER_SPECIFIC_LOW_FREQ_SUBBAND  ← revised
+L1_ANOMALY_BAND:             20-40 Hz (ex_k=+44.9 trigger, +1.1 off-source)
 L1_HARMONIC_STRUCTURE:       RESONANCE_IN_OFF_SOURCE_TOO
 L1_BROADBAND_EXCESS:         TECHNICALLY_REPRODUCIBLE_NOT_EXPLAINED
 L1_STATUS:                   DQ_FLAGGED_DIAGNOSTIC_ONLY
 H1_L1_COHERENCE_STATUS:      BLOCKED_BY_L1_DQ
+ARTIFACT_SCORE:              10/24  RISK=MEDIUM
 READY_FOR_REAL_LIGO_SSZ_CLAIM: NO
 SSZ_SUPPORT_CLAIM_MADE:      NO
 SSZ_FALSIFICATION_CLAIM_MADE: NO
@@ -66,6 +68,34 @@ Key observations:
 - H1 trigger (2.61) is **less** non-Gaussian than H1 off-source (6.4) —
   H1 trigger window is actually the quietest window
 
+### Step 5 — Sub-band Gaussianity (revised finding)
+
+Raw strain bandpassed into 5 sub-bands, Tukey-windowed, normalized:
+
+| Band | L1 trigger ex_k | L1 off-500s ex_k | H1 trigger ex_k | Flag |
+|------|-----------------|------------------|-----------------|------|
+| **20-40 Hz** | **+44.857** | **+1.127** | +3.673 | **ANOMAL** |
+| 40-80 Hz | -0.515 | -0.614 | +0.340 | clean |
+| 80-120 Hz | +3.266 | +0.892 | +2.386 | mild |
+| 120-160 Hz | +5.663 | +1.445 | +1.252 | mild |
+| 160-210 Hz | +0.198 | +0.371 | +0.405 | clean |
+
+**Revised classification:**
+- The anomaly is **trigger-specific** in the 20-40 Hz band (Δex_k = +43.7)
+- It is **NOT chronic broadband** — off-source 20-40 Hz is clean (+1.1)
+- Previous Step 4 showed chronic non-Gaussianity across the full 20-210 Hz
+  band due to whitening artifacts; the sub-band test on raw strain is more
+  precise
+- **L1_EXCESS_CLASS revised:** `TRIGGER_SPECIFIC_LOW_FREQ_SUBBAND`
+
+Physical candidates for the 20-40 Hz trigger-specific L1 structure:
+1. Sub-threshold glitch (seismic, suspension, control system)
+2. Environmental coupling not captured in public DQ bits
+3. Pipeline ringing (bandpass / whitening filter edge)
+4. Low-frequency instrumental mode excited near trigger time
+
+**None of these constitute a signal. None falsify SSZ.**
+
 ---
 
 ## What This Means
@@ -86,14 +116,26 @@ The L1 excess is therefore:
 
 ---
 
-## Canonical Report Statement
+## Canonical Report Statement (updated)
 
-> The L1 excess is technically reproducible but not trigger-specific
-> in Gaussianity diagnostics. In the 20–210 Hz band, L1 behaves as
-> chronically non-Gaussian relative to the assumptions of the current
-> whitening and bandpass pipeline. Therefore L1 cannot support a
-> broadband H1/L1 non-GR coherence claim for this release without
-> offline DQ / iDQ / Omicron clarification.
+> The L1 anomaly in GW240925 is concentrated in the 20-40 Hz sub-band
+> and is trigger-specific (excess kurtosis +44.9 at trigger vs. +1.1
+> off-source 500 s prior). This band is maximally sensitive to seismic
+> coupling, suspension noise, and LIGO control-system artefacts.
+> The anomaly may be detector- or pipeline-induced. Current public
+> GWOSC products are insufficient to decide whether the 20-40 Hz
+> structure is instrumental, environmental, line-related, or
+> signal-like. Therefore no physics claim is allowed without
+> offline DQ / iDQ / Omicron / AUX clarification.
+
+**What "detector-induced" means here:**
+- Not: LIGO acted intentionally
+- Yes: the excess may originate from the instrument system itself
+  (seismics, suspensions, optics, controls, calibration, pipeline)
+- The public data show something anomalous
+- The public data do **not** provide enough context to distinguish:
+  `signal` vs. `detector artefact` vs. `line` vs. `whitening/PSD` vs.
+  `sub-threshold glitch`
 
 ---
 
@@ -140,6 +182,9 @@ Option D — Wait for improved public DQ products
 | `L1_GAUSSIANITY_TEST.md` | Whitened Gaussianity stats | 2026-05-19 |
 | `GAUSSIANITY_ARTIFACT_GATE_REPORT.md` | Full artifact gate | 2026-05-19 |
 | `DQ_AWARE_FINAL_LIGO_STATUS.md` | Master DQ gate | 2026-05-18 |
+| `UNIT_NORMALIZATION_AUDIT.md` | FFT/PSD normalization 7/7 PASS | 2026-05-19 |
+| `ARTIFACT_SCORE_REPORT.md` | Aggregate score 10/24 MEDIUM | 2026-05-19 |
+| `GW250207_ARTIFACT_GATE_COMPARISON.md` | Cross-event (MISSING_DATA) | 2026-05-19 |
 
 ---
 
