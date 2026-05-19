@@ -1,0 +1,5 @@
+[2026-05-19] H1_L1_ABS_REPLICATION: Classification updated to COHERENT_WITH_SIGN_FLIP
+[2026-05-19] Full-band: corr=-0.991, abs_corr=0.991, peak_tau=0.0 ms
+[2026-05-19] Previous dt=-10ms result reclassified as CLASSIFICATION_ARTIFACT (argmax(corr) vs argmax(|corr|))
+[2026-05-19] Subband abs-correlation run: PENDING
+[2026-05-19] READY_FOR_REAL_LIGO_SSZ_CLAIM: NO

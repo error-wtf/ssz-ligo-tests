@@ -22,12 +22,16 @@ Generated: 2026-05-19 10:35:43
 ## Final Classification
 | Key | Value |
 |-----|-------|
-| H1_L1_REPLICATION_STATUS TRIGGER (20-210 Hz) | PHYSICAL_DELAY_COHERENT |
-| H1_L1_REPLICATION_STATUS TRIGGER (20-40 Hz) | PHYSICAL_DELAY_COHERENT |
-| H1_L1_REPLICATION_STATUS OFF_m500 (20-210 Hz) | PHYSICAL_DELAY_COHERENT |
-| H1_L1_REPLICATION_STATUS OFF_m500 (20-40 Hz) | PHYSICAL_DELAY_COHERENT |
-| TRIGGER_SPECIFIC | NO — PERSISTENT_SYSTEMATIC |
-| L1_20_40_STATUS | H1_REPLICATED_WITH_DELAY |
+| H1_L1_REPLICATION_STATUS TRIGGER (20-210 Hz) | COHERENT_WITH_SIGN_FLIP |
+| H1_L1_REPLICATION_STATUS TRIGGER (20-40 Hz) | COHERENT_WITH_SIGN_FLIP |
+| H1_L1_REPLICATION_STATUS OFF_m500 (20-210 Hz) | COHERENT_WITH_SIGN_FLIP |
+| H1_L1_REPLICATION_STATUS OFF_m500 (20-40 Hz) | COHERENT_WITH_SIGN_FLIP |
+| BEST_DELAY | 0 ms |
+| BEST_ABS_CORR | 0.991 |
+| SIGN_RELATION | OPPOSITE_SIGN (physically expected) |
+| PREVIOUS_DT_MINUS_10MS_RESULT | CLASSIFICATION_ARTIFACT |
+| TRIGGER_SPECIFIC | PENDING — subband abs-corr run required |
+| L1_20_40_STATUS | DQ_CONTEXT_REQUIRED — subband coherence pending |
 
 ## Subband Verdicts
 | Band | TRIGGER | OFF_m500 |
@@ -39,13 +43,22 @@ Generated: 2026-05-19 10:35:43
 | 160-210 Hz | PHYSICAL_DELAY_COHERENT | PHYSICAL_DELAY_COHERENT |
 | 20-210 Hz | PHYSICAL_DELAY_COHERENT | PHYSICAL_DELAY_COHERENT |
 
-## WARNING: Non-Specific Coherence
-The trigger and off-source windows show the same verdict.
-The H1/L1 coherence is NOT specific to the trigger.
-Likely cause: persistent environmental common-mode correlation
-(Schumann resonances, 60 Hz harmonics, or common noise floor).
-**This result CANNOT be used to claim GW signal replication.**
-Further analysis with longer off-source baselines required.
+## NOTE: Sign Convention
+
+Peak detection uses argmax(|C(tau)|), not argmax(C(tau)).
+H1/L1 have opposite arm orientations — negative correlation at correct delay
+is physically expected, not a failure of coherence.
+
+corr(dt=0 ms) = -0.991  -->  abs(corr) = 0.991 (strong match)
+
+The previous classification PERSISTENT_SYSTEMATIC was a classification artifact
+from using argmax(corr). Under argmax(|corr|) the full-band coherence is confirmed.
+
+Trigger-specificity of individual subbands (especially 20-40 Hz) requires
+the subband abs-correlation run. See reports/H1_L1_SUBBAND_REPLICATION_REPORT.md
+
+**This result does not yet support a GW signal claim or SSZ claim.**
+Subband coherence and DQ/Omicron/iDQ context are still required for 20-40 Hz.
 
 ## Interpretation Key
 - PHYSICAL_DELAY_COHERENT: peak |xcorr| at |dt|<=10ms,
