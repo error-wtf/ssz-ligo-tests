@@ -1,6 +1,6 @@
 # SSZ-LIGO Test Suite — Current Status
 
-**Version:** 0.4.0  
+**Version:** 0.5.0  
 **Date:** 2026-05-19  
 **Data:** GW240925 O4b — GWOSC [https://zenodo.org/records/18600070](https://zenodo.org/records/18600070)
 
@@ -53,6 +53,7 @@ SSZ_FALSIFICATION_CLAIM_MADE:  NO
 | test_epsilon_220_branch_registry.py | ✅ PASS |
 | test_xi_strong_branch_lock.py | ✅ PASS |
 | test_08_anti_circularity.py | ✅ PASS |
+| run_h1_l1_time_delay_replication.py | ✅ RAN — TRIGGER_SPECIFIC: NO (persistent systematic) |
 
 ---
 
@@ -108,3 +109,4 @@ H1/L1 coherence:                   BLOCKED (L1 DQ unresolved)
 | LIGO_QUESTION_REPORT.md | 2026-05-19 |
 | PHYSICS_CLARIFICATION_NOTE.md | 2026-05-19 |
 | OPEN_DATA_METHODOLOGY_POSITION.md | 2026-05-19 |
+| H1_L1_TIME_DELAY_REPLICATION_REPORT.md | 2026-05-19 |
