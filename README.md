@@ -677,6 +677,8 @@ Concise question to LIGO:
 
 ### 13. Public Petition / Transparency Context
 
+**Petition:** [https://www.change.org/p/prof-karsten-danzmann-beantworten-sie-bitte-3-fragen-%C3%BCber-das-ligo-experiment](https://www.change.org/p/prof-karsten-danzmann-beantworten-sie-bitte-3-fragen-%C3%BCber-das-ligo-experiment)
+
 A public petition questioning aspects of the LIGO experiment is not, by itself, scientific
 proof that LIGO is wrong. However, it is relevant as a transparency signal.
 
@@ -845,6 +847,9 @@ For anti-circular non-GR tests: Level 3-4 is often decisive, and Level 5 is meth
 ---
 
 ### 18. Petition / Public Criticism Context
+
+**Petition:**
+[https://www.change.org/p/prof-karsten-danzmann-beantworten-sie-bitte-3-fragen-%C3%BCber-das-ligo-experiment](https://www.change.org/p/prof-karsten-danzmann-beantworten-sie-bitte-3-fragen-%C3%BCber-das-ligo-experiment)
 
 **Reference:** LIGO official Mastodon post (scicomm.xyz):
 [https://chaos.social/deck/@LIGO@scicomm.xyz/116569194588841654](https://chaos.social/deck/@LIGO@scicomm.xyz/116569194588841654)
