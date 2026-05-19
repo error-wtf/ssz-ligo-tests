@@ -1,0 +1,161 @@
+GAUSSIANITY ARTIFACT GATE — 2026-05-19 06:57:36
+Trigger: 1411261107.984  Win: 4.0s  PSD: -500.0s x 64.0s
+Band: 20.0-210.0Hz
+
+============================================================
+DETECTOR: H1
+============================================================
+  PSD source: -500.0s x 64.0s  fs=4096Hz  n=262144
+
+  [TRIGGER] FULLBAND whitened:
+    n=13108  mean=-0.0000  std=1.0000  med=-0.0019  MAD=0.9070
+    skew=+0.0095  kurt=1.732  ex_kurt=-1.268  max|z|=2.93
+    |z|>3: 0 (exp 35)  |z|>4: 0 (exp 1)  |z|>5: 0 (exp 0)
+    AD=328.615 crit=0.752 FAIL  KS=0.1116 p=0.00e+00 FAIL
+    Plot skipped: No module named 'matplotlib'
+  [TRIGGER] BAND 20.0-210.0Hz whitened+bp:
+    n=13108  mean=+0.0000  std=1.0000  med=-0.0013  MAD=0.5888
+    skew=+0.2977  kurt=5.605  ex_kurt=+2.605  max|z|=6.64
+    |z|>3: 131 (exp 35)  |z|>4: 36 (exp 1)  |z|>5: 15 (exp 0)
+    AD=35.331 crit=0.752 FAIL  KS=0.0347 p=0.00e+00 FAIL
+    Plot skipped: No module named 'matplotlib'
+
+  [OFF_m500] FULLBAND whitened:
+    n=13108  mean=-0.0000  std=1.0000  med=+0.0017  MAD=0.9503
+    skew=-0.0001  kurt=1.591  ex_kurt=-1.409  max|z|=2.66
+    |z|>3: 0 (exp 35)  |z|>4: 0 (exp 1)  |z|>5: 0 (exp 0)
+    AD=505.933 crit=0.752 FAIL  KS=0.1386 p=0.00e+00 FAIL
+    Plot skipped: No module named 'matplotlib'
+  [OFF_m500] BAND 20.0-210.0Hz whitened+bp:
+    n=13108  mean=+0.0000  std=1.0000  med=-0.0025  MAD=0.4036
+    skew=-0.1394  kurt=9.375  ex_kurt=+6.375  max|z|=7.12
+    |z|>3: 307 (exp 35)  |z|>4: 91 (exp 1)  |z|>5: 24 (exp 0)
+    AD=410.798 crit=0.752 FAIL  KS=0.1090 p=0.00e+00 FAIL
+    Plot skipped: No module named 'matplotlib'
+
+  [OFF_m300] FULLBAND whitened:
+    n=13108  mean=+0.0000  std=1.0000  med=-0.0002  MAD=0.9495
+    skew=-0.0000  kurt=1.592  ex_kurt=-1.408  max|z|=2.66
+    |z|>3: 0 (exp 35)  |z|>4: 0 (exp 1)  |z|>5: 0 (exp 0)
+    AD=505.800 crit=0.752 FAIL  KS=0.1387 p=0.00e+00 FAIL
+    Plot skipped: No module named 'matplotlib'
+  [OFF_m300] BAND 20.0-210.0Hz whitened+bp:
+    n=13108  mean=+0.0000  std=1.0000  med=+0.0029  MAD=0.4028
+    skew=-0.1272  kurt=9.334  ex_kurt=+6.334  max|z|=7.14
+    |z|>3: 306 (exp 35)  |z|>4: 91 (exp 1)  |z|>5: 28 (exp 0)
+    AD=408.016 crit=0.752 FAIL  KS=0.1106 p=0.00e+00 FAIL
+    Plot skipped: No module named 'matplotlib'
+  [OFF_m100] load failed — skipped
+
+============================================================
+DETECTOR: L1
+============================================================
+  PSD source: -500.0s x 64.0s  fs=4096Hz  n=262144
+
+  [TRIGGER] FULLBAND whitened:
+    n=13108  mean=-0.0000  std=1.0000  med=+0.0004  MAD=0.6931
+    skew=-0.0015  kurt=3.618  ex_kurt=+0.618  max|z|=4.49
+    |z|>3: 101 (exp 35)  |z|>4: 6 (exp 1)  |z|>5: 0 (exp 0)
+    AD=13.150 crit=0.752 FAIL  KS=0.0202 p=4.34e-05 FAIL
+    Plot skipped: No module named 'matplotlib'
+  [TRIGGER] BAND 20.0-210.0Hz whitened+bp:
+    n=13108  mean=-0.0000  std=1.0000  med=-0.0026  MAD=0.5481
+    skew=-0.0352  kurt=7.582  ex_kurt=+4.582  max|z|=6.85
+    |z|>3: 203 (exp 35)  |z|>4: 74 (exp 1)  |z|>5: 29 (exp 0)
+    AD=108.182 crit=0.752 FAIL  KS=0.0537 p=0.00e+00 FAIL
+    Plot skipped: No module named 'matplotlib'
+
+  [OFF_m500] FULLBAND whitened:
+    n=13108  mean=-0.0000  std=1.0000  med=-0.0026  MAD=0.6836
+    skew=+0.0095  kurt=3.585  ex_kurt=+0.585  max|z|=4.43
+    |z|>3: 103 (exp 35)  |z|>4: 4 (exp 1)  |z|>5: 0 (exp 0)
+    AD=10.306 crit=0.752 FAIL  KS=0.0191 p=1.44e-04 FAIL
+    Plot skipped: No module named 'matplotlib'
+  [OFF_m500] BAND 20.0-210.0Hz whitened+bp:
+    n=13108  mean=-0.0000  std=1.0000  med=+0.0117  MAD=0.5933
+    skew=+0.0600  kurt=5.856  ex_kurt=+2.856  max|z|=6.18
+    |z|>3: 145 (exp 35)  |z|>4: 66 (exp 1)  |z|>5: 19 (exp 0)
+    AD=38.764 crit=0.752 FAIL  KS=0.0326 p=0.00e+00 FAIL
+    Plot skipped: No module named 'matplotlib'
+
+  [OFF_m300] FULLBAND whitened:
+    n=13108  mean=+0.0000  std=1.0000  med=+0.0009  MAD=0.6933
+    skew=+0.0017  kurt=3.617  ex_kurt=+0.617  max|z|=4.48
+    |z|>3: 99 (exp 35)  |z|>4: 6 (exp 1)  |z|>5: 0 (exp 0)
+    AD=13.123 crit=0.752 FAIL  KS=0.0201 p=4.90e-05 FAIL
+    Plot skipped: No module named 'matplotlib'
+  [OFF_m300] BAND 20.0-210.0Hz whitened+bp:
+    n=13108  mean=+0.0000  std=1.0000  med=+0.0021  MAD=0.5469
+    skew=-0.0080  kurt=7.560  ex_kurt=+4.560  max|z|=6.77
+    |z|>3: 199 (exp 35)  |z|>4: 75 (exp 1)  |z|>5: 33 (exp 0)
+    AD=109.118 crit=0.752 FAIL  KS=0.0571 p=0.00e+00 FAIL
+    Plot skipped: No module named 'matplotlib'
+
+  [OFF_m100] FULLBAND whitened:
+    n=13108  mean=+0.0000  std=1.0000  med=-0.0041  MAD=0.6901
+    skew=+0.0044  kurt=3.609  ex_kurt=+0.609  max|z|=4.56
+    |z|>3: 94 (exp 35)  |z|>4: 6 (exp 1)  |z|>5: 0 (exp 0)
+    AD=12.939 crit=0.752 FAIL  KS=0.0201 p=5.15e-05 FAIL
+    Plot skipped: No module named 'matplotlib'
+  [OFF_m100] BAND 20.0-210.0Hz whitened+bp:
+    n=13108  mean=-0.0000  std=1.0000  med=-0.0064  MAD=0.5369
+    skew=+0.0584  kurt=7.524  ex_kurt=+4.524  max|z|=6.96
+    |z|>3: 208 (exp 35)  |z|>4: 69 (exp 1)  |z|>5: 28 (exp 0)
+    AD=110.520 crit=0.752 FAIL  KS=0.0536 p=0.00e+00 FAIL
+    Plot skipped: No module named 'matplotlib'
+
+============================================================
+CLASSIFICATION
+============================================================
+  [H1 classification]
+    ex_kurt_trig=+2.605  mean_off=+6.354  delta=-3.749
+    outlier_ratio(4s)=36.0x expected
+    -> det_class=STRONGLY_NON_GAUSSIAN
+    -> excess_class=LINE_OR_RINGING_STRUCTURE
+  [L1 classification]
+    ex_kurt_trig=+4.582  mean_off=+3.980  delta=+0.602
+    outlier_ratio(4s)=74.0x expected
+    -> det_class=STRONGLY_NON_GAUSSIAN
+    -> excess_class=CHRONIC_NON_GAUSSIAN_BAND_NOISE
+
+============================================================
+REQUIRED COMPARISONS (20-210 Hz bandpassed)
+============================================================
+  [1. H1 trigger vs H1 off-source (mean off)]
+    ex_kurt: A=+2.605  B=+6.354  diff=-3.749
+    |z|>4:   A=36  B=91
+  [2. L1 trigger vs L1 off-source (mean off)]
+    ex_kurt: A=+4.582  B=+3.980  diff=+0.602
+    |z|>4:   A=74  B=70
+  [3. H1 trigger vs L1 trigger]
+    ex_kurt: A=+2.605  B=+4.582  diff=-1.977
+    |z|>4:   A=36  B=74
+  [4. H1 20-210Hz vs L1 20-210Hz (off-source mean)]
+    ex_kurt: A=+6.354  B=+3.980  diff=+2.374
+    |z|>4:   A=91  B=70
+  [5. L1 anomaly window vs L1 normal windows]
+    L1 TRIGGER ex_kurt=+4.582  L1 OFF_m500 ex_kurt=+2.856  diff=+1.726
+    L1 TRIGGER ex_kurt=+4.582  L1 OFF_m300 ex_kurt=+4.560  diff=+0.022
+    L1 TRIGGER ex_kurt=+4.582  L1 OFF_m100 ex_kurt=+4.524  diff=+0.059
+
+============================================================
+ARTIFACT GATE VERDICT
+============================================================
+  H1_GAUSSIANITY:  STRONGLY_NON_GAUSSIAN
+  L1_GAUSSIANITY:  STRONGLY_NON_GAUSSIAN
+  L1_EXCESS_CLASS: CHRONIC_NON_GAUSSIAN_BAND_NOISE
+
+  GAUSSIANITY_ARTIFACT_GATE: FAIL_L1_NON_GAUSSIAN
+  READY_FOR_REAL_LIGO_SSZ_CLAIM: NO
+
+  Interpretation:
+  L1 excess is NOT trigger-specific.
+  Non-Gaussianity is chronic and stationary across all windows.
+  20-210 Hz band behaves as persistent non-ideal noise under current whitening.
+  L1 blocked: chronic band noise, not astrophysical candidate.
+
+Outputs:
+  E:\clone\ssz-ligo-tests\reports\GAUSSIANITY_ARTIFACT_GATE_REPORT.md
+  E:\clone\ssz-ligo-tests\data_manifest\gaussianity_summary_stats.csv
+  E:\clone\ssz-ligo-tests\data_manifest\gaussianity_test_windows.csv
+  E:\clone\ssz-ligo-tests\logs\gaussianity_artifact_gate.log

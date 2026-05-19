@@ -1,0 +1,62 @@
+L1 LINE / NOTCH TEST -- 2026-05-19 07:11:55
+Trigger: 1411261107.984  Win: 4.0s  Band: 20.0-210.0Hz  Threshold: +6.0dB
+Notch width: +/-2.0Hz per peak
+
+============================================================
+TRIGGER WINDOW ANALYSIS
+============================================================
+
+  [H1 TRIGGER]  bandpower=1.4675e-43
+    Peaks in 20.0-210.0Hz (2 found, >+6.0dB over local median):
+        20.00 Hz  +8.8 dB  UNKNOWN
+       177.00 Hz  +6.4 dB  UNKNOWN
+    Bandpower (full):    1.4675e-43
+    Bandpower (notched): 6.4880e-44
+    Fraction in peaks:   55.8%
+    Structure class: LINE_DOMINATED
+
+  [L1 TRIGGER]  bandpower=2.7120e-43
+    Peaks in 20.0-210.0Hz (4 found, >+6.0dB over local median):
+        20.00 Hz  +7.4 dB  UNKNOWN
+        60.00 Hz  +17.0 dB  KNOWN_LINE:mains_60@60.0Hz
+       120.00 Hz  +6.9 dB  KNOWN_LINE:mains_120@120.0Hz
+       180.00 Hz  +6.9 dB  KNOWN_LINE:mains_180@180.0Hz
+    Bandpower (full):    2.7120e-43
+    Bandpower (notched): 1.2009e-43
+    Fraction in peaks:   55.7%
+    Structure class: LINE_DOMINATED
+
+============================================================
+OFF-SOURCE WINDOW ANALYSIS (L1, -500s)
+============================================================
+
+  [L1 OFF_m500]  bandpower=3.0832e-43
+    Peaks in 20.0-210.0Hz (3 found, >+6.0dB over local median):
+        20.00 Hz  +7.4 dB  UNKNOWN
+        60.00 Hz  +13.5 dB  KNOWN_LINE:mains_60@60.0Hz
+       180.00 Hz  +6.3 dB  KNOWN_LINE:mains_180@180.0Hz
+    Bandpower (full):    3.0832e-43
+    Bandpower (notched): 1.4223e-43
+    Fraction in peaks:   53.9%
+    Structure class: LINE_DOMINATED
+
+============================================================
+CROSS-COMPARISON
+============================================================
+  L1/H1 bandpower ratio (full):    1.848
+  L1/H1 bandpower ratio (notched): 1.851
+  Ratio change after notching:     1.002
+  -> EXCESS_PERSISTS_AFTER_NOTCHING
+
+  L1 trigger  structure: LINE_DOMINATED
+  L1 off-500s structure: LINE_DOMINATED
+  L1 trigger  n_peaks: 4
+  L1 off-500s n_peaks: 3
+  L1 trigger  notch_frac: 55.7%
+  L1 off-500s notch_frac: 53.9%
+  -> CHRONIC_LINE_DOMINATED
+
+Outputs:
+  E:\clone\ssz-ligo-tests\reports\L1_LINE_NOTCH_TEST_REPORT.md
+  E:\clone\ssz-ligo-tests\data_manifest\l1_line_notch_peaks.csv
+  E:\clone\ssz-ligo-tests\data_manifest\l1_line_notch_summary.csv

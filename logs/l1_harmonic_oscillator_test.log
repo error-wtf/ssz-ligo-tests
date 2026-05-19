@@ -1,0 +1,69 @@
+L1 HARMONIC OSCILLATOR TEST — 2026-05-19 01:32:12
+Band: 20.0-210.0Hz | Win: 4.0s | +6.0dB threshold | ±3.0Hz harmonic tol
+
+[1] L1 TRIGGER WINDOW
+
+=======================================================
+L1 [TRIGGER]  t_center=1411261107.984  dur=4.0s
+=======================================================
+  Loaded 16384 samples @ 4096 Hz
+  Peaks (6): 26.0Hz(+13.3dB), 36.0Hz(+9.7dB), 41.0Hz(+11.9dB), 53.0Hz(+7.5dB), 60.0Hz(+23.5dB), 120.0Hz(+6.1dB)
+  Harmonic test: f0=26.00Hz, 2 peaks match
+    n=1  f=26.00Hz  n*f0=26.00Hz  d=+0.00Hz
+    n=2  f=53.00Hz  n*f0=52.00Hz  d=+1.00Hz
+  Envelope: gamma=1.764/s  R2=0.604  -> WEAK_DECAY_HINT
+  STATUS: POSSIBLE_HARMONIC_PAIR
+
+[2] H1 TRIGGER WINDOW (cross-check)
+
+=======================================================
+H1 [TRIGGER]  t_center=1411261107.984  dur=4.0s
+=======================================================
+  Loaded 16384 samples @ 4096 Hz
+  Peaks (3): 22.0Hz(+19.1dB), 28.0Hz(+15.5dB), 40.0Hz(+11.0dB)
+  Harmonic test: f0=22.00Hz, 1 peaks match
+    n=1  f=22.00Hz  n*f0=22.00Hz  d=+0.00Hz
+  Envelope: gamma=0.983/s  R2=0.261  -> NO_CLEAR_DECAY
+  STATUS: MULTIPLE_PEAKS_NO_HARMONIC_PATTERN
+
+[3] L1 OFF-SOURCE (-500s)
+
+=======================================================
+L1 [OFF_SOURCE]  t_center=1411260607.984  dur=16.0s
+=======================================================
+  Loaded 65536 samples @ 4096 Hz
+  Peaks (3): 27.0Hz(+15.8dB), 41.0Hz(+6.5dB), 60.0Hz(+22.2dB)
+  Harmonic test: f0=27.00Hz, 1 peaks match
+    n=1  f=27.00Hz  n*f0=27.00Hz  d=+0.00Hz
+  Envelope: gamma=0.041/s  R2=0.013  -> NO_CLEAR_DECAY
+  STATUS: MULTIPLE_PEAKS_NO_HARMONIC_PATTERN
+
+[4] H1 OFF-SOURCE (-500s)
+
+=======================================================
+H1 [OFF_SOURCE]  t_center=1411260607.984  dur=16.0s
+=======================================================
+  Loaded 65536 samples @ 4096 Hz
+  Peaks (2): 24.0Hz(+16.6dB), 32.0Hz(+11.2dB)
+  Harmonic test: f0=24.00Hz, 1 peaks match
+    n=1  f=24.00Hz  n*f0=24.00Hz  d=+0.00Hz
+  Envelope: gamma=0.079/s  R2=0.063  -> NO_CLEAR_DECAY
+  STATUS: MULTIPLE_PEAKS_NO_HARMONIC_PATTERN
+
+=======================================================
+CROSS-DETECTOR COMPARISON
+=======================================================
+  L1 trigger peaks (rounded Hz): [26, 36, 41, 53, 60, 120]
+  H1 trigger peaks (rounded Hz): [22, 28, 40]
+  Shared peaks: []
+  Only in L1:  [26, 36, 41, 53, 60, 120]
+  Only in H1:  [22, 28, 40]
+  -> L1-only peaks: INSTRUMENT/LOCAL ARTEFACT CANDIDATE
+
+  L1 off-source peaks: [27, 41, 60]
+  -> L1 peaks [41, 60] ALSO IN OFF-SOURCE -> PERSISTENT ARTEFACT / SPECTRAL LINE
+
+OVERALL L1 HARMONIC STATUS: RESONANCE_IN_OFF_SOURCE_TOO
+
+Report: E:\clone\ssz-ligo-tests\reports\L1_HARMONIC_OSCILLATOR_TEST.md
+CSV:    E:\clone\ssz-ligo-tests\reports\L1_HARMONIC_OSCILLATOR_TEST.csv

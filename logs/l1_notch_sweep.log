@@ -1,0 +1,68 @@
+L1 NOTCH SWEEP -- 2026-05-19 07:30:11
+Trigger: 1411261107.984  Win: 4.0s  Band: 20.0-210.0Hz  Notch: +/-1.5Hz
+
+============================================================
+DETECTOR: H1  (TRIGGER)
+============================================================
+
+  [H1]  Top peaks (sorted by height):
+     177.00 Hz  +6.4 dB
+      20.00 Hz  +6.3 dB
+      22.00 Hz  +5.6 dB
+     169.00 Hz  +3.9 dB
+     124.00 Hz  +3.6 dB
+      28.00 Hz  +3.5 dB
+      24.00 Hz  +3.5 dB
+      40.00 Hz  +3.4 dB
+      75.00 Hz  +3.3 dB
+      36.00 Hz  +3.0 dB
+  Bandpower after notching N peaks:
+    N= 0:  1.4675e-43  (100.0% of full)
+    N= 1:  1.4662e-43  (99.9% of full)
+    N= 3:  5.2546e-44  (35.8% of full)
+    N= 5:  5.2275e-44  (35.6% of full)
+    N=10:  1.8424e-44  (12.6% of full)
+    N=20:  1.6758e-44  (11.4% of full)
+
+============================================================
+DETECTOR: L1  (TRIGGER)
+============================================================
+
+  [L1]  Top peaks (sorted by height):
+      60.00 Hz  +17.0 dB
+     120.00 Hz  +7.4 dB
+     180.00 Hz  +6.9 dB
+      20.00 Hz  +6.2 dB
+      22.00 Hz  +4.0 dB
+     166.00 Hz  +3.5 dB
+      24.00 Hz  +3.4 dB
+     132.00 Hz  +3.0 dB
+      81.00 Hz  +2.9 dB
+     193.00 Hz  +2.9 dB
+  Bandpower after notching N peaks:
+    N= 0:  2.7120e-43  (100.0% of full)
+    N= 1:  2.6245e-43  (96.8% of full)
+    N= 3:  2.6213e-43  (96.7% of full)
+    N= 5:  9.3855e-44  (34.6% of full)
+    N=10:  5.6713e-44  (20.9% of full)
+    N=20:  5.3842e-44  (19.9% of full)
+
+============================================================
+L1/H1 BANDPOWER RATIO SWEEP
+============================================================
+   N notched          H1 BP          L1 BP    L1/H1    L1 frac
+  --------------------------------------------------------------
+           0      1.4675e-43      2.7120e-43     1.848     100.0%
+           1      1.4662e-43      2.6245e-43     1.790      96.8%
+           3      5.2546e-44      2.6213e-43     4.989      96.7%
+           5      5.2275e-44      9.3855e-44     1.795      34.6%
+          10      1.8424e-44      5.6713e-44     3.078      20.9%
+          20      1.6758e-44      5.3842e-44     3.213      19.9%
+
+  L1/H1 ratio change after 10 notches: 166.6% of original
+  -> SWEEP_VERDICT: EXCESS_PERSISTS_BROADBAND
+
+Outputs:
+  E:\clone\ssz-ligo-tests\reports\L1_NOTCH_SWEEP_REPORT.md
+  E:\clone\ssz-ligo-tests\data_manifest\l1_notch_sweep_peaks.csv
+  E:\clone\ssz-ligo-tests\data_manifest\l1_notch_sweep_ratios.csv

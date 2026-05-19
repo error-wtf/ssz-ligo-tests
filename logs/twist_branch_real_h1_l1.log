@@ -1,0 +1,53 @@
+Twist Branch Real H1/L1 Exploratory — 2026-05-18 23:05:01
+Trigger GPS: 1411261107.984
+Theta scan: [0.0, 0.001, 0.003, 0.01, 0.03, 0.1] rad
+Antenna patterns - H1: F+=0.592 Fx=0.344  L1: F+=0.437 Fx=0.683
+NOTE: Antenna patterns are approximate sky-position proxies, not from PE posterior.
+
+============================================================
+  DETECTOR: H1
+============================================================
+  Robust PSD band_median = 2.8434e-47
+  GR: SNR=40.52  lnL=-3.2918e+07  resid_rms=1.711e-21
+  Scale-only: SNR=10.43  lnL=-3.2918e+07  delta_lnL=3.6433e-06  resid_rms=1.711e-21
+  theta=0.000: SNR=10.43  lnL=-3.2918e+07  d_vs_GR=3.643e-06  d_vs_scale=0.000e+00  resid=1.711e-21
+  theta=0.001: SNR=10.43  lnL=-3.2918e+07  d_vs_GR=3.643e-06  d_vs_scale=0.000e+00  resid=1.711e-21
+  theta=0.003: SNR=10.44  lnL=-3.2918e+07  d_vs_GR=3.643e-06  d_vs_scale=0.000e+00  resid=1.711e-21
+  theta=0.010: SNR=10.45  lnL=-3.2918e+07  d_vs_GR=3.647e-06  d_vs_scale=3.725e-09  resid=1.711e-21
+  theta=0.030: SNR=10.48  lnL=-3.2918e+07  d_vs_GR=3.647e-06  d_vs_scale=3.725e-09  resid=1.711e-21
+  theta=0.100: SNR=10.55  lnL=-3.2918e+07  d_vs_GR=3.651e-06  d_vs_scale=7.451e-09  resid=1.711e-21
+  EXPLORATORY_BEST_THETA (lnL scan): 0.100 rad  d_vs_scale=7.451e-09  [NOT A FIT — DIAGNOSTIC ONLY]
+
+============================================================
+  DETECTOR: L1
+============================================================
+  Robust PSD band_median = 1.9212e-47
+  GR: SNR=277.54  lnL=-1.5718e+10  resid_rms=1.114e-20
+  Scale-only: SNR=21.00  lnL=-1.5718e+10  delta_lnL=2.4796e-05  resid_rms=1.114e-20
+  theta=0.000: SNR=21.00  lnL=-1.5718e+10  d_vs_GR=2.480e-05  d_vs_scale=0.000e+00  resid=1.114e-20
+  theta=0.001: SNR=20.77  lnL=-1.5718e+10  d_vs_GR=2.480e-05  d_vs_scale=0.000e+00  resid=1.114e-20
+  theta=0.003: SNR=20.32  lnL=-1.5718e+10  d_vs_GR=2.480e-05  d_vs_scale=0.000e+00  resid=1.114e-20
+  theta=0.010: SNR=18.73  lnL=-1.5718e+10  d_vs_GR=2.670e-05  d_vs_scale=1.907e-06  resid=1.114e-20
+  theta=0.030: SNR=14.20  lnL=-1.5718e+10  d_vs_GR=2.670e-05  d_vs_scale=1.907e-06  resid=1.114e-20
+  theta=0.100: SNR=1.71  lnL=-1.5718e+10  d_vs_GR=2.670e-05  d_vs_scale=1.907e-06  resid=1.114e-20
+  EXPLORATORY_BEST_THETA (lnL scan): 0.010 rad  d_vs_scale=1.907e-06  [NOT A FIT — DIAGNOSTIC ONLY]
+
+============================================================
+  H1/L1 COHERENCE (twist scan)
+============================================================
+     theta    H1_dlnL_vs_GR    L1_dlnL_vs_GR    H1_dlnL_vs_sc    L1_dlnL_vs_sc
+     0.000        3.643e-06        2.480e-05        0.000e+00        0.000e+00
+     0.001        3.643e-06        2.480e-05        0.000e+00        0.000e+00
+     0.003        3.643e-06        2.480e-05        0.000e+00        0.000e+00
+     0.010        3.647e-06        2.670e-05        3.725e-09        1.907e-06
+     0.030        3.647e-06        2.670e-05        3.725e-09        1.907e-06
+     0.100        3.651e-06        2.670e-05        7.451e-09        1.907e-06
+
+  H1 exploratory best theta: 0.100 rad
+  L1 exploratory best theta: 0.010 rad
+  Best-theta agreement (< 0.05 rad): False
+
+  COHERENCE_STATUS: TWIST_PARTIAL_L1_SNR_ANOMALY
+
+  -> E:\clone\ssz-ligo-tests\data_manifest\twist_branch_theta_scan.csv
+  -> reports/TWIST_BRANCH_REAL_H1_L1_EXPLORATORY_REPORT.md

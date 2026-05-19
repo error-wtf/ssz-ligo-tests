@@ -1,0 +1,21 @@
+CALIBRATION/PSD SENSITIVITY — 2026-05-18 21:30:09
+READY_FOR_REAL_CLAIM: NO | No physics claim from sensitivity scan
+  Nominal: lnL_GR=-3.2372e+07 lnL_SSZ=-3.2372e+07 delta=6.3404e-06
+  -- Amplitude calibration scan --
+    amp_cal=+0.00: delta_lnL=6.3404e-06 diff_vs_nom=0.0000e+00 -> WITHIN_NOMINAL
+    amp_cal=+0.03: delta_lnL=6.3814e-06 diff_vs_nom=4.0978e-08 -> WITHIN_NOMINAL
+    amp_cal=-0.03: delta_lnL=6.2995e-06 diff_vs_nom=-4.0978e-08 -> WITHIN_NOMINAL
+    amp_cal=+0.05: delta_lnL=6.4112e-06 diff_vs_nom=7.0781e-08 -> WITHIN_NOMINAL
+    amp_cal=-0.05: delta_lnL=6.2734e-06 diff_vs_nom=-6.7055e-08 -> WITHIN_NOMINAL
+  -- Phase calibration scan --
+    phase_cal=+0.000 rad: delta_lnL=6.3404e-06 diff=0.0000e+00 -> WITHIN_NOMINAL
+    phase_cal=+0.010 rad: delta_lnL=6.3293e-06 diff=-1.1176e-08 -> WITHIN_NOMINAL
+    phase_cal=-0.010 rad: delta_lnL=6.3516e-06 diff=1.1176e-08 -> WITHIN_NOMINAL
+    phase_cal=+0.050 rad: delta_lnL=6.2846e-06 diff=-5.5879e-08 -> WITHIN_NOMINAL
+    phase_cal=-0.050 rad: delta_lnL=6.3963e-06 diff=5.5879e-08 -> WITHIN_NOMINAL
+  -- PSD Welch variant scan --
+    nperseg=2048: delta_lnL=2.1756e-06 diff=-4.1649e-06 -> WITHIN_NOMINAL
+    nperseg=4096: delta_lnL=6.3404e-06 diff=0.0000e+00 -> WITHIN_NOMINAL
+    nperseg=8192: delta_lnL=2.8759e-05 diff=2.2419e-05 -> WITHIN_NOMINAL
+  SSZ_EFFECT=6.3404e-06 CAL_SPREAD=7.0781e-08
+  SSZ_EFFECT_ABOVE_CALIBRATION: YES — SSZ effect exceeds calibration spread

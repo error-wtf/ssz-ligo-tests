@@ -1,0 +1,2 @@
+ERROR: E:\clone\ssz-ligo-tests\pyproject.toml: Cannot declare ('tool', 'pytest', 'ini_options') twice (at line 47, column 25)
+

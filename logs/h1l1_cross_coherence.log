@@ -1,0 +1,40 @@
+H1/L1 CROSS-COHERENCE + PHASE -- 2026-05-19 07:18:22
+Trigger: 1411261107.984  Win: 4.0s
+NPERSEG=1024  Sub-bands: ['full', '20-60', '60-120', '120-210']
+
+  [TRIGGER]
+    full      : mean_coh=0.0561  phase_R=0.912  mean_phase=-167.0deg
+    20-60     : mean_coh=0.0618  phase_R=0.996  mean_phase=-154.6deg
+    60-120    : mean_coh=0.0631  phase_R=0.989  mean_phase=-166.0deg
+    120-210   : mean_coh=0.0490  phase_R=0.844  mean_phase=-174.8deg
+
+  [OFF_m500]
+    full      : mean_coh=0.0818  phase_R=0.991  mean_phase=-10.7deg
+    20-60     : mean_coh=0.1068  phase_R=0.999  mean_phase=-18.6deg
+    60-120    : mean_coh=0.0896  phase_R=0.998  mean_phase=-11.1deg
+    120-210   : mean_coh=0.0643  phase_R=0.990  mean_phase=-6.7deg
+
+  [OFF_m300]
+    full      : mean_coh=0.1204  phase_R=0.987  mean_phase=+170.2deg
+    20-60     : mean_coh=0.1608  phase_R=0.998  mean_phase=+162.5deg
+    60-120    : mean_coh=0.1377  phase_R=0.999  mean_phase=+170.3deg
+    120-210   : mean_coh=0.0897  phase_R=0.980  mean_phase=+173.8deg
+
+============================================================
+SUMMARY — TRIGGER COHERENCE vs OFF-SOURCE
+============================================================
+  Band           Coh_TRIG   Coh_OFF500   PhaseR_TRIG   PhaseR_OFF
+  -----------------------------------------------------------------
+  full             0.0561       0.0818        0.9115       0.9914
+  20-60            0.0618       0.1068        0.9956       0.9991
+  60-120           0.0631       0.0896        0.9891       0.9984
+  120-210          0.0490       0.0643        0.8438       0.9904
+
+  KEY: Trigger full-band coherence: 0.0561  (INCOHERENT)
+  KEY: Trigger full-band phase R: 0.9115  (STABLE_PHASE)
+  KEY: Max GW light-travel time: 10 ms
+  -> COHERENCE_VERDICT: WEAK_COHERENCE_INCONCLUSIVE
+
+Outputs:
+  E:\clone\ssz-ligo-tests\reports\H1L1_CROSS_COHERENCE_REPORT.md
+  E:\clone\ssz-ligo-tests\data_manifest\h1l1_cross_coherence.csv

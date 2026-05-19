@@ -1,0 +1,88 @@
+GW250207 FULL ARTIFACT GATE COMPARISON -- 2026-05-19 08:27:50
+GW240925 GPS: 1411261107.984
+GW250207 GPS: 1422964625.26
+
+GW250207 strain files:
+  H1: NOT FOUND
+  L1: NOT FOUND
+
+=================================================================
+EVENT: GW240925  GPS: 1411261107.984
+=================================================================
+  H1: OK (H-H1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5)
+  L1: OK (L-L1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5)
+
+  [1] Bandpower 20-210 Hz
+    H1: trigger=2.412e-40  off-500s=4.248e-40
+    L1: trigger=3.772e-40  off-500s=8.416e-40
+    L1/H1 ratio: 1.564
+
+  [2] Sub-band excess kurtosis
+    H1 20-40: ex_k=+3.673
+    H1 40-80: ex_k=+0.340
+    H1 80-120: ex_k=+2.386
+    H1 120-160: ex_k=+1.252
+    H1 160-210: ex_k=+0.405
+    L1 20-40: ex_k=+44.857
+    L1 40-80: ex_k=-0.515
+    L1 80-120: ex_k=+3.266
+    L1 120-160: ex_k=+5.663
+    L1 160-210: ex_k=+0.198
+
+  [3] Line/notch test
+    H1: full=2.412e-40  notched=2.310e-40  line_frac=4.2%
+    L1: full=3.772e-40  notched=3.597e-40  line_frac=4.7%
+
+  [4] Multi-window stationarity (+-500s)
+    H1: N=233  q=10.3%  z=-1.10
+    L1: N=251  q=74.5%  z=+0.32
+
+  [5] H1/L1 cross-coherence
+    coh_mean=0.0561  R=0.9115  phase=-167.0deg
+
+  [6] Phase-randomization null test (N=100)
+    H1: bp_q=0.0%  kurt_q=44.0%  kurt=-0.407
+    L1: bp_q=0.0%  kurt_q=60.0%  kurt=-0.288
+
+=================================================================
+EVENT: GW250207  GPS: 1422964625.26
+=================================================================
+  H1: MISSING (N/A)
+  L1: MISSING (N/A)
+  SKIPPED — strain files not available
+
+=================================================================
+DIRECT COMPARISON: GW240925 vs GW250207
+=================================================================
+  Metric                             GW240925     GW250207 Flag
+  -----------------------------------------------------------------
+  L1/H1 BP ratio                        1.564          N/A 
+  L1 stationarity Q %                  74.500          N/A 
+  H1 stationarity Q %                  10.300          N/A 
+  L1 line fraction                      0.046          N/A 
+  H1/L1 coherence                       0.056          N/A 
+  Cross-phase R                         0.911          N/A 
+  L1 20-40Hz ex_k                      44.857          N/A 
+  L1 40-80Hz ex_k                      -0.515          N/A 
+  L1 80-120Hz ex_k                      3.266          N/A 
+  L1 120-160Hz ex_k                     5.663          N/A 
+  L1 160-210Hz ex_k                     0.198          N/A 
+  H1 20-40Hz ex_k                       3.673          N/A 
+  L1 phase-rand kurtosis Q%            60.000          N/A 
+
+=================================================================
+GW250207_STATUS: MISSING_DATA
+=================================================================
+  - GW250207 strain files not available
+
+  Interpretation: GW250207 strain files not available. Run scripts/download_gw250207_strain.py first. Cannot classify.
+
+GATE VERDICTS:
+  READY_FOR_REAL_LIGO_SSZ_CLAIM: NO
+  SSZ_SUPPORT_CLAIM_MADE: NO
+  SSZ_FALSIFICATION_CLAIM_MADE: NO
+
+Outputs:
+  E:\clone\ssz-ligo-tests\reports\GW250207_ARTIFACT_GATE_COMPARISON.md
+  E:\clone\ssz-ligo-tests\data_manifest\gw250207_artifact_gate_summary.csv
+  E:\clone\ssz-ligo-tests\logs\gw250207_comparison.log

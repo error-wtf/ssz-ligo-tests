@@ -1,0 +1,65 @@
+UNIT & NORMALIZATION AUDIT -- 2026-05-19 08:07:49
+FS=4096.0 Hz  DUR=16.0s  NPERSEG=4096  df=1.0000 Hz
+Injection: A=1.000e-21 strain  f0=100.0 Hz  window=hann
+Tolerance: 5%
+
+[TEST 1] PSD peak normalization (sine injection)
+  f0=100.0 Hz  A=1.000e-21  df=1.0000 Hz
+  Hann ENB: 1.5004  (S2/S1^2, theoretical=1.5)
+  PSD peak at f0:           3.333333e-43 strain^2/Hz
+  Expected (A^2/(2*df*ENB)): 3.332520e-43 strain^2/Hz
+  Ratio: 1.000244  Error: 0.024%  PASS=True
+  Note: Peak height depends on ENB. Bandpower integral (Test 2) is the reliable normalization check.
+
+[TEST 2] Bandpower integration (sine injection)
+  Bandpower [95.0-105.0 Hz]: 5.000000e-43 strain^2
+  Expected (A^2/2):              5.000000e-43 strain^2
+  Ratio: 1.000000  Error: 0.000%  PASS=True
+
+[TEST 3] ASD normalization
+  Hann ENB: 1.5004
+  ASD peak at f0:              5.773503e-22 strain/sqrt(Hz)
+  Expected (A/sqrt(2*df*ENB)): 5.772798e-22 strain/sqrt(Hz)
+  Ratio: 1.000122  Error: 0.012%  PASS=True
+
+[TEST 4] Window power correction factor
+  sum(w^2)/N (Hann): 0.374908
+  Expected (Hann):   0.375000
+  Error: 0.0244%  PASS=True
+
+[TEST 5] One-sided vs two-sided PSD consistency
+  var(x):         5.000000e-43
+  one-sided power: 5.000000e-43  err=0.000%  PASS=True
+  two-sided power: 5.000000e-43  err=0.000%  PASS=True
+
+[TEST 6] rfft normalization convention
+  rfft magnitude at f0: 3.276800e-17
+  Expected (A*n/2):     3.276800e-17
+  Ratio: 1.000000  Error: 0.000%  PASS=True
+  PSD from rfft peak: 8.000000e-42
+  Expected PSD peak:  8.000000e-42
+  Ratio: 1.000000  Error: 0.000%  PASS=True
+
+[TEST 7] Real H1 strain PSD units check
+  ASD at 100 Hz: 5.1233e-24 strain/sqrt(Hz)  in_range=True
+  ASD at  60 Hz: 1.2576e-23 strain/sqrt(Hz)  (60Hz line, should be elevated)
+  60/100 ASD ratio: 2.45  (>1 expected for 60Hz line)
+  Sample rate: 4096 Hz  n_samples: 65536
+
+============================================================
+AUDIT SUMMARY
+============================================================
+  PASS  psd_peak_normalization
+  PASS  bandpower_integration
+  PASS  asd_normalization
+  PASS  window_power_correction
+  PASS  onesided_vs_twosided
+  PASS  rfft_normalization
+  PASS  real_strain_units
+
+OVERALL: ALL NORMALIZATION CHECKS PASSED
+Pipeline FFT/PSD/ASD units are consistent.
+
+Outputs:
+  E:\clone\ssz-ligo-tests\reports\UNIT_NORMALIZATION_AUDIT.md
+  E:\clone\ssz-ligo-tests\data_manifest\unit_normalization_audit.csv

@@ -1,0 +1,38 @@
+L1 GLITCH/STATIONARITY DIAGNOSTIC — 2026-05-18 22:21:22
+No SSZ claims. Data quality only.
+Band: 20.0–210.0 Hz | Trigger: 1411261107.984
+
+  === H1 ===
+  Off-source bandpowers:
+    minus500s: 1.492e-45
+    minus300s: 7.475e-46
+    minus100s: 1.434e-45
+  Trigger bandpower (median of slices): 1.146e-41
+  Trigger bandpower (max slice):        5.977e-41
+  bp_on / bp_off(-500s): 7683.3x
+  MAD z-score: -0.6
+  Off-source spread (rel std): 0.276
+  H1_CLASSIFICATION: L1_OK_SIGNAL_LIKE
+
+  === L1 ===
+  Off-source bandpowers:
+    minus500s: 5.478e-46
+    minus300s: 3.946e-46
+    minus100s: 1.809e-45
+  Trigger bandpower (median of slices): 4.150e-41
+  Trigger bandpower (max slice):        1.395e-40
+  bp_on / bp_off(-500s): 75772.1x
+  MAD z-score: 1.3
+  Off-source spread (rel std): 0.691
+  L1_CLASSIFICATION: L1_PSD_WINDOW_NOT_REPRESENTATIVE
+
+  === H1 / L1 BANDPOWER COMPARISON ===
+  Trigger bandpower H1: 1.146e-41
+  Trigger bandpower L1: 4.150e-41
+  L1/H1 bandpower ratio: 3.6x
+  H1 bp_ratio vs off-500s: 7683.3x
+  L1 bp_ratio vs off-500s: 75772.1x
+  [plot skipped: No module named 'matplotlib']
+
+  -> data_manifest/l1_20_210hz_diagnostics.csv
+  -> reports/L1_20_210HZ_GLITCH_STATIONARITY_REPORT.md

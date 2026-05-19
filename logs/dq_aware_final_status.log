@@ -1,0 +1,7 @@
+DQ-Aware Final Status -- 2026-05-18 23:49:58
+Trigger GPS: 1411261107.984
+H1: bp_ratio=0.76  (from provenance run)
+L1: bp_ratio=2.28  (from provenance run)
+  -> reports/DQ_AWARE_FINAL_LIGO_STATUS.md
+  -> reports/H1_ONLY_EXPLORATORY_STRAIN_REPORT.md
+  -> reports/L1_EXCLUDED_OR_DIAGNOSTIC_REPORT.md

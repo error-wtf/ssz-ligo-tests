@@ -1,0 +1,147 @@
+L1/H1 GAUSSIANITY TEST — 2026-05-19 01:34:31
+Trigger GPS: 1411261107.984 | Win: 4.0s | PSD: -500.0s x 64.0s
+Band: 20.0-210.0 Hz | Whitening: PSD-division in freq domain
+
+============================================================
+DETECTOR: H1
+============================================================
+  PSD source: -500.0s, 64.0s, fs=4096Hz, n=262144
+
+  --- TRIGGER (offset=+0s) ---
+  FULLBAND whitened:
+  [H1_TRIGGER_FULL] n=13108  mu=-0.0000  sigma=1.0000  skew=+0.0095  kurt=1.732  ex_kurt=-1.268
+    |z|>3: 0 (exp 35)  |z|>4: 0 (exp 1)  |z|>5: 0 (exp 0)
+    AD stat=328.6146  AD 5% crit=0.7520  -> FAIL
+    KS stat=0.1116  KS p=1.4221e-142  -> FAIL
+    VERDICT: NON_GAUSSIAN:KURTOSIS_EXCESS(-1.27),AD_FAIL,KS_FAIL
+  BAND 20.0-210.0Hz whitened+bandpassed:
+  [H1_TRIGGER_BP] n=13108  mu=+0.0000  sigma=1.0000  skew=+0.2977  kurt=5.605  ex_kurt=+2.605
+    |z|>3: 131 (exp 35)  |z|>4: 36 (exp 1)  |z|>5: 15 (exp 0)
+    AD stat=35.3306  AD 5% crit=0.7520  -> FAIL
+    KS stat=0.0347  KS p=3.9719e-14  -> FAIL
+    VERDICT: NON_GAUSSIAN:KURTOSIS_EXCESS(+2.61),EXCESS_OUTLIERS_4s(36vs1),AD_FAIL,KS_FAIL
+
+  --- OFF_m500 (offset=-500s) ---
+  FULLBAND whitened:
+  [H1_OFF_m500_FULL] n=13108  mu=-0.0000  sigma=1.0000  skew=-0.0001  kurt=1.591  ex_kurt=-1.409
+    |z|>3: 0 (exp 35)  |z|>4: 0 (exp 1)  |z|>5: 0 (exp 0)
+    AD stat=505.9335  AD 5% crit=0.7520  -> FAIL
+    KS stat=0.1386  KS p=3.5477e-220  -> FAIL
+    VERDICT: NON_GAUSSIAN:KURTOSIS_EXCESS(-1.41),AD_FAIL,KS_FAIL
+  BAND 20.0-210.0Hz whitened+bandpassed:
+  [H1_OFF_m500_BP] n=13108  mu=+0.0000  sigma=1.0000  skew=-0.1394  kurt=9.375  ex_kurt=+6.375
+    |z|>3: 308 (exp 35)  |z|>4: 91 (exp 1)  |z|>5: 24 (exp 0)
+    AD stat=410.7976  AD 5% crit=0.7520  -> FAIL
+    KS stat=0.1090  KS p=4.5999e-136  -> FAIL
+    VERDICT: NON_GAUSSIAN:KURTOSIS_EXCESS(+6.37),EXCESS_OUTLIERS_4s(91vs1),AD_FAIL,KS_FAIL
+
+  --- OFF_m300 (offset=-300s) ---
+  FULLBAND whitened:
+  [H1_OFF_m300_FULL] n=13108  mu=+0.0000  sigma=1.0000  skew=-0.0000  kurt=1.592  ex_kurt=-1.408
+    |z|>3: 0 (exp 35)  |z|>4: 0 (exp 1)  |z|>5: 0 (exp 0)
+    AD stat=505.7999  AD 5% crit=0.7520  -> FAIL
+    KS stat=0.1387  KS p=1.3475e-220  -> FAIL
+    VERDICT: NON_GAUSSIAN:KURTOSIS_EXCESS(-1.41),AD_FAIL,KS_FAIL
+  BAND 20.0-210.0Hz whitened+bandpassed:
+  [H1_OFF_m300_BP] n=13108  mu=+0.0000  sigma=1.0000  skew=-0.1271  kurt=9.334  ex_kurt=+6.334
+    |z|>3: 306 (exp 35)  |z|>4: 91 (exp 1)  |z|>5: 28 (exp 0)
+    AD stat=408.0159  AD 5% crit=0.7520  -> FAIL
+    KS stat=0.1106  KS p=5.1181e-140  -> FAIL
+    VERDICT: NON_GAUSSIAN:KURTOSIS_EXCESS(+6.33),EXCESS_OUTLIERS_4s(91vs1),AD_FAIL,KS_FAIL
+
+  --- OFF_m100 (offset=-100s) ---
+  load failed
+
+============================================================
+DETECTOR: L1
+============================================================
+  PSD source: -500.0s, 64.0s, fs=4096Hz, n=262144
+
+  --- TRIGGER (offset=+0s) ---
+  FULLBAND whitened:
+  [L1_TRIGGER_FULL] n=13108  mu=-0.0000  sigma=1.0000  skew=-0.0015  kurt=3.618  ex_kurt=+0.618
+    |z|>3: 101 (exp 35)  |z|>4: 6 (exp 1)  |z|>5: 0 (exp 0)
+    AD stat=13.1503  AD 5% crit=0.7520  -> FAIL
+    KS stat=0.0202  KS p=4.3782e-05  -> FAIL
+    VERDICT: NON_GAUSSIAN:EXCESS_OUTLIERS_4s(6vs1),AD_FAIL,KS_FAIL
+  BAND 20.0-210.0Hz whitened+bandpassed:
+  [L1_TRIGGER_BP] n=13108  mu=-0.0000  sigma=1.0000  skew=-0.0352  kurt=7.582  ex_kurt=+4.582
+    |z|>3: 203 (exp 35)  |z|>4: 74 (exp 1)  |z|>5: 29 (exp 0)
+    AD stat=108.1823  AD 5% crit=0.7520  -> FAIL
+    KS stat=0.0537  KS p=2.4257e-33  -> FAIL
+    VERDICT: NON_GAUSSIAN:KURTOSIS_EXCESS(+4.58),EXCESS_OUTLIERS_4s(74vs1),AD_FAIL,KS_FAIL
+
+  --- OFF_m500 (offset=-500s) ---
+  FULLBAND whitened:
+  [L1_OFF_m500_FULL] n=13108  mu=-0.0000  sigma=1.0000  skew=+0.0095  kurt=3.585  ex_kurt=+0.585
+    |z|>3: 103 (exp 35)  |z|>4: 4 (exp 1)  |z|>5: 0 (exp 0)
+    AD stat=10.3055  AD 5% crit=0.7520  -> FAIL
+    KS stat=0.0191  KS p=1.4564e-04  -> FAIL
+    VERDICT: NON_GAUSSIAN:EXCESS_OUTLIERS_4s(4vs1),AD_FAIL,KS_FAIL
+  BAND 20.0-210.0Hz whitened+bandpassed:
+  [L1_OFF_m500_BP] n=13108  mu=-0.0000  sigma=1.0000  skew=+0.0600  kurt=5.856  ex_kurt=+2.856
+    |z|>3: 145 (exp 35)  |z|>4: 66 (exp 1)  |z|>5: 19 (exp 0)
+    AD stat=38.7644  AD 5% crit=0.7520  -> FAIL
+    KS stat=0.0326  KS p=1.5923e-12  -> FAIL
+    VERDICT: NON_GAUSSIAN:KURTOSIS_EXCESS(+2.86),EXCESS_OUTLIERS_4s(66vs1),AD_FAIL,KS_FAIL
+
+  --- OFF_m300 (offset=-300s) ---
+  FULLBAND whitened:
+  [L1_OFF_m300_FULL] n=13108  mu=+0.0000  sigma=1.0000  skew=+0.0017  kurt=3.617  ex_kurt=+0.617
+    |z|>3: 99 (exp 35)  |z|>4: 6 (exp 1)  |z|>5: 0 (exp 0)
+    AD stat=13.1235  AD 5% crit=0.7520  -> FAIL
+    KS stat=0.0201  KS p=4.9469e-05  -> FAIL
+    VERDICT: NON_GAUSSIAN:EXCESS_OUTLIERS_4s(6vs1),AD_FAIL,KS_FAIL
+  BAND 20.0-210.0Hz whitened+bandpassed:
+  [L1_OFF_m300_BP] n=13108  mu=+0.0000  sigma=1.0000  skew=-0.0080  kurt=7.560  ex_kurt=+4.560
+    |z|>3: 200 (exp 35)  |z|>4: 75 (exp 1)  |z|>5: 33 (exp 0)
+    AD stat=109.1182  AD 5% crit=0.7520  -> FAIL
+    KS stat=0.0571  KS p=1.2300e-37  -> FAIL
+    VERDICT: NON_GAUSSIAN:KURTOSIS_EXCESS(+4.56),EXCESS_OUTLIERS_4s(75vs1),AD_FAIL,KS_FAIL
+
+  --- OFF_m100 (offset=-100s) ---
+  FULLBAND whitened:
+  [L1_OFF_m100_FULL] n=13108  mu=+0.0000  sigma=1.0000  skew=+0.0044  kurt=3.609  ex_kurt=+0.609
+    |z|>3: 94 (exp 35)  |z|>4: 6 (exp 1)  |z|>5: 0 (exp 0)
+    AD stat=12.9390  AD 5% crit=0.7520  -> FAIL
+    KS stat=0.0201  KS p=5.2027e-05  -> FAIL
+    VERDICT: NON_GAUSSIAN:EXCESS_OUTLIERS_4s(6vs1),AD_FAIL,KS_FAIL
+  BAND 20.0-210.0Hz whitened+bandpassed:
+  [L1_OFF_m100_BP] n=13108  mu=-0.0000  sigma=1.0000  skew=+0.0584  kurt=7.524  ex_kurt=+4.524
+    |z|>3: 208 (exp 35)  |z|>4: 69 (exp 1)  |z|>5: 28 (exp 0)
+    AD stat=110.5198  AD 5% crit=0.7520  -> FAIL
+    KS stat=0.0536  KS p=3.2985e-33  -> FAIL
+    VERDICT: NON_GAUSSIAN:KURTOSIS_EXCESS(+4.52),EXCESS_OUTLIERS_4s(69vs1),AD_FAIL,KS_FAIL
+
+============================================================
+SUMMARY COMPARISON
+============================================================
+
+  Band: FULLBAND
+  Label                            sigma   ex_kurt   |z|>4   exp4 verdict
+  --------------------------------------------------------------------------------
+  H1_TRIGGER                       1.000    -1.268       0      1  NON_GAUSSIAN:KURTOSIS_EXCESS(-1.27),AD_F
+  H1_OFF_m500                      1.000    -1.409       0      1  NON_GAUSSIAN:KURTOSIS_EXCESS(-1.41),AD_F
+  H1_OFF_m300                      1.000    -1.408       0      1  NON_GAUSSIAN:KURTOSIS_EXCESS(-1.41),AD_F
+  L1_TRIGGER                       1.000    +0.618       6      1  NON_GAUSSIAN:EXCESS_OUTLIERS_4s(6vs1),AD
+  L1_OFF_m500                      1.000    +0.585       4      1  NON_GAUSSIAN:EXCESS_OUTLIERS_4s(4vs1),AD
+  L1_OFF_m300                      1.000    +0.617       6      1  NON_GAUSSIAN:EXCESS_OUTLIERS_4s(6vs1),AD
+  L1_OFF_m100                      1.000    +0.609       6      1  NON_GAUSSIAN:EXCESS_OUTLIERS_4s(6vs1),AD
+
+  Band: 20.0-210.0Hz
+  Label                            sigma   ex_kurt   |z|>4   exp4 verdict
+  --------------------------------------------------------------------------------
+  H1_TRIGGER                       1.000    +2.605      36      1  NON_GAUSSIAN:KURTOSIS_EXCESS(+2.61),EXCE
+  H1_OFF_m500                      1.000    +6.375      91      1  NON_GAUSSIAN:KURTOSIS_EXCESS(+6.37),EXCE
+  H1_OFF_m300                      1.000    +6.334      91      1  NON_GAUSSIAN:KURTOSIS_EXCESS(+6.33),EXCE
+  L1_TRIGGER                       1.000    +4.582      74      1  NON_GAUSSIAN:KURTOSIS_EXCESS(+4.58),EXCE
+  L1_OFF_m500                      1.000    +2.856      66      1  NON_GAUSSIAN:KURTOSIS_EXCESS(+2.86),EXCE
+  L1_OFF_m300                      1.000    +4.560      75      1  NON_GAUSSIAN:KURTOSIS_EXCESS(+4.56),EXCE
+  L1_OFF_m100                      1.000    +4.524      69      1  NON_GAUSSIAN:KURTOSIS_EXCESS(+4.52),EXCE
+
+  KEY QUESTION: L1 trigger vs L1 off-source (non-Gaussianity)
+  [FULLBAND] trigger ex_kurt=+0.618  off_mean=+0.604  diff=+0.015  -> TRIGGER_SIMILAR_TO_OFF_SOURCE
+  [20.0-210.0Hz] trigger ex_kurt=+4.582  off_mean=+3.980  diff=+0.602  -> TRIGGER_SIMILAR_TO_OFF_SOURCE
+
+Report: E:\clone\ssz-ligo-tests\reports\L1_GAUSSIANITY_TEST.md
+CSV:    E:\clone\ssz-ligo-tests\reports\L1_GAUSSIANITY_TEST.csv

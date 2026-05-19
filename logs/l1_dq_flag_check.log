@@ -1,0 +1,118 @@
+L1 DQ Flag Check -- 2026-05-18 23:21:51
+Trigger GPS: 1411261107.984
+Window: +/- 2.0s around trigger
+Band: 20.0--210.0 Hz
+
+============================================================
+  DETECTOR: H1
+============================================================
+  GPS0=1411260416.0  t_ev=692.0s  fs=4096Hz
+  DQ mask sample rate: 1.0 Hz
+  DQ flags in file: ['DATA', 'CBC_CAT1', 'CBC_CAT2', 'CBC_CAT3', 'BURST_CAT1', 'BURST_CAT2', 'BURST_CAT3', 'STOCH_CAT1', 'CW_CAT1']
+  Trigger window DQ values (unique): [255]
+  Decoded mask=255:
+    DATA                : SET
+    CBC_CAT1            : SET
+    CBC_CAT2            : SET
+    CBC_CAT3            : SET
+    BURST_CAT1          : SET
+    BURST_CAT2          : SET
+    BURST_CAT3          : SET
+    STOCH_CAT1          : SET
+    CW_CAT1             : NOT_SET
+
+  Injection flags: ['NO_CBC_HW_INJ', 'NO_BURST_HW_INJ', 'NO_DETCHAR_HW_INJ', 'NO_CW_HW_INJ', 'NO_STOCH_HW_INJ']
+  Trigger window injection values (unique): [23]
+  Decoded inj_mask=23:
+    NO_CBC_HW_INJ            : CLEAN(no inj)
+    NO_BURST_HW_INJ          : CLEAN(no inj)
+    NO_DETCHAR_HW_INJ        : CLEAN(no inj)
+    NO_CW_HW_INJ             : INJECTION_PRESENT
+    NO_STOCH_HW_INJ          : CLEAN(no inj)
+
+  Spectral line check in trigger window:
+    60Hz_power                     @ 60.0Hz: psd_ratio=1.24  OK
+    120Hz_power_harmonic           @ 120.0Hz: psd_ratio=1.16  OK
+    180Hz_power_harmonic           @ 180.0Hz: psd_ratio=0.89  OK
+    calibration_pcal_H1            @ 35.9Hz: psd_ratio=0.99  OK
+    calibration_pcal_L1            @ 36.7Hz: psd_ratio=1.13  OK
+    calibration_pcal2_H1           @ 36.7Hz: psd_ratio=1.13  OK
+    calibration_pcal2_L1           @ 38.1Hz: psd_ratio=1.48  OK
+
+  Band power ratio (trigger/off-source):
+    trigger  PSD_mean = 9.0493e-46
+    off-src  PSD_mean = 1.1838e-45
+    ratio    = 0.76
+
+============================================================
+  DETECTOR: L1
+============================================================
+  GPS0=1411260416.0  t_ev=692.0s  fs=4096Hz
+  DQ mask sample rate: 1.0 Hz
+  DQ flags in file: ['DATA', 'CBC_CAT1', 'CBC_CAT2', 'CBC_CAT3', 'BURST_CAT1', 'BURST_CAT2', 'BURST_CAT3', 'STOCH_CAT1', 'CW_CAT1']
+  Trigger window DQ values (unique): [511]
+  Decoded mask=511:
+    DATA                : SET
+    CBC_CAT1            : SET
+    CBC_CAT2            : SET
+    CBC_CAT3            : SET
+    BURST_CAT1          : SET
+    BURST_CAT2          : SET
+    BURST_CAT3          : SET
+    STOCH_CAT1          : SET
+    CW_CAT1             : SET
+
+  Injection flags: ['NO_CBC_HW_INJ', 'NO_BURST_HW_INJ', 'NO_DETCHAR_HW_INJ', 'NO_CW_HW_INJ', 'NO_STOCH_HW_INJ']
+  Trigger window injection values (unique): [23]
+  Decoded inj_mask=23:
+    NO_CBC_HW_INJ            : CLEAN(no inj)
+    NO_BURST_HW_INJ          : CLEAN(no inj)
+    NO_DETCHAR_HW_INJ        : CLEAN(no inj)
+    NO_CW_HW_INJ             : INJECTION_PRESENT
+    NO_STOCH_HW_INJ          : CLEAN(no inj)
+
+  Spectral line check in trigger window:
+    60Hz_power                     @ 60.0Hz: psd_ratio=15.90  LINE_PROMINENT
+    120Hz_power_harmonic           @ 120.0Hz: psd_ratio=2.26  OK
+    180Hz_power_harmonic           @ 180.0Hz: psd_ratio=2.05  OK
+    calibration_pcal_H1            @ 35.9Hz: psd_ratio=0.99  OK
+    calibration_pcal_L1            @ 36.7Hz: psd_ratio=0.99  OK
+    calibration_pcal2_H1           @ 36.7Hz: psd_ratio=0.99  OK
+    calibration_pcal2_L1           @ 38.1Hz: psd_ratio=0.89  OK
+
+  Band power ratio (trigger/off-source):
+    trigger  PSD_mean = 1.6457e-45
+    off-src  PSD_mean = 7.2324e-46
+    ratio    = 2.28
+
+============================================================
+  H1 / L1 DQ COMPARISON
+============================================================
+  BURST_CAT1          : H1=SET       L1=SET       AGREE
+  BURST_CAT2          : H1=SET       L1=SET       AGREE
+  BURST_CAT3          : H1=SET       L1=SET       AGREE
+  CBC_CAT1            : H1=SET       L1=SET       AGREE
+  CBC_CAT2            : H1=SET       L1=SET       AGREE
+  CBC_CAT3            : H1=SET       L1=SET       AGREE
+  CW_CAT1             : H1=NOT_SET   L1=SET       DIFFER
+  DATA                : H1=SET       L1=SET       AGREE
+  STOCH_CAT1          : H1=SET       L1=SET       AGREE
+
+  Flags that DIFFER between H1 and L1: ['CW_CAT1']
+
+  CW_CAT1: H1=False  L1=True
+  *** CW_CAT1 DIFFERS: L1 passes CW CAT1, H1 does not ***
+
+  NO_CW_HW_INJ: H1=CW_INJ_PRESENT  L1=CW_INJ_PRESENT
+  *** BOTH H1 and L1 have CW_HW_INJ NOT clean at trigger time ***
+  *** This means a CW hardware injection was active at BOTH detectors ***
+
+  Band power ratio (trigger/off-200s):
+    H1: 0.76
+    L1: 2.28
+
+  L1_DQ_STATUS: FLAGGED_CW_HW_INJ_ACTIVE
+  COHERENCE_STATUS: PARTIAL_L1_ANOMALY
+
+  -> E:\clone\ssz-ligo-tests\data_manifest\l1_dq_flags_checked.csv
+  -> reports/L1_DQ_FLAG_CHECK_REPORT.md

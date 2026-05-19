@@ -1,0 +1,95 @@
+L1 STFT OMICRON-LITE -- 2026-05-19 07:12:18
+Trigger: 1411261107.984  Win: 4.0s  Band: 20.0-210.0Hz
+STFT nperseg=512  noverlap=75%  hot_threshold=8.0dB
+
+============================================================
+DETECTOR: H1
+============================================================
+  Off-source baseline: fs=4096Hz  n=65536  spec shape=(257, 509)
+
+  [H1_TRIGGER] Spectrogram: 24 freq bins x 125 time bins
+    df=8.00Hz  dt=0.031s
+    Band bandpower (mean): 2.0489e-39
+    Band bandpower (std):  1.9932e-39  (97.3%)
+    Band bandpower (max):  1.0570e-38 at t=1.844s
+    Hot tiles (>8.0dB): 21/3000 (0.7%)
+    Time bins with hot tiles: 2.4%
+    Max consecutive hot time bins: 1
+    TF class: SCATTERED_EXCESS
+    Most frequent hot freq bins:
+      200.0Hz  hot in 3/125 time bins
+      208.0Hz  hot in 2/125 time bins
+      184.0Hz  hot in 2/125 time bins
+      168.0Hz  hot in 2/125 time bins
+      112.0Hz  hot in 2/125 time bins
+
+  [H1_OFF_m500] Spectrogram: 24 freq bins x 125 time bins
+    df=8.00Hz  dt=0.031s
+    Band bandpower (mean): 3.5535e-39
+    Band bandpower (std):  3.3034e-39  (93.0%)
+    Band bandpower (max):  1.3243e-38 at t=1.781s
+    Hot tiles (>8.0dB): 143/3000 (4.8%)
+    Time bins with hot tiles: 9.6%
+    Max consecutive hot time bins: 2
+    TF class: SCATTERED_EXCESS
+    Most frequent hot freq bins:
+      208.0Hz  hot in 10/125 time bins
+      192.0Hz  hot in 9/125 time bins
+      200.0Hz  hot in 8/125 time bins
+      160.0Hz  hot in 8/125 time bins
+      144.0Hz  hot in 8/125 time bins
+
+============================================================
+DETECTOR: L1
+============================================================
+  Off-source baseline: fs=4096Hz  n=65536  spec shape=(257, 509)
+
+  [L1_TRIGGER] Spectrogram: 24 freq bins x 125 time bins
+    df=8.00Hz  dt=0.031s
+    Band bandpower (mean): 5.4233e-39
+    Band bandpower (std):  5.5130e-39  (101.7%)
+    Band bandpower (max):  2.3643e-38 at t=3.000s
+    Hot tiles (>8.0dB): 538/3000 (17.9%)
+    Time bins with hot tiles: 21.6%
+    Max consecutive hot time bins: 2
+    TF class: SCATTERED_EXCESS
+    Most frequent hot freq bins:
+      200.0Hz  hot in 27/125 time bins
+      192.0Hz  hot in 25/125 time bins
+      168.0Hz  hot in 25/125 time bins
+      176.0Hz  hot in 25/125 time bins
+      136.0Hz  hot in 25/125 time bins
+
+  [L1_OFF_m500] Spectrogram: 24 freq bins x 125 time bins
+    df=8.00Hz  dt=0.031s
+    Band bandpower (mean): 7.5173e-39
+    Band bandpower (std):  1.0300e-38  (137.0%)
+    Band bandpower (max):  4.8064e-38 at t=1.375s
+    Hot tiles (>8.0dB): 494/3000 (16.5%)
+    Time bins with hot tiles: 20.8%
+    Max consecutive hot time bins: 18
+    TF class: SINGLE_BURST_CANDIDATE
+    Most frequent hot freq bins:
+      24.0Hz  hot in 23/125 time bins
+      120.0Hz  hot in 22/125 time bins
+      32.0Hz  hot in 22/125 time bins
+      200.0Hz  hot in 21/125 time bins
+      136.0Hz  hot in 21/125 time bins
+
+============================================================
+SUMMARY
+============================================================
+  Label                          BP mean     Hot%   MaxCluster TF class
+  ----------------------------------------------------------------------
+  H1_TRIGGER                   2.049e-39     2.4%            1  SCATTERED_EXCESS
+  H1_OFF_m500                  3.553e-39     9.6%            2  SCATTERED_EXCESS
+  L1_TRIGGER                   5.423e-39    21.6%            2  SCATTERED_EXCESS
+  L1_OFF_m500                  7.517e-39    20.8%           18  SINGLE_BURST_CANDIDATE
+
+  KEY: L1 trigger TF class: SCATTERED_EXCESS
+  KEY: L1 off-source TF class: SINGLE_BURST_CANDIDATE
+  -> L1_STFT_VERDICT: INCONCLUSIVE
+
+Outputs:
+  E:\clone\ssz-ligo-tests\reports\L1_STFT_OMICRON_LITE_REPORT.md
+  E:\clone\ssz-ligo-tests\data_manifest\l1_stft_omicron_lite.csv

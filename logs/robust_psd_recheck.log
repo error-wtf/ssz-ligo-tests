@@ -1,0 +1,83 @@
+Robust Multi-Window PSD Recheck — 2026-05-18 22:58:06
+Trigger GPS: 1411261107.984
+Off-source windows: [-500.0, -300.0, -100.0, 100.0, 300.0] s (each 64.0s)
+
+============================================================
+  DETECTOR: H1
+============================================================
+  GPS0=1411260416.0  t_ev=692.0s  fs=4096Hz
+  Trigger window: 16384 samples = 4.000s
+
+  Off-source window PSDs (64.0s each):
+    minus500    : PSD_median=2.816e-47  bandpower=3.038e-37
+    minus300    : PSD_median=2.927e-47  bandpower=1.414e-38
+    minus100    : PSD_median=nan  bandpower=nan
+    plus100     : PSD_median=2.954e-47  bandpower=7.584e-38
+    plus300     : PSD_median=2.812e-47  bandpower=9.656e-38
+
+  PSD_robust (median of 4 windows):
+    band_median = 2.8434e-47
+    minus500_median = 2.8164e-47
+    robust/single ratio = 1.010
+  PSD_STATUS: PSD_WINDOWS_CONSISTENT
+
+  Trigger bandpower: 2.2276e-39
+  Noise estimate (robust PSD * BW): 5.4024e-45
+  bp_trigger / bp_noise = 412343.01
+
+  With robust PSD:
+    MF-SNR GR  = 40.20
+    MF-SNR SSZ = 9.89
+    lnL_GR     = -3.2918e+07
+    lnL_SSZ    = -3.2918e+07
+    delta_lnL  = 5.2378e-06
+    SNR_STATUS: OK
+
+============================================================
+  DETECTOR: L1
+============================================================
+  GPS0=1411260416.0  t_ev=692.0s  fs=4096Hz
+  Trigger window: 16384 samples = 4.000s
+
+  Off-source window PSDs (64.0s each):
+    minus500    : PSD_median=1.960e-47  bandpower=5.018e-38
+    minus300    : PSD_median=2.154e-47  bandpower=5.080e-37
+    minus100    : PSD_median=1.799e-47  bandpower=2.685e-37
+    plus100     : PSD_median=1.962e-47  bandpower=1.112e-37
+    plus300     : PSD_median=1.860e-47  bandpower=2.684e-37
+
+  PSD_robust (median of 5 windows):
+    band_median = 1.9212e-47
+    minus500_median = 1.9598e-47
+    robust/single ratio = 0.980
+  PSD_STATUS: PSD_WINDOWS_CONSISTENT
+
+  Trigger bandpower: 9.4356e-38
+  Noise estimate (robust PSD * BW): 3.6502e-45
+  bp_trigger / bp_noise = 25849264.89
+
+  With robust PSD:
+    MF-SNR GR  = 423.69
+    MF-SNR SSZ = 179.44
+    lnL_GR     = -1.5718e+10
+    lnL_SSZ    = -1.5718e+10
+    delta_lnL  = -3.4332e-05
+    SNR_STATUS: ANOMALOUS_HIGH_SNR
+
+============================================================
+  H1/L1 COHERENCE CHECK (robust PSD)
+============================================================
+  H1 MF-SNR GR (robust): 40.20
+  L1 MF-SNR GR (robust): 423.69
+  H1/L1 SNR ratio:       0.095
+  H1 PSD status: PSD_WINDOWS_CONSISTENT
+  L1 PSD status: PSD_WINDOWS_CONSISTENT
+  H1 bp_ratio (trigger/noise): 412343.0
+  L1 bp_ratio (trigger/noise): 25849264.9
+
+  COHERENCE_STATUS: COHERENCE_PARTIAL_SNR_ANOMALY
+
+  -> E:\clone\ssz-ligo-tests\data_manifest\robust_psd_windows_used.csv
+
+  -> reports/ROBUST_MULTIWINDOW_PSD_REPORT.md
+  -> reports/H1_L1_COHERENCE_RECHECK_ROBUST_PSD.md

@@ -1,0 +1,41 @@
+L1 ANOMALY DIAGNOSTIC — 2026-05-18 21:52:53
+READY_FOR_REAL_CLAIM: NO | No SSZ claim made here
+
+  === H1 ===
+  File OK | GPS0=1411260416.0  t_ev=692.0s  fs=4096 Hz  n_total=16777216
+    H1_on: rms=2.727e-18  peak=7.251e-18  p99=6.709e-18  NaN=0  Inf=0  near_clip=31  n=16384
+    H1_pre: rms=5.060e-18  peak=1.287e-17  p99=1.232e-17  NaN=0  Inf=0  near_clip=63  n=40960
+    H1_post: rms=3.682e-18  peak=9.968e-18  p99=9.258e-18  NaN=0  Inf=0  near_clip=28  n=40960
+    H1_off: rms=4.092e-18  peak=1.463e-17  p99=1.047e-17  NaN=0  Inf=0  near_clip=59  n=1048576
+  rms_on/rms_off ratio: 0.67  (OK)
+  MF-SNR GR=44.20  SSZ=5.98
+  PSD median in band: 2.840e-47  signal power: 2.927e-42  ratio: 103057.9
+  Anomalies: ['POSSIBLE_CLIPPING']
+  H1_STATUS: MINOR_ANOMALY
+
+  === L1 ===
+  File OK | GPS0=1411260416.0  t_ev=692.0s  fs=4096 Hz  n_total=16777216
+    L1_on: rms=4.236e-18  peak=1.040e-17  p99=9.760e-18  NaN=0  Inf=0  near_clip=36  n=16384
+    L1_pre: rms=3.288e-18  peak=8.883e-18  p99=8.071e-18  NaN=0  Inf=0  near_clip=73  n=40960
+    L1_post: rms=3.206e-18  peak=9.898e-18  p99=8.497e-18  NaN=0  Inf=0  near_clip=33  n=40960
+    L1_off: rms=3.370e-18  peak=1.808e-17  p99=9.686e-18  NaN=0  Inf=0  near_clip=33  n=1048576
+  rms_on/rms_off ratio: 1.26  (OK)
+  MF-SNR GR=646.94  SSZ=358.55
+  PSD median in band: 2.010e-47  signal power: 1.240e-40  ratio: 6168138.7
+  ANOMALY: MF-SNR GR=647 >> expected (~10-50)
+  Likely cause: off-source PSD underestimates trigger-window noise
+  Anomalies: ['POSSIBLE_CLIPPING', 'MF_SNR_GR_ANOMALOUS (647)']
+  L1_STATUS: NOISE_ANOMALY
+
+  === CORRECTED XCORR ===
+  xcorr (Cauchy-Schwarz) = 0.368039  lag=-3252  in_[-1,1]: True
+  XCORR_STATUS: CORRELATED_NEEDS_INVESTIGATION
+  Previous std-norm xcorr = 0.368053  (OK)
+
+  === H1 / L1 RMS COMPARISON ===
+  on      : H1=2.727e-18  L1=4.236e-18  L1/H1=1.55
+  pre     : H1=5.060e-18  L1=3.288e-18  L1/H1=0.65
+  post    : H1=3.682e-18  L1=3.206e-18  L1/H1=0.87
+  off     : H1=4.092e-18  L1=3.370e-18  L1/H1=0.82
+
+  -> reports/L1_ANOMALY_DIAGNOSTIC_REPORT.md

@@ -1,0 +1,10 @@
+H1/L1 COHERENCE PIPELINE — 2026-05-18 21:29:42
+FORMULA: DERIVED_V1_INSPIRAL_0PN_LOCKED | READY_FOR_REAL_CLAIM: NO
+  r/rs@20Hz=15  r/rs@800Hz=3  (weak-field)
+  [H1] lnL_GR=-3.2372e+07 lnL_SSZ=-3.2372e+07 delta=5.3160e-06
+  [H1] SNR_GR=44.20 SNR_SSZ=5.98 resid_rms=1.711e-21
+  [L1] lnL_GR=-1.5832e+10 lnL_SSZ=-1.5832e+10 delta=-4.3869e-05
+  [L1] SNR_GR=646.94 SNR_SSZ=358.55 resid_rms=1.114e-20
+  H1/L1 xcorr=1.6002 lag=0 samples -> CORRELATED_NEEDS_CHECK
+  -> reports/H1_L1_COHERENCE_PIPELINE_REPORT.md
+  -> data_manifest/h1_l1_files_used.csv

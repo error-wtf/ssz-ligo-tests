@@ -1,0 +1,30 @@
+H1/L1 TIME-DELAY SCAN -- 2026-05-19 07:29:45
+Trigger: 1411261107.984  Win: 4.0s  Band: 20.0-210.0Hz
+Scan: +/-20ms  step=0.244ms  max_physical=10ms
+  H1 loaded: 16712 samples  H1 segment: 16384 samples  fs=4096Hz
+  L1 loaded: 16712 samples  t0=1411261105.944
+  Computing off-source reference ASDs...
+  H1 ref ASD: 65864 samples
+  L1 ref ASD: 65864 samples
+
+============================================================
+WINDOW: TRIGGER
+============================================================
+  Zero-lag:   xcorr=-0.99665  coh=0.4982
+  Best shift: dt=-20.000ms  xcorr=-0.99710  coh=0.5007
+  Physical shift (|dt|<=10ms): NO
+  XCorr noise std: 0.00056  peak SNR: 1791.65
+  -> TIME_DELAY_VERDICT: NON_PHYSICAL_PEAK
+
+============================================================
+WINDOW: OFF_m500
+============================================================
+  Zero-lag:   xcorr=-1.00026  coh=0.5948
+  Best shift: dt=+0.008ms  xcorr=-1.00026  coh=0.5948
+  Physical shift (|dt|<=10ms): YES
+  XCorr noise std: 0.67145  peak SNR: 1.49
+  -> TIME_DELAY_VERDICT: NO_PEAK_CONSISTENT_WITH_NOISE
+
+Outputs:
+  E:\clone\ssz-ligo-tests\reports\H1L1_TIME_DELAY_SCAN_REPORT.md
+  E:\clone\ssz-ligo-tests\data_manifest\h1l1_time_delay_scan.csv

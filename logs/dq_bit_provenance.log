@@ -1,0 +1,162 @@
+DQ State-Vector Bit Provenance -- 2026-05-18 23:39:25
+Trigger GPS: 1411261107.984
+
+============================================================
+  DETECTOR: H1
+============================================================
+  GPS0=1411260416  dur=4096s  t_trigger_in_file=692.0s
+
+  --- DQ mask ---
+  DQ mask attrs:
+    Bits: 9
+    Description: A bitmask encoded as an integer-valued timeseries. The first "Bits" bits might be used, for each there is an entry in "Bits", "Shortnames", "Descriptions", one for each bit.
+    Npoints: 4096
+    Xlabel: GPS time
+    Xspacing: 1.0
+    Xstart: 1411260416
+    Xunits: second
+    Ylabel: DQmask
+  nbits=9  sample_rate=1.0Hz  name_source=VERIFIED_FROM_HDF5
+  DQ unique mask values (whole file): [0, 159, 255]
+  DQ mask at trigger index 691: 255
+    bit 0  DATA             at_trig=1  pct_set=  41.6%  constant=False  desc='data present'
+    bit 1  CBC_CAT1         at_trig=1  pct_set=  41.6%  constant=False  desc='passes the cbc CAT1 test'
+    bit 2  CBC_CAT2         at_trig=1  pct_set=  41.6%  constant=False  desc='passes cbc CAT2 test'
+    bit 3  CBC_CAT3         at_trig=1  pct_set=  41.6%  constant=False  desc='passes cbc CAT3 test'
+    bit 4  BURST_CAT1       at_trig=1  pct_set=  41.6%  constant=False  desc='passes burst CAT1 test'
+    bit 5  BURST_CAT2       at_trig=1  pct_set=  41.5%  constant=False  desc='passes burst CAT2 test'
+    bit 6  BURST_CAT3       at_trig=1  pct_set=  41.5%  constant=False  desc='passes burst CAT3 test'
+    bit 7  STOCH_CAT1       at_trig=1  pct_set=  41.6%  constant=False  desc='passes stoch CAT1 test'
+    bit 8  CW_CAT1          at_trig=0  pct_set=   0.0%  constant=True  desc='passes cw CAT1 test'
+
+  --- Injection mask ---
+  Inj mask attrs:
+    Bits: 5
+    Description: A bitmask encoded as an integer-valued timeseries. The first "Bits" bits might be used, for each there is an entry in "Bits", "Shortnames", "Descriptions", one for each bit.
+    Npoints: 4096
+    Xlabel: GPS time
+    Xspacing: 1.0
+    Xstart: 1411260416
+    Xunits: second
+    Ylabel: Injmask
+  inj_nbits=5  name_source=VERIFIED_FROM_HDF5
+  Inj unique mask values (whole file): [23]
+  Inj mask at trigger: 23
+    bit 0  NO_CBC_HW_INJ         at_trig=1  pct_set= 100.0%  constant=True
+           desc='no cbc injection'
+           interpretation: SET: no injection of this type
+    bit 1  NO_BURST_HW_INJ       at_trig=1  pct_set= 100.0%  constant=True
+           desc='no burst injections'
+           interpretation: SET: no injection of this type
+    bit 2  NO_DETCHAR_HW_INJ     at_trig=1  pct_set= 100.0%  constant=True
+           desc='no detchar injections'
+           interpretation: SET: no injection of this type
+    bit 3  NO_CW_HW_INJ          at_trig=0  pct_set=   0.0%  constant=True
+           desc='no continuous wave injections'
+           interpretation: NOT_SET: not certified injection-free (injection may be present or state unknown)
+    bit 4  NO_STOCH_HW_INJ       at_trig=1  pct_set= 100.0%  constant=True
+           desc='no stoch injections'
+           interpretation: SET: no injection of this type
+
+  --- quality/detail ---
+  keys: []
+
+============================================================
+  DETECTOR: L1
+============================================================
+  GPS0=1411260416  dur=4096s  t_trigger_in_file=692.0s
+
+  --- DQ mask ---
+  DQ mask attrs:
+    Bits: 9
+    Description: A bitmask encoded as an integer-valued timeseries. The first "Bits" bits might be used, for each there is an entry in "Bits", "Shortnames", "Descriptions", one for each bit.
+    Npoints: 4096
+    Xlabel: GPS time
+    Xspacing: 1.0
+    Xstart: 1411260416
+    Xunits: second
+    Ylabel: DQmask
+  nbits=9  sample_rate=1.0Hz  name_source=VERIFIED_FROM_HDF5
+  DQ unique mask values (whole file): [511]
+  DQ mask at trigger index 691: 511
+    bit 0  DATA             at_trig=1  pct_set= 100.0%  constant=True  desc='data present'
+    bit 1  CBC_CAT1         at_trig=1  pct_set= 100.0%  constant=True  desc='passes the cbc CAT1 test'
+    bit 2  CBC_CAT2         at_trig=1  pct_set= 100.0%  constant=True  desc='passes cbc CAT2 test'
+    bit 3  CBC_CAT3         at_trig=1  pct_set= 100.0%  constant=True  desc='passes cbc CAT3 test'
+    bit 4  BURST_CAT1       at_trig=1  pct_set= 100.0%  constant=True  desc='passes burst CAT1 test'
+    bit 5  BURST_CAT2       at_trig=1  pct_set= 100.0%  constant=True  desc='passes burst CAT2 test'
+    bit 6  BURST_CAT3       at_trig=1  pct_set= 100.0%  constant=True  desc='passes burst CAT3 test'
+    bit 7  STOCH_CAT1       at_trig=1  pct_set= 100.0%  constant=True  desc='passes stoch CAT1 test'
+    bit 8  CW_CAT1          at_trig=1  pct_set= 100.0%  constant=True  desc='passes cw CAT1 test'
+
+  --- Injection mask ---
+  Inj mask attrs:
+    Bits: 5
+    Description: A bitmask encoded as an integer-valued timeseries. The first "Bits" bits might be used, for each there is an entry in "Bits", "Shortnames", "Descriptions", one for each bit.
+    Npoints: 4096
+    Xlabel: GPS time
+    Xspacing: 1.0
+    Xstart: 1411260416
+    Xunits: second
+    Ylabel: Injmask
+  inj_nbits=5  name_source=VERIFIED_FROM_HDF5
+  Inj unique mask values (whole file): [23]
+  Inj mask at trigger: 23
+    bit 0  NO_CBC_HW_INJ         at_trig=1  pct_set= 100.0%  constant=True
+           desc='no cbc injection'
+           interpretation: SET: no injection of this type
+    bit 1  NO_BURST_HW_INJ       at_trig=1  pct_set= 100.0%  constant=True
+           desc='no burst injections'
+           interpretation: SET: no injection of this type
+    bit 2  NO_DETCHAR_HW_INJ     at_trig=1  pct_set= 100.0%  constant=True
+           desc='no detchar injections'
+           interpretation: SET: no injection of this type
+    bit 3  NO_CW_HW_INJ          at_trig=0  pct_set=   0.0%  constant=True
+           desc='no continuous wave injections'
+           interpretation: NOT_SET: not certified injection-free (injection may be present or state unknown)
+    bit 4  NO_STOCH_HW_INJ       at_trig=1  pct_set= 100.0%  constant=True
+           desc='no stoch injections'
+           interpretation: SET: no injection of this type
+
+  --- quality/detail ---
+  keys: []
+
+============================================================
+  H1 / L1 COMPARISON
+============================================================
+
+  H1 DQ mask at trigger: 255 (unique over file: [0, 159, 255])
+  L1 DQ mask at trigger: 511 (unique over file: [511])
+
+  Per-bit comparison:
+   bit  name               H1    L1   H1_%set   L1_%set  status
+     0  DATA                1     1      41.6     100.0  AGREE
+     1  CBC_CAT1            1     1      41.6     100.0  AGREE
+     2  CBC_CAT2            1     1      41.6     100.0  AGREE
+     3  CBC_CAT3            1     1      41.6     100.0  AGREE
+     4  BURST_CAT1          1     1      41.6     100.0  AGREE
+     5  BURST_CAT2          1     1      41.5     100.0  AGREE
+     6  BURST_CAT3          1     1      41.5     100.0  AGREE
+     7  STOCH_CAT1          1     1      41.6     100.0  AGREE
+     8  CW_CAT1             0     1       0.0     100.0  DIFFER
+
+  Bits that DIFFER: ['CW_CAT1']
+
+  CW_CAT1 analysis:
+    H1 CW_CAT1: value_at_trigger=0, pct_set=0.0%, constant=True
+    L1 CW_CAT1: value_at_trigger=1, pct_set=100.0%, constant=True
+    Description from HDF5: 'passes cw CAT1 test'
+    Name source: VERIFIED_FROM_HDF5
+
+  NO_CW_HW_INJ analysis:
+    H1 NO_CW_HW_INJ: value=0, pct_set=0.0%, constant=True
+    L1 NO_CW_HW_INJ: value=0, pct_set=0.0%, constant=True
+    Description from HDF5: 'no continuous wave injections'
+    Name source: VERIFIED_FROM_HDF5
+
+  DQ_BIT_MAPPING_STATUS: VERIFIED_FROM_HDF5
+  L1_DQ_INTERPRETATION: NO_FLAG_CONFIRMED
+  INJECTION_STATUS: NOT_CERTIFIED_INJECTION_FREE
+
+  -> E:\clone\ssz-ligo-tests\data_manifest\dq_state_vector_bits.csv
+  -> reports/DQ_STATE_VECTOR_BIT_PROVENANCE_REPORT.md

@@ -1,0 +1,29 @@
+QNM RINGDOWN INJECTION SENSITIVITY — 2026-05-18 21:49:33
+Branch: QNM_FREQ_3PCT | READY_FOR_REAL_CLAIM: NO
+This is a SENSITIVITY test, not a signal test.
+  PSD loaded: fs=4096 Hz, bins=2049
+  M_total=20.4 Msun  f_220_GR=152.6 Hz  tau_220=4.2 ms
+  Estimated ringdown SNR ~ 13.50
+  PSD at f_220: 2.358e-47 Hz^-1
+  Freq resolution (analytic): delta_f/f ~ 0.0001 (0.01%)
+  Injected GR ringdown SNR (numerical): 55.973
+
+  epsilon  | f_220_SSZ | delta_f%  | delta_lnL  | detectability
+  -----------------------------------------------------------------
+  eps=0.000  f_SSZ=152.6Hz  d_f%=0.0%  dlnL=+0.000e+00  -> UNDETECTABLE
+  eps=0.010  f_SSZ=154.2Hz  d_f%=1.0%  dlnL=-8.020e-02  -> UNDETECTABLE
+  eps=0.020  f_SSZ=155.7Hz  d_f%=2.0%  dlnL=-3.218e-01  -> UNDETECTABLE
+  eps=0.030  f_SSZ=157.2Hz  d_f%=3.0%  dlnL=-7.258e-01  -> UNDETECTABLE
+  eps=0.050  f_SSZ=160.3Hz  d_f%=5.0%  dlnL=-2.021e+00  -> MARGINAL
+  eps=0.100  f_SSZ=167.9Hz  d_f%=10.0%  dlnL=-8.020e+00  -> DETECTABLE
+  eps=0.200  f_SSZ=183.2Hz  d_f%=20.0%  dlnL=-3.003e+01  -> DETECTABLE
+  eps=0.308  f_SSZ=199.7Hz  d_f%=30.8%  dlnL=-6.276e+01  -> DETECTABLE
+  eps=0.310  f_SSZ=199.9Hz  d_f%=31.0%  dlnL=-6.339e+01  -> DETECTABLE
+  eps=0.390  f_SSZ=212.2Hz  d_f%=39.0%  dlnL=-8.908e+01  -> DETECTABLE
+
+  === 3% BRANCH SUMMARY ===
+  epsilon=0.03 -> delta_lnL=-7.258e-01 -> UNDETECTABLE
+  Analytic resolution: 0.01%  vs  3% shift
+  Analytic: 3% shift is ABOVE frequency resolution threshold
+  -> reports/QNM_RINGDOWN_INJECTION_SENSITIVITY_REPORT.md
+  -> data_manifest/qnm_injection_scan.csv
