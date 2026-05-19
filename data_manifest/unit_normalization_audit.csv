@@ -1,0 +1,8 @@
+test,passed,error_pct,ratio
+psd_peak_normalization,True,0.024420024419846698,1.0002442002441985
+bandpower_integration,True,1.887379141862766e-13,0.9999999999999981
+asd_normalization,True,0.012209266878948632,1.0001220926687895
+window_power_correction,True,0.0244140625,N/A
+onesided_vs_twosided,True,N/A,N/A
+rfft_normalization,True,N/A,N/A
+real_strain_units,True,N/A,N/A
