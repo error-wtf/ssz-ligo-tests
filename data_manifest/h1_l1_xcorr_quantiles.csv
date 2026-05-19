@@ -1,0 +1,2 @@
+dur_s,band,trig_abs_corr,trig_raw_corr,trig_dt_ms,trig_sign,off_n,off_mean,off_sigma,off_p50,off_p95,off_p99,z_score,percentile,verdict,H1_L1_XCORR_TRIGGER_STATUS
+PENDING,,,,,,,,,,,,,,,
