@@ -1,2 +1,7 @@
-dur_s,band,trig_abs_corr,trig_raw_corr,trig_dt_ms,trig_sign,off_n,off_mean,off_sigma,off_p50,off_p95,off_p99,z_score,percentile,verdict,H1_L1_XCORR_TRIGGER_STATUS
-PENDING,,,,,,,,,,,,,,,
+band,trig_abs_corr,off_n,off_mean,off_p95,off_p99,percentile
+120-160,0.999869,1,0.9999509,0.9999509,0.9999509,0.0
+160-210,0.9994455,1,0.999779,0.999779,0.999779,0.0
+20-210,0.9958729,1,0.999955,0.999955,0.999955,0.0
+20-40,0.9998171,1,0.9997962,0.9997962,0.9997962,100.0
+40-80,0.9996503,1,0.9998758,0.9998758,0.9998758,0.0
+80-120,0.9996181,1,0.99986,0.99986,0.99986,0.0
