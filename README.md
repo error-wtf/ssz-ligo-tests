@@ -673,6 +673,9 @@ Concise question to LIGO:
 > at trigger vs. +1.1 off-source). Are offline DQ/iDQ/Omicron/line products
 > available, or should L1 be treated as diagnostic-only for broadband non-GR tests?
 
+**Related public reproducibility request (IGWN community forum):**  
+[https://ask.igwn.org/t/request-for-fully-reproducible-calibration-chain-for-gwosc-strain-data/1397/2](https://ask.igwn.org/t/request-for-fully-reproducible-calibration-chain-for-gwosc-strain-data/1397/2)
+
 ---
 
 ### 13. Public Petition / Transparency Context
@@ -859,8 +862,11 @@ For anti-circular non-GR tests: Level 3-4 is often decisive, and Level 5 is meth
 **Petition:**
 [https://www.change.org/p/prof-karsten-danzmann-beantworten-sie-bitte-3-fragen-%C3%BCber-das-ligo-experiment](https://www.change.org/p/prof-karsten-danzmann-beantworten-sie-bitte-3-fragen-%C3%BCber-das-ligo-experiment)
 
-**Reference:** LIGO official Mastodon post (scicomm.xyz):
+**Reference:** LIGO official Mastodon post (scicomm.xyz):  
 [https://chaos.social/deck/@LIGO@scicomm.xyz/116569194588841654](https://chaos.social/deck/@LIGO@scicomm.xyz/116569194588841654)
+
+**IGWN community forum — reproducible calibration chain request:**  
+[https://ask.igwn.org/t/request-for-fully-reproducible-calibration-chain-for-gwosc-strain-data/1397/2](https://ask.igwn.org/t/request-for-fully-reproducible-calibration-chain-for-gwosc-strain-data/1397/2)
 
 A public petition signed by ~3000 people questioning aspects of the LIGO
 experiment (including researchers) is not, by itself, scientific proof that
