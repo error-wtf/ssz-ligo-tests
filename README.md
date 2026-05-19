@@ -1,6 +1,6 @@
 # SSZ-LIGO Forward Model Test Suite
 
-**Version:** 0.4.0 — 2026-05-19  
+**Version:** 0.5.0 — 2026-05-19  
 **Event:** GW240925 (O4b, GWOSC public release)  
 **Status:** `PIPELINE_STATUS: PASS_EXPLORATORY` | `READY_FOR_REAL_LIGO_SSZ_CLAIM: NO`
 
@@ -46,6 +46,32 @@ SSZ Core (Xi, D, s)
 |------|------|
 | **Carmen Wrede** | Theory Development — SSZ framework, formula derivation, physics interpretation |
 | **Lino Casu** | Programming & Testing — pipeline implementation, test suite, data analysis |
+
+---
+
+## Reproducibility Critique
+
+This project documents a methodological reproducibility limitation of LIGO/GWOSC public
+data releases — based entirely on primary sources, including LIGO's own data management
+policy and a direct public exchange.
+
+**Central finding:**
+
+```text
+Open Data Product  !=  Fully reproducible measurement chain
+
+GWOSC provides: calibrated strain h(t), DQ segments, GR/CBC posteriors
+Not provided:    PCal raw channels, DARM signals, FIR/IIR filter archives,
+                 CalibEnv files, full aux channel access via public API
+```
+
+Confirmed by LIGO directly (Mastodon, Dec 2025):
+> "Our full data management policy [...] covers calibrated data, not auxiliary channels."
+
+This is a **reproducibility concern, not a fraud accusation**.
+
+> [Full sourced critique → docs/LIGO_REPRODUCIBILITY_CRITIQUE.md](docs/LIGO_REPRODUCIBILITY_CRITIQUE.md)  
+> [IGWN forum thread → ask.igwn.org](https://ask.igwn.org/t/request-for-fully-reproducible-calibration-chain-for-gwosc-strain-data/1397/2)
 
 ---
 
@@ -263,7 +289,10 @@ scripts/
   run_twist_branch_synthetic.py        — synthetic twist branch
   run_twist_branch_2pn_synthetic.py    — 2PN twist branch
   run_ga_interferometer_synthetic.py   — GA interferometer model
-  run_source_propagation_twist_synthetic.py — source propagation twist
+  run_source_propagation_twist_synthetic.py — source propagation 
+  run_h1_l1_time_delay_replication.py  — single-window H1/L1 delay scan
+  run_h1_l1_long_baseline_replication.py — 100 off-source windows, Z-score, subband
+  run_twist_branch_real_h1_l1.py
   verify_real_ligo_tests.py            — quick verification runner
   forced_verify.py                     — forced verification suite
 
@@ -303,10 +332,16 @@ reports/
   QNM_3PCT_SENSITIVITY_FINAL_REPORT.md
   OBSERVABLE_BRANCH_TEST_READINESS.md
   NEXT_PHYSICS_DERIVATION_TASKS.md     — open physics agenda
+  H1_L1_TIME_DELAY_REPLICATION_REPORT.md — single-window delay scan
+  H1_L1_ABS_CORRELATION_REPLICATION_REPORT.md — abs(corr) peak detection
+  H1_L1_SUBBAND_REPLICATION_REPORT.md  — per-subband xcorr
+  H1_L1_LONG_BASELINE_REPLICATION_REPORT.md — 100 off-source windows (PENDING run)
 
 data_manifest/
   gaussianity_summary_stats.csv        — per-window Gaussianity statistics
   gaussianity_test_windows.csv         — window manifest
+  h1_l1_long_baseline_xcorr.csv        — per-window abs_corr results (all bands)
+  h1_l1_xcorr_quantiles.csv            — trigger vs off-source Z-score summary
 ```
 
 ---
