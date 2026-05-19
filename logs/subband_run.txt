@@ -1,0 +1,77 @@
+E:\clone\ssz-ligo-tests\scripts\run_subband_gaussianity.py:145: FutureWarning: As of SciPy 1.17, users must choose a p-value calculation method by providing the `method` parameter. `method='interpolate'` interpolates the p-value from pre-calculated tables; `method` may also be an instance of `MonteCarloMethod` to approximate the p-value via Monte Carlo simulation. When `method` is specified, the result object will include a `pvalue` attribute and not attributes `critical_value`, `significance_level`, or `fit_result`. Beginning in 1.19.0, these other attributes will no longer be available, and a p-value will always be computed according to one of the available `method` options.
+  ad_stat, ad_cv, ad_sig = stats.anderson(x, dist="norm")
+SUBBAND GAUSSIANITY TEST -- 2026-05-19 07:36:17
+Trigger: 1411261107.984  Win: 4.0s
+Sub-bands: ['20-40', '40-80', '80-120', '120-160', '160-210']
+Off-source windows: ['OFF_m500', 'OFF_m300', 'OFF_m100']
+
+Loaded H1 windows: ['TRIGGER', 'OFF_m500', 'OFF_m300']
+Loaded L1 windows: ['TRIGGER', 'OFF_m500', 'OFF_m300', 'OFF_m100']
+Reference ASD: H1=262144 samples  L1=262144 samples
+
+  --- Sub-band: 20-40 [20.0-40.0 Hz] ---
+    H1_TRIGGER_20-40: ex_k=+165.667  sk=+6.917  n_z4=114  class=STRONGLY_NON_GAUSSIAN
+    H1_OFF_m500_20-40: ex_k=+165.648  sk=-6.908  n_z4=114  class=STRONGLY_NON_GAUSSIAN
+    H1_OFF_m300_20-40: ex_k=+165.648  sk=-6.908  n_z4=114  class=STRONGLY_NON_GAUSSIAN
+    L1_TRIGGER_20-40: ex_k=+168.434  sk=-7.138  n_z4=115  class=STRONGLY_NON_GAUSSIAN
+    L1_OFF_m500_20-40: ex_k=+168.436  sk=+7.138  n_z4=115  class=STRONGLY_NON_GAUSSIAN
+    L1_OFF_m300_20-40: ex_k=+168.463  sk=-7.141  n_z4=115  class=STRONGLY_NON_GAUSSIAN
+    L1_OFF_m100_20-40: ex_k=+168.413  sk=+7.136  n_z4=115  class=STRONGLY_NON_GAUSSIAN
+    H1/L1 bandpower ratio (trigger): 586.501
+
+  --- Sub-band: 40-80 [40.0-80.0 Hz] ---
+    H1_TRIGGER_40-80: ex_k=+326.565  sk=+9.496  n_z4=82  class=STRONGLY_NON_GAUSSIAN
+    H1_OFF_m500_40-80: ex_k=+327.383  sk=-9.512  n_z4=81  class=STRONGLY_NON_GAUSSIAN
+    H1_OFF_m300_40-80: ex_k=+327.395  sk=-9.512  n_z4=81  class=STRONGLY_NON_GAUSSIAN
+    L1_TRIGGER_40-80: ex_k=+323.435  sk=-9.436  n_z4=81  class=STRONGLY_NON_GAUSSIAN
+    L1_OFF_m500_40-80: ex_k=+323.423  sk=+9.436  n_z4=81  class=STRONGLY_NON_GAUSSIAN
+    L1_OFF_m300_40-80: ex_k=+323.330  sk=-9.434  n_z4=81  class=STRONGLY_NON_GAUSSIAN
+    L1_OFF_m100_40-80: ex_k=+323.513  sk=+9.438  n_z4=81  class=STRONGLY_NON_GAUSSIAN
+    H1/L1 bandpower ratio (trigger): 594.711
+
+  --- Sub-band: 80-120 [80.0-120.0 Hz] ---
+    H1_TRIGGER_80-120: ex_k=+348.813  sk=+4.981  n_z4=85  class=STRONGLY_NON_GAUSSIAN
+    H1_OFF_m500_80-120: ex_k=+348.817  sk=-4.979  n_z4=84  class=STRONGLY_NON_GAUSSIAN
+    H1_OFF_m300_80-120: ex_k=+348.816  sk=-4.979  n_z4=84  class=STRONGLY_NON_GAUSSIAN
+    L1_TRIGGER_80-120: ex_k=+351.407  sk=-5.008  n_z4=84  class=STRONGLY_NON_GAUSSIAN
+    L1_OFF_m500_80-120: ex_k=+351.408  sk=+5.008  n_z4=84  class=STRONGLY_NON_GAUSSIAN
+    L1_OFF_m300_80-120: ex_k=+351.428  sk=-5.008  n_z4=84  class=STRONGLY_NON_GAUSSIAN
+    L1_OFF_m100_80-120: ex_k=+351.391  sk=+5.008  n_z4=84  class=STRONGLY_NON_GAUSSIAN
+    H1/L1 bandpower ratio (trigger): 584.834
+
+  --- Sub-band: 120-160 [120.0-160.0 Hz] ---
+    H1_TRIGGER_120-160: ex_k=+349.135  sk=+3.439  n_z4=85  class=STRONGLY_NON_GAUSSIAN
+    H1_OFF_m500_120-160: ex_k=+349.201  sk=-3.440  n_z4=85  class=STRONGLY_NON_GAUSSIAN
+    H1_OFF_m300_120-160: ex_k=+349.197  sk=-3.440  n_z4=85  class=STRONGLY_NON_GAUSSIAN
+    L1_TRIGGER_120-160: ex_k=+347.670  sk=-3.443  n_z4=85  class=STRONGLY_NON_GAUSSIAN
+    L1_OFF_m500_120-160: ex_k=+347.657  sk=+3.443  n_z4=85  class=STRONGLY_NON_GAUSSIAN
+    L1_OFF_m300_120-160: ex_k=+347.628  sk=-3.443  n_z4=85  class=STRONGLY_NON_GAUSSIAN
+    L1_OFF_m100_120-160: ex_k=+347.704  sk=+3.443  n_z4=85  class=STRONGLY_NON_GAUSSIAN
+    H1/L1 bandpower ratio (trigger): 608.532
+
+  --- Sub-band: 160-210 [160.0-210.0 Hz] ---
+    H1_TRIGGER_160-210: ex_k=+443.979  sk=+3.719  n_z4=71  class=STRONGLY_NON_GAUSSIAN
+    H1_OFF_m500_160-210: ex_k=+442.832  sk=-3.704  n_z4=70  class=STRONGLY_NON_GAUSSIAN
+    H1_OFF_m300_160-210: ex_k=+442.806  sk=-3.704  n_z4=70  class=STRONGLY_NON_GAUSSIAN
+    L1_TRIGGER_160-210: ex_k=+447.855  sk=-3.772  n_z4=70  class=STRONGLY_NON_GAUSSIAN
+    L1_OFF_m500_160-210: ex_k=+447.848  sk=+3.772  n_z4=70  class=STRONGLY_NON_GAUSSIAN
+    L1_OFF_m300_160-210: ex_k=+447.957  sk=-3.773  n_z4=70  class=STRONGLY_NON_GAUSSIAN
+    L1_OFF_m100_160-210: ex_k=+447.777  sk=+3.770  n_z4=70  class=STRONGLY_NON_GAUSSIAN
+    H1/L1 bandpower ratio (trigger): 588.466
+
+======================================================================
+SUMMARY: L1 TRIGGER ù per sub-band
+======================================================================
+  Band           Ex.Kurt     Skew   n_z4   L1/H1 Class
+  ------------------------------------------------------------
+  20-40         +168.434   -7.138    115 586.501 STRONGLY_NON_GAUSSIAN
+  40-80         +323.435   -9.436     81 594.711 STRONGLY_NON_GAUSSIAN
+  80-120        +351.407   -5.008     84 584.834 STRONGLY_NON_GAUSSIAN
+  120-160       +347.670   -3.443     85 608.532 STRONGLY_NON_GAUSSIAN
+  160-210       +447.855   -3.772     70 588.466 STRONGLY_NON_GAUSSIAN
+
+  Most non-Gaussian L1 trigger sub-band: 160-210 (ex_k=+447.855)
+
+Outputs:
+  E:\clone\ssz-ligo-tests\reports\SUBBAND_GAUSSIANITY_REPORT.md
+  E:\clone\ssz-ligo-tests\data_manifest\subband_gaussianity.csv

@@ -1,0 +1,70 @@
+PHASE RANDOMIZATION NULL TEST -- 2026-05-19 07:37:12
+Trigger: 1411261107.984  Win: 4.0s  Band: 20.0-210.0Hz  N_surrogates: 200
+Reference ASD: H1 262144 samples  L1 262144 samples
+
+============================================================
+DETECTOR: H1
+============================================================
+
+  [H1_TRIGGER] Original:
+    Bandpower:      2.0234e-39
+    Excess kurtosis: +242.9982
+    |z|>4 count:    117
+  [H1_TRIGGER] Surrogate distribution (N=200):
+    Bandpower:  surr_mean=2.2715e-39  orig_quantile=0.0%
+    |ex_kurtosis|: surr_mean=141.511  orig_quantile=96.0%
+    |z|>4 count: surr_mean=102.77  orig_quantile=64.8%
+  -> BP_VERDICT: BP_CONSISTENT_WITH_SURROGATES
+  -> EK_VERDICT: KURTOSIS_EXCEEDS_SURROGATES
+  -> Bandpower consistent with surrogates. Excess may be explained by spectral content alone.
+
+  [H1_OFF_m500] Original:
+    Bandpower:      3.5965e-39
+    Excess kurtosis: +245.2588
+    |z|>4 count:    116
+  [H1_OFF_m500] Surrogate distribution (N=200):
+    Bandpower:  surr_mean=8.2392e-38  orig_quantile=0.0%
+    |ex_kurtosis|: surr_mean=157.791  orig_quantile=92.0%
+    |z|>4 count: surr_mean=104.91  orig_quantile=58.8%
+  -> BP_VERDICT: BP_CONSISTENT_WITH_SURROGATES
+  -> EK_VERDICT: KURTOSIS_CONSISTENT_WITH_SURROGATES
+  -> Bandpower consistent with surrogates. Excess may be explained by spectral content alone.
+
+============================================================
+DETECTOR: L1
+============================================================
+
+  [L1_TRIGGER] Original:
+    Bandpower:      5.3954e-39
+    Excess kurtosis: +244.5959
+    |z|>4 count:    114
+  [L1_TRIGGER] Surrogate distribution (N=200):
+    Bandpower:  surr_mean=1.5672e-38  orig_quantile=0.0%
+    |ex_kurtosis|: surr_mean=164.790  orig_quantile=92.5%
+    |z|>4 count: surr_mean=109.21  orig_quantile=46.8%
+  -> BP_VERDICT: BP_CONSISTENT_WITH_SURROGATES
+  -> EK_VERDICT: KURTOSIS_CONSISTENT_WITH_SURROGATES
+  -> Bandpower consistent with surrogates. Excess may be explained by spectral content alone.
+
+  [L1_OFF_m500] Original:
+    Bandpower:      7.4699e-39
+    Excess kurtosis: +244.5966
+    |z|>4 count:    113
+  [L1_OFF_m500] Surrogate distribution (N=200):
+    Bandpower:  surr_mean=7.4665e-39  orig_quantile=42.5%
+    |ex_kurtosis|: surr_mean=157.162  orig_quantile=93.0%
+    |z|>4 count: surr_mean=107.58  orig_quantile=43.2%
+  -> BP_VERDICT: BP_CONSISTENT_WITH_SURROGATES
+  -> EK_VERDICT: KURTOSIS_CONSISTENT_WITH_SURROGATES
+  -> Bandpower consistent with surrogates. Excess may be explained by spectral content alone.
+
+============================================================
+OVERALL PHASE-RANDOMIZATION VERDICT
+============================================================
+  H1 trigger BP quantile vs surrogates: 0.0%  -> BP_CONSISTENT_WITH_SURROGATES
+  L1 trigger BP quantile vs surrogates: 0.0%  -> BP_CONSISTENT_WITH_SURROGATES
+  -> FINAL_PHASE_RAND_VERDICT: L1_EXCESS_IN_PHASE_STRUCTURE_NOT_ASD
+
+Outputs:
+  E:\clone\ssz-ligo-tests\reports\PHASE_RANDOMIZATION_NULL_REPORT.md
+  E:\clone\ssz-ligo-tests\data_manifest\phase_randomization_null.csv

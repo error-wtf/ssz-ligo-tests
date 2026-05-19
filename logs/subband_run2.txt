@@ -1,0 +1,14 @@
+SUBBAND GAUSSIANITY TEST -- 2026-05-19 07:41:49
+Trigger: 1411261107.984  Win: 4.0s
+Sub-bands: ['20-40', '40-80', '80-120', '120-160', '160-210']
+Off-source windows: ['OFF_m500', 'OFF_m300', 'OFF_m100']
+
+Loaded H1 windows: ['TRIGGER', 'OFF_m500', 'OFF_m300']
+Loaded L1 windows: ['TRIGGER', 'OFF_m500', 'OFF_m300', 'OFF_m100']
+Traceback (most recent call last):
+  File "E:\clone\ssz-ligo-tests\scripts\run_subband_gaussianity.py", line 396, in <module>
+    run()
+  File "E:\clone\ssz-ligo-tests\scripts\run_subband_gaussianity.py", line 272, in run
+    h1_ref_data = compute_ref_asd(h1_ref_s, fs_h)
+                  ^^^^^^^^^^^^^^^
+NameError: name 'compute_ref_asd' is not defined
