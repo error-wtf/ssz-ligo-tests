@@ -711,6 +711,18 @@ detector-characterization products are missing. Without that clarity, "open data
 create an impression of complete openness while leaving decisive non-standard checks
 impossible. That is not strong open science.
 
+**Sharpest fair summary:**
+
+> This is not full open science; it is partial open-data access around a largely
+> collaboration-controlled inference context.
+
+Or in the language of the data layers:
+
+```text
+Open enough to reproduce their story.
+Not open enough to independently challenge the story.
+```
+
 ---
 
 ### 15. Final Position
