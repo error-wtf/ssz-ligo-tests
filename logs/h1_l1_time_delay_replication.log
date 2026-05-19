@@ -1,0 +1,103 @@
+H1/L1 TIME-DELAY REPLICATION TEST -- 2026-05-19 10:35:43
+Trigger: 1411261107.984  Win: 4.0s
+Delays coarse: +/-50.0ms step=1.0ms
+Delays fine:   +/-10.0ms step=0.244ms
+Physical range: |dt|<=10.012ms
+
+Loading reference ASDs from file (first 32s of HDF5)...
+  H1 ref ASD: OK
+  L1 ref ASD: OK
+
+============================================================
+WINDOW: TRIGGER
+============================================================
+  fs=4096Hz  H1=17204 L1=17204 samples
+  H1 t0=1411261105.884  t_center=1411261107.984  offset=2.100s  array_end=1411261110.084
+
+  Band: 20-40 Hz
+    VERDICT: PHYSICAL_DELAY_COHERENT
+    Best physical: dt=-0.24ms xcorr=-0.99982 coh=0.9968
+    Sign-flip: +L1 best_xc=-0.99982  -L1 best_xc=+0.99982
+
+  Band: 40-80 Hz
+    VERDICT: PHYSICAL_DELAY_COHERENT
+    Best physical: dt=+0.00ms xcorr=-0.99965 coh=0.9949
+    Sign-flip: +L1 best_xc=-0.99965  -L1 best_xc=+0.99965
+
+  Band: 80-120 Hz
+    VERDICT: PHYSICAL_DELAY_COHERENT
+    Best physical: dt=+0.00ms xcorr=-0.99962 coh=0.9644
+    Sign-flip: +L1 best_xc=-0.99962  -L1 best_xc=+0.99962
+
+  Band: 120-160 Hz
+    VERDICT: PHYSICAL_DELAY_COHERENT
+    Best physical: dt=+0.00ms xcorr=-0.99987 coh=0.8212
+    Sign-flip: +L1 best_xc=-0.99987  -L1 best_xc=+0.99987
+
+  Band: 160-210 Hz
+    VERDICT: PHYSICAL_DELAY_COHERENT
+    Best physical: dt=+0.00ms xcorr=-0.99945 coh=0.5986
+    Sign-flip: +L1 best_xc=-0.99945  -L1 best_xc=+0.99945
+
+  Band: 20-210 Hz
+    VERDICT: PHYSICAL_DELAY_COHERENT
+    Best physical: dt=+0.00ms xcorr=-0.99587 coh=0.4839
+    Sign-flip: +L1 best_xc=-0.99587  -L1 best_xc=+0.99587
+
+============================================================
+WINDOW: OFF_m500
+============================================================
+  fs=4096Hz  H1=17204 L1=17204 samples
+  H1 t0=1411260605.884  t_center=1411260607.984  offset=2.100s  array_end=1411260610.084
+
+  Band: 20-40 Hz
+    VERDICT: PHYSICAL_DELAY_COHERENT
+    Best physical: dt=+0.00ms xcorr=-0.99980 coh=0.9996
+    Sign-flip: +L1 best_xc=-0.99980  -L1 best_xc=+0.99980
+
+  Band: 40-80 Hz
+    VERDICT: PHYSICAL_DELAY_COHERENT
+    Best physical: dt=+0.00ms xcorr=-0.99988 coh=0.9978
+    Sign-flip: +L1 best_xc=-0.99988  -L1 best_xc=+0.99988
+
+  Band: 80-120 Hz
+    VERDICT: PHYSICAL_DELAY_COHERENT
+    Best physical: dt=+0.00ms xcorr=-0.99986 coh=0.9839
+    Sign-flip: +L1 best_xc=-0.99986  -L1 best_xc=+0.99986
+
+  Band: 120-160 Hz
+    VERDICT: PHYSICAL_DELAY_COHERENT
+    Best physical: dt=+0.00ms xcorr=-0.99995 coh=0.9175
+    Sign-flip: +L1 best_xc=-0.99995  -L1 best_xc=+0.99995
+
+  Band: 160-210 Hz
+    VERDICT: PHYSICAL_DELAY_COHERENT
+    Best physical: dt=+0.00ms xcorr=-0.99978 coh=0.7202
+    Sign-flip: +L1 best_xc=-0.99978  -L1 best_xc=+0.99978
+
+  Band: 20-210 Hz
+    VERDICT: PHYSICAL_DELAY_COHERENT
+    Best physical: dt=+0.00ms xcorr=-0.99996 coh=0.5929
+    Sign-flip: +L1 best_xc=-0.99996  -L1 best_xc=+0.99996
+
+============================================================
+FINAL CLASSIFICATION
+============================================================
+H1_L1_REPLICATION_STATUS TRIGGER (full band): PHYSICAL_DELAY_COHERENT
+H1_L1_REPLICATION_STATUS TRIGGER (20-40 Hz):  PHYSICAL_DELAY_COHERENT
+H1_L1_REPLICATION_STATUS OFF_m500 (full band): PHYSICAL_DELAY_COHERENT
+H1_L1_REPLICATION_STATUS OFF_m500 (20-40 Hz):  PHYSICAL_DELAY_COHERENT
+TRIGGER_SPECIFIC: False
+L1_20_40_STATUS:  H1_REPLICATED_WITH_DELAY
+WARNING: Trigger and off-source give same verdict.
+  The coherence is NOT specific to the trigger window.
+  Likely cause: persistent H1/L1 environmental correlation
+  (Schumann resonances, common noise) or data artifact.
+  This result CANNOT be used to claim GW signal replication.
+
+READY_FOR_REAL_LIGO_SSZ_CLAIM: NO
+SSZ_SUPPORT_CLAIM_MADE: NO
+SSZ_FALSIFICATION_CLAIM_MADE: NO
+
+CSV: E:\clone\ssz-ligo-tests\data_manifest\h1_l1_delay_scan.csv  (2208 rows)
+Report: E:\clone\ssz-ligo-tests\reports\H1_L1_TIME_DELAY_REPLICATION_REPORT.md
