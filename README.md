@@ -6,6 +6,15 @@
 
 ---
 
+> **Core methodological position:**
+> We distinguish measured detector strain from model-conditioned inference products.
+> Component masses, chirp mass, spins, and QNM parameters are not directly measured
+> observables — they are outputs of a GR/CBC or Kerr-conditioned inference chain.
+> Therefore they cannot serve as metric-neutral input for SSZ tests.
+> **m₁ and m₂ do not exist as numbers anywhere in the detector.**
+
+---
+
 ## What This Is
 
 A **physics-first, anti-circular forward model** from SSZ (Segmented Spacetime)
