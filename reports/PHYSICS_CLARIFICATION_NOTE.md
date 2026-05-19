@@ -35,6 +35,37 @@ However: ℳ is defined and inferred **inside a GR/CBC waveform model**.
 For alternative metric theories (SSZ or other), ℳ is not a neutral
 model-free measurement. It is a GR-posterior-level quantity.
 
+#### What LIGO actually measures vs. what it infers
+
+| Layer | What it is | Status |
+|-------|-----------|--------|
+| h(t) — strain time series | **Raw observable** | Directly measured |
+| f(t), ḟ(t) — instantaneous frequency | Extracted from h(t) | Model-assisted |
+| ℳ, m₁, m₂, χ — source parameters | **Inferred from h(t) under GR/CBC** | Model-dependent |
+| f_QNM, τ_QNM — ringdown parameters | Inferred under Kerr assumption | Model-dependent |
+
+**m₁ and m₂ do not exist as numbers anywhere in the detector.**
+They are the output of a Bayesian inference that asks:
+*"Which GR/CBC waveform template best matches the observed h(t)?"*
+
+The chirp mass ℳ is therefore:
+- Mathematically well-motivated (not arbitrary)
+- Physically meaningful **within GR**
+- **Not a neutral observable** for theories that modify the inspiral waveform
+- **Circular as an SSZ input**: using GR-inferred ℳ to constrain SSZ
+  assumes the answer before the test
+
+#### Canonical methodological statement
+
+> LIGO measures strain h(t). Chirp mass ℳ is a model-conditioned inference,
+> not a raw measurement. Treating a model-dependent parameter as a
+> theory-independent observable overstates the evidential reach of the data.
+> For alternative metric tests, raw strain must be used directly —
+> not GR posteriors as inputs.
+
+This is not a criticism of LIGO's analysis. It is a statement about
+**what the data can and cannot establish** for non-GR hypotheses.
+
 ---
 
 ### 2. LIGO Posteriors — Model-Dependent
@@ -48,10 +79,13 @@ If the signal contains non-GR components (SSZ, modified dispersion, twist, ...),
 those components are not captured by GR/CBC templates. The reported posteriors
 are shaped by the model assumed.
 
-**Correct framing:**
-> "Under GR/CBC waveform assumptions, the posterior on the chirp mass
-> peaks at ℳ ≈ X M☉. Under alternative metric assumptions, this
-> posterior would need to be recomputed from raw strain."
+**The correct framing for any alternative-metric test:**
+
+| Incorrect framing | Correct framing |
+|-------------------|----------------|
+| "The LIGO chirp mass objectively tells us what the source was" | "Under GR/CBC assumptions, h(t) is consistent with a source of ℳ ≈ X M☉" |
+| "GW240925 has component masses m₁=X, m₂=Y" | "Under GR/CBC templates, the posterior on m₁ peaks at X M☉" |
+| "The ringdown frequency proves Kerr" | "The data is consistent with Kerr QNM frequencies at the stated SNR" |
 
 **What this means for the SSZ pipeline:**
 A forward-model test on raw strain (as implemented here) bypasses
