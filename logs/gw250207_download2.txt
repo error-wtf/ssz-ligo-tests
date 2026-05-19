@@ -1,0 +1,17 @@
+GW250207 Strain Download
+Trigger GPS: 1422964625.26
+Output dir : E:\clone\ligo-gw240925-gw250207-release\18600070\GW250207-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF
+
+Querying GWOSC API v2: https://gwosc.org/api/v2/events/GW250207_115645/strain-files/
+  API v2 failed: HTTP Error 404: Not Found
+
+Still missing: ['H1', 'L1']
+
+Manual download instructions:
+  1. Go to: https://gwosc.org/eventapi/html/GWTC-3/GW250207_115645/
+  2. Download: 4kHz HDF5, 4096s blocks for H1 and L1
+  3. Place H1 file in: E:\clone\ligo-gw240925-gw250207-release\18600070\GW250207-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF\H1
+  4. Place L1 file in: E:\clone\ligo-gw240925-gw250207-release\18600070\GW250207-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF\L1
+
+Alternative ù fetch via GWOSC data API:
+  https://gwosc.org/api/v2/datasets/events/O4/?format=json

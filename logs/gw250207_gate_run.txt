@@ -1,0 +1,21 @@
+GW250207 ARTIFACT GATE ù CROSS-EVENT COMPARISON -- 2026-05-19 07:52:22
+GW240925 GPS: 1411261107.984
+GW250207 GPS: 1422964625.26
+
+=================================================================
+EVENT: GW240925  GPS: 1411261107.984
+=================================================================
+  H1 file: OK ù H-H1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5
+  L1 file: OK ù L-L1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5
+
+  [1] Bandpower 20-210 Hz
+Traceback (most recent call last):
+  File "E:\clone\ssz-ligo-tests\scripts\run_gw250207_artifact_gate.py", line 425, in <module>
+    run()
+  File "E:\clone\ssz-ligo-tests\scripts\run_gw250207_artifact_gate.py", line 303, in run
+    r240 = run_event_gate(
+           ^^^^^^^^^^^^^^^
+  File "E:\clone\ssz-ligo-tests\scripts\run_gw250207_artifact_gate.py", line 210, in run_event_gate
+    f"off-500s={bp_o:.3e if bp_o else 'N/A'}")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid format specifier '.3e if bp_o else 'N/A'' for object of type 'float'

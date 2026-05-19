@@ -1,0 +1,19 @@
+GW250207 Strain Download
+Trigger GPS: 1422964625.26
+Output dir: E:\clone\ligo-gw240925-gw250207-release\18600070\GW250207-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF
+
+Checking GWOSC event API: https://gwosc.org/eventapi/json/GWTC-3/GW250207_115645/?format=json
+  API call failed: HTTP Error 404: Not Found
+
+Attempting direct downloads...
+  Downloading: H-H1_GWOSC_O4b4DiscC00_4KHZ_R1-1422964096-4096.hdf5
+  URL: https://gwosc.org/archive/data/O4/H-H1_GWOSC_O4b4DiscC00_4KHZ_R1-1422964096-4096.hdf5
+  FAILED: HTTP Error 404: Not Found
+  Downloading: L-L1_GWOSC_O4b4DiscC00_4KHZ_R1-1422964096-4096.hdf5
+  URL: https://gwosc.org/archive/data/O4/L-L1_GWOSC_O4b4DiscC00_4KHZ_R1-1422964096-4096.hdf5
+  FAILED: HTTP Error 404: Not Found
+
+NOTE: If download fails, manually fetch from:
+  https://gwosc.org/events/GW250207_115645/
+  Download: 4kHz HDF5, 4096s block containing GPS 1422964625
+  Place in: E:\clone\ligo-gw240925-gw250207-release\18600070\GW250207-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF/H1/... and E:\clone\ligo-gw240925-gw250207-release\18600070\GW250207-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF/L1/...

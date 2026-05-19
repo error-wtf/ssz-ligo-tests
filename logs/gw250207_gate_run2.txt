@@ -1,0 +1,63 @@
+GW250207 ARTIFACT GATE ù CROSS-EVENT COMPARISON -- 2026-05-19 07:55:49
+GW240925 GPS: 1411261107.984
+GW250207 GPS: 1422964625.26
+
+=================================================================
+EVENT: GW240925  GPS: 1411261107.984
+=================================================================
+  H1 file: OK ù H-H1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5
+  L1 file: OK ù L-L1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5
+
+  [1] Bandpower 20-210 Hz
+    H1: trigger=2.412e-40  off-500s=4.248e-40
+    L1: trigger=3.772e-40  off-500s=8.416e-40
+
+  [2] Multi-window stationarity (+-500s)
+    H1: N=233  quantile=10.3%  z=-1.10
+    L1: N=251  quantile=74.5%  z=+0.32
+
+  [3] Line/notch test
+    H1: full=2.412e-40  notched=2.310e-40  line_frac=4.2%
+    L1: full=3.772e-40  notched=3.597e-40  line_frac=4.7%
+
+  [4] Sub-band Gaussianity
+    H1_20-40: ex_k=+3.673
+    H1_40-80: ex_k=+0.340
+    H1_80-120: ex_k=+2.386
+    H1_120-160: ex_k=+1.252
+    H1_160-210: ex_k=+0.405
+    L1_20-40: ex_k=+44.857
+    L1_40-80: ex_k=-0.515
+    L1_80-120: ex_k=+3.266
+    L1_120-160: ex_k=+5.663
+    L1_160-210: ex_k=+0.198
+
+  [5] H1/L1 cross-coherence
+    mean_coh=0.0561  phase_R=0.9115  mean_phase=-167.0deg
+
+=================================================================
+EVENT: GW250207  GPS: 1422964625.26
+=================================================================
+  H1 file: MISSING ù H-H1_GWOSC_O4b4DiscC00_4KHZ_R1-1422964096-4096.hdf5
+  L1 file: MISSING ù L-L1_GWOSC_O4b4DiscC00_4KHZ_R1-1422964096-4096.hdf5
+  -> SKIPPED: strain files not available
+  -> Run scripts/download_gw250207_strain.py first
+
+=================================================================
+CROSS-EVENT COMPARISON SUMMARY
+=================================================================
+  L1/H1 BP ratio                      GW240925: N/A
+  L1 stationarity quantile (%)        GW240925: 74.5000
+  H1 stationarity quantile (%)        GW240925: 10.3000
+  L1 line fraction                    GW240925: 0.0465
+  H1/L1 coherence                     GW240925: 0.0561
+  Cross-phase stability R             GW240925: 0.9115
+  Mean cross-phase (deg)              GW240925: -167.0200
+
+  EVENT              L1/H1    L1-Q%      Coh      Phase GATE
+  ------------------------------------------------------------
+  GW240925             nan     74.5   0.0561     -167.0 MARGINAL_NEEDS_DQ
+
+Outputs:
+  E:\clone\ssz-ligo-tests\reports\GW250207_ARTIFACT_GATE_REPORT.md
+  E:\clone\ssz-ligo-tests\data_manifest\gw250207_artifact_gate.csv
