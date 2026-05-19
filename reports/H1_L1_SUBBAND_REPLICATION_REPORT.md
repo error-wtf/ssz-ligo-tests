@@ -55,29 +55,49 @@ Results will populate data_manifest/h1_l1_subband_abs_corr.csv when run is compl
 
 ## Decision Logic
 
+The decisive check for each subband is:
+
 ```text
-For each subband:
-
-If abs_corr_trigger > abs_corr_off_source AND abs_corr_trigger > 0.5:
-    subband_verdict = TRIGGER_SPECIFIC_COHERENT
-
-If abs_corr_trigger approximately equals abs_corr_off_source:
-    subband_verdict = PERSISTENT_COMMON_MODE (not event-specific)
-
-If abs_corr_trigger < 0.3:
-    subband_verdict = L1_LOCAL (no H1 coherence)
+Is abs_corr_trigger significantly HIGHER than abs_corr_off_source?
 ```
+
+Interpretation:
+
+```text
+abs_corr_trigger >> abs_corr_off_source:
+    -> event-specific coherence
+    -> subband_verdict = TRIGGER_SPECIFIC_COHERENT
+    -> the signal in this band is triggered by the event
+
+abs_corr_trigger approximately equals abs_corr_off_source:
+    -> stationary coupling / common noise mode
+    -> subband_verdict = PERSISTENT_COMMON_MODE
+    -> not event-specific; cannot support signal claim
+
+abs_corr_trigger < 0.3 AND abs_corr_off_source < 0.3:
+    -> no H1 coherence in this band
+    -> subband_verdict = L1_LOCAL
+```
+
+Note: The full-band comparison already shows TRIGGER approximately equals OFF_m500
+(0.991 vs 0.9999), which suggests a stationary coupling mode dominates the full band.
+Subband analysis is critical to find whether any band is trigger-specific.
 
 **Key gate for 20-40 Hz:**
 
 ```text
 If 20-40 Hz is TRIGGER_SPECIFIC_COHERENT:
-    The L1 low-frequency excess is part of the coherent event signal.
-    Gaussianity gate may be revisited.
+    The L1 20-40 Hz excess is part of the coherent event signal.
+    Gaussianity gate may be revisited with event-context.
 
-If 20-40 Hz is PERSISTENT_COMMON_MODE or L1_LOCAL:
-    The L1 20-40 Hz excess is detector-local.
-    DQ/Omicron/iDQ context required before claim-level interpretation.
+If 20-40 Hz is PERSISTENT_COMMON_MODE:
+    The excess is a stationary environmental coupling.
+    Not event-specific. Does not block or support SSZ claim.
+    DQ/Omicron/iDQ context required for further interpretation.
+    L1_20_40_STATUS: PERSISTENT_COMMON_MODE
+
+If 20-40 Hz is L1_LOCAL:
+    The excess is detector-local, not H1-coherent.
     L1_20_40_STATUS: DQ_CONTEXT_REQUIRED
 ```
 

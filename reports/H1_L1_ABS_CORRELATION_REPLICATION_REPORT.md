@@ -6,9 +6,25 @@
 
 ---
 
+## Sign Convention: Why Negative Correlation Is Not a Failure
+
+```text
+corr = +0.99  ->  strongly co-directed
+corr = -0.99  ->  strongly counter-directed (same pattern, mirrored)
+|corr| = 0.99 ->  strongly coupled
+```
+
+For the H1/L1 detector pair, opposite arm orientations, antenna projection,
+and sign conventions can cause the same GW signal to appear with opposite
+sign at the two sites. A large negative correlation at the correct time delay
+is therefore a valid coherence result, not a failure.
+
+**Rule:** Always use `argmax(|C(tau)|)` for peak detection, not `argmax(C(tau))`.
+
+---
+
 ## Summary
 
-The H1/L1 cross-correlation test does not argue against a common event signal.
 When sign convention is handled correctly, the trigger window shows a strong
 anti-correlated match at dt=0 ms:
 
@@ -16,9 +32,6 @@ anti-correlated match at dt=0 ms:
 corr(dt=0 ms) = -0.991
 abs(corr)     =  0.991
 ```
-
-This is consistent with an opposite detector sign/projection convention
-(H1/L1 have opposite arm orientations in the GW strain projection).
 
 The previous dt=-10 ms result and PERSISTENT_SYSTEMATIC classification were
 xcorr implementation artifacts from using argmax(corr) instead of argmax(|corr|).
@@ -59,6 +72,40 @@ it is expected behavior for the H1/L1 detector pair.
 - SSZ is falsified
 - This event is free of DQ concerns
 ```
+
+---
+
+## Critical Gate: Trigger vs. Off-Source |corr|
+
+The decisive professional check is:
+
+```text
+Is |corr| at the trigger window significantly stronger than in off-source windows?
+```
+
+Current full-band values:
+
+```text
+Window     |corr|   interpretation
+TRIGGER    0.991    strong coupling
+OFF_m500   0.9999   strong coupling (off-source)
+```
+
+**Assessment:** Trigger and off-source abs-correlation are comparable.
+This indicates a stationary coupling mode rather than an event-specific signal.
+
+Possible causes:
+
+```text
+- Persistent environmental common mode (Schumann resonances)
+- Shared noise floor between H1 and L1
+- Detector orientation: structural anti-correlation that is always present
+```
+
+Conclusion: Full-band coherence with abs(corr)=0.991 is confirmed, but it is
+persistent — not exclusive to the trigger. The event-specific contribution
+must be isolated via subband analysis (especially 20-40 Hz) and longer
+off-source baselines.
 
 ---
 
