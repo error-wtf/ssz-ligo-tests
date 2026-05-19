@@ -284,6 +284,7 @@ docs/
   SSZ_GEOMETRIC_ALGEBRA_INTERFEROMETER_MODEL.md — GA detector model
   SSZ_TWIST_ANHOLONOMY_BRANCH.md       — twist/anholonomy branch
   ANALYTIC_2PN_POLARIZATION_CONTROL.md — 2PN polarization control
+  LIGO_REPRODUCIBILITY_CRITIQUE.md     — sourced critique of LIGO reproducibility gap
 
 reports/
   FINAL_INTERPRETATION_LOCK.md         — locked interpretation (2026-05-18)
@@ -653,7 +654,9 @@ READY_FOR_REAL_LIGO_SSZ_CLAIM: NO
 
 ---
 
-### 12. What We Need from LIGO
+### 12. What We Need from LIGO — And the Reproducibility Gap
+
+**For our specific non-GR test:**
 
 ```text
 Omicron triggers for the relevant GPS windows
@@ -673,8 +676,68 @@ Concise question to LIGO:
 > at trigger vs. +1.1 off-source). Are offline DQ/iDQ/Omicron/line products
 > available, or should L1 be treated as diagnostic-only for broadband non-GR tests?
 
-**Related public reproducibility request (IGWN community forum):**  
-[https://ask.igwn.org/t/request-for-fully-reproducible-calibration-chain-for-gwosc-strain-data/1397/2](https://ask.igwn.org/t/request-for-fully-reproducible-calibration-chain-for-gwosc-strain-data/1397/2)
+**Broader reproducibility concern:**
+
+The limitation extends beyond our specific test. GWOSC releases provide calibrated
+strain, DQ segments, and posteriors — but not the full calibration chain required for a
+fundamentally independent external reconstruction of h(t).
+
+This was confirmed directly by LIGO in a public exchange (Mastodon, December 2025):
+
+> "Our full data management policy [...] covers calibrated data, not auxiliary channels."
+> — LIGO @scicomm.xyz, 3 Dec 2025 [[source]](https://chaos.social/deck/@LIGO@scicomm.xyz/116569194588841654)
+
+The missing components for full external reproducibility:
+
+```text
+PCal (Photon Calibrator) raw channels and injected waveform data
+DARM error and control signals
+Time-dependent FIR/IIR filter coefficient archives
+CalibEnv / calibration model files (epoch-by-epoch)
+Full auxiliary channel data via public API
+```
+
+Central distinction:
+
+```text
+Open Data Product  !=  Fully reproducible measurement chain
+```
+
+The calibration question was raised publicly in 2016 in a petition (3,028 verified
+signatures) asking where the photon-calibrator data — strain as a function of laser power
+— from the GW150914 discovery paper had been published. The cited Reference [63] in
+PRL 116, 061102 (2016) was an unpublished e-print containing no data.
+
+A 2020 reproduction study noted explicitly:
+
+> "An exact replication of the original LIGO analysis was not possible because the
+> original dataset was not publicly available."
+> — arXiv:2010.07244 [[source]](https://arxiv.org/abs/2010.07244)
+
+Ten years after GW150914, a fully independent external reconstruction of the calibration
+chain that produced the published h(t) remains practically impossible using only
+publicly available data. This is not a fraud accusation. It is a reproducibility
+observation with documented primary sources.
+
+**Full sourced critique:** [docs/LIGO_REPRODUCIBILITY_CRITIQUE.md](docs/LIGO_REPRODUCIBILITY_CRITIQUE.md)
+
+**Primary sources:**
+
+| Document | Link |
+|----------|------|
+| IGWN forum: reproducibility request | [ask.igwn.org](https://ask.igwn.org/t/request-for-fully-reproducible-calibration-chain-for-gwosc-strain-data/1397/2) |
+| LIGO Mastodon response (Dec 2025) | [chaos.social](https://chaos.social/deck/@LIGO@scicomm.xyz/116569194588841654) |
+| Petition: 3,028 verified signatures | [change.org](https://www.change.org/p/prof-karsten-danzmann-beantworten-sie-bitte-3-fragen-%C3%BCber-das-ligo-experiment?signed=true) |
+| LIGO Data Management Plan v31 | [dcc.ligo.org](https://dcc.ligo.org/public/0009/M1000066/031/Data_Management_Plan-v31.pdf) |
+| arXiv:1710.09973 — calibrated strain reconstruction | [arxiv.org](https://arxiv.org/abs/1710.09973) |
+| arXiv:2412.04638 — iDQ O4 performance | [arxiv.org](https://arxiv.org/abs/2412.04638) |
+| arXiv:1311.4898 — template mismodelling | [arxiv.org](https://arxiv.org/abs/1311.4898) |
+| arXiv:2101.07743 — mismodelling / PE | [arxiv.org](https://arxiv.org/abs/2101.07743) |
+| arXiv:2302.03676 — O3 open data | [arxiv.org](https://arxiv.org/abs/2302.03676) |
+| arXiv:2010.07244 — GW150914 reproduction | [arxiv.org](https://arxiv.org/abs/2010.07244) |
+| arXiv:2508.18079 — O4a open data | [arxiv.org](https://arxiv.org/abs/2508.18079) |
+| LIGO Wikipedia (DE) — Danish group critique | [wikipedia.org](https://de.wikipedia.org/wiki/LIGO) |
+| IGWN O3 aux channels release | [ask.igwn.org](https://ask.igwn.org/t/new-data-release-o3-auxiliary-channels/470) |
 
 ---
 
