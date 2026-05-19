@@ -30,7 +30,6 @@ SSZ_SUPPORT_CLAIM_MADE: NO
 import sys
 import time
 import datetime
-import importlib
 import traceback
 from pathlib import Path
 
@@ -125,11 +124,20 @@ PIPELINE = [
         "slow": False,
         "skip_if_event_only": False,
     },
+    {
+        "id": "12",
+        "module": "run_artifact_score",
+        "label": "Artifact Score + Claim Gate",
+        "slow": False,
+        "skip_if_event_only": False,
+    },
 ]
 
 # ---------------------------------------------------------------------------
 # RUNNER
 # ---------------------------------------------------------------------------
+
+
 def run_step(step):
     mod_name = step["module"]
     try:
@@ -224,8 +232,8 @@ def main():
         "",
         "## Run Summary",
         "",
-        f"| # | Script | Status | Time (s) |",
-        f"|---|--------|--------|----------|",
+        "| # | Script | Status | Time (s) |",
+        "|---|--------|--------|----------|",
     ]
     for s in summary:
         md.append(

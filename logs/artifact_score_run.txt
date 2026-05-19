@@ -1,0 +1,32 @@
+ARTIFACT SCORE AUTOMAT -- 2026-05-19 08:11:34
+Event: GW240925 GPS=1411261107.984
+
+  Component                            Score        Value Notes
+  ----------------------------------------------------------------------
+    2  L1/H1 bandpower ratio                     1.5639  elevated
+    0  L1 stationarity quantile                 74.5000  clean
+    0  L1 line fraction                          0.0465  clean
+    3  L1 20-40Hz excess kurtosis               44.8567  high_risk
+    2  H1/L1 coherence                           0.0561  elevated
+    0  Cross-phase stability R                   0.9115  clean
+    0  Phase-rand BP quantile                    0.0000  clean
+    3  DQ status                           DQ_UNRESOLVED  high_risk
+
+  Total score: 10 / 24 (max 24)
+  ARTIFACT_RISK: MEDIUM
+
+=================================================================
+CLAIM GATE VERDICT
+=================================================================
+  CLAIM_ALLOWED: NO
+  BLOCKERS:
+    - L1_DQ_UNRESOLVED: DQ_UNRESOLVED
+    - OMICRON_IDQ_NOT_AVAILABLE
+    - GW250207_STRAIN_NOT_DOWNLOADED
+
+  READY_FOR_REAL_LIGO_SSZ_CLAIM: NO
+  (Hardcoded: requires manual review + external DQ confirmation)
+Outputs:
+  E:\clone\ssz-ligo-tests\reports\ARTIFACT_SCORE_REPORT.md
+  E:\clone\ssz-ligo-tests\data_manifest\artifact_score.csv
+  E:\clone\ssz-ligo-tests\data_manifest\artifact_gate_verdict.json

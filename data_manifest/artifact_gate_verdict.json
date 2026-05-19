@@ -1,0 +1,15 @@
+{
+  "event": "GW240925",
+  "timestamp": "2026-05-19 08:11:34",
+  "total_score": 10,
+  "max_score": 24,
+  "n_scored": 8,
+  "artifact_risk": "MEDIUM",
+  "claim_allowed": false,
+  "blockers": [
+    "L1_DQ_UNRESOLVED: DQ_UNRESOLVED",
+    "OMICRON_IDQ_NOT_AVAILABLE",
+    "GW250207_STRAIN_NOT_DOWNLOADED"
+  ],
+  "READY_FOR_REAL_LIGO_SSZ_CLAIM": "NO"
+}
