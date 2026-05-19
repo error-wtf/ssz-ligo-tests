@@ -715,15 +715,23 @@ impossible. That is not strong open science.
 
 **Sharpest fair summary:**
 
-> This is not full open science; it is partial open-data access around a largely
-> collaboration-controlled inference context.
+> We do not claim that LIGO hides or manipulates data. We state that the public GWOSC
+> release provides calibrated strain and selected DQ information, but not the full
+> detector-characterization context needed to independently resolve the L1 low-frequency
+> anomaly for our non-GR forward-model test.
 
 Or in the language of the data layers:
 
 ```text
-Open enough to reproduce their story.
-Not open enough to independently challenge the story.
+Open data:                       yes, in a limited but useful formal sense
+Open standard-analysis reproducibility:  partially yes
+Open alternative-model reproducibility:  limited
 ```
+
+A strong open-science release should clearly state what the data can support,
+what they cannot support, which products are model-dependent, and which
+detector-characterization products are missing from the public release.
+This is a reproducibility concern, not an accusation of fraud.
 
 ---
 
