@@ -70,7 +70,8 @@ Confirmed by LIGO directly (Mastodon, Dec 2025):
 
 This is a **reproducibility concern, not a fraud accusation**.
 
-> [Full sourced critique → docs/LIGO_REPRODUCIBILITY_CRITIQUE.md](docs/LIGO_REPRODUCIBILITY_CRITIQUE.md)  
+> [**Full Report → docs/LIGO_OPEN_DATA_FULL_REPORT.md**](docs/LIGO_OPEN_DATA_FULL_REPORT.md)  
+> [Detailed critique → docs/LIGO_REPRODUCIBILITY_CRITIQUE.md](docs/LIGO_REPRODUCIBILITY_CRITIQUE.md)  
 > [IGWN forum thread → ask.igwn.org](https://ask.igwn.org/t/request-for-fully-reproducible-calibration-chain-for-gwosc-strain-data/1397/2)
 
 ---
@@ -313,6 +314,7 @@ docs/
   SSZ_GEOMETRIC_ALGEBRA_INTERFEROMETER_MODEL.md — GA detector model
   SSZ_TWIST_ANHOLONOMY_BRANCH.md       — twist/anholonomy branch
   ANALYTIC_2PN_POLARIZATION_CONTROL.md — 2PN polarization control
+  LIGO_OPEN_DATA_FULL_REPORT.md        — full report: calibration, provenance, auditability (8 parts, 14 sources)
   LIGO_REPRODUCIBILITY_CRITIQUE.md     — sourced critique of LIGO reproducibility gap
 
 reports/
@@ -780,7 +782,8 @@ chain that produced the published h(t) remains practically impossible using only
 publicly available data. This is not a fraud accusation. It is a reproducibility
 observation with documented primary sources.
 
-**Full sourced critique:** [docs/LIGO_REPRODUCIBILITY_CRITIQUE.md](docs/LIGO_REPRODUCIBILITY_CRITIQUE.md)
+**Full report:** [docs/LIGO_OPEN_DATA_FULL_REPORT.md](docs/LIGO_OPEN_DATA_FULL_REPORT.md)  
+**Detailed critique:** [docs/LIGO_REPRODUCIBILITY_CRITIQUE.md](docs/LIGO_REPRODUCIBILITY_CRITIQUE.md)
 
 **Primary sources:**
 
