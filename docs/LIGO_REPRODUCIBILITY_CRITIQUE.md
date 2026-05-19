@@ -213,7 +213,69 @@ Open Data Product              != Fully reproducible measurement chain
 
 ---
 
-## 7. The Reproducibility Standard
+## 7. Code Provenance, Migration, and Link Rot
+
+Reproducibility requires not just that data exist today, but that:
+
+```text
+The code, parameters, merge requests, pipeline versions, and data products
+that produced a specific published result are permanently, citably, and
+publicly accessible in the exact version that was used.
+```
+
+There is documented evidence of structural provenance gaps in LIGO/LVK software:
+
+**`bilby` code migration (LIGO GitLab → GitHub):**  
+The `bilby` Bayesian inference library changelog explicitly notes that after migration
+from the internal LIGO GitLab to GitHub, links were retroactively updated. The original
+merge requests remain only in the LIGO GitLab and are not publicly accessible:
+
+> "Migration from LIGO GitLab to GitHub. Old merge requests are only visible on the
+> LIGO GitLab."
+> — bilby CHANGELOG.md [[source]](https://github.com/bilby-dev/bilby/blob/main/CHANGELOG.md)
+
+This is scientifically relevant because:
+- Published papers cite code and pipeline versions
+- If the original merge requests, issues, and review history are not public,
+  external reviewers cannot fully trace the reasoning behind algorithmic decisions
+- Migration without archived public access creates **link rot in the scientific record**
+
+The broader pattern:
+
+```text
+Paper cites:   Code version X / Repo Y / Merge Request Z
+Actual state:  Repo migrated, MRs internal-only, old links broken
+Result:        External full-chain reproduction becomes practically impossible
+```
+
+**Scale of the data problem:**  
+The O4a open data documentation notes that calibrated strain represents approximately
+**4 TB/year per instrument**. The total detector data with all diagnostic channels is
+**several PB/year** with hundreds of thousands of channels. Only a small, processed
+subset reaches GWOSC. The channels published include explicitly pre-processed variants:
+`CLEAN` (noise-subtracted), `NOLINES` (spectral lines removed), `AR` (Analysis Ready).
+
+This means:
+
+```text
+What GWOSC releases = analysis-ready, pre-processed strain products
+What was actually recorded = PB-scale raw data with 10^5+ diagnostic channels
+```
+
+For an independent audit, one needs to trace from raw to processed — and that path
+is not publicly available.
+
+**Strongest fair formulation:**
+
+> Open Data without stable, versioned, publicly accessible provenance is not
+> a complete reproducibility guarantee. When analysis code, repos, merge requests,
+> or calibration artefacts are migrated, removed, or kept internally, the external
+> auditability of published strain products is structurally weakened.
+> This is not evidence of fraud. It is a massive auditability problem.
+
+---
+
+## 8. The Reproducibility Standard
 
 Ten years after GW150914, a reasonable reproducibility standard for a publicly funded,
 Nobel Prize-winning experiment would include:
@@ -254,14 +316,21 @@ The strongest fair formulation:
   reproducibility gap for non-standard analyses
 - The calibration transparency question, raised publicly since 2016, remains unanswered
   in the form required for independent fundamental audit
+- Code migration (LIGO GitLab → GitHub) left original merge requests non-public,
+  creating provenance gaps in the scientific record
+- GWOSC strain is ~4 TB/year per instrument; total detector data is PB-scale;
+  only a small processed subset is publicly released
 
 ### Central methodological conclusion
 ```text
 Open Data != Full Open Reproducibility
 
 For non-GR forward-model tests: the decisive missing components are
-calibration chain provenance, aux channels, Omicron/iDQ, and
-time-dependent filter definitions.
+calibration chain provenance, aux channels, Omicron/iDQ,
+time-dependent filter definitions, and code/pipeline provenance.
+
+Open Data without stable, versioned, publicly accessible provenance
+is not a complete reproducibility guarantee.
 
 This is a reproducibility concern, not a fraud accusation.
 ```
@@ -285,3 +354,4 @@ This is a reproducibility concern, not a fraud accusation.
 | arXiv:2302.03676 — O3 open data paper | https://arxiv.org/abs/2302.03676 |
 | arXiv:2010.07244 — GW150914 reproduction study | https://arxiv.org/abs/2010.07244 |
 | arXiv:2508.18079 — O4a open data paper | https://arxiv.org/abs/2508.18079 |
+| bilby CHANGELOG — LIGO GitLab migration | https://github.com/bilby-dev/bilby/blob/main/CHANGELOG.md |

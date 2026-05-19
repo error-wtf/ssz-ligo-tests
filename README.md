@@ -738,6 +738,32 @@ Central distinction:
 Open Data Product  !=  Fully reproducible measurement chain
 ```
 
+**Code provenance and migration:**
+
+The `bilby` Bayesian inference library (core LVK analysis tool) changelog explicitly
+documents migration from the internal LIGO GitLab to GitHub, with the original merge
+requests remaining non-public:
+
+> "Migration from LIGO GitLab to GitHub. Old merge requests are only visible on the
+> LIGO GitLab."
+> — [bilby CHANGELOG.md](https://github.com/bilby-dev/bilby/blob/main/CHANGELOG.md)
+
+If published papers cite code versions whose development history (merge requests, review
+threads, parameter decisions) is not publicly accessible, external full-chain audit is
+structurally incomplete — independent of whether the current code is open.
+
+**Scale of the gap:**
+
+The O4a documentation states calibrated strain is ~4 TB/year per instrument. Total
+detector data with all diagnostic channels is **several PB/year**. GWOSC releases a
+small, pre-processed subset: channels named `CLEAN`, `NOLINES`, `AR` are already
+noise-subtracted and analysis-ready — not raw observables.
+
+```text
+GWOSC releases:        ~4 TB/yr/instrument — pre-processed, analysis-ready
+Total recorded data:   PB-scale, 10^5+ channels — not publicly available
+```
+
 The calibration question was raised publicly in 2016 in a petition (3,028 verified
 signatures) asking where the photon-calibrator data — strain as a function of laser power
 — from the GW150914 discovery paper had been published. The cited Reference [63] in
