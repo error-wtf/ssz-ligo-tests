@@ -393,6 +393,328 @@ flake8 src/ tests/ scripts/ --select=F401,F541,F811,F841,E722,E712
 
 ---
 
+## Critical Open-Data and Methodology Position
+
+### Summary
+
+This repository does **not** claim that LIGO data are fake, manipulated, or useless.
+
+It also does **not** claim that SSZ is confirmed or falsified by the current LIGO release data.
+
+The central conclusion is narrower and more important:
+
+> Public LIGO release products are useful for standard GR/CBC analyses and educational
+> reproduction, but they are not sufficient, by themselves, for a fully independent,
+> anti-circular test of alternative metric theories.
+
+- LIGO measures detector strain. The strain is real measurement input.
+- Many higher-level products — masses, spins, QNM frequencies, remnant parameters,
+  posterior samples, Bayes factors — are **not raw observables**.
+- They are outputs of model-dependent inference pipelines.
+- If those outputs are used as independent proof of the same model assumptions
+  that produced them, a circularity problem arises.
+
+We call this: **model-bound self-confirmation**.
+
+The data are not meaningless. But outside the official GR/CBC pipeline, their
+independent evidential power is much smaller than public communication often suggests.
+
+---
+
+### 1. Strain Is Data; Posterior Products Are Interpretation
+
+LIGO measures calibrated detector strain: `h(t)`. Everything above that level is inferred.
+
+Quantities such as `m1`, `m2`, chirp mass, final spin, QNM frequency, Bayes factors, and
+posterior samples are **not directly observed in the detector**. They are estimated from
+strain using waveform models, priors, noise assumptions, calibration, DQ selections, and
+GR/Kerr/CBC parameter-estimation pipelines. Such products are **not metric-neutral**.
+
+For alternative metrics, the correct test is not:
+`Does SSZ match the Kerr-derived posterior?`
+
+But:
+`Can h_SSZ(f) explain the calibrated strain without using GR/Kerr posteriors as truth?`
+
+---
+
+### 2. The Chirp Mass Is Not a Direct Measurement
+
+The chirp mass is mathematically well-motivated (not arbitrary):
+
+```text
+M_chirp = (m1 * m2)^(3/5) / (m1 + m2)^(1/5)
+```
+
+It governs the GR inspiral rate: `df/dt ∝ M_chirp^(5/3) * f^(11/3)`.
+
+However, `m1` and `m2` are **not directly measured object properties**. They are
+model-inferred from Bayesian template matching.
+
+| Layer | What it is | Status |
+|-------|-----------|--------|
+| `h(t)` — strain | Raw observable | Directly measured |
+| `M_chirp`, `m1`, `m2`, `chi` | GR/CBC Bayesian posterior | Model-dependent |
+| `f_QNM`, `tau_QNM` — ringdown | Inferred under Kerr assumption | Model-dependent |
+
+**`m1` and `m2` do not exist as numbers anywhere in the detector.**
+
+Correct: *"Under GR/CBC assumptions, the strain is consistent with a source having
+this inferred chirp mass."*
+
+Not valid: *"The detector directly measured this chirp mass as a metric-neutral fact."*
+
+---
+
+### 3. The Circularity Problem
+
+```text
+1. Assume GR/Kerr/CBC waveform models.
+2. Search strain with GR/Kerr/CBC templates.
+3. Estimate masses, spins, QNMs via GR/Kerr/CBC parameter estimation.
+4. Publish those posterior products.
+5. Treat them as independent evidence that GR/Kerr/CBC is correct.
+```
+
+This does not mean the experiment is fraudulent. It means the evidential scope must be
+stated honestly. The pipeline shows: *"Data are consistent with GR/CBC."* It cannot
+alone prove: *"All alternative metric models are excluded."* For that, alternative models
+need their own strain-level forward models tested directly against calibrated strain.
+
+---
+
+### 4. Open Data vs. Open Reproducibility
+
+The public GWOSC releases are open in a formal sense — calibrated strain, some metadata,
+some DQ bits, posterior products, tutorials. But this is **not** the same as full open
+reproducibility.
+
+For a fully independent non-GR test, one also needs:
+
+```text
+Omicron triggers      iDQ products          offline DQ reports
+auxiliary channels    line lists            known instrumental couplings
+calibration details   state-vector context  detector-characterization decisions
+```
+
+Without these, external groups cannot independently decide whether an anomaly is a signal,
+a known glitch, an unvetoed transient, a line, a calibration feature, a whitening artifact,
+or a seismic coupling.
+
+We distinguish **formal open data** from **full open reproducibility**.
+
+---
+
+### 5. Why Public LIGO Products Are Not Enough for SSZ
+
+SSZ is an alternative metric framework. A valid SSZ-LIGO test **cannot** use GR/Kerr
+posterior parameters as neutral input.
+
+Circular inputs:
+
+```text
+Kerr QNM posteriors     GR remnant mass/spin posteriors
+pSEOBNR samples         PE-derived QNM frequencies as ground truth
+```
+
+Valid inputs start at strain level:
+
+```text
+calibrated H1/L1 strain     independent PSD + whitening
+independent artifact gates  SSZ forward model h_SSZ(f)
+direct residual / likelihood comparison
+```
+
+This is the **anti-circular principle** of this project.
+
+---
+
+### 6. GW240925 — What the Pipeline Found
+
+The pipeline built and tested: PSD estimation, H1/L1 diagnostics, Gaussianity, line/notch,
+STFT/Omicron-lite, phase-randomization, DQ-bit provenance, H1-only exploratory,
+synthetic SSZ branches, source-propagation twist, and phase-transport formalism.
+
+Key empirical finding:
+
+```text
+L1 non-Gaussianity concentrated in 20-40 Hz sub-band.
+Trigger excess kurtosis:  +44.9  vs. off-source -500s: +1.1
+Delta = +43.7 -- trigger-specific, not chronic broadband.
+```
+
+Classification:
+
+```text
+H1: USABLE_EXPLORATORY      L1: DIAGNOSTIC_ONLY
+H1/L1 coherence: BLOCKED    SSZ claim: NO    SSZ falsification: NO
+```
+
+Public products are insufficient to decide whether the L1 behavior is caused by
+low-frequency detector noise, seismic coupling, suspension/control system, unvetoed
+transient, line contamination, or filtering artifacts. Offline Omicron/iDQ/AUX needed.
+
+---
+
+### 7. What the L1 Anomaly Does and Does Not Mean
+
+Does **not** mean:
+`LIGO data are fake` / `GW240925 is not real` / `SSZ is confirmed or falsified` / `LIGO manipulated data`
+
+Does mean:
+`The released public data are not sufficient for a broadband non-GR H1/L1 coherence test.`
+
+> The L1 behavior is technically reproducible but not sufficiently explained by public
+> release DQ products. Without offline Omicron/iDQ/line/AUX context, L1 cannot be used
+> for a claim-level broadband non-GR coherence test.
+
+---
+
+### 8. Detector Strain Is Not a Telescope Observable
+
+For telescope SSZ tests, one may compare redshift, emission lines, or lensing. LIGO is
+different — it measures local interferometer strain: laser phase differences, arm
+projections, detector response, noise-weighted strain.
+
+A valid SSZ-LIGO model must describe how SSZ affects source-frame emission, propagation,
+phase transport, polarization/twist, detector projection, and calibrated strain.
+The relevant target is `h_SSZ(f)`, not a Kerr-derived posterior table.
+
+---
+
+### 9. Phase Transport and Co-Scaling
+
+If the detector, arms, optics, and local rulers co-scale, a pure local scale factor is
+not directly observable. What is observable is the relative phase accumulated by photons:
+`DeltaPhi = Phi_x - Phi_y`. Therefore SSZ-LIGO must be formulated as a phase-transport /
+relative-holonomy problem. The local arm-length correction was found to be negligible.
+
+The relevant signal chain:
+
+```text
+source / strong-field geometry
+  -> SSZ scale and twist
+  -> propagation
+  -> polarization / phase transport
+  -> detector projection
+  -> strain residual
+```
+
+---
+
+### 10. Source-Propagation Twist Branch
+
+```text
+[h_plus_SSZ, h_cross_SSZ]^T  =  S(f) * R(theta) * [h_plus_GR, h_cross_GR]^T
+```
+
+where `S(f)` = scale contribution, `R(theta)` = polarization/phase/frame twist.
+
+```text
+SOURCE_PROPAGATION_TWIST: synthetic pass
+REAL_TWIST_SIGNAL:        not extractable from current GW240925 run
+READY_FOR_REAL_LIGO_SSZ_CLAIM: NO
+```
+
+---
+
+### 11. What the Current Data Can and Cannot Be Used For
+
+**Can be used for:**
+`pipeline construction` / `PSD estimation` / `H1/L1 diagnostics` / `Gaussianity tests`
+`line/notch analysis` / `STFT/Omicron-lite` / `background estimates`
+`H1-only exploratory tests` / `synthetic SSZ validation` / `methodological demonstrations`
+
+**Cannot currently be used for:**
+`a final SSZ claim` / `a final SSZ falsification` / `a metric-neutral QNM test`
+`a claim-level H1/L1 non-GR coherence test without offline DQ/Omicron/iDQ`
+
+---
+
+### 12. What We Need from LIGO
+
+```text
+Omicron triggers for the relevant GPS windows
+iDQ information and offline DQ reports
+line lists and known instrumental couplings
+auxiliary-channel context
+calibration uncertainty context
+state-vector interpretation
+detector-characterization notes for the 20-40 Hz band
+```
+
+Concise question to LIGO:
+
+> We cannot treat current PE/QNM posterior products as metric-neutral for our
+> non-GR forward-model test. H1 is usable for exploratory validation, but L1 shows
+> unresolved low-frequency DQ context in the 20-40 Hz band (excess kurtosis +44.9
+> at trigger vs. +1.1 off-source). Are offline DQ/iDQ/Omicron/line products
+> available, or should L1 be treated as diagnostic-only for broadband non-GR tests?
+
+---
+
+### 13. Public Petition / Transparency Context
+
+A public petition questioning aspects of the LIGO experiment is not, by itself, scientific
+proof that LIGO is wrong. However, it is relevant as a transparency signal.
+
+```text
+petition = transparency and trust signal
+not:
+petition = physical disproof of LIGO
+```
+
+This project does not use any petition as evidence against LIGO. It uses the existence
+of public scrutiny as evidence that reproducibility limits deserve serious attention.
+
+---
+
+### 14. Political / Funding-Relevant Interpretation
+
+For policymakers: the key issue is not whether LIGO is fake. The key issue is whether
+publicly funded large-scale science should provide enough data and context for independent
+verification outside the collaboration's preferred model family.
+
+Current situation:
+
+```text
+Open data:                       yes, in a limited formal sense
+Open reproducibility:            only partially
+Open alternative-model testing:  strongly limited
+```
+
+If public money funds the experiment, then public releases should clearly state: what the
+data can prove, what they cannot prove, which products are model-dependent, and which
+detector-characterization products are missing. Without that clarity, "open data" can
+create an impression of complete openness while leaving decisive non-standard checks
+impossible. That is not strong open science.
+
+---
+
+### 15. Final Position
+
+```text
+LIGO strain is real measurement input.
+LIGO posterior products are model-dependent outputs.
+The public releases are useful but incomplete for anti-circular non-GR tests.
+GW240925 is useful for pipeline and artifact-gate development.
+GW240925 is not sufficient for a final SSZ test.
+L1 remains diagnostic-only without offline DQ/Omicron/iDQ clarification.
+No SSZ support claim is made.
+No SSZ falsification claim is made.
+```
+
+The strongest fair criticism:
+
+> The public LIGO releases are formally open, but not fully open in the sense required
+> for independent alternative-metric reproducibility. They allow standard analyses to be
+> reproduced, but they do not always provide enough detector-characterization context for
+> external groups to independently test non-GR forward models at claim level.
+
+This is the central methodological result of this project.
+
+---
+
 ## License
 
 ANTI-CAPITALIST SOFTWARE LICENSE v1.4
