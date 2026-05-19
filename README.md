@@ -846,6 +846,9 @@ For anti-circular non-GR tests: Level 3-4 is often decisive, and Level 5 is meth
 
 ### 18. Petition / Public Criticism Context
 
+**Reference:** LIGO official Mastodon post (scicomm.xyz):
+[https://chaos.social/deck/@LIGO@scicomm.xyz/116569194588841654](https://chaos.social/deck/@LIGO@scicomm.xyz/116569194588841654)
+
 A public petition signed by ~3000 people questioning aspects of the LIGO
 experiment (including researchers) is not, by itself, scientific proof that
 LIGO is wrong. It is a **transparency and trust signal**.
