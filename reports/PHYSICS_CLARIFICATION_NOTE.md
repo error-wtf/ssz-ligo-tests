@@ -6,6 +6,33 @@ Context: GW240925 / L1 anomaly / SSZ pipeline interpretation
 
 ---
 
+## Canonical Statement
+
+> We distinguish between detector measurements and model-conditioned inference
+> products. The calibrated strain is measurement input; chirp mass, component
+> masses, spins, and QNM parameters are GR/CBC-conditioned estimates — not
+> metric-neutral observables.
+
+On the L1 anomaly specifically:
+
+> The anomaly may be detector- or pipeline-induced. Current public GWOSC
+> products are insufficient to decide whether the 20–40 Hz structure is
+> instrumental, environmental, line-related, or signal-like.
+
+On the chirp mass specifically:
+
+```text
+Chirp mass IS:     a meaningful GR/CBC model parameter
+                   mathematically well-motivated
+                   the dominant inspiral observable in GR
+
+Chirp mass IS NOT: a raw detector observable
+                   a metric-neutral measurement
+                   valid input for an anti-circular SSZ test
+```
+
+---
+
 ## Four Precise Statements
 
 ### 1. Chirp Mass — Not Arbitrary, But Model-Dependent

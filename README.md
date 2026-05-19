@@ -419,6 +419,19 @@ We call this: **model-bound self-confirmation**.
 The data are not meaningless. But outside the official GR/CBC pipeline, their
 independent evidential power is much smaller than public communication often suggests.
 
+**Canonical methodological statement of this project:**
+
+> We distinguish between detector measurements and model-conditioned inference
+> products. The calibrated strain is measurement input; chirp mass, component
+> masses, spins, and QNM parameters are GR/CBC-conditioned estimates — not
+> metric-neutral observables.
+
+And on the L1 anomaly:
+
+> The anomaly may be detector- or pipeline-induced. Current public GWOSC
+> products are insufficient to decide whether the 20–40 Hz structure is
+> instrumental, environmental, line-related, or signal-like.
+
 ---
 
 ### 1. Strain Is Data; Posterior Products Are Interpretation
