@@ -16,13 +16,15 @@ in the 20–210 Hz band:
 
 | Metric | H1 | L1 | L1/H1 |
 |--------|----|----|-------|
-| Trigger bandpower (20–210 Hz) | ~1.47e-43 W/Hz·Hz | ~2.71e-43 | **1.85** |
-| Multi-window quantile (±1000s) | 7.7% | **85.0%** | — |
-| Trigger z-score vs off-source | −1.25 | +0.81 | — |
+| Trigger bandpower (20–210 Hz) | 2.41e-40 strain² | 3.77e-40 strain² | **1.56** |
+| Off-source −500s bandpower | 4.25e-40 | 8.42e-40 | — |
+| Multi-window stationarity Q (±500s) | 10.3% | **74.5%** | — |
+| Trigger z-score vs off-source | −1.10 | +0.32 | — |
+| Artifact score (0–24, MEDIUM=5–10) | — | — | **10/24 MEDIUM** |
 
-The H1 trigger is **below average** for its own detector. The L1 trigger is at
-the 85th percentile — elevated but not extreme (15% of ordinary L1 windows are
-equally high).
+H1 trigger is **below** its own median (10th percentile). L1 trigger is at the
+74th percentile of its own ±500s windows — elevated but not extreme.
+The key finding is concentrated in the **20–40 Hz sub-band** (see section 2).
 
 ---
 
@@ -69,7 +71,12 @@ equally high).
 - 120–160 Hz: L1 trigger excess kurtosis = **+5.7** (elevated vs off-source)
 - 160–210 Hz: L1 and H1 both near-Gaussian
 
-Most anomalous sub-band: **20–40 Hz** (L1 trigger ex_k = +44.9, off-source ex_k = +1.1)
+Most anomalous sub-band: **20–40 Hz** (L1 trigger ex_k = +44.9, off-source −500s ex_k = +1.1,
+Δ = **+43.7 — trigger-specific, not chronic**).
+
+The 20–40 Hz band is maximally sensitive to seismic coupling, suspension modes,
+and control-system transients in LIGO. This band was not separately identified
+in our initial broadband analysis.
 
 ### Phase Randomization Null Test (N=200 surrogates)
 - L1 bandpower at 0th percentile vs surrogates (surrogates have more BP variance)
@@ -116,14 +123,24 @@ Most anomalous sub-band: **20–40 Hz** (L1 trigger ex_k = +44.9, off-source ex_
 
 - This report makes **no SSZ (Scale + Spectral Shift) claims**
 - No modified gravity posterior fitting has been done
-- The broadband L1 excess is **not interpreted as a signal of new physics**
+- The L1 excess is **not interpreted as a signal of new physics**
 - All findings are **purely artifact-gating diagnostics**
+- We do **not** claim LIGO posteriors (ℳ, m₁, m₂, χ) are wrong —
+  they are valid within their GR/CBC waveform assumptions
+
+**On LIGO parameter posteriors:**  
+Parameters such as chirp mass ℳ = (m₁m₂)^(3/5)/(m₁+m₂)^(1/5) are
+well-motivated GR quantities governing the inspiral frequency evolution
+(ḟ ∝ ℳ^(5/3) f^(11/3)). They are not arbitrary. However, they are
+inferred **inside a GR/CBC waveform model** and are not model-independent
+strain measurements. For alternative metric tests, raw strain must be used.
 
 The gate status remains:
 
 ```
 READY_FOR_REAL_LIGO_SSZ_CLAIM: NO
 BLOCKER: L1_DQ_UNRESOLVED — Omicron/iDQ/AUX channels not available
+BLOCKER: GW250207_STRAIN_NOT_PUBLIC — GWOSC O4c release pending
 ```
 
 ---
@@ -139,6 +156,13 @@ If LIGO/DQ confirms:
 
 If GW250207 is available and cleaner: run same pipeline there as a comparison
 dataset before committing to GW240925 as the SSZ test event.
+
+**Current GW250207 status:** O4c strain not yet public on GWOSC (HTTP 404).
+Comparison script is ready (`scripts/run_gw250207_comparison.py`) — will
+auto-run once HDF5 files are placed in the data directory.
+
+**Unit normalization status:** 7/7 pipeline normalization checks pass.
+Bandpower values and PSD units verified correct to <0.03% error.
 
 ---
 
