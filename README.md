@@ -51,22 +51,38 @@ SSZ Core (Xi, D, s)
 
 ## Reproducibility Critique
 
-This project documents a methodological reproducibility limitation of LIGO/GWOSC public
-data releases — based entirely on primary sources, including LIGO's own data management
-policy and a direct public exchange.
+This project documents, on the basis of verifiable primary sources, a structural
+reproducibility gap in LIGO/GWOSC public data releases.
 
-**Central finding:**
+**This is not a fraud accusation. It is a sourced, methodological observation.**
+
+**Five documented critique points:**
+
+1. **Calibration chain not public.** GWOSC releases calibrated h(t), not the PCal channels,
+   DARM signals, FIR/IIR filter archives, or CalibEnv files needed to reconstruct h(t) from
+   scratch. Confirmed by LIGO (Mastodon, Dec 2025): *"Our full data management policy [...]
+   covers calibrated data, not auxiliary channels."*
+
+2. **Calibration deficit since 2016.** The GW150914 discovery paper (PRL 116, 061102) cited
+   Reference [63] for PCal data — an unpublished e-print with no data. A petition of 3,028
+   verified signatures raised three specific calibration traceability questions that remain
+   structurally unanswered ten years later.
+
+3. **Code provenance gaps.** The `bilby` inference library (core LVK tool) was migrated from
+   LIGO GitLab to GitHub. Original merge requests are internal-only. Papers citing specific
+   code versions cannot be fully externally audited.
+
+4. **PB-scale gap.** O4a documentation confirms total detector data is several PB/year with
+   10⁵+ channels. GWOSC releases ~4 TB/year/instrument of pre-processed strain
+   (`CLEAN`, `NOLINES`, `AR`). The gap between raw observable and public product is not
+   disclosed upfront.
+
+5. **GW150914 reproduction failed.** arXiv:2010.07244: *"An exact replication of the original
+   LIGO analysis was not possible because the original dataset was not publicly available."*
 
 ```text
 Open Data Product  !=  Fully reproducible measurement chain
-
-GWOSC provides: calibrated strain h(t), DQ segments, GR/CBC posteriors
-Not provided:    PCal raw channels, DARM signals, FIR/IIR filter archives,
-                 CalibEnv files, full aux channel access via public API
 ```
-
-Confirmed by LIGO directly (Mastodon, Dec 2025):
-> "Our full data management policy [...] covers calibrated data, not auxiliary channels."
 
 This is a **reproducibility concern, not a fraud accusation**.
 
@@ -984,67 +1000,62 @@ For anti-circular non-GR tests: Level 3-4 is often decisive, and Level 5 is meth
 
 ---
 
-### 18. Petition / Public Criticism Context
+### 18. Public Criticism and Open-Science Context
 
-**Petition:**
-[https://www.change.org/p/prof-karsten-danzmann-beantworten-sie-bitte-3-fragen-%C3%BCber-das-ligo-experiment](https://www.change.org/p/prof-karsten-danzmann-beantworten-sie-bitte-3-fragen-%C3%BCber-das-ligo-experiment)
+**Primary sources (all publicly verifiable):**
 
-**Reference:** LIGO official Mastodon post (scicomm.xyz):  
-[https://chaos.social/deck/@LIGO@scicomm.xyz/116569194588841654](https://chaos.social/deck/@LIGO@scicomm.xyz/116569194588841654)
+| Document | Link |
+|----------|------|
+| Petition: 3,028 verified signatures (2016) | [change.org](https://www.change.org/p/prof-karsten-danzmann-beantworten-sie-bitte-3-fragen-%C3%BCber-das-ligo-experiment) |
+| LIGO Mastodon response (Dec 2025) | [chaos.social](https://chaos.social/deck/@LIGO@scicomm.xyz/116569194588841654) |
+| IGWN forum reproducibility request (Dec 2025) | [ask.igwn.org](https://ask.igwn.org/t/request-for-fully-reproducible-calibration-chain-for-gwosc-strain-data/1397/2) |
+| bilby CHANGELOG — GitLab migration | [github.com/bilby-dev/bilby](https://github.com/bilby-dev/bilby/blob/main/CHANGELOG.md) |
+| GW150914 reproduction study (2020) | [arXiv:2010.07244](https://arxiv.org/abs/2010.07244) |
+| LIGO Data Management Plan v31 | [dcc.ligo.org](https://dcc.ligo.org/public/0009/M1000066/031/Data_Management_Plan-v31.pdf) |
 
-**IGWN community forum — reproducible calibration chain request:**  
-[https://ask.igwn.org/t/request-for-fully-reproducible-calibration-chain-for-gwosc-strain-data/1397/2](https://ask.igwn.org/t/request-for-fully-reproducible-calibration-chain-for-gwosc-strain-data/1397/2)
+**The 2016 petition — three concrete calibration questions:**
 
-A public petition signed by ~3000 people questioning aspects of the LIGO
-experiment (including researchers) is not, by itself, scientific proof that
-LIGO is wrong. It is a **transparency and trust signal**.
+The petition raised three precise, technical questions addressed to Prof. Karsten Danzmann:
 
-```text
-petition = transparency and trust signal
-not:
-petition = physical disproof of LIGO
-```
+1. Where are the photon-calibrator data (strain as function of laser power) from GW150914
+   published? Reference [63] in PRL 116, 061102 (2016) was an unpublished e-print with no data.
+2. The PCal method was last documented in 2003 (LIGO-T030266-00-D, Bruursema) achieving
+   ~10⁻¹⁵ m excursions. GW150914 required ~10⁻¹⁸ m. Was this method re-applied and documented?
+3. If not, is there a plan to do so retroactively?
 
-The right way to evaluate it:
-
-```text
-Which technical questions does it raise?
-Which are already answered by official LIGO/GWOSC documentation?
-Which reflect misunderstandings?
-Which point to real reproducibility gaps?
-Which require unavailable Omicron/iDQ/Aux/Offline-DQ products to answer?
-```
-
-This project does not use the petition as evidence against LIGO. It uses the
-existence of organized public scrutiny as evidence that:
-
-> The boundaries between what LIGO data can prove and what requires
-> collaboration-internal context deserve clearer public communication.
-
-For policymakers and funders, the issue is not whether LIGO is fraudulent.
-The issue is whether a publicly funded experiment provides enough material
-for independent verification outside its preferred model family.
+These are **specific, traceable calibration questions** — not conspiracy claims. Their absence
+of complete public answers over ten years is a documented open-science gap, not evidence of fraud.
 
 **The epistemic asymmetry:**
 
+GWOSC is a genuine public service. The data release is real. But there is a structural gap:
+
 ```text
-Formal openness:  strain + some metadata + posterior products available.
-Actual openness:  decisive non-standard checks require Omicron/iDQ/
-                  Aux/Line/Offline-DQ context not in the public release.
+Formally available:   calibrated strain, DQ segments, GR/CBC posteriors
+Not available:        PCal channels, DARM signals, FIR/IIR filter archives,
+                      CalibEnv files, full aux channels, Omicron/iDQ,
+                      offline DQ, pre-migration code merge requests
 ```
 
-This creates an impression of complete openness while leaving specific
-non-standard analyses incomplete. That is a legitimate open-science concern
-— not a fraud accusation.
+This means:
 
-Strongest fair single sentence:
+- **Standard GR/CBC analyses:** fully supported by public data
+- **Non-GR forward-model tests:** partially supported — decisive context is missing
+- **Full independent calibration audit:** structurally impossible from public data alone
 
-> The public LIGO releases are formally open but epistemically asymmetric:
-> strain and derived products are available, yet central detector
-> characterization, Omicron/iDQ, auxiliary channels, and offline DQ
-> context are typically missing as a complete reproducibility package,
-> meaning external groups can reproduce standard analyses but can only
-> partially verify non-GR forward models independently.
+For policymakers and funders: the question is not whether LIGO is fraudulent. It is whether
+a publicly funded, Nobel Prize-winning experiment provides enough material for independent
+verification **outside its own model family**. Currently, it does not.
+
+**Strongest fair single statement:**
+
+> The public LIGO releases are formally open but structurally incomplete for non-standard
+> analysis: calibrated strain and GR-conditioned posteriors are available, but the
+> calibration chain, auxiliary channels, Omicron/iDQ, offline DQ context, and code
+> development history are not — meaning external groups can reproduce standard GR/CBC
+> analyses but cannot fully verify non-GR forward models independently.
+
+This is a reproducibility concern. It is not a fraud accusation.
 
 ---
 
