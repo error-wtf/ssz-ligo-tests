@@ -265,8 +265,13 @@ def classify_gaussianity(s_trig, s_off_list, det):
         det_class = "INCONCLUSIVE"
 
     # Excess classification (trigger-specific or chronic?)
+    n_off = len(s_off_list)
+    chronic = (n_off >= 2 and abs(delta_ex_k) < 1.0
+               and abs(ex_k_trig) > 2.0)
     if delta_ex_k > 2.0 and n4_trig > mean_n4_off * 1.5:
         excess_class = "NON_GAUSSIAN_TRANSIENT"
+    elif chronic:
+        excess_class = "CHRONIC_NON_GAUSSIAN_BAND_NOISE"
     elif delta_ex_k < 0.5 and abs(ex_k_trig) > 2.0:
         excess_class = "LINE_OR_RINGING_STRUCTURE"
     elif delta_ex_k < 0.5 and abs(ex_k_trig) < 1.5:
@@ -457,15 +462,24 @@ def run():
     log("  READY_FOR_REAL_LIGO_SSZ_CLAIM: NO")
 
     # Interpretation
-    log(f"\n  Interpretation:")
+    log("\n  Interpretation:")
     if gate == "PASS_L1_GAUSSIAN":
         log("  L1 is consistent with whitened Gaussian noise.")
         log("  The bandpower excess is a Gaussian high-power fluctuation.")
         log("  Check: antenna response, PSD normalization, SNR difference.")
     elif gate == "FAIL_L1_NON_GAUSSIAN":
-        log("  L1 shows structured non-Gaussian excess.")
-        log("  Artefact / glitch / resonance more likely.")
-        log("  L1 blocked for claim — further DQ investigation required.")
+        if l1_exc == "CHRONIC_NON_GAUSSIAN_BAND_NOISE":
+            log("  L1 excess is NOT trigger-specific.")
+            log("  Non-Gaussianity is chronic and stationary across all "
+                "windows.")
+            log("  20-210 Hz band behaves as persistent non-ideal noise "
+                "under current whitening.")
+            log("  L1 blocked: chronic band noise, not astrophysical "
+                "candidate.")
+        else:
+            log("  L1 shows structured non-Gaussian excess.")
+            log("  Artefact / glitch / resonance more likely.")
+            log("  L1 blocked for claim — further DQ investigation required.")
     elif gate == "PARTIAL":
         log("  L1 shows mild non-Gaussianity — consistent across all windows.")
         log("  Likely chronic detector noise, not trigger-specific.")
@@ -478,8 +492,11 @@ def run():
     # ---------------------------------------------------------------------------
     # 1. Flat stats CSV for data_manifest
     all_stats = []
-    for tag_dict, band in [(h1_full, "FULLBAND"), (h1_bp, f"{F_LOW}-{F_HIGH}Hz"),
-                           (l1_full, "FULLBAND"), (l1_bp, f"{F_LOW}-{F_HIGH}Hz")]:
+    bp_band = f"{F_LOW}-{F_HIGH}Hz"
+    for tag_dict, band in [
+        (h1_full, "FULLBAND"), (h1_bp, bp_band),
+        (l1_full, "FULLBAND"), (l1_bp, bp_band)
+    ]:
         for tag, s in tag_dict.items():
             if s.get("band") == band:
                 all_stats.append(s)
@@ -507,10 +524,10 @@ def run():
                 "n_samples": s.get("n", ""),
             })
     wpath = MANIFEST / "gaussianity_test_windows.csv"
+    wfields = ["detector", "tag", "t_center_gps",
+               "duration_s", "band", "n_samples"]
     with open(wpath, "w", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, fieldnames=["detector", "tag",
-                                            "t_center_gps", "duration_s",
-                                            "band", "n_samples"],
+        w = csv.DictWriter(fh, fieldnames=wfields,
                            extrasaction="ignore")
         w.writeheader()
         w.writerows(wrows)
@@ -568,7 +585,7 @@ def run():
     rpath = REPORTS / "GAUSSIANITY_ARTIFACT_GATE_REPORT.md"
     rpath.write_text("\n".join(md_lines) + "\n", encoding="utf-8")
 
-    log(f"\nOutputs:")
+    log("\nOutputs:")
     log(f"  {rpath}")
     log(f"  {spath}")
     log(f"  {wpath}")
