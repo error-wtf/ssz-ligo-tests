@@ -33,7 +33,9 @@ def run_command(cmd, description):
 
 
 def main():
-    os.chdir(r'E:\clone\ssz-ligo-tests')
+    # Make directory-independent
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    os.chdir(script_dir)
     python_exe = sys.executable
 
     # Step 1: Fetch LIGO strain data

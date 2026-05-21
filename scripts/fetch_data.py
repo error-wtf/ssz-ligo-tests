@@ -12,8 +12,9 @@ from pathlib import Path
 ZENODO_RECORD = "18600070"
 TAR_URL = f"https://zenodo.org/api/records/{ZENODO_RECORD}/files/GW240925-C00-Strain.tar/content"
 
-# Target paths
-BASE_DIR = Path(r"E:\clone\ligo-gw240925-gw250207-release")
+# Target paths resolved dynamically relative to repository root
+REPO_ROOT = Path(__file__).resolve().parent.parent
+BASE_DIR = REPO_ROOT.parent / "ligo-gw240925-gw250207-release"
 RECORD_DIR = BASE_DIR / ZENODO_RECORD
 TAR_PATH = RECORD_DIR / "GW240925-C00-Strain.tar"
 EXTRACT_DIR = RECORD_DIR / "GW240925-C00-Strain"

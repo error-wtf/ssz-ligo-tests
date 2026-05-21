@@ -6,17 +6,25 @@ attributes, strain statistics. Writes JSON + CSV manifest.
 import os, hashlib, json, time, re
 import numpy as np
 import h5py
+from pathlib import Path
 
 TRIGGER = 1411261107.984
 
-FILES = [
-    r"E:\clone\ligo-gw240925-gw250207-release\18600070\GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF\H1\1410334720\H-H1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5",
-    r"E:\clone\ligo-gw240925-gw250207-release\18600070\GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_16KHZ_R1\STRAIN_HDF\H1\1410334720\H-H1_GWOSC_O4b4DiscC00_16KHZ_R1-1411260416-4096.hdf5",
-    r"E:\clone\ligo-gw240925-gw250207-release\18600070\GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF\L1\1410334720\L-L1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5",
-    r"E:\clone\ligo-gw240925-gw250207-release\18600070\GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_16KHZ_R1\STRAIN_HDF\L1\1410334720\L-L1_GWOSC_O4b4DiscC00_16KHZ_R1-1411260416-4096.hdf5",
-    r"E:\clone\ligo-gw240925-gw250207-release\18600070\GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF\V1\1410334720\V-V1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5",
-    r"E:\clone\ligo-gw240925-gw250207-release\18600070\GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_16KHZ_R1\STRAIN_HDF\V1\1410334720\V-V1_GWOSC_O4b4DiscC00_16KHZ_R1-1411260416-4096.hdf5",
+# Find paths dynamically
+REPO_ROOT = Path(__file__).resolve().parent.parent
+BASE_DIR = REPO_ROOT.parent / "ligo-gw240925-gw250207-release"
+EXTRACT_DIR = BASE_DIR / "18600070" / "GW240925-C00-Strain" / "GW240925-C00-Strain"
+
+FILES_RELATIVE = [
+    Path("O4b4DiscC00_4KHZ_R1") / "STRAIN_HDF" / "H1" / "1410334720" / "H-H1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5",
+    Path("O4b4DiscC00_16KHZ_R1") / "STRAIN_HDF" / "H1" / "1410334720" / "H-H1_GWOSC_O4b4DiscC00_16KHZ_R1-1411260416-4096.hdf5",
+    Path("O4b4DiscC00_4KHZ_R1") / "STRAIN_HDF" / "L1" / "1410334720" / "L-L1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5",
+    Path("O4b4DiscC00_16KHZ_R1") / "STRAIN_HDF" / "L1" / "1410334720" / "L-L1_GWOSC_O4b4DiscC00_16KHZ_R1-1411260416-4096.hdf5",
+    Path("O4b4DiscC00_4KHZ_R1") / "STRAIN_HDF" / "V1" / "1410334720" / "V-V1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5",
+    Path("O4b4DiscC00_16KHZ_R1") / "STRAIN_HDF" / "V1" / "1410334720" / "V-V1_GWOSC_O4b4DiscC00_16KHZ_R1-1411260416-4096.hdf5",
 ]
+
+FILES = [str(EXTRACT_DIR / p) for p in FILES_RELATIVE]
 
 DETECTOR_MAP = {'H': 'H1 (Hanford)', 'L': 'L1 (Livingston)', 'V': 'V1 (Virgo)'}
 RESULTS = []
@@ -141,12 +149,12 @@ for fp in FILES:
 elapsed = time.time() - t0
 
 # Write JSON
-JSON_PATH = r"E:\clone\ssz-ligo-tests\reports\progress\raw_ligo_hdf5_provenance.json"
+JSON_PATH = str(REPO_ROOT / "reports" / "progress" / "raw_ligo_hdf5_provenance.json")
 with open(JSON_PATH, 'w') as f:
     json.dump(RESULTS, f, indent=2, default=str)
 
 # Write CSV
-CSV_PATH = r"E:\clone\ssz-ligo-tests\data_manifest\raw_ligo_hdf5_manifest.csv"
+CSV_PATH = str(REPO_ROOT / "data_manifest" / "raw_ligo_hdf5_manifest.csv")
 os.makedirs(os.path.dirname(CSV_PATH), exist_ok=True)
 with open(CSV_PATH, 'w') as f:
     f.write('\n'.join(CSV_LINES) + '\n')
