@@ -1,0 +1,86 @@
+DETECTOR_PARITY_TEST_LOG
+========================
+SSZ_FORWARD_MODE: DERIVED_V1
+V0_FALLBACK_USED: NO
+amplitude_source: derived_amplitude.py
+phase_source: derived_phase.py
+waveform_source: derived_waveform.py
+formula_status: DERIVED_V1_NOT_LOCKED_FINAL
+
+DETECTOR: H1
+  Path: E:\clone\ligo-gw240925-gw250207-release\18600070\GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF\H1\1410334720\H-H1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5
+  SHA256: 4da44bd2e5e17716608f0acbc8c631cce3d9738aa9d19e03d2738cced7aeed14
+  GPS: [1411260416.0, 1411264512.0]
+  Trigger GPS 1411261107.984 inside range: True
+  Trigger offset: 691.984 s
+  Sample Rate: 4096 Hz
+  Strain Stats: min=-7.2509e-18, max=7.0932e-18, std=2.7274e-18
+  NaN Count: 0, Inf Count: 0
+  PSD median (20-800 Hz): 1.7571e-47 1/Hz
+  deltaA range: [-6.9194e-01, -6.5066e-02]
+  deltaPsi range: [0.0598, 10.7622] rad
+  |h_SSZ|/|h_GR|: 0.8892
+  MF-SNR GR: 39.4536
+  MF-SNR SSZ: 12.7216
+  delta_lnL: 6.1370e-06
+  Residual RMS GR: 8.5020e-22
+  Residual RMS SSZ: 8.5020e-22
+  Subbands:
+    20-100 Hz: GR_SNR=15.4264, SSZ_SNR=43.4191, d_lnL=4.3367e-06
+    100-200 Hz: GR_SNR=4.8507, SSZ_SNR=4.5561, d_lnL=8.5682e-08
+    200-400 Hz: GR_SNR=10.4090, SSZ_SNR=7.2413, d_lnL=-2.9907e-07
+    400-800 Hz: GR_SNR=123.7932, SSZ_SNR=166.8030, d_lnL=2.2109e-06
+
+DETECTOR: L1
+  Path: E:\clone\ligo-gw240925-gw250207-release\18600070\GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF\L1\1410334720\L-L1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5
+  SHA256: 188d5b71e0d1a77b71fff04e17c37593d1d3c069b75dd54ceeb69c8ba6803e45
+  GPS: [1411260416.0, 1411264512.0]
+  Trigger GPS 1411261107.984 inside range: True
+  Trigger offset: 691.984 s
+  Sample Rate: 4096 Hz
+  Strain Stats: min=-1.0403e-17, max=1.0225e-17, std=4.2360e-18
+  NaN Count: 0, Inf Count: 0
+  PSD median (20-800 Hz): 1.2917e-47 1/Hz
+  deltaA range: [-6.9194e-01, -6.5066e-02]
+  deltaPsi range: [0.0598, 10.7622] rad
+  |h_SSZ|/|h_GR|: 0.8892
+  MF-SNR GR: 653.9489
+  MF-SNR SSZ: 16.0894
+  delta_lnL: -9.1314e-05
+  Residual RMS GR: 5.6943e-21
+  Residual RMS SSZ: 5.6943e-21
+  Subbands:
+    20-100 Hz: GR_SNR=175.8637, SSZ_SNR=436.9574, d_lnL=-4.9829e-05
+    100-200 Hz: GR_SNR=16.2108, SSZ_SNR=157.3091, d_lnL=1.1623e-05
+    200-400 Hz: GR_SNR=523.9837, SSZ_SNR=562.9823, d_lnL=8.7619e-06
+    400-800 Hz: GR_SNR=3243.9346, SSZ_SNR=4417.0282, d_lnL=-6.6936e-05
+
+DETECTOR: V1
+  Path: E:\clone\ligo-gw240925-gw250207-release\18600070\GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF\V1\1410334720\V-V1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5
+  SHA256: f5777c40857bc42d2714b9a67149aa5053f266f63cdc1e706b7cd448845baf24
+  GPS: [1411260416.0, 1411264512.0]
+  Trigger GPS 1411261107.984 inside range: True
+  Trigger offset: 691.984 s
+  Sample Rate: 4096 Hz
+  Strain Stats: min=-2.9468e-18, max=2.9459e-18, std=1.0622e-18
+  NaN Count: 0, Inf Count: 0
+  PSD median (20-800 Hz): 4.3583e-46 1/Hz
+  deltaA range: [-6.9194e-01, -6.5066e-02]
+  deltaPsi range: [0.0598, 10.7622] rad
+  |h_SSZ|/|h_GR|: 0.8892
+  MF-SNR GR: 19.2495
+  MF-SNR SSZ: 55.9346
+  delta_lnL: 1.3597e-06
+  Residual RMS GR: 1.1114e-21
+  Residual RMS SSZ: 1.1114e-21
+  Subbands:
+    20-100 Hz: GR_SNR=19.3723, SSZ_SNR=21.6000, d_lnL=1.5148e-06
+    100-200 Hz: GR_SNR=61.7608, SSZ_SNR=64.2086, d_lnL=-2.8464e-07
+    200-400 Hz: GR_SNR=45.5041, SSZ_SNR=44.2586, d_lnL=-2.0076e-07
+    400-800 Hz: GR_SNR=92.5629, SSZ_SNR=104.8633, d_lnL=3.4072e-07
+
+DECISION:
+DETECTOR_PARITY: YES
+L1_DQ_REQUIRED: YES
+V1_USABLE: YES
+CLAIM_LEVEL_LIGO: NO

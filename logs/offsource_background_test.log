@@ -1,0 +1,79 @@
+OFFSOURCE_BACKGROUND_TEST_LOG
+==============================
+SSZ_FORWARD_MODE: DERIVED_V1
+V0_FALLBACK_USED: NO
+
+DETECTOR: H1
+  Path: E:\clone\ligo-gw240925-gw250207-release\18600070\GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF\H1\1410334720\H-H1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5
+  SHA256: 4da44bd2e5e17716608f0acbc8c631cce3d9738aa9d19e03d2738cced7aeed14
+  Trigger GPS: 1411261107.984
+  FULL BAND METRICS:
+    Trigger SNR GR:  39.4536 (Percentile: 6.5%)
+    Trigger SNR SSZ: 12.7216 (Percentile: 19.4%)
+    Trigger delta_lnL: 6.1370e-06
+    Off-source SNR GR Mean: 712.3256 Std: 506.6752 Max: 1714.7605
+    Off-source SNR SSZ Mean: 75.1383 Std: 56.5078 Max: 194.2235
+    Off-source delta_lnL Mean: 1.0269e-05 Std: 9.9375e-05
+  SUBBAND 20-100 Hz:
+    Trigger SNR GR:  15.4264
+    Trigger SNR SSZ: 43.4191
+    Off-source SNR GR Mean: 139.4293 Max: 335.0784
+    Off-source SNR SSZ Mean: 391.3032 Max: 939.1609
+  SUBBAND 400-800 Hz:
+    Trigger SNR GR:  123.7932
+    Trigger SNR SSZ: 166.8030
+    Off-source SNR GR Mean: 3063.2372 Max: 7377.6182
+    Off-source SNR SSZ Mean: 4178.6710 Max: 10064.7752
+
+DETECTOR: L1
+  Path: E:\clone\ligo-gw240925-gw250207-release\18600070\GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF\L1\1410334720\L-L1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5
+  SHA256: 188d5b71e0d1a77b71fff04e17c37593d1d3c069b75dd54ceeb69c8ba6803e45
+  Trigger GPS: 1411261107.984
+  FULL BAND METRICS:
+    Trigger SNR GR:  653.9489 (Percentile: 56.0%)
+    Trigger SNR SSZ: 16.0894 (Percentile: 56.0%)
+    Trigger delta_lnL: -9.1314e-05
+    Off-source SNR GR Mean: 616.9496 Std: 494.6767 Max: 2160.1315
+    Off-source SNR SSZ Mean: 18.6870 Std: 14.6798 Max: 71.2461
+    Off-source delta_lnL Mean: 6.1277e-06 Std: 1.1240e-04
+  SUBBAND 20-100 Hz:
+    Trigger SNR GR:  175.8637
+    Trigger SNR SSZ: 436.9574
+    Off-source SNR GR Mean: 171.6711 Max: 590.8631
+    Off-source SNR SSZ Mean: 437.1325 Max: 1482.3606
+  SUBBAND 400-800 Hz:
+    Trigger SNR GR:  3243.9346
+    Trigger SNR SSZ: 4417.0282
+    Off-source SNR GR Mean: 2990.5216 Max: 10593.4713
+    Off-source SNR SSZ Mean: 4066.6056 Max: 14421.9986
+
+DETECTOR: V1
+  Path: E:\clone\ligo-gw240925-gw250207-release\18600070\GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF\V1\1410334720\V-V1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5
+  SHA256: f5777c40857bc42d2714b9a67149aa5053f266f63cdc1e706b7cd448845baf24
+  Trigger GPS: 1411261107.984
+  FULL BAND METRICS:
+    Trigger SNR GR:  19.2495 (Percentile: 56.0%)
+    Trigger SNR SSZ: 55.9346 (Percentile: 46.0%)
+    Trigger delta_lnL: 1.3597e-06
+    Off-source SNR GR Mean: 22.8628 Std: 22.8047 Max: 109.7098
+    Off-source SNR SSZ Mean: 92.8693 Std: 92.9120 Max: 400.0517
+    Off-source delta_lnL Mean: -3.7621e-07 Std: 3.9163e-06
+  SUBBAND 20-100 Hz:
+    Trigger SNR GR:  19.3723
+    Trigger SNR SSZ: 21.6000
+    Off-source SNR GR Mean: 37.2322 Max: 152.7858
+    Off-source SNR SSZ Mean: 46.1835 Max: 177.0633
+  SUBBAND 400-800 Hz:
+    Trigger SNR GR:  92.5629
+    Trigger SNR SSZ: 104.8633
+    Off-source SNR GR Mean: 139.0545 Max: 615.6560
+    Off-source SNR SSZ Mean: 160.3516 Max: 706.6786
+
+DECISION:
+OFFSOURCE_BACKGROUND_STATUS: PASS
+H1_TRIGGER_SPECIFIC: NO
+L1_TRIGGER_SPECIFIC: NO
+V1_TRIGGER_SPECIFIC: NO
+L1_PERSISTENT_NOISE: YES
+DQ_CONTEXT_REQUIRED: YES
+CLAIM_LEVEL_LIGO: NO
