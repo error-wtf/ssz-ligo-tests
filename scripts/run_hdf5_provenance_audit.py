@@ -131,7 +131,7 @@ for fp in FILES:
 
     status = "INSIDE" if trigger_inside else ("OUTSIDE" if trigger_inside is False else "UNKNOWN")
     print(f"  {detector}: {strain_path} shape={strain_shape} GPS=[{gps_start}, {gps_end}] "
-          f"trigger_offset={trigger_offset:.3f}s → {status}")
+          f"trigger_offset={trigger_offset:.3f}s -> {status}")
     if strain_path:
         print(f"  Strain: min={strain_min:.4e} max={strain_max:.4e} mean={strain_mean:.4e} std={strain_std:.4e}")
 
@@ -157,6 +157,6 @@ print(f"JSON: {JSON_PATH}")
 print(f"CSV:  {CSV_PATH}")
 print(f"\nTRIGGER INSIDE WINDOW for ALL 6 files: {all(r['trigger_inside_window'] for r in RESULTS)}")
 for r in RESULTS:
-    s = "✅" if r['trigger_inside_window'] else "❌"
+    s = "[OK]" if r['trigger_inside_window'] else "[FAIL]"
     print(f"  {s} {r['filename'][:50]}... offset={r['trigger_offset_s']:.3f}s")
 print("DONE")

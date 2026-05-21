@@ -238,6 +238,23 @@ Earlier diagnostic runs documented localized spectral line and kurtosis properti
 
 ## Test Suite
 
+The repository features a fully integrated main runner script `run_full_test.py` that handles the entire pipeline, from fetching the necessary public scientific data to executing the provenance audit and running the full pytest suite.
+
+### How to Run the Main Runner
+
+To execute the entire test suite and validation pipeline with a single command:
+
+```bash
+python run_full_test.py
+```
+
+The main runner executes the following sequential stages:
+
+1. **Fetch LIGO Strain Data (`scripts/fetch_data.py`):** Automatically checks for the presence of the 6 official GW240925 HDF5 strain files. If they are missing, it downloads the official `GW240925-C00-Strain.tar` archive directly from Zenodo (Record ID `18600070`) and extracts it to the correct path structure.
+2. **HDF5 Provenance Audit (`scripts/run_hdf5_provenance_audit.py`):** Computes SHA256 checksums, extracts HDF5 structure/attributes, verifies strain statistics, and confirms that the event trigger GPS time is inside the 4096-second file windows.
+3. **Environment and Import Sanity Checks:** Verifies the current Python environment path and ensures that the `ssz_ligo_tests` package is correctly imported and resolved.
+4. **Pytest Suite Execution:** Discovers and runs all unit, integration, and validation tests (over 490 tests), checking the anti-circularity protocol, SSZ core formulas, and interferometry calculations.
+
 ```text
 Current pytest status:
 497 passed, 1 xfailed, exit code 0.
