@@ -38,8 +38,8 @@ def print_and_log(text=""):
     write_to_log(text)
 
 
-def run_command(cmd, description):
-    """Run command, stream output in real-time to console, and log to file."""
+def run_command(cmd, description, max_console_lines=None):
+    """Run command, stream output in real-time to console, and log 100% untruncated to file."""
     header = (
         f"\n{'='*60}\n"
         f"Running: {description}\n"
@@ -65,6 +65,8 @@ def run_command(cmd, description):
 
     stdout_captured = []
     stderr_captured = []
+    console_lines_printed = 0
+    truncated_alert_printed = False
 
     # Stream stdout line-by-line in real-time
     while True:
@@ -72,17 +74,25 @@ def run_command(cmd, description):
         if not line and process.poll() is not None:
             break
         if line:
-            print(line, end="")
-            # Clean trailing newline before writing to log
+            # Always log 100% untruncated to file
             write_to_log(line.rstrip("\n"))
             stdout_captured.append(line)
+
+            # Print to console only if under limit
+            if max_console_lines is None or console_lines_printed < max_console_lines:
+                print(line, end="")
+                console_lines_printed += 1
+            elif not truncated_alert_printed:
+                print(f"\n... [Console truncated. Full untruncated output is saved to the log file] ...\n")
+                truncated_alert_printed = True
 
     # Read remaining stderr
     remaining_err = process.stderr.read()
     if remaining_err:
-        print(remaining_err, end="")
         write_to_log(remaining_err.rstrip("\n"))
         stderr_captured.append(remaining_err)
+        if max_console_lines is None or console_lines_printed < max_console_lines:
+            print(remaining_err, end="")
 
     process.wait()
 
@@ -103,7 +113,6 @@ def main():
         f'"{python_exe}" scripts/fetch_data.py',
         "Fetch Data (Zenodo GW240925)"
     )
-    print_and_log(out if out else err)
     if code != 0:
         print_and_log("[FAIL] Data fetching failed. Aborting further tests.")
         return code
@@ -113,7 +122,6 @@ def main():
         f'"{python_exe}" scripts/run_hdf5_provenance_audit.py',
         "HDF5 Provenance Audit"
     )
-    print_and_log(out if out else err)
     if code != 0:
         print_and_log("[FAIL] HDF5 Provenance Audit failed. Aborting tests.")
         return code
@@ -123,7 +131,6 @@ def main():
         f'"{python_exe}" -c "import sys; print(chr(10).join(sys.path))"',
         "Python Path"
     )
-    print_and_log(out if out else err)
 
     # Test 4: Import test
     import_test_cmd = (
@@ -134,43 +141,20 @@ def main():
         import_test_cmd,
         "Import Test"
     )
-    print_and_log(out if out else err)
 
     # Test 5: Pytest collection
     code, out, err = run_command(
         f'"{python_exe}" -m pytest tests/ --collect-only',
-        "Test Collection"
+        "Test Collection",
+        max_console_lines=50
     )
-    if out:
-        # Show first 50 lines of collection output in console
-        lines = out.splitlines()
-        print_and_log("\n".join(lines[:50]))
-        if len(lines) > 50:
-            truncated = len(lines) - 50
-            print_and_log(
-                f"... [Console truncated {truncated} lines of collection. "
-                "Full output is saved in log file] ..."
-            )
-    else:
-        print_and_log(err)
 
     # Test 6: Run pytest
     code, out, err = run_command(
         f'"{python_exe}" -m pytest tests/ -v --tb=short',
-        "Pytest Run"
+        "Pytest Run",
+        max_console_lines=150
     )
-    if out:
-        # Show first 150 lines of test output in console
-        lines = out.splitlines()
-        print_and_log("\n".join(lines[:150]))
-        if len(lines) > 150:
-            truncated = len(lines) - 150
-            print_and_log(
-                f"... [Console truncated {truncated} lines of run output. "
-                "Full output is saved in log file] ..."
-            )
-    else:
-        print_and_log(err)
 
     print_and_log(f"\n{'='*60}")
     print_and_log("FINAL STATUS SUMMARY:")
