@@ -1,5 +1,11 @@
 # H1/L1 Long-Baseline Replication Report
 
+⚠️ STATUS: UNVERIFIED_DERIVED_REPORT (2026-05-20 Bingsi/Hermes) ⚠️
+⚠️ HDF5→Command→Log→CSV→Report provenance chain NOT VERIFIED. ⚠️
+⚠️ Do NOT cite numbers from this report without re-verification. ⚠️
+⚠️ See reports/progress/REPORT_STATUS_INDEX.md for current classification. ⚠️
+
+
 **Status:** PENDING — run `python scripts/run_h1_l1_long_baseline_replication.py` to populate.
 
 ## Purpose

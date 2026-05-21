@@ -1,5 +1,11 @@
 # Global Anti-Circularity Rule
 
+⚠️ STATUS: UNVERIFIED_DERIVED_REPORT (2026-05-20 Bingsi/Hermes) ⚠️
+⚠️ HDF5→Command→Log→CSV→Report provenance chain NOT VERIFIED. ⚠️
+⚠️ Do NOT cite numbers from this report without re-verification. ⚠️
+⚠️ See reports/progress/REPORT_STATUS_INDEX.md for current classification. ⚠️
+
+
 **Applies to:** All SSZ testing, especially LIGO data analysis  
 **Status:** MANDATORY  
 **Principle:** No quantity may simultaneously be the source of prediction and proof of prediction

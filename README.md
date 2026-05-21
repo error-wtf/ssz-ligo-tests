@@ -1,8 +1,15 @@
 # SSZ-LIGO Forward Model Test Suite
 
-**Version:** 0.5.0 — 2026-05-19  
+**Version:** 0.5.0 — 2026-05-21  
 **Event:** GW240925 (O4b, GWOSC public release)  
 **Status:** `PIPELINE_STATUS: PASS_EXPLORATORY` | `READY_FOR_REAL_LIGO_SSZ_CLAIM: NO`
+
+---
+
+> **Latest diagnostic conclusion (2026-05-21):**  
+> **The off-source background test shows that the extreme L1 SSZ-SNR metric in the 20–100 Hz band is not trigger-specific. The trigger value is essentially equal to the off-source background mean. Therefore, this L1 metric is DQ-blocked for any physical SSZ interpretation.**  
+> 
+> *Der Off-source-Hintergrundtest zeigt, dass die extreme L1-SSZ-SNR-Metrik im 20–100-Hz-Band nicht trigger-spezifisch ist. Der Triggerwert liegt praktisch auf dem Off-source-Hintergrundmittel. Daher ist diese L1-Metrik für jede physikalische SSZ-Interpretation DQ-blockiert.*
 
 ---
 
@@ -24,18 +31,19 @@ This is **not** a posterior-parameter test.
 This is **not** a Kerr self-consistency test.  
 This is **not** a claim engine.
 
-The pipeline computes a fully analytic SSZ waveform from first principles,
-applies it to real strain, and reports likelihood differences — without using
+The pipeline computes a documented DERIVED_V1 inspiral-only SSZ waveform component for diagnostic method testing,
+applies it to public GWOSC strain, and reports likelihood differences for methodological analysis — without using
 any LIGO parameter estimation output.
 
-```
+```text
 SSZ Core (Xi, D, s)
   → rdot/P_GW correction (Ch.31, LOCKED)
   → Phase accumulation (0PN inspiral, RSG)
   → delta_psi_SSZ(f), delta_a_SSZ(f)
   → h_SSZ(f) = h_GR(f) * (1 + delta_a) * exp(i * delta_psi)
-  → H1 / L1 strain comparison
-  → Residuals + lnL + MF-SNR
+  → H1 / L1 / V1 diagnostic strain comparison
+  → detector parity + off-source background tests
+  → residuals + lnL + MF-SNR as diagnostic metrics only
 ```
 
 ---
@@ -54,7 +62,7 @@ SSZ Core (Xi, D, s)
 This project documents, on the basis of verifiable primary sources, a structural
 reproducibility gap in LIGO/GWOSC public data releases.
 
-**This is not a fraud accusation. It is a sourced, methodological observation.**
+**This is a reproducibility, provenance, and methodology project.**
 
 **Five documented critique points:**
 
@@ -77,14 +85,13 @@ reproducibility gap in LIGO/GWOSC public data releases.
    (`CLEAN`, `NOLINES`, `AR`). The gap between raw observable and public product is not
    disclosed upfront.
 
-5. **GW150914 reproduction failed.** arXiv:2010.07244: *"An exact replication of the original
-   LIGO analysis was not possible because the original dataset was not publicly available."*
+5. **GW150914 exact replication limitation.** arXiv:2010.07244 reported that the main finding could be reproduced, but an exact replication of the original analysis was not possible because the original dataset was not publicly available.
 
 ```text
 Open Data Product  !=  Fully reproducible measurement chain
 ```
 
-This is a **reproducibility concern, not a fraud accusation**.
+This is a reproducibility and provenance limitation.
 
 > [**Full Report → docs/LIGO_OPEN_DATA_FULL_REPORT.md**](docs/LIGO_OPEN_DATA_FULL_REPORT.md)  
 > [Detailed critique → docs/LIGO_REPRODUCIBILITY_CRITIQUE.md](docs/LIGO_REPRODUCIBILITY_CRITIQUE.md)  
@@ -143,12 +150,14 @@ h_SSZ(f)         = h_GR(f) * (1 + delta_a) * exp(i * delta_psi)
 | Xi_weak, Xi_strong, D, s | **LOCKED** | SSZ Book, formula_compendium.md |
 | rdot_SSZ = rdot_GR·D²/s⁴ | **LOCKED** | SSZ Book Ch.31 |
 | P_GW_SSZ = P_GW_GR·D²/s² | **LOCKED** | SSZ Book Ch.31 |
-| delta_psi_SSZ(f) | **DERIVED_V1_INSPIRAL_0PN_LOCKED** | algebraically exact from rdot |
-| delta_a_SSZ(f) | DERIVED_V0_PROXY | D²−1 from P_GW ratio |
-| h_SSZ(f) | DERIVED_V0_PROXY | V0 waveform construction |
-| epsilon_220 (ringdown) | **BLOCKED_BRANCH_CONFLICT** | 3% vs 31% vs 39% — different observables |
+| delta_psi_SSZ(f) | **DERIVED_V1_INSPIRAL_0PN** | derived from rdot_SSZ / Ch.31 chain |
+| delta_a_SSZ(f) | **DERIVED_V1_INSPIRAL_ONLY** | D²−1 from P_GW ratio |
+| h_SSZ(f) | **DERIVED_V1_METHOD_COMPONENT** | constructed from deltaA + deltaPsi |
+| epsilon_220 (ringdown) | **BLOCKED_BRANCH_CONFLICT** | not used for LIGO strain claims |
 
-> The 39% QNM value is a source-frame strong-field frequency ratio, not a LIGO strain observable.
+> **DERIVED_V1 does not mean LOCKED_FINAL. These are documented method-test components, not a complete claim-level LIGO strain model.**
+
+The 39% QNM value is a source-frame strong-field frequency ratio, not a LIGO strain observable.
 
 ---
 
@@ -162,59 +171,53 @@ h_SSZ(f)         = h_GR(f) * (1 + delta_a) * exp(i * delta_psi)
 | delta_lnL (L1) | −4.4×10⁻⁵ | L1 diagnostic only |
 | MF-SNR GR | 44.2 | |
 | MF-SNR SSZ (with deltaA) | 14.2 | amplitude deformation reduces template match |
-| SSZ_EFFECT_ABOVE_CALIBRATION | YES | 6.3e-06 > cal spread 7.1e-08 |
+| FAIR_COMPARISON | NO | not a fair claim-level model comparison |
+| CLAIM_LEVEL_LIGO | NO | metric-level claim blocked |
 
 **F_HIGH capped at 210 Hz** (below f_ISCO ~ 215 Hz for M~20 M☉ — within 0PN regime).
 
 > **Note:** MF-SNR 14.2 vs 44.2 reflects that an amplitude-deformed SSZ signal
 > matches poorly against an undeformed GR template. This is not a physical result —
 > it shows that a proper SSZ test would require an SSZ template bank.
+> 
+> **Note on delta_lnL:** The numerical delta_lnL scale is reported for diagnostic reproducibility only. It is not a physical SSZ effect claim because the current comparison is not a fair claim-level model comparison.
 
 ---
 
-## L1 Diagnostic Results (2026-05-19)
+## L1 Diagnostic Results (Historical vs. Current)
 
-L1 shows a reproducible bandpower excess in the trigger window.
-Three independent diagnostic tests have been run:
+### Current Verified Status after Off-source Background Test (2026-05-21)
+The extreme L1 SSZ-SNR metric in the 20–100 Hz band is not trigger-specific. The trigger value is essentially equal to the off-source background mean. Therefore, this L1 metric is DQ-blocked for any physical SSZ interpretation.
 
-### 1. Stationarity / Glitch / DQ
-- L1 20–210 Hz bandpower ratio (trigger/off-source): **~2.28×** (H1: 0.76×)
-- CBC_CAT2/CAT3 flags: **CLEAN** (no vetoed CBC glitch)
-- L1_CW_CAT1: file-wide constant, not trigger-specific
-- Public DQ products: **INSUFFICIENT** to fully explain the excess
-- `L1_STATUS: DQ_FLAGGED_DIAGNOSTIC_ONLY`
-
-### 2. Harmonic Oscillator / Resonance Test
-- L1 trigger peaks: 26, 36, 41, 53, **60**, 120 Hz
-- **60 Hz + 120 Hz** = US mains frequency + 1st harmonic → persistent spectral line
-- 41 Hz and 60 Hz peaks also present **500 s before the trigger** (off-source)
-- H1 trigger peaks (22, 28, 40 Hz): **zero overlap** with L1
-- `STATUS: RESONANCE_IN_OFF_SOURCE_TOO` — instrumental, not astrophysical
-
-### 3. Gaussianity Artifact Gate
-Whitened strain tested for 4 windows (trigger, −100s, −300s, −500s), fullband and 20–210 Hz.
-
-| Window | L1 ex_kurtosis (bp) | H1 ex_kurtosis (bp) |
-|--------|--------------------|--------------------|
-| TRIGGER | +4.58 | +2.61 |
-| OFF −500s | +2.86 | +6.37 |
-| OFF −300s | +4.56 | +6.33 |
-| OFF −100s | +4.52 | — |
-
-- L1 trigger (4.58) ≈ L1 OFF−300s (4.56) ≈ L1 OFF−100s (4.52): **difference < 0.06**
-- Non-Gaussianity is **chronic and stationarity-consistent**, not trigger-specific
-- `GAUSSIANITY_ARTIFACT_GATE: FAIL_L1_NON_GAUSSIAN`
-- `L1_EXCESS_CLASS: INCONCLUSIVE` (persistent detector noise, not transient)
-
-### L1 Summary
+```text
+L1_TRIGGER_SPECIFIC: NO
+L1_PERSISTENT_NOISE: YES
+DQ_CONTEXT_REQUIRED: YES
+CLAIM_LEVEL_LIGO:    NO
 ```
-L1_BROADBAND_EXCESS_EXPLAINED:    NO (open)
-L1_INJECTION_CONFIRMED:           NO
-L1_HARMONIC_STRUCTURE:            RESONANCE_IN_OFF_SOURCE_TOO (mains lines)
-L1_GAUSSIANITY:                   STRONGLY_NON_GAUSSIAN (chronic, all windows)
-L1_GAUSSIANITY_ARTIFACT_GATE:     FAIL_L1_NON_GAUSSIAN
-H1_L1_COHERENCE_STATUS:           BLOCKED_BY_L1_DQ
-```
+
+- **L1 20–100 Hz (Low-Frequency Noise):**
+  - Trigger SSZ SNR: `436.96`
+  - Off-source SSZ Mean (Max): `437.13` (`1482.36`)
+- **L1 400–800 Hz (HF Noise / Calibration):**
+  - Trigger SSZ SNR: `4417.03`
+  - Off-source SSZ Mean (Max): `4066.61` (`14422.00`)
+
+---
+
+### Historical Diagnostics (2026-05-19 Archive)
+Earlier diagnostic runs documented localized spectral line and kurtosis properties:
+
+1. **Harmonic / Resonance Test:**
+   - L1 trigger peaks: 26, 36, 41, 53, **60**, 120 Hz.
+   - **60 Hz + 120 Hz** = US mains frequency + 1st harmonic -> persistent spectral lines.
+   - 41 Hz and 60 Hz peaks were also present **500 s before the trigger** (off-source).
+
+2. **Gaussianity Artifact Gate:**
+   - L1 ex-kurtosis in the trigger window was evaluated at `+4.58` (compared to `+4.56` at 300s off-source).
+   - This confirmed L1's non-Gaussianity is **chronic and stationarity-consistent**, rather than trigger-specific.
+   - `L1_GAUSSIANITY: STRONGLY_NON_GAUSSIAN` (chronic, all windows)
+   - `H1_L1_COHERENCE_STATUS: BLOCKED_BY_L1_DQ`
 
 ---
 
@@ -235,8 +238,12 @@ H1_L1_COHERENCE_STATUS:           BLOCKED_BY_L1_DQ
 
 ## Test Suite
 
-```
-497 PASS  |  1 xfail (expected: epsilon_220 branch conflict)  |  0 fail
+```text
+Current pytest status:
+497 passed, 1 xfailed, exit code 0.
+
+Historical note:
+The earlier 2026-05-18 API/import-drift failures were re-audited and are no longer current.
 ```
 
 | Test file | Status |
@@ -263,9 +270,9 @@ src/
   ssz_ligo_tests/
     ssz_core.py              — Xi, D, s, regime detection
     constants.py             — PHI, XI_MAX, D_MIN, G, C, M_SUN
-    derived_phase.py         — delta_psi_ssz (V1 0PN locked)
-    derived_amplitude.py     — delta_a_ssz (V0 proxy)
-    derived_waveform.py      — h_SSZ(f) construction
+    derived_phase.py         — delta_psi_ssz (DERIVED_V1 inspiral-only phase component)
+    derived_amplitude.py     — delta_a_ssz (DERIVED_V1 inspiral-only amplitude component)
+    derived_waveform.py      — DERIVED_V1 h_SSZ(f) method-component construction
     ssz_inspiral.py          — rdot_SSZ, P_GW_SSZ (Ch.31 locked)
     ssz_phase.py             — phase accumulation
     ssz_ringdown.py          — QNM (BLOCKED_BRANCH_CONFLICT)
@@ -382,7 +389,11 @@ Optional (plots): `matplotlib`
 ## Running Tests
 
 ```bash
-pytest                                            # full suite (497 pass, 1 xfail)
+Current pytest status:
+497 passed, 1 xfailed, exit code 0.
+
+Historical note:
+An earlier 2026-05-18 run reported 123 passed / 52 failed / 1 xfail due to API/import/status-string drift. Those failures were re-audited and are no longer the current test-suite status.
 pytest tests/unit/                                # unit tests only
 pytest tests/validation/                          # anti-circularity + book checks
 pytest tests/test_xi_strong_branch_lock.py        # Xi branch lock
@@ -408,6 +419,12 @@ python scripts/run_gaussianity_artifact_gate.py
 # L1 stationarity / glitch / bandpower diagnostic
 python scripts/run_l1_glitch_stationarity.py
 
+# Multi-detector Parity Test (H1 + L1 + V1)
+python scripts/run_detector_parity_test.py
+
+# Off-source Background Noise Test (50 windows)
+python scripts/run_offsource_background_test.py
+
 # DQ-aware master status report
 python scripts/run_dq_aware_final_status.py
 ```
@@ -416,7 +433,7 @@ python scripts/run_dq_aware_final_status.py
 
 ## Open Blockers Before Any Real Claim
 
-```
+```text
 PHYSICS BLOCKERS:
 1. delta_psi: upgrade from 0PN to 3.5PN r(f) mapping (RSG integral, Ch.31)
 2. delta_a:   scope lock — inspiral only, no merger/ringdown
@@ -425,10 +442,11 @@ PHYSICS BLOCKERS:
 5. RSG detector propagation phase: not yet included
 
 DATA QUALITY BLOCKERS:
-6. L1 broadband excess: not explained — offline DQ (Omicron/iDQ/hveto) required
+6. L1 20–100 Hz metric is not trigger-specific: trigger SNR lies at background mean (verified off-source 2026-05-21)
 7. L1 harmonic structure: 60/120 Hz mains lines confirmed persistent
 8. L1 Gaussianity gate: FAIL_L1_NON_GAUSSIAN (chronic, not trigger-specific)
 9. H1/L1 coherence: frequency-domain coherence test needed
+10. L1 excess is persistent noise: L1_PERSISTENT_NOISE = YES confirmed across 50 off-source windows
 
 READY_FOR_REAL_LIGO_SSZ_CLAIM: NO
 ```
@@ -440,7 +458,7 @@ READY_FOR_REAL_LIGO_SSZ_CLAIM: NO
 The delta_lnL ~ 0 result admits three open interpretations:
 
 - **Option A:** SSZ correction is intrinsically small in the LIGO band (weak field, r/rs >> 1 → SSZ → GR limit). This is physically expected.
-- **Option B:** The V0 proxy formula for delta_psi is too coarse (kappa=1.0 exploratory, not derived from Ch.31).
+- **Option B:** The DERIVED_V1 formula for delta_psi is too coarse (kappa=1.0 exploratory, not fully derived from Ch.31 RSG phase integral).
 - **Option C:** The true SSZ-LIGO forward term (RSG phase integral from Ch.31) has not yet been fully implemented.
 
 None of these options has been eliminated. No claim is permitted until all physics blockers are resolved and L1 passes the artifact gate.
@@ -460,15 +478,11 @@ flake8 src/ tests/ scripts/ --select=F401,F541,F811,F841,E722,E712
 
 ### Summary
 
-This repository does **not** claim that LIGO data are fake, manipulated, or useless.
-
 It also does **not** claim that SSZ is confirmed or falsified by the current LIGO release data.
 
 The central conclusion is narrower and more important:
 
-> Public LIGO release products are useful for standard GR/CBC analyses and educational
-> reproduction, but they are not sufficient, by themselves, for a fully independent,
-> anti-circular test of alternative metric theories.
+> The public GWOSC strain products are useful for standard GR/CBC workflows and educational diagnostics. However, because they are already calibrated, cleaned, line-treated, and released without the full auxiliary, calibration, DQ, Omicron/iDQ, and preprocessing context, they are not sufficient by themselves for a claim-level independent forward test of non-Kerr / non-GR metric models.
 
 - LIGO measures detector strain. The strain is real measurement input.
 - Many higher-level products — masses, spins, QNM frequencies, remnant parameters,
@@ -479,7 +493,7 @@ The central conclusion is narrower and more important:
 
 We call this: **model-bound self-confirmation**.
 
-The data are not meaningless. But outside the official GR/CBC pipeline, their
+The public strain products are useful measurement inputs, but they are not complete measurement-chain reconstruction packages. Outside the official GR/CBC pipeline, their
 independent evidential power is much smaller than public communication often suggests.
 
 **Canonical methodological statement of this project:**
@@ -492,8 +506,43 @@ independent evidential power is much smaller than public communication often sug
 And on the L1 anomaly:
 
 > The anomaly may be detector- or pipeline-induced. Current public GWOSC
-> products are insufficient to decide whether the 20–40 Hz structure is
+> products are insufficient to decide whether the 20–100 Hz structure is
 > instrumental, environmental, line-related, or signal-like.
+
+---
+
+### Standard Reproducibility vs. Alternative-Metric Forward Testing
+
+GWOSC strain products are valid and useful public data products for standard GR/CBC workflows, tutorials, diagnostics, and many reproducibility exercises.
+
+They are not, by themselves, sufficient for a claim-level independent forward test of a non-Kerr / non-GR metric model.
+
+Reason: a non-GR forward test must distinguish between:
+
+- physical model residuals
+- calibration effects
+- detector noise
+- line subtraction / line contamination
+- whitening and PSD choices
+- DQ selections
+- auxiliary-channel couplings
+- Omicron/iDQ/offline detector-characterization information
+- preprocessing choices such as CLEAN / NOLINES / AR products
+
+Without that context, a residual or anomaly cannot be uniquely assigned to the alternative metric or to the detector/pipeline state.
+
+Therefore, our position is:
+
+- **Public GWOSC strain is measurement input.**
+- **It is useful but not a complete external reconstruction package.**
+- **For claim-level non-Kerr metric tests, additional calibration, DQ, auxiliary, and preprocessing provenance is required.**
+
+Scope:
+
+- **Methodology**
+- **Provenance**
+- **Anti-circular strain-level testing**
+- **Limits of public data products for alternative-metric forward models**
 
 ---
 
@@ -552,7 +601,7 @@ Not valid: *"The detector directly measured this chirp mass as a metric-neutral 
 5. Treat them as independent evidence that GR/Kerr/CBC is correct.
 ```
 
-This does not mean the experiment is fraudulent. It means the evidential scope must be
+This is a reproducibility and provenance limitation. It means the evidential scope must be
 stated honestly. The pipeline shows: *"Data are consistent with GR/CBC."* It cannot
 alone prove: *"All alternative metric models are excluded."* For that, alternative models
 need their own strain-level forward models tested directly against calibrated strain.
@@ -614,9 +663,12 @@ synthetic SSZ branches, source-propagation twist, and phase-transport formalism.
 Key empirical finding:
 
 ```text
-L1 non-Gaussianity concentrated in 20-40 Hz sub-band.
-Trigger excess kurtosis:  +44.9  vs. off-source -500s: +1.1
-Delta = +43.7 -- trigger-specific, not chronic broadband.
+[Historical 2026-05-19 diagnostic note — superseded by 2026-05-21 off-source background test]
+Current status:
+L1_TRIGGER_SPECIFIC: NO
+L1_PERSISTENT_NOISE: YES
+DQ_CONTEXT_REQUIRED: YES
+CLAIM_LEVEL_LIGO:    NO
 ```
 
 Classification:
@@ -634,8 +686,8 @@ transient, line contamination, or filtering artifacts. Offline Omicron/iDQ/AUX n
 
 ### 7. What the L1 Anomaly Does and Does Not Mean
 
-Does **not** mean:
-`LIGO data are fake` / `GW240925 is not real` / `SSZ is confirmed or falsified` / `LIGO manipulated data`
+Does **not** establish a physical SSZ signal.
+It indicates that L1 requires DQ/auxiliary/preprocessing context before physical interpretation.
 
 Does mean:
 `The released public data are not sufficient for a broadband non-GR H1/L1 coherence test.`
@@ -718,18 +770,16 @@ line lists and known instrumental couplings
 auxiliary-channel context
 calibration uncertainty context
 state-vector interpretation
-detector-characterization notes for the 20-40 Hz band
+detector-characterization notes for the 20-100 Hz band
 ```
 
 Concise question to LIGO:
 
-> We cannot treat current PE/QNM posterior products as metric-neutral for our
-> non-GR forward-model test. H1 is usable for exploratory validation, but L1 shows
-> unresolved low-frequency DQ context in the 20-40 Hz band (excess kurtosis +44.9
-> at trigger vs. +1.1 off-source). Are offline DQ/iDQ/Omicron/line products
-> available, or should L1 be treated as diagnostic-only for broadband non-GR tests?
+> "For our non-Kerr forward-model diagnostic, the public GWOSC strain products are useful but insufficient at claim level without additional DQ/Omicron/iDQ/auxiliary/line/preprocessing context. In our GW240925 test, the L1 20–100 Hz SSZ-SNR metric is not trigger-specific: trigger ≈ off-source mean. Are offline DQ/iDQ/Omicron/line products available for this GPS window, or should L1 remain diagnostic-only for this type of non-GR forward test?"
+> 
+> *(Ref: LIGO Mastodon response, Dec 2025: [chaos.social](https://chaos.social/deck/@LIGO@scicomm.xyz/116569194588841654))*
 
-**Broader reproducibility concern:**
+**Broader reproducibility and provenance limitation:**
 
 The limitation extends beyond our specific test. GWOSC releases provide calibrated
 strain, DQ segments, and posteriors — but not the full calibration chain required for a
@@ -795,8 +845,7 @@ A 2020 reproduction study noted explicitly:
 
 Ten years after GW150914, a fully independent external reconstruction of the calibration
 chain that produced the published h(t) remains practically impossible using only
-publicly available data. This is not a fraud accusation. It is a reproducibility
-observation with documented primary sources.
+publicly available data. This is a reproducibility and provenance limitation.
 
 **Full report:** [docs/LIGO_OPEN_DATA_FULL_REPORT.md](docs/LIGO_OPEN_DATA_FULL_REPORT.md)  
 **Detailed critique:** [docs/LIGO_REPRODUCIBILITY_CRITIQUE.md](docs/LIGO_REPRODUCIBILITY_CRITIQUE.md)
@@ -841,7 +890,7 @@ of public scrutiny as evidence that reproducibility limits deserve serious atten
 
 ### 14. Political / Funding-Relevant Interpretation
 
-For policymakers: the key issue is not whether LIGO is fake. The key issue is whether
+For policymakers: the key issue is an evaluation of public data products. The key issue is whether
 publicly funded large-scale science should provide enough data and context for independent
 verification outside the collaboration's preferred model family.
 
@@ -861,7 +910,7 @@ impossible. That is not strong open science.
 
 **Sharpest fair summary:**
 
-> We do not claim that LIGO hides or manipulates data. We state that the public GWOSC
+> We limit our scope strictly to data-scope, provenance, and methodology. We state that the public GWOSC
 > release provides calibrated strain and selected DQ information, but not the full
 > detector-characterization context needed to independently resolve the L1 low-frequency
 > anomaly for our non-GR forward-model test.
@@ -877,7 +926,7 @@ Open alternative-model reproducibility:  limited
 A strong open-science release should clearly state what the data can support,
 what they cannot support, which products are model-dependent, and which
 detector-characterization products are missing from the public release.
-This is a reproducibility concern, not an accusation of fraud.
+This is a reproducibility and provenance limitation.
 
 ---
 
@@ -914,20 +963,20 @@ This section separates claims by evidential strength.
 ```text
 1. We built and ran a reproducible, anti-circular LIGO strain pipeline.
 2. It uses real H1 GWOSC strain, off-source PSD, an analytic GR control
-   template, and an SSZ V0/V1 forward proxy.
+   template, and a DERIVED_V1 inspiral-only SSZ method component.
 3. It does NOT use PE posteriors, PE-derived PSD, or Kerr self-tests.
 4. PE/QNM posterior-based R_f tests are methodologically invalid for SSZ
    because posterior products are model-dependent.
 5. The anti-circularity gate explicitly marks posterior samples, PE-PSD,
    and pSEOBNR products as invalid inputs; strain, off-source PSD, and
-   the SSZ V0 proxy were used instead.
+   the DERIVED_V1 inspiral-only SSZ component were used instead.
 6. Formal open data is not the same as full open reproducibility.
 ```
 
 **What we can say about SSZ/LIGO:**
 
 ```text
-The current V0/V1 strain pipeline produces no measurable deviation
+The current DERIVED_V1 inspiral-only strain pipeline produces no measurable deviation
 from the GR control template in the tested range:
 
   delta_lnL ~= 0
@@ -936,7 +985,7 @@ from the GR control template in the tested range:
 This does NOT mean SSZ is confirmed.
 This does NOT mean SSZ is falsified.
 It means:
-  With the current V0/V1 inspiral forward proxy and the limited
+  With the current DERIVED_V1 inspiral forward component and the limited
   0PN GR control, SSZ is indistinguishable in this setup.
 ```
 
@@ -945,42 +994,44 @@ It means:
 ```text
 H1: USABLE_EXPLORATORY
 L1: DIAGNOSTIC_ONLY
-  -> reproducible 20-40 Hz non-Gaussianity
-  -> trigger excess kurtosis: +44.9  vs. off-source: +1.1
-  -> trigger-specific, not chronic broadband
+  -> reproducible persistent background noise in the 20-100 Hz band
+  -> [Historical 2026-05-19 diagnostic note — superseded by 2026-05-21 off-source background test]
+  -> L1_TRIGGER_SPECIFIC: NO
+  -> L1_PERSISTENT_NOISE: YES
+  -> DQ_CONTEXT_REQUIRED: YES
+  -> CLAIM_LEVEL_LIGO: NO
   -> without Omicron/iDQ/offline DQ: not claimable
 
 GW240925 tests the method. It does not adjudicate SSZ.
 ```
 
-**What we must NOT say:**
+**What we must not claim:**
 
 ```text
-SSZ is confirmed by LIGO.
-SSZ is falsified by LIGO.
-LIGO data are fake.
-LIGO manipulated the results.
-The 39% branch is refuted.
-L1 shows SSZ.
+- SSZ is confirmed by LIGO.
+- SSZ is falsified by LIGO.
+- L1 shows SSZ.
+- The 39% branch is refuted.
+- The current public release is sufficient for a claim-level non-Kerr forward test.
+```
+
+**What we may say:**
+
+```text
+- The public GWOSC strain products are useful for standard workflows and diagnostics.
+- For this alternative-metric forward-test use case, they are insufficient by themselves at claim level because full calibration, DQ, auxiliary, Omicron/iDQ, line and preprocessing context is missing.
+- The L1 20–100 Hz SSZ-SNR metric is not trigger-specific and is DQ-blocked for physical interpretation.
 ```
 
 **Best public short statement:**
 
-> We built an anti-circular strain-level pipeline for SSZ-like non-GR
-> forward models. PE/QNM posteriors are not used as metric-neutral
-> observables. For GW240925, H1 is usable exploratorily; L1 remains
-> diagnostic-only due to reproducible 20-40 Hz non-Gaussianity without
-> offline Omicron/iDQ/DQ context. The current V0/V1 SSZ pipeline is
-> technically operational but not at claim level.
+> We built an anti-circular strain-level diagnostic pipeline for SSZ-like non-GR forward models. PE/QNM posteriors are not used as metric-neutral observables. For GW240925, the public GWOSC strain data support method diagnostics only. The current DERIVED_V1 inspiral-only SSZ component is technically operational but not LOCKED_FINAL and not claim-level. L1 20–100 Hz is DQ-blocked by the off-source background test.
 
 ---
 
 ### 17. Paper-Ready Status Statement
 
-> GW240925 supports method validation, not physical adjudication of SSZ.
-> The strain-level pipeline is reproducible and anti-circular, but the
-> event is DQ-limited for H1/L1 non-GR coherence tests, and the SSZ
-> interferometer forward model remains V0/V1, not LOCKED_FINAL.
+> **GW240925 supports method validation, not physical adjudication of SSZ. The strain-level pipeline is reproducible and anti-circular, but the current SSZ component is DERIVED_V1 inspiral-only, not a complete IMR/detector-response model, and L1 is DQ-blocked by persistent off-source background metrics. No SSZ confirmation, no SSZ falsification, no claim-level LIGO test.**
 
 This is the most defensible single-sentence summary of the project's current state.
 
@@ -1024,7 +1075,7 @@ The petition raised three precise, technical questions addressed to Prof. Karste
 3. If not, is there a plan to do so retroactively?
 
 These are **specific, traceable calibration questions** — not conspiracy claims. Their absence
-of complete public answers over ten years is a documented open-science gap, not evidence of fraud.
+of complete public answers over ten years is a documented open-science gap, a material reproducibility and provenance limitation.
 
 **The epistemic asymmetry:**
 
@@ -1043,19 +1094,17 @@ This means:
 - **Non-GR forward-model tests:** partially supported — decisive context is missing
 - **Full independent calibration audit:** structurally impossible from public data alone
 
-For policymakers and funders: the question is not whether LIGO is fraudulent. It is whether
+For policymakers and funders: the question is not about intent or institutional wrongdoing. It is whether
 a publicly funded, Nobel Prize-winning experiment provides enough material for independent
 verification **outside its own model family**. Currently, it does not.
 
 **Strongest fair single statement:**
 
-> The public LIGO releases are formally open but structurally incomplete for non-standard
-> analysis: calibrated strain and GR-conditioned posteriors are available, but the
-> calibration chain, auxiliary channels, Omicron/iDQ, offline DQ context, and code
-> development history are not — meaning external groups can reproduce standard GR/CBC
-> analyses but cannot fully verify non-GR forward models independently.
+> **The public GWOSC strain products are useful for standard reproducibility exercises and diagnostic studies, but they are not sufficient for a claim-level independent SSZ test. The missing full calibration, DQ, auxiliary-channel and preprocessing provenance prevents a unique physical interpretation of persistent L1 excess metrics.**
+>
+> *Die öffentlichen GWOSC-Strain-Produkte sind für Standard-Reproduktion und Diagnostik nutzbar, aber nicht ausreichend für einen claimfähigen unabhängigen SSZ-Test. Die fehlende vollständige Kalibrations-, DQ-, Auxiliary- und Preprocessing-Provenienz verhindert eine eindeutige physikalische Interpretation der persistenten L1-Exzessmetriken.*
 
-This is a reproducibility concern. It is not a fraud accusation.
+This is a reproducibility and provenance limitation.
 
 ---
 

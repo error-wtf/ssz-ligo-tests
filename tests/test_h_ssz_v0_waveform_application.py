@@ -26,7 +26,7 @@ H_GR = np.ones(len(FREQS), dtype=complex) * 1e-23
 
 class TestWaveformModuleConstants:
     def test_formula_status(self):
-        assert FORMULA_STATUS == "DERIVED_V0_PROXY"
+        assert FORMULA_STATUS == "DERIVED_V1"
 
     def test_ready_for_claim_no(self):
         assert READY_FOR_REAL_CLAIM == "NO"
@@ -71,7 +71,7 @@ class TestWaveformMetadata:
         _, _, _, meta = apply_ssz_v0_to_frequency_waveform(
             H_GR, FREQS, M_TOTAL, MU
         )
-        assert meta["FORMULA_STATUS"] == "DERIVED_V0_PROXY"
+        assert meta["FORMULA_STATUS"] == "DERIVED_V1"
 
     def test_ready_for_claim_in_meta(self):
         _, _, _, meta = apply_ssz_v0_to_frequency_waveform(

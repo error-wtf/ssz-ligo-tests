@@ -1,35 +1,47 @@
 # SSZ Forward Model Application Report
-Generated: 2026-05-18 18:52:44
+Generated: {NOW}
 
-## LABEL: SSZ_FORWARD_V0_PROXY
+## LABEL: SSZ_FORWARD_DERIVED_V1
 
-## Warning
-The delta_psi(f) formula used here is a V0 proxy.
-Exact derivation from SSZ Book Ch.31 (RSG phase integral) is MISSING.
-This result CANNOT be used for any physics claim.
+## Implementation
+Uses `derived_waveform.py` — the documented DERIVED_V1 implementation.
+NOT the V0 proxy that was previously in the pipeline.
 
 ## Formula Applied
 ```
-r(f)    = (G*M / (pi*f)^2)^(1/3)   [Kepler 3rd law]
-xi(r)   = xi_weak(r, rs)             [weak field: rs/(2r)]
-dPsi(f) = kappa * (1 - D(xi(r)))    [kappa=1.0, locked]
-h_SSZ   = h_GR * exp(i * dPsi(f))
+deltaA(f)  = D(r(f))^2 - 1          [from P_GW_SSZ, Ch.31 Z.18696]
+deltaPsi_V0(f) via rdot_SSZ chain  [from rdot_SSZ, Ch.31 Z.18700]
+r(f)       = (GM/(pi*f)^2)^(1/3)    [Newtonian Kepler proxy]
+h_SSZ(f)   = h_GR(f) * (1+deltaA) * exp(i*deltaPsi)
 ```
 
+## FORMULA_STATUS: DERIVED_V1
+- deltaA: AUTHORIZED_CH31 source → algebraically derived ✓
+- deltaPsi: AUTHORIZED_CH31 source → Kepler-Approx derived ✓
+- Hamiltonian-Jacobi S_r(r) integral (Ch.31 Z.18677): NOT IMPLEMENTED
+- PN corrections beyond 0PN: NONE
+- Spin: NONE
+
 ## Parameters
-- Total mass: 20.45 Msun
-- Schwarzschild radius: 60.40 km
-- kappa_phase: 1.0 (exploratory, not derived)
+- Total mass: {M_kg/M_SUN:.2f} Msun
+- Schwarzschild radius: {rs_m/1e3:.2f} km
 - Regime: weak field (r >> rs in LIGO band)
 
 ## delta_psi Statistics [20–800 Hz]
-- max:  0.2858 rad
-- min:  0.0331 rad
-- mean: 0.1919 rad
+- max:  {dpsi[mask].max():.4f} rad
+- min:  {dpsi[mask].min():.4f} rad
+- mean: {dpsi[mask].mean():.4f} rad
 
 ## Blocked Items
-- BLOCKED_MISSING_EQUATION: exact delta_psi from SSZ Ch.31
-- BLOCKED_MISSING_EQUATION: epsilon_220 ringdown (CONFLICTING 3%/31%/39%)
+- HJ phase integral (Ch.31 Z.18677) not implemented → deltaPsi NOT LOCKED_FINAL
+- epsilon_220 ringdown: BLOCKED_CONFLICT (3%/31%/39%)
+
+## Mandatory Statements
+```
+READY_FOR_REAL_SSZ_CLAIM:      NO
+SSZ_SUPPORT_CLAIM_MADE:        NO
+SSZ_FALSIFICATION_CLAIM_MADE:  NO
+```
 
 ## Status
-**SSZ_FORWARD_V0_PROXY** — technical application only, no physics claim
+**SSZ_FORWARD_DERIVED_V1** — inspiral-only, methodological test, not claim-level

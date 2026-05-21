@@ -1,5 +1,11 @@
 # Robust Multi-Window PSD Report
 
+⚠️ STATUS: UNVERIFIED_DERIVED_REPORT (2026-05-20 Bingsi/Hermes) ⚠️
+⚠️ HDF5→Command→Log→CSV→Report provenance chain NOT VERIFIED. ⚠️
+⚠️ Do NOT cite numbers from this report without re-verification. ⚠️
+⚠️ See reports/progress/REPORT_STATUS_INDEX.md for current classification. ⚠️
+
+
 Generated: 2026-05-18 22:58:06  
 Event: GW240925 (trigger GPS 1411261107.984)  
 No LIGO claim. No posterior. No SSZ support/falsification.

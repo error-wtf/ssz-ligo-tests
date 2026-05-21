@@ -27,7 +27,7 @@ FREQS = np.linspace(20.0, 500.0, 100)
 
 class TestDeltaPsiModuleConstants:
     def test_formula_status_derived(self):
-        assert FORMULA_STATUS == "DERIVED_V0_PROXY"
+        assert FORMULA_STATUS == "DERIVED_V1"
 
     def test_ready_for_claim_no(self):
         assert READY_FOR_REAL_CLAIM == "NO"
@@ -69,7 +69,7 @@ class TestDeltaPsiWeakFieldLimit:
 class TestDeltaPsiMetadata:
     def test_metadata_formula_status(self):
         _, meta = delta_psi_ssz_v0(FREQS, M_TOTAL, MU)
-        assert meta["FORMULA_STATUS"] == "DERIVED_V0_PROXY"
+        assert meta["FORMULA_STATUS"] == "DERIVED_V1"
 
     def test_metadata_ready_for_claim(self):
         _, meta = delta_psi_ssz_v0(FREQS, M_TOTAL, MU)

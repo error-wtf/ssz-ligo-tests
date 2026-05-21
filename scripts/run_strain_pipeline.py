@@ -8,7 +8,7 @@ HARD RULES:
 
 All reports written to reports/  |  Log to logs/full_strain_pipeline.log
 """
-import sys, datetime, numpy as np, h5py
+import sys, datetime, numpy as np, h5py, hashlib
 from pathlib import Path
 from scipy import signal
 
@@ -83,7 +83,18 @@ def step_A():
         log(f"  File not found: {H1_STRAIN}")
         return None, None, None
 
+    # SHA256
+    sha = hashlib.sha256()
+    with open(str(H1_STRAIN), 'rb') as fh:
+        while True:
+            chunk = fh.read(8*1024*1024)
+            if not chunk: break
+            sha.update(chunk)
+    hdf5_sha256 = sha.hexdigest()
+
     log(f"  File:    {H1_STRAIN}")
+    log(f"  SHA256:  {hdf5_sha256}")
+    log(f"  File size: {H1_STRAIN.stat().st_size:,} bytes")
     log("  Dataset: strain/Strain")
 
     with h5py.File(str(H1_STRAIN), 'r') as f:
@@ -205,32 +216,74 @@ def step_C(freqs_fd, Mc_kg, eta, dL_m):
 # STEP D — SSZ FORWARD MODEL
 # ---------------------------------------------------------------------------
 def step_D(freqs_fd, h_gr, M_kg, rs_m):
-    log("\n" + "=" * 60)
-    log("STEP D: SSZ FORWARD MODEL")
-    log("=" * 60)
-    log("  LABEL: SSZ_FORWARD_V0_PROXY")
-    log("  V0 proxy formula:")
-    log("    r(f)  = (G*M / (pi*f)^2)^{1/3}  [Kepler]")
-    log("    xi(r) = xi_weak(r, rs)           [weak field]")
-    log("    dPsi(f) = kappa * (1 - D(xi))   [kappa=1.0 locked]")
+    """Apply SSZ DERIVED_V1 corrections via derived_waveform.py.
 
+    Uses the documented DERIVED_V1 implementation:
+      deltaA = D(r)^2 - 1          (from P_GW_SSZ, Ch.31 Z.18696)
+      deltaPsi_V0(f) via rdot_SSZ  (from rdot_SSZ, Ch.31 Z.18700)
+      h_SSZ = h_GR * (1+deltaA) * exp(i*deltaPsi)
+
+    FORMULA_STATUS: DERIVED_V1 (NOT LOCKED_FINAL)
+    READY_FOR_REAL_CLAIM: NO
+    """
+    from ssz_ligo_tests.derived_waveform import apply_ssz_v0_to_frequency_waveform
+
+    log("\n" + "=" * 60)
+    log("STEP D: SSZ FORWARD MODEL (DERIVED_V1)")
+    log("=" * 60)
+    log("  LABEL: SSZ_FORWARD_DERIVED_V1")
+    log("  Using derived_waveform.py (NOT V0 proxy)")
+    log("  FORMULA_STATUS: DERIVED_V1")
+    log("  Sources:")
+    log("    deltaA: D(r)^2 - 1  ← P_GW_SSZ = P_GW_GR * D^2/s^2 (Ch.31 Z.18696)")
+    log("    deltaPsi: via rdot_SSZ = rdot_GR * D^2/s^4 (Ch.31 Z.18700)")
+    log("    Construction: h_SSZ = h_GR * (1+deltaA) * exp(i*deltaPsi)")
+
+    # Compute reduced mass from total mass and eta
+    mu_kg = ETA * M_kg
+
+    try:
+        h_ssz_f, dpsi, delta_a, meta = apply_ssz_v0_to_frequency_waveform(
+            h_gr, freqs_fd, M_total_kg=M_kg, mu_kg=mu_kg, branch="g2_decay"
+        )
+    except Exception as e:
+        log(f"  ERROR in derived_waveform: {e}")
+        log("  Falling back to V0 proxy (SSZ_FORWARD_V0_PROXY)")
+        return _step_D_v0_fallback(freqs_fd, h_gr, M_kg, rs_m)
+
+    mask = (freqs_fd >= F_LOW) & (freqs_fd <= F_HIGH) & (freqs_fd > 0)
+    band_psi = dpsi[mask]
+    band_a   = delta_a[mask]
+
+    log(f"  Schwarzschild r_s:  {rs_m/1e3:.2f} km")
+    log(f"  Total mass:         {M_kg/M_SUN:.2f} Msun")
+    log(f"  Reduced mass:       {mu_kg/M_SUN:.2f} Msun")
+    log(f"  deltaPsi range (band): [{band_psi.min():.4f}, {band_psi.max():.4f}] rad")
+    log(f"  deltaPsi mean (band):  {band_psi.mean():.4f} rad")
+    log(f"  deltaA range (band):   [{band_a.min():.4e}, {band_a.max():.4e}]")
+    log(f"  deltaA mean (band):    {band_a.mean():.4e}")
+    log(f"  |h_SSZ| / |h_GR| ratio: {meta.get('h_ssz_amplitude_ratio', 'N/A')}")
+    log(f"  FORMULA_STATUS:         {meta.get('FORMULA_STATUS', 'N/A')}")
+    log(f"  READY_FOR_REAL_CLAIM:   {meta.get('READY_FOR_REAL_CLAIM', 'N/A')}")
+    log("  STATUS: SSZ_FORWARD_DERIVED_V1 — inspiral-only, not claim-level")
+    return h_ssz_f, dpsi
+
+
+def _step_D_v0_fallback(freqs_fd, h_gr, M_kg, rs_m):
+    """V0 proxy fallback — only used if derived_waveform.py fails."""
+    log("\n  *** FALLBACK: V0 PROXY (kappa=1.0 locked) ***")
+    log("  WARNING: This uses a simplified formula, NOT the DERIVED_V1 implementation.")
+    log("  dPsi(f) = 1.0 * (1 - D(xi_weak(r))) — NO amplitude correction.")
     mask = (freqs_fd >= F_LOW) & (freqs_fd <= F_HIGH) & (freqs_fd > 0)
     dpsi = np.zeros(len(freqs_fd))
     for i in np.where(mask)[0]:
         r = (G * M_kg / (np.pi * freqs_fd[i])**2) ** (1.0/3.0)
         xi = xi_weak(r, rs_m)
         dpsi[i] = 1.0 * (1.0 - d_ssz(xi))
-
     h_ssz = h_gr * np.exp(1j * dpsi)
-
     band = dpsi[mask]
-    log(f"  Schwarzschild r_s:  {rs_m/1e3:.2f} km")
-    log("  kappa_phase:        1.0 (locked exploratory)")
-    log(f"  dpsi range (band):  [{band.min():.4f}, {band.max():.4f}] rad")
-    log(f"  dpsi mean (band):   {band.mean():.4f} rad")
-    log(f"  |h_SSZ| max:        {np.abs(h_ssz).max():.3e}")
-    log("  Exact delta_psi SSZ derivation: MISSING (Ch.31 not yet locked)")
-    log("  STATUS: SSZ_FORWARD_V0_PROXY — not suitable for physics claim")
+    log(f"  dpsi range: [{band.min():.4f}, {band.max():.4f}] rad")
+    log("  STATUS: SSZ_FORWARD_V0_PROXY (fallback)")
     return h_ssz, dpsi
 
 # ---------------------------------------------------------------------------
@@ -404,25 +457,30 @@ It is used ONLY as a sanity control reference.
     (REPORTS / "SSZ_FORWARD_APPLICATION_REPORT.md").write_text("""# SSZ Forward Model Application Report
 Generated: {NOW}
 
-## LABEL: SSZ_FORWARD_V0_PROXY
+## LABEL: SSZ_FORWARD_DERIVED_V1
 
-## Warning
-The delta_psi(f) formula used here is a V0 proxy.
-Exact derivation from SSZ Book Ch.31 (RSG phase integral) is MISSING.
-This result CANNOT be used for any physics claim.
+## Implementation
+Uses `derived_waveform.py` — the documented DERIVED_V1 implementation.
+NOT the V0 proxy that was previously in the pipeline.
 
 ## Formula Applied
 ```
-r(f)    = (G*M / (pi*f)^2)^(1/3)   [Kepler 3rd law]
-xi(r)   = xi_weak(r, rs)             [weak field: rs/(2r)]
-dPsi(f) = kappa * (1 - D(xi(r)))    [kappa=1.0, locked]
-h_SSZ   = h_GR * exp(i * dPsi(f))
+deltaA(f)  = D(r(f))^2 - 1          [from P_GW_SSZ, Ch.31 Z.18696]
+deltaPsi_V0(f) via rdot_SSZ chain  [from rdot_SSZ, Ch.31 Z.18700]
+r(f)       = (GM/(pi*f)^2)^(1/3)    [Newtonian Kepler proxy]
+h_SSZ(f)   = h_GR(f) * (1+deltaA) * exp(i*deltaPsi)
 ```
+
+## FORMULA_STATUS: DERIVED_V1
+- deltaA: AUTHORIZED_CH31 source → algebraically derived ✓
+- deltaPsi: AUTHORIZED_CH31 source → Kepler-Approx derived ✓
+- Hamiltonian-Jacobi S_r(r) integral (Ch.31 Z.18677): NOT IMPLEMENTED
+- PN corrections beyond 0PN: NONE
+- Spin: NONE
 
 ## Parameters
 - Total mass: {M_kg/M_SUN:.2f} Msun
 - Schwarzschild radius: {rs_m/1e3:.2f} km
-- kappa_phase: 1.0 (exploratory, not derived)
 - Regime: weak field (r >> rs in LIGO band)
 
 ## delta_psi Statistics [20–800 Hz]
@@ -431,11 +489,18 @@ h_SSZ   = h_GR * exp(i * dPsi(f))
 - mean: {dpsi[mask].mean():.4f} rad
 
 ## Blocked Items
-- BLOCKED_MISSING_EQUATION: exact delta_psi from SSZ Ch.31
-- BLOCKED_MISSING_EQUATION: epsilon_220 ringdown (CONFLICTING 3%/31%/39%)
+- HJ phase integral (Ch.31 Z.18677) not implemented → deltaPsi NOT LOCKED_FINAL
+- epsilon_220 ringdown: BLOCKED_CONFLICT (3%/31%/39%)
+
+## Mandatory Statements
+```
+READY_FOR_REAL_SSZ_CLAIM:      NO
+SSZ_SUPPORT_CLAIM_MADE:        NO
+SSZ_FALSIFICATION_CLAIM_MADE:  NO
+```
 
 ## Status
-**SSZ_FORWARD_V0_PROXY** — technical application only, no physics claim
+**SSZ_FORWARD_DERIVED_V1** — inspiral-only, methodological test, not claim-level
 """, encoding="utf-8")
 
     # ---- E: RESIDUAL_LIKELIHOOD_REPORT ----
@@ -451,14 +516,14 @@ Generated: {NOW}
 | Model | lnL | MF-SNR | Residual RMS |
 |-------|-----|--------|--------------|
 | GR control (0PN) | {stats['lnL_gr']:.4e} | {stats['snr_gr']:.2f} | {stats['res_gr_rms']:.3e} |
-| SSZ V0-proxy     | {stats['lnL_ssz']:.4e} | {stats['snr_ssz']:.2f} | {stats['res_ssz_rms']:.3e} |
+| SSZ DERIVED_V1    | {stats['lnL_ssz']:.4e} | {stats['snr_ssz']:.2f} | {stats['res_ssz_rms']:.3e} |
 
 **delta_lnL (SSZ - GR) = {stats['delta_lnL']:.4e}**
 
 ## Interpretation
 - |delta_lnL| < 1: INDISTINGUISHABLE
 - GR control is 0PN only (GR_CONTROL_TEMPLATE_LIMITED)
-- SSZ uses V0 proxy (SSZ_FORWARD_V0_PROXY)
+- SSZ uses DERIVED_V1 via derived_waveform.py (SSZ_FORWARD_DERIVED_V1)
 - Neither result constitutes a physics claim
 
 ## Mandatory Statements
@@ -484,7 +549,7 @@ Generated: {NOW}
 | H1 strain (GWOSC HDF5) | VALID_INDEPENDENT | YES |
 | PSD from off-source strain | VALID_INDEPENDENT | YES |
 | TaylorF2 analytic template | ANALYTIC_CONTROL | YES |
-| SSZ V0 proxy (locked kappa) | SSZ_FORWARD_V0_PROXY | YES |
+| SSZ DERIVED_V1 (via derived_waveform.py) | SSZ_FORWARD_DERIVED_V1 | YES |
 | online_posterior_samples.h5 | INVALID (posterior) | NO |
 | GW240925 metafile PSDs | CIRCULARITY_RISK (bilby) | NO |
 | pSEOBNR HDF5 samples | INVALID (GR posterior) | NO |
@@ -505,12 +570,12 @@ SSZ_SUPPORT_CLAIM_MADE:        NO
 SSZ_FALSIFICATION_CLAIM_MADE:  NO
 POSTERIOR_RF_TEST:             INVALID_FOR_SSZ
 GR_CONTROL_TEMPLATE:           GR_CONTROL_TEMPLATE_LIMITED
-SSZ_FORWARD_MODEL:             SSZ_FORWARD_V0_PROXY
+SSZ_FORWARD_MODEL:             SSZ_FORWARD_DERIVED_V1
 ANTI_CIRCULARITY_GATE:         CLEAR
 ```
 
 ## What Remains Blocked
-1. delta_psi exact formula (SSZ Book Ch.31 not yet locked)
+1. Hamiltonian-Jacobi S_r(r) integral (Ch.31 Z.18677) not implemented → deltaPsi NOT LOCKED_FINAL
 2. epsilon_220 ringdown (3 conflicting sources: 3%, 31%, 39%)
 3. Whitened MF with calibrated ASD
 """, encoding="utf-8")

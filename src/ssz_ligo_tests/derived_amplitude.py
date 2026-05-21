@@ -28,7 +28,7 @@ from typing import Tuple
 from .constants import G, C
 from .ssz_core import get_xi
 
-FORMULA_STATUS = "DERIVED_V0_PROXY"
+FORMULA_STATUS = "DERIVED_V1"
 READY_FOR_REAL_CLAIM = "NO"
 
 

@@ -1,5 +1,11 @@
 # Critical Open-Data and Methodology Position
 
+⚠️ STATUS: UNVERIFIED_DERIVED_REPORT (2026-05-20 Bingsi/Hermes) ⚠️
+⚠️ HDF5→Command→Log→CSV→Report provenance chain NOT VERIFIED. ⚠️
+⚠️ Do NOT cite numbers from this report without re-verification. ⚠️
+⚠️ See reports/progress/REPORT_STATUS_INDEX.md for current classification. ⚠️
+
+
 Generated: 2026-05-19  
 Repository: error-wtf/ssz-ligo-tests
 
@@ -7,7 +13,7 @@ Repository: error-wtf/ssz-ligo-tests
 
 ## Summary
 
-This repository does **not** claim that LIGO data are fake, manipulated, or useless.
+This repository is a reproducibility, provenance, and methodology project. It does not make allegations about intent, misconduct, or institutional wrongdoing.
 
 It also does **not** claim that SSZ is confirmed or falsified by the current LIGO release data.
 
@@ -174,9 +180,8 @@ The public release products are insufficient to decide whether the L1 behavior i
 Does **not** mean:
 
 ```text
-LIGO data are fake  /  GW240925 is not real
-SSZ is confirmed    /  SSZ is falsified
-LIGO manipulated the data
+- SSZ is confirmed or falsified
+- LIGO data has preprocessing or instrumental issues
 ```
 
 Does mean:
@@ -306,7 +311,7 @@ This project does not use any petition as evidence against LIGO. It uses the exi
 
 ## 14. Political / Funding-Relevant Interpretation
 
-For policymakers, the key issue is not whether LIGO is fake. The key issue is whether publicly funded large-scale science should provide enough data and context for independent verification outside the collaboration's preferred model family.
+For policymakers, the key issue is not an allegation of misconduct. The key issue is whether publicly funded large-scale science should provide enough data and context for independent verification outside the collaboration's preferred model family.
 
 Current situation:
 

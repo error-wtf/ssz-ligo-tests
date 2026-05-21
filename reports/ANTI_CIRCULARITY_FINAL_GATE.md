@@ -1,5 +1,5 @@
 # Anti-Circularity Final Gate
-Generated: 2026-05-18 18:52:44
+Generated: {NOW}
 
 ## Observable Classification Audit
 

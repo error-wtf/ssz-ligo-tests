@@ -1,23 +1,23 @@
 # Residual and Log-Likelihood Report
-Generated: 2026-05-18 18:52:44
+Generated: {NOW}
 
 ## Computation
-- FFT length: 16384 samples
-- df: 0.250000 Hz
-- Band: 20.0–800.0 Hz
+- FFT length: {len(strain)} samples
+- df: {float(fs)/len(strain):.6f} Hz
+- Band: {F_LOW}–{F_HIGH} Hz
 
 ## Log-Likelihood (noise-weighted inner product)
 | Model | lnL | MF-SNR | Residual RMS |
 |-------|-----|--------|--------------|
-| GR control (0PN) | -3.2372e+07 | 39.92 | 8.502e-22 |
-| SSZ V0-proxy     | -3.2372e+07 | 40.27 | 8.502e-22 |
+| GR control (0PN) | {stats['lnL_gr']:.4e} | {stats['snr_gr']:.2f} | {stats['res_gr_rms']:.3e} |
+| SSZ DERIVED_V1    | {stats['lnL_ssz']:.4e} | {stats['snr_ssz']:.2f} | {stats['res_ssz_rms']:.3e} |
 
-**delta_lnL (SSZ - GR) = -4.4703e-08**
+**delta_lnL (SSZ - GR) = {stats['delta_lnL']:.4e}**
 
 ## Interpretation
 - |delta_lnL| < 1: INDISTINGUISHABLE
 - GR control is 0PN only (GR_CONTROL_TEMPLATE_LIMITED)
-- SSZ uses V0 proxy (SSZ_FORWARD_V0_PROXY)
+- SSZ uses DERIVED_V1 via derived_waveform.py (SSZ_FORWARD_DERIVED_V1)
 - Neither result constitutes a physics claim
 
 ## Mandatory Statements

@@ -1,5 +1,10 @@
 # H1/L1 LONG-BASELINE XCORR - FINAL EXECUTION REPORT
-Status: COMPLETED with DATA LIMITATION
+⚠️ STATUS: PARTIALLY_INVALID_PRIOR_REPORT (2026-05-20 Bingsi/Hermes) ⚠️
+⚠️ Reason: Uses wrong GPS value ~1417240123. Do NOT cite old trigger/out-of-range section. ⚠️
+⚠️ Correct trigger: 1411261107.984 — lies INSIDE HDF5 window [1411260416, 1411264512]. ⚠️
+⚠️ See reports/progress/COMPLETE_PROJECT_REPORT.md — Corrections pending Lino approval. ⚠️
+⚠️ UNVERIFIED_DERIVED_REPORT - CSV NOT PRIMARY EVIDENCE
+Status: COMPLETED with DATA LIMITATION (trigger correction pending)
 Timestamp: 2026-05-19 16:20:39.225214
 
 ## EXECUTED TESTS (All with Logs and GitHub Commits)
@@ -36,11 +41,19 @@ Timestamp: 2026-05-19 16:20:39.225214
 - Required: 50-100 windows from -1000s to +1000s
 - Available: Only 1 window (OFF_m500)
 - Status: BLOCKED - insufficient local data
-- Root Cause:
-  * GW240925 trigger at GPS ~1417240123
-  * Local GWOSC files at GPS 1411260416
-  * Delta: ~6,979,707 seconds = ~69.2 days
-  * Available strain files do NOT cover trigger time
+- ⚠️ INVALID_AUDIT_FINDING (2026-05-20 Bingsi/Hermes) ⚠️
+  DER FOLGENDE ABSCHNITT ENTHÄLT EINEN FALSCHEN TRIGGER-GPS-WERT:
+- ~~Root Cause:~~
+-   ~~GW240925 trigger at GPS ~1417240123~~
+-   ~~Local GWOSC files at GPS 1411260416~~
+-   ~~Delta: ~6,979,707 seconds = ~69.2 days~~
+-   ~~Available strain files do NOT cover trigger time~~
+- KORREKTUR:
+  GW240925 trigger at GPS 1411261107.984 (kanonisch, GraceDB).
+  HDF5-Fenster: 1411260416–1411264512 (4096s).
+  Trigger liegt IM Fenster (Offset 691.984s).
+  Die "80 Tage außerhalb"-Behauptung war selbst ein Audit-Fehler.
+  Korrektur erfolgt nach Freigabe. Siehe reports/progress/COMPLETE_PROJECT_REPORT.md
 
 ### Phase Coherence Analysis
 - Status: BLOCKED - phase data not in current CSV
@@ -91,8 +104,8 @@ GitHub Commits: 3118437, e43657a, 41558f5, 7f0af06
 
 To complete the analysis as specified by user:
 
-1. Obtain GWOSC strain files covering GPS 1417239000-1417242000
-2. Extract 50-100 off-source windows (4s each, spaced ~20s apart)
+1. Current strain files ARE sufficient — trigger is within HDF5 window (verified 2026-05-20)
+2. Extract 50-100 off-source windows (4s each, spaced ~20s apart) from same HDF5 file(s)
 3. Compute xcorr for each window vs TRIGGER
 4. Build statistical distribution (mean, sigma, percentiles)
 5. Compute Z-scores: Z = (Trigger - mu_off) / sigma_off
@@ -101,4 +114,4 @@ To complete the analysis as specified by user:
 8. Compute coherence-excess spectra
 9. Final classification with statistical confidence
 
-Current Status: Pipeline functional, execution complete within data constraints, claims blocked pending extended baseline.
+Current Status: Pipeline functional, execution complete within data constraints, claims blocked pending extended baseline and verified HDF5 hashes.

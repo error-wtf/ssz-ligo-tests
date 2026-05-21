@@ -1,27 +1,27 @@
 # Real Strain Load Report
-Generated: 2026-05-18 18:52:44
+Generated: {NOW}
 
 ## File
-- Path: `E:\clone\ligo-gw240925-gw250207-release\18600070\GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF\H1\1410334720\H-H1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5`
+- Path: `{H1_STRAIN}`
 - Dataset: `strain/Strain`
-- GPS start: 1411260416.0
-- Trigger GPS: 1411261107.984
-- Trigger offset: 691.984 s within file
+- GPS start: {gps0}
+- Trigger GPS: {TRIGGER_GPS}
+- Trigger offset: {TRIGGER_GPS - gps0:.3f} s within file
 
 ## Segment
-- Window: 4.0 s around trigger
-- Samples loaded: 16384
-- Sample rate: 4096 Hz
+- Window: {WIN_S} s around trigger
+- Samples loaded: {len(strain)}
+- Sample rate: {fs} Hz
 
 ## Sanity Statistics
 | Stat | Value |
 |------|-------|
-| min | -7.2509e-18 |
-| max | 7.0932e-18 |
-| mean | -2.0062e-20 |
-| std | 2.7274e-18 |
-| NaN | False |
-| Inf | False |
+| min | {strain.min():.4e} |
+| max | {strain.max():.4e} |
+| mean | {strain.mean():.4e} |
+| std | {strain.std():.4e} |
+| NaN | {np.any(np.isnan(strain))} |
+| Inf | {np.any(np.isinf(strain))} |
 
 ## Anti-Circularity
 - Source label: `H1/strain`

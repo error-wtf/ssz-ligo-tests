@@ -1,10 +1,12 @@
-SSZ STRAIN PIPELINE — 2026-05-18 18:52:44
+SSZ STRAIN PIPELINE — 2026-05-20 23:43:34
 GW240925 | GPS=1411261107.984 | Mc=8.9 Msun | eta=0.25
 ============================================================
 STEP A: LOAD GW240925 H1 STRAIN
 ============================================================
   Anti-circularity check: H1/strain -> VALID_INDEPENDENT
   File:    E:\clone\ligo-gw240925-gw250207-release\18600070\GW240925-C00-Strain\GW240925-C00-Strain\O4b4DiscC00_4KHZ_R1\STRAIN_HDF\H1\1410334720\H-H1_GWOSC_O4b4DiscC00_4KHZ_R1-1411260416-4096.hdf5
+  SHA256:  4da44bd2e5e17716608f0acbc8c631cce3d9738aa9d19e03d2738cced7aeed14
+  File size: 53,995,910 bytes
   Dataset: strain/Strain
   Detector:        H1
   Channel:         H1:GDS-CALIB_STRAIN_CLEAN
@@ -53,20 +55,26 @@ STEP C: GR CONTROL WAVEFORM (TaylorF2 0PN)
   STATUS: GR_CONTROL_TEMPLATE_LIMITED (0PN only, no higher order terms)
 
 ============================================================
-STEP D: SSZ FORWARD MODEL
+STEP D: SSZ FORWARD MODEL (DERIVED_V1)
 ============================================================
-  LABEL: SSZ_FORWARD_V0_PROXY
-  V0 proxy formula:
-    r(f)  = (G*M / (pi*f)^2)^{1/3}  [Kepler]
-    xi(r) = xi_weak(r, rs)           [weak field]
-    dPsi(f) = kappa * (1 - D(xi))   [kappa=1.0 locked]
+  LABEL: SSZ_FORWARD_DERIVED_V1
+  Using derived_waveform.py (NOT V0 proxy)
+  FORMULA_STATUS: DERIVED_V1
+  Sources:
+    deltaA: D(r)^2 - 1  ← P_GW_SSZ = P_GW_GR * D^2/s^2 (Ch.31 Z.18696)
+    deltaPsi: via rdot_SSZ = rdot_GR * D^2/s^4 (Ch.31 Z.18700)
+    Construction: h_SSZ = h_GR * (1+deltaA) * exp(i*deltaPsi)
   Schwarzschild r_s:  60.40 km
-  kappa_phase:        1.0 (locked exploratory)
-  dpsi range (band):  [0.0331, 0.2858] rad
-  dpsi mean (band):   0.1919 rad
-  |h_SSZ| max:        1.629e-31
-  Exact delta_psi SSZ derivation: MISSING (Ch.31 not yet locked)
-  STATUS: SSZ_FORWARD_V0_PROXY — not suitable for physics claim
+  Total mass:         20.45 Msun
+  Reduced mass:       5.11 Msun
+  deltaPsi range (band): [0.0598, 10.7595] rad
+  deltaPsi mean (band):  0.3955 rad
+  deltaA range (band):   [-6.9194e-01, -6.5077e-02]
+  deltaA mean (band):    -4.8103e-01
+  |h_SSZ| / |h_GR| ratio: 0.7542091098932708
+  FORMULA_STATUS:         DERIVED_V1
+  READY_FOR_REAL_CLAIM:   NO
+  STATUS: SSZ_FORWARD_DERIVED_V1 — inspiral-only, not claim-level
 
 ============================================================
 STEP E: RESIDUALS + LOG-LIKELIHOOD
@@ -77,9 +85,9 @@ STEP E: RESIDUALS + LOG-LIKELIHOOD
   Band [20-800 Hz]:   3121 bins
   lnL (GR control):   -3.2372e+07
   lnL (SSZ V0):       -3.2372e+07
-  delta_lnL SSZ-GR:   -4.4703e-08
+  delta_lnL SSZ-GR:   6.3404e-06
   MF-SNR GR:          39.92
-  MF-SNR SSZ:         40.27
+  MF-SNR SSZ:         14.23
   Residual RMS GR:    8.502e-22
   Residual RMS SSZ:   8.502e-22
   delta_lnL < 1: INDISTINGUISHABLE — no physics claim possible

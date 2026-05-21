@@ -1,5 +1,11 @@
 # LIGO Release Master Status Report
 
+⚠️ STATUS: UNVERIFIED_DERIVED_REPORT (2026-05-20 Bingsi/Hermes) ⚠️
+⚠️ HDF5→Command→Log→CSV→Report provenance chain NOT VERIFIED. ⚠️
+⚠️ Do NOT cite numbers from this report without re-verification. ⚠️
+⚠️ See reports/progress/REPORT_STATUS_INDEX.md for current classification. ⚠️
+
+
 **Generated:** 2026-05-14  
 **Project:** LIGO/Virgo/KAGRA Zenodo Release 1860070  
 **Events:** GW240925, GW250207

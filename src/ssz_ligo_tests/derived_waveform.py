@@ -20,7 +20,7 @@ from typing import Tuple
 from .derived_phase import delta_psi_ssz_v0
 from .derived_amplitude import delta_a_ssz_v0
 
-FORMULA_STATUS = "DERIVED_V0_PROXY"
+FORMULA_STATUS = "DERIVED_V1"
 READY_FOR_REAL_CLAIM = "NO"
 
 

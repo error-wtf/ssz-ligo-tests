@@ -1,5 +1,11 @@
 # Zenodo Release Symlink Issue Summary
 
+⚠️ STATUS: UNVERIFIED_DERIVED_REPORT (2026-05-20 Bingsi/Hermes) ⚠️
+⚠️ HDF5→Command→Log→CSV→Report provenance chain NOT VERIFIED. ⚠️
+⚠️ Do NOT cite numbers from this report without re-verification. ⚠️
+⚠️ See reports/progress/REPORT_STATUS_INDEX.md for current classification. ⚠️
+
+
 **Date:** 2026-05-14  
 **Task ID:** LIGO_PHASE_3C_SYMLINK_TARGET_RESOLUTION_AUDIT  
 **Status:** RELEASE_PACKAGING_ISSUE_SUSPECTED  

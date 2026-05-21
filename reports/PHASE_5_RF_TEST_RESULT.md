@@ -1,5 +1,11 @@
 # Phase 5: Preregistered QNM R_f Test - Final Result
 
+⚠️ STATUS: UNVERIFIED_DERIVED_REPORT (2026-05-20 Bingsi/Hermes) ⚠️
+⚠️ HDF5→Command→Log→CSV→Report provenance chain NOT VERIFIED. ⚠️
+⚠️ Do NOT cite numbers from this report without re-verification. ⚠️
+⚠️ See reports/progress/REPORT_STATUS_INDEX.md for current classification. ⚠️
+
+
 **Task ID:** LIGO_PHASE_5_PREREGISTERED_QNM_RF_TEST  
 **Status:** BLOCKED (Phase 5C - GR Reference Computation)  
 **Date:** 2026-05-14  

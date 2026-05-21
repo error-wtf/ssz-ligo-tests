@@ -2,15 +2,14 @@
 
 **Authors:** Lino Casu, Carmen Wrede (SSZ Research Project)  
 **Date:** 2026-05-19  
-**Status:** Public position document — sourced, legally reviewed, no misconduct claims  
+**Status:** Public methodology document — source-backed reproducibility and provenance evaluation  
 **Repository:** [ssz-ligo-tests](https://github.com/error-wtf/ssz-ligo-tests)
 
 ---
 
 ## Legal Preamble
 
-This report makes no claim of scientific fraud, data manipulation, or personal misconduct
-by any member of the LIGO Scientific Collaboration or the Virgo/KAGRA consortia.
+This is a reproducibility, provenance, and methodology project. It evaluates the limits of public GWOSC products for claim-level alternative-metric forward testing. It is limited to data-scope, provenance, and methodology.
 
 This report documents, on the basis of publicly verifiable primary sources:
 
@@ -53,8 +52,7 @@ CONSEQUENCE:
 
 > Ten years after GW150914, a fully independent external reconstruction of the
 > calibration chain that produced the published h(t) remains practically impossible
-> using only publicly available data. This is a reproducibility concern, not a
-> fraud accusation.
+> using only publicly available data. This is a reproducibility and provenance limitation.
 
 ---
 
@@ -154,7 +152,7 @@ Was this method repeated since 2003 with documented improvement?
 Source: https://www.change.org/p/prof-karsten-danzmann-beantworten-sie-bitte-3-fragen-%C3%BCber-das-ligo-experiment?signed=true
 
 These are precise calibration traceability questions. They are not equivalent to
-claiming the detection is fabricated. Their lack of complete public answers over the
+claiming the detection cannot be reconstructed. Their lack of complete public answers over the
 following decade is a legitimate open-science concern.
 
 ### 2.3 The 2025 IGWN Forum Request
@@ -207,8 +205,7 @@ Code version cited in paper
 When migration moves merge requests to an internal-only system, the development history
 becomes opaque. External reviewers cannot trace why specific algorithmic choices were made.
 
-This creates **link rot in the scientific record** — not fraud, but a structural
-auditability gap.
+This creates **link rot in the scientific record** — a material reproducibility and provenance limitation and structural auditability gap.
 
 ### 3.3 The Broader Pattern
 
@@ -288,7 +285,7 @@ This project (SSZ-LIGO Forward Model Test Suite) uses:
 |------|-----------|-------------|
 | Calibrated strain | YES (GWOSC) | H1 usable for exploratory tests |
 | DQ segments | YES (GWOSC) | Partial context only |
-| Omicron/iDQ | NO | L1 20-40 Hz anomaly unresolved |
+| Omicron/iDQ | NO | L1 20-100 Hz persistent background noise unresolved |
 | PCal/DARM channels | NO | Cannot verify calibration chain |
 | Aux channels (full) | NO | Cannot fully characterize glitches |
 | Offline DQ | NO | Cannot gate L1 at claim level |
@@ -297,8 +294,7 @@ This project (SSZ-LIGO Forward Model Test Suite) uses:
 
 ```text
 H1:   PASS_EXPLORATORY — usable for forward-model validation
-L1:   DIAGNOSTIC_ONLY — excess kurtosis +44.9 at trigger vs +1.1 off-source
-      in 20-40 Hz band; unresolved without Omicron/iDQ/offline DQ
+L1:   DIAGNOSTIC_ONLY — L1 20–100 Hz persistent background noise: trigger SNR ≈ off-source mean; unresolved without offline DQ context
 
 PIPELINE_STATUS: PASS_EXPLORATORY
 READY_FOR_REAL_LIGO_SSZ_CLAIM: NO
@@ -307,19 +303,17 @@ READY_FOR_REAL_LIGO_SSZ_CLAIM: NO
 ### 5.3 The Epistemic Position
 
 ```text
-NOT claimed:
-  LIGO data are fake
-  GW detections are not real
-  The Nobel Prize was undeserved
-  LIGO personnel acted dishonestly
+What we must not claim:
+- SSZ is confirmed by LIGO.
+- SSZ is falsified by LIGO.
+- L1 shows SSZ.
+- The 39% branch is refuted.
+- The current public release is sufficient for a claim-level non-Kerr forward test.
 
-CLAIMED, with sources:
-  Public GWOSC releases are pre-calibrated analysis products
-  Full calibration chain is not publicly reconstructable
-  Code provenance has structural gaps from migration
-  Non-GR tests require context not in the public release
-  The "fully open" framing does not reflect the reproducibility reality
-  for fundamentally independent non-GR analyses
+What we may say:
+- The public GWOSC strain products are useful for standard workflows and diagnostics.
+- For this alternative-metric forward-test use case, they are insufficient by themselves at claim level because full calibration, DQ, auxiliary, Omicron/iDQ, line and preprocessing context is missing.
+- The L1 20–100 Hz SSZ-SNR metric is not trigger-specific and is DQ-blocked for physical interpretation.
 ```
 
 ---
@@ -367,7 +361,7 @@ None of these currently exist in the GWOSC public release.
 > independent reconstruction of the calibration chain remains practically impossible
 > from publicly available data.
 
-**None of these sentences claim fraud. All are sourced.**
+**This is a reproducibility, provenance, and methodology project. It evaluates the limits of public GWOSC products for claim-level alternative-metric forward testing. It is limited to data-scope, provenance, and methodology.**
 
 ---
 

@@ -1,6 +1,6 @@
-# L1 Artifact Gate — Final Status Lock
-
-Generated: 2026-05-19 (updated 2026-05-19 sub-band revision)  
+# L1 Data Quality & Artifact Gate – Final Diagnostic Status
+⚠️ UNVERIFIED_DERIVED_REPORT - CSV NOT PRIMARY EVIDENCE  
+**Date:** 2026-05-19 (updated 2026-05-19 sub-band revision)  
 Status: LOCKED — Do not modify without explicit author decision  
 Event: GW240925 (trigger GPS 1411261107.984, O4b GWOSC)
 

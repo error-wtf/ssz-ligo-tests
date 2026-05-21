@@ -1,18 +1,13 @@
 # LIGO Open Data: Reproducibility Gap — A Methodological Critique
 
 **Date:** 2026-05-19 | **Authors:** Lino Casu, Carmen Wrede (SSZ Research Project)
-**Legal note:** This document makes no claim of fraud, manipulation, or misconduct.
-It documents a methodological reproducibility concern based on publicly verifiable facts.
+**Legal note:** This is a reproducibility, provenance, and methodology project. It evaluates the limits of public GWOSC products for claim-level alternative-metric forward testing. It is limited to data-scope, provenance, and methodology.
 
 ---
 
 ## 1. Position Statement
 
-This document does NOT claim:
-- LIGO data are fake or manipulated
-- Gravitational wave detections are fabricated
-- The Nobel Prize was undeserved
-- LIGO personnel acted dishonestly
+This is a reproducibility, provenance, and methodology project. It evaluates the limits of public GWOSC products for claim-level alternative-metric forward testing. It is limited to data-scope, provenance, and methodology.
 
 This document DOES claim, based on primary sources:
 - Public GWOSC releases are pre-calibrated analysis products, not raw measurement data
@@ -104,8 +99,8 @@ The petition asked:
 3. **If not, is there a plan to perform this retroactively?**
 
 These are precise, technical questions about calibration traceability. They are not
-equivalent to claiming the detection is fabricated. Their lack of complete, prominent
-public answers over the following decade substantiates the reproducibility concern.
+equivalent to claiming the detection cannot be reconstructed. Their lack of complete, prominent
+public answers over the following decade substantiates the reproducibility and provenance limitation.
 
 ---
 
@@ -271,7 +266,7 @@ is not publicly available.
 > a complete reproducibility guarantee. When analysis code, repos, merge requests,
 > or calibration artefacts are migrated, removed, or kept internally, the external
 > auditability of published strain products is structurally weakened.
-> This is not evidence of fraud. It is a massive auditability problem.
+> This represents a material reproducibility and provenance limitation. It is a material auditability limitation.
 
 ---
 
@@ -301,11 +296,7 @@ The strongest fair formulation:
 
 ## 8. What This Project Does and Does Not Conclude
 
-### Does NOT conclude
-- LIGO data are fabricated
-- GW detections are not real
-- The Nobel Prize was awarded incorrectly
-- LIGO personnel acted with intent to deceive
+This is a reproducibility, provenance, and methodology project. It evaluates the limits of public GWOSC products for claim-level alternative-metric forward testing. It is limited to data-scope, provenance, and methodology.
 
 ### DOES conclude
 - Public GWOSC data are analysis products, not raw observables
@@ -332,7 +323,7 @@ time-dependent filter definitions, and code/pipeline provenance.
 Open Data without stable, versioned, publicly accessible provenance
 is not a complete reproducibility guarantee.
 
-This is a reproducibility concern, not a fraud accusation.
+This is a reproducibility, provenance, and methodology project. It evaluates the limits of public GWOSC products for claim-level alternative-metric forward testing. It is limited to data-scope, provenance, and methodology.
 ```
 
 ---

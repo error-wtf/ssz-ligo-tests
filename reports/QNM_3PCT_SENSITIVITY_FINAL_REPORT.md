@@ -1,5 +1,11 @@
 # QNM 3% Branch — Sensitivity Final Report
 
+⚠️ STATUS: UNVERIFIED_DERIVED_REPORT (2026-05-20 Bingsi/Hermes) ⚠️
+⚠️ HDF5→Command→Log→CSV→Report provenance chain NOT VERIFIED. ⚠️
+⚠️ Do NOT cite numbers from this report without re-verification. ⚠️
+⚠️ See reports/progress/REPORT_STATUS_INDEX.md for current classification. ⚠️
+
+
 **Version:** 1.0  
 **Date:** 2026-05-18  
 **Branch:** QNM_FREQ_3PCT (SSZ Book V51, Ch.30)  

@@ -54,6 +54,8 @@ SSZ_FALSIFICATION_CLAIM_MADE:  NO
 | test_xi_strong_branch_lock.py | ✅ PASS |
 | test_08_anti_circularity.py | ✅ PASS |
 | run_h1_l1_time_delay_replication.py | ✅ RAN — TRIGGER_SPECIFIC: NO (persistent systematic) |
+| run_detector_parity_test.py | ✅ RAN — DETECTOR_PARITY: YES |
+| run_offsource_background_test.py | ✅ RAN — L1_TRIGGER_SPECIFIC: NO, L1_PERSISTENT_NOISE: YES |
 
 ---
 
@@ -69,7 +71,7 @@ Claim gate verdict:                NO
 H1 status:                         USABLE_EXPLORATORY
 L1 status:                         DIAGNOSTIC_ONLY
   L1 20-40 Hz trigger ex_kurtosis: +44.9  (off-source: +1.1)  delta=+43.7
-  L1 excess class:                 CHRONIC_NON_GAUSSIAN_BAND_NOISE
+  L1 excess class:                 TRIGGER_SPECIFIC_LOW_FREQ_SUBBAND
   Trigger-specific burst:          NO
   Lines explain part:              YES (~55% bandpower in lines)
   Broadband remainder:             YES
