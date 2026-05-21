@@ -1,7 +1,7 @@
 # RAW LIGO HDF5 PROVENANCE AUDIT
 **Datum:** 2026-05-20 04:57 CEST
 **Autor:** Bingsi (Hermes Agent)
-**Skript:** scripts/hermes_hdf5_provenance_audit.py
+**Skript:** scripts/run_hdf5_provenance_audit.py
 **Status:** ✅ COMPLETE — STEP 02 abgeschlossen
 
 ---
