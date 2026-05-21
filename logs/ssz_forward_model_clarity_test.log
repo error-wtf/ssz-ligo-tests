@@ -1,0 +1,77 @@
+=== SSZ_FORWARD_MODEL_CLARITY_TEST LOG ===
+Phase: 10
+Date: 2026-05-20
+No LIGO runs performed.
+No new claims made.
+
+=== SOURCES READ ===
+[OK] src/ssz_ligo_tests/derived_waveform.py (apply_ssz_v0_to_frequency_waveform)
+[OK] src/ssz_ligo_tests/derived_phase.py (delta_psi_ssz_v0)
+[OK] src/ssz_ligo_tests/derived_amplitude.py (delta_a_ssz_v0)
+[OK] src/ssz_ligo_tests/ssz_inspiral.py (gw_power_ssz, rdot_ssz, accumulated_phase)
+[OK] src/ssz_ligo_tests/forward_model.py (SSZForwardModel class)
+[OK] src/ssz_ligo_tests/detector_response.py (antenna patterns - placeholders)
+[OK] src/ssz_ligo_tests/ssz_twist.py (twist_angle_v0 - conceptual)
+[OK] src/ssz_ligo_tests/ssz_ringdown.py (epsilon_220 - BLOCKED)
+[OK] scripts/run_strain_pipeline.py (full pipeline, Steps A-E)
+
+=== FINDINGS ===
+
+COMPONENT: deltaPsi_V0(f)
+  Status: DERIVED_V1
+  Source: rdot_SSZ (Ch.31 Z.18700, AUTHORIZED_CH31)
+  Implementation: 0PN Newtonian Kepler-Approx
+  HJ integral (Ch.31 Z.18677): NOT IMPLEMENTED
+  PN corrections: NONE (0PN only)
+  Spin: NONE
+
+COMPONENT: deltaA_V0(f)
+  Status: DERIVED_V1
+  Source: P_GW_SSZ (Ch.31 Z.18696, AUTHORIZED_CH31)
+  Implementation: deltaA = D²−1 (algebraic from P_GW)
+  Ringdown amplitude: NOT DERIVED
+
+COMPONENT: h_SSZ_V0(f)
+  Status: DERIVED_V1 (constructed from DERIVED_V1 components)
+  Construction: h_GR_TaylorF2_0PN * (1+dA) * exp(i*dPsi)
+  Inspiral-only: YES
+  Merger: NO
+  Ringdown: NO (epsilon_220 BLOCKED)
+
+COMPONENT: Detector Projection
+  Status: PLACEHOLDER (hardcoded 0.5, 0.5)
+  Used in pipeline: NO (H1 implicitly optimal)
+
+COMPONENT: Twist/Polarization
+  Status: DERIVED_V0_CONCEPTUAL
+  Derivation from spin connection: NOT DONE
+  Used in pipeline: NO
+
+COMPONENT: Ringdown (epsilon_220)
+  Status: BLOCKED_CONFLICT
+  Values: 3% (exploratory) / 31% (D_min²) / 39% (source-frame QNM)
+  ssz_ringdown.py: explicitly refuses to run
+
+COMPONENT: GR Control
+  Status: GR_CONTROL_TEMPLATE_LIMITED (0PN TaylorF2 only)
+
+COMPONENT: Propagation (source-to-detector)
+  Status: NOT IMPLEMENTED
+
+=== GAP ASSESSMENT ===
+HIGH:    HJ phase integral, epsilon_220 canon, merger model
+MEDIUM:  Detector projection, GR control upgrade, ringdown QNM
+LOW:     Propagation path integral, twist derivation
+
+=== VERDICT ===
+h_SSZ(f) is DERIVED_V1 inspiral-only scalar correction.
+NOT a complete strain-level forward model.
+CAN run as methodological H1 sanity test.
+CANNOT run as claim-level LIGO comparison.
+
+=== OUTPUT FILES ===
+[OK] data_manifest/ssz_forward_model_clarity_matrix.csv (18 components)
+[OK] reports/progress/SSZ_FORWARD_MODEL_CLARITY_TEST.md
+[OK] logs/ssz_forward_model_clarity_test.log (this file)
+
+=== PHASE 10 COMPLETE ===

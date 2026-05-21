@@ -1,0 +1,4 @@
+  File "<string>", line 21
+    print(f'  Kurtosis: {h1_trigger[
+                                   ^
+SyntaxError: '[' was never closed

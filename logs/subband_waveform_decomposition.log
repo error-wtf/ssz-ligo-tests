@@ -1,0 +1,18 @@
+=== SUBBAND WAVEFORM DECOMPOSITION LOG ===
+Date: 2026-05-21 00:27:01
+HDF5 SHA256: 4da44bd2e5e17716608f0acbc8c631cce3d9738aa9d19e03d2738cced7aeed14
+Trigger GPS: 1411261107.984
+GPS start: 1411260416.0
+Mc=8.9 Msun  eta=0.25  M_total=20.45 Msun
+rs=60.40 km
+
+=== PER SUB-BAND ===
+20-100 Hz: overlap(phase=0.3538 amp=0.9997 full=0.3423)  MF-SNR(GR=16.3 phase=44.1 amp=17.7 full=45.5)
+100-200 Hz: overlap(phase=0.9506 amp=0.9996 full=0.9493)  MF-SNR(GR=4.9 phase=3.3 amp=6.3 full=4.7)
+200-400 Hz: overlap(phase=0.9940 amp=0.9937 full=0.9878)  MF-SNR(GR=10.3 phase=19.3 amp=1.7 full=7.2)
+400-800 Hz: overlap(phase=0.9686 amp=0.9950 full=0.9638)  MF-SNR(GR=123.6 phase=148.6 amp=142.3 full=166.7)
+
+=== STATUS ===
+FAIR_COMPARISON: PARTIAL
+SSZ_EFFECT_SEPARABLE: YES
+CLAIM_LEVEL_LIGO: NO

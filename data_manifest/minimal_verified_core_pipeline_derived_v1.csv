@@ -1,0 +1,15 @@
+metric,v0_proxy,derived_v1,delta,notes
+delta_lnL SSZ−GR,~6e-6,6.3404e-06,~0,Essentially identical — both INDISTINGUISHABLE. Expected in weak-field LIGO band where both corrections are tiny.
+MF-SNR GR,39.92,39.92,0,GR control unchanged — same 0PN TaylorF2.
+MF-SNR SSZ,14.23,14.23,0,Template mismatch — not physics. SSZ template would need its own bank.
+Residual RMS GR,~e-22,8.502e-22,~0,Identical — dominated by noise floor.
+Residual RMS SSZ,~e-22,8.502e-22,~0,Identical.
+deltaA formula,NONE,D²−1 from P_GW_SSZ Ch.31,CHANGED,V0 had NO amplitude correction. DERIVED_V1 has proper deltaA.
+deltaPsi formula,kappa*(1−D(xi_weak)),(1+Xi)⁶ via rdot_SSZ Ch.31,CHANGED,V0 was heuristic (kappa=1.0 locked). DERIVED_V1 is derived from Ch.31.
+Xi branch,xi_weak only,get_xi() w/ blend zone,CHANGED,DERIVED_V1 uses proper regime-aware Xi selection.
+deltaA mean [20-800 Hz],N/A,-4.8103e-01,NEW,Dominated by high-f bins near ISCO. Low-f bins (where power is) have tiny deltaA (~−0.065 at 20Hz).
+deltaPsi mean [20-800 Hz],N/A,0.3955 rad,NEW,V0 proxy would give similar value in weak field (both scale with Xi),but DERIVED_V1 is the correct derivation.
+|h_SSZ|/|h_GR| ratio,N/A,0.754,NEW,Amplitude suppressed across band due to D²<1. Strong-field bins dominate mean ratio.
+FORMULA_STATUS,V0_PROXY,DERIVED_V1,UPGRADED,DERIVED_V1 = derived from AUTHORIZED_CH31 sources, documented, dimensionally verified. NOT LOCKED_FINAL.
+V0_FALLBACK,default,not used,FIXED,DERIVED_V1 is now default. V0 preserved as explicit fallback.
+IMPLEMENTATION_ALIGNED,NO,YES,FIXED,Pipeline now calls derived_waveform.py.

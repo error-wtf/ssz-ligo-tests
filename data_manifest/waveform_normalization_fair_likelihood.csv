@@ -1,0 +1,17 @@
+metric,value,interpretation,fairness_impact
+MF-SNR GR,39.92,"Baseline: 0PN TaylorF2 template matched to H1 strain data.",—
+MF-SNR SSZ,14.23,"SSZ DERIVED_V1 template (amplitude-suppressed + phase-shifted GR template) matched to same data.",UNFAIR: amplitude suppression penalized
+delta_lnL (raw),6.34e-06,"Structurally near zero: SNR loss (−25.69) compensated by template norm reduction (+25.69).",NOT INFORMATIVE: cancellation artifact
+|h_SSZ|/|h_GR| ratio,0.754,"SSZ amplitude ~75% of GR at matched frequencies. Weighted by signal power distribution.",UNFAIR: raw ratio favors GR-identical templates
+deltaA mean [20-800 Hz],−0.481,"Dominated by high-f bins (r/rs→1.25 at 800Hz, deltaA→−0.71). Low-f bins (20Hz) only −0.065.",BAND-EDGE ARTIFACT: not physically meaningful aggregate
+deltaPsi range [20-800 Hz],[0.06, 10.76] rad,"Phase decorrelation > 2π at high frequencies. Low-f phase is modest (0.06 rad at 20Hz).",SUB-BAND ANALYSIS NEEDED
+Expected MF-SNR from amplitude only,20.72,"MF_SNR_GR × mean(1+deltaA) = 39.92 × 0.519. Actual is 14.23.",Phase contributes additional −6.49 SNR loss
+SNR loss decomposition,amplitude: −19.21 phase: −6.49 total: −25.69,"Amplitude suppression dominates SNR loss. Phase decorrelation adds 25% more.",SEPARABLE: amplitude and phase effects additive
+Residual RMS GR vs SSZ,8.502e-22 vs 8.502e-22,"Identical at reported precision. Residuals dominated by noise floor, not template differences.",NOT INFORMATIVE for model comparison
+Overlap estimate (full band),<<0.5,"h_SSZ nearly orthogonal to h_GR due to phase decorrelation + amplitude suppression.",EXPECTED for full 20-800Hz band
+Overlap estimate (20-200 Hz),0.7-0.95,"Lower frequencies have small deltaPsi and deltaA. Templates are similar in signal-dominant band.",RELEVANT for physical interpretation
+Normalization method,none (raw),"Neither template normalized before comparison. SSZ inherits GR normalization then modifies.",UNFAIR: both should be L²=1
+Fair comparison method,overlap + sub-band,"Normalized overlap ⟨h_GR|h_SSZ⟩/√(⟨h_GR|h_GR⟩⟨h_SSZ|h_SSZ⟩) per sub-band.",CORRECT approach
+Separable analysis,phase-only + amplitude-only variants,"Run A: h_GR×exp(i·deltaPsi), Run B: h_GR×(1+deltaA), Run C: full.",RECOMMENDED for methodological testing
+FAIR_COMPARISON,NO,"Current pipeline comparison is template-matching exercise, not model test.",—
+CLAIM_LEVEL_LIGO,NO,"No claim can be made from unfair comparison.",—

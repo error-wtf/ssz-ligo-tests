@@ -1,0 +1,56 @@
+=== WAVEFORM NORMALIZATION AND FAIR LIKELIHOOD AUDIT ===
+Date: 2026-05-20
+Based on: DERIVED_V1 Core Pipeline Run (GW240925, H1, 4kHz)
+
+=== KEY FINDING: UNFAIR COMPARISON ===
+The current pipeline comparison is a template-matching exercise, NOT a physics model test.
+
+MF-SNR comparison:
+  GR (0PN TaylorF2): 39.92
+  SSZ DERIVED_V1:    14.23
+
+SNR loss decomposition:
+  amplitude-only expected: 39.92 * 0.519 = 20.72
+  phase-only additional:   20.72 - 14.23 = 6.49
+  total loss: 25.69
+
+delta_lnL = 6.34e-06 — NOT INFORMATIVE
+  SNR loss (-25.69) + template norm compensation (+25.69) ≈ 0
+  This is STRUCTURAL CANCELLATION, not evidence of equivalence.
+
+deltaA mean = -0.48 — BAND-EDGE ARTIFACT
+  Dominated by high frequencies (800 Hz: r/rs=1.25, deltaA=-0.71)
+  Low frequencies (20 Hz: r/rs=14.6, deltaA=-0.065) where most signal power lives
+
+FAIR_COMPARISON: NO
+  SSZ inherits GR normalization then applies corrections.
+  Raw MF-SNR penalizes any deviation from GR template shape.
+  Correct approach: normalized overlap per sub-band.
+
+=== THREE VARIANT DECOMPOSITION ===
+[ESTIMATED — not yet numerically computed]
+  Variant A (phase-only):   h_SSZ = h_GR * exp(i*deltaPsi)
+    overlap ~0.1-0.5 (depends on sub-band)
+  Variant B (amplitude-only): h_SSZ = h_GR * (1+deltaA)
+    overlap ~0.52
+  Variant C (full): h_SSZ = h_GR * (1+deltaA) * exp(i*deltaPsi)
+    overlap << 0.5
+
+=== RECOMMENDATIONS ===
+1. Normalize both templates to L²=1 before comparing
+2. Use overlap ⟨h_GR|h_SSZ⟩/√(⟨h_GR|h_GR⟩⟨h_SSZ|h_SSZ⟩) per sub-band
+3. Phase-only and amplitude-only variants for decomposition
+4. Sub-band analysis (20-100 Hz, 100-200 Hz, 200-400 Hz, 400-800 Hz)
+
+=== STATUS ===
+FAIR_COMPARISON: NO
+NORMALIZATION_NEEDED: YES
+SSZ_EFFECT_SEPARABLE: YES
+CLAIM_LEVEL_LIGO: NO
+
+=== OUTPUTS ===
+[OK] reports/progress/WAVEFORM_NORMALIZATION_AND_FAIR_LIKELIHOOD_AUDIT.md
+[OK] data_manifest/waveform_normalization_fair_likelihood.csv
+[OK] logs/waveform_normalization_fair_likelihood.log (this file)
+
+=== COMPLETE ===

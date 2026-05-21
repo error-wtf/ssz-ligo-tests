@@ -1,0 +1,65 @@
+=== FORMULA_AUTHORIZATION_TEST LOG ===
+Phase: 3
+Date: 2026-05-20
+Session: Formula Authorization Audit
+No LIGO runs performed.
+No new claims made.
+No SSZ confirmation or falsification.
+
+=== SOURCES READ (TIER 1: PRIMARY) ===
+[OK] ssz-complete-documentation/03_FORMULAS/formula_compendium.md
+[OK] ssz-complete-documentation/11_GUARDRAILS/prime_directive.md
+[OK] ssz-complete-documentation/11_GUARDRAILS/method_assignment.md
+[OK] ssz-complete-documentation/11_GUARDRAILS/forbidden_formulas.md
+
+=== SOURCES READ (TIER 2: 06_STRONG_FIELD) ===
+[OK] ssz-complete-documentation/06_STRONG_FIELD/delta_a_derivation.md
+[OK] ssz-complete-documentation/06_STRONG_FIELD/delta_psi_derivation.md
+[OK] ssz-complete-documentation/06_STRONG_FIELD/h_ssz_v0_derivation.md
+[OK] ssz-complete-documentation/06_STRONG_FIELD/epsilon_220_derivation_status.md
+[OK] ssz-complete-documentation/06_STRONG_FIELD/GR_SSZ_INTERSECTION_PHI_DISCRETIZATION.md
+
+=== SOURCES READ (TIER 3: BOOK Ch.31) ===
+[OK] SSZ_BOOK_EN_PERFECTED.md Ch.31 Z.18670-18705
+  - Z.18677: Hamilton-Jacobi S_r(r) integral
+  - Z.18696: P_GW_SSZ = P_GW_GR * D(r)^2/s(r)^2
+  - Z.18700: rdot_SSZ = rdot_GR * D(r)^2/s(r)^4
+  - Z.18704: f_QNM_SSZ ~ 1.39 * f_QNM_GR
+
+=== SOURCES READ (TIER 4: 06_PAPERS) ===
+[OK] All 25 papers previously read (2026-05-20). Cross-referenced for formula verification.
+[OK] Maxwell-Rotating-Space paper (Ω²∓ωΩ−c²k²=0, ΔΦ_geo)
+[OK] LLI+FrameDragging paper (twist/polarization)
+[OK] No-Retuning Theorem paper (photon invariant phase rate)
+[OK] New Perspective paper (N₀=4, D_SSZ, Ξ_max)
+[OK] Cosmic Censorship paper (2φ≈π)
+[OK] Dual Velocities paper (v_esc·v_fall=c²)
+
+=== AUTHORIZATION RESULTS ===
+LOCKED_FINAL:        17 formulas
+AUTHORIZED_CH31:      5 formulas
+DERIVED_V1:           3 formulas
+BLOCKED_CONFLICT:     1 formula
+NOT_OPERATIVE:        1 formula (r* didactic)
+TOTAL:               27 formulas
+
+=== STATUS TRANSITIONS ===
+deltaA:       V0_PROXY → DERIVED_V1 (source P_GW_SSZ is CH31 authorized)
+deltaPsi_V0:  V0_PROXY → DERIVED_V1 (source rdot_SSZ is CH31 authorized)
+h_SSZ_V0:     V0_PROXY → DERIVED_V1 (constructed from DERIVED_V1 components)
+epsilon_220:  UNCHANGED → BLOCKED_CONFLICT (3 values, different observables)
+
+=== BLOCKERS IDENTIFIED ===
+1. deltaPsi → LOCKED_FINAL: HJ S_r(r) integral (Ch.31 Z.18677) not implemented
+2. deltaA → LOCKED_FINAL: Ringdown QNM derivation missing
+3. h_SSZ → LOCKED_FINAL: Both of above + PN corrections + detector propagation
+4. epsilon_220: Author decision on canonical observable required
+
+=== OUTPUT FILES ===
+[OK] data_manifest/formula_authorization_matrix.csv (27 rows)
+[OK] reports/progress/FORMULA_AUTHORIZATION_TEST.md
+[OK] logs/formula_authorization_test.log (this file)
+
+=== PHASE 3 COMPLETE ===
+Timestamp: 2026-05-20
+No LIGO runs. No claims. No falsification.

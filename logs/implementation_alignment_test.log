@@ -1,0 +1,40 @@
+=== IMPLEMENTATION_ALIGNMENT_TEST LOG ===
+Date: 2026-05-20
+No LIGO runs performed.
+No new claims made.
+
+=== AUDIT: EXPECTED vs ACTUAL ===
+deltaA:      derived_amplitude.py  → Pipeline used NONE (V0 proxy)     [MISMATCH]
+deltaPsi:    derived_phase.py      → Pipeline used V0 heuristic        [MISMATCH]
+h_SSZ:       derived_waveform.py   → Pipeline used inline exp(i*dPsi)  [MISMATCH]
+Xi branch:   ssz_core.get_xi()     → Pipeline used xi_weak only        [PARTIAL]
+epsilon_220: BLOCKED               → Pipeline correctly excludes       [ALIGNED]
+merger:      NOT IMPLEMENTED       → Pipeline correctly excludes       [ALIGNED]
+ringdown:    NOT IMPLEMENTED       → Pipeline correctly excludes       [ALIGNED]
+detector:    PLACEHOLDER 0.5/0.5   → Pipeline correctly excludes       [ALIGNED]
+twist:       CONCEPTUAL            → Pipeline correctly excludes       [ALIGNED]
+propagation: NOT IMPLEMENTED       → Pipeline correctly excludes       [ALIGNED]
+
+=== PATCHES APPLIED ===
+[OK] run_strain_pipeline.py: Step D replaced with derived_waveform.py call
+[OK] run_strain_pipeline.py: _step_D_v0_fallback preserved as safety net
+[OK] run_strain_pipeline.py: Report D label → SSZ_FORWARD_DERIVED_V1
+[OK] run_strain_pipeline.py: Report E label → SSZ DERIVED_V1
+
+=== RESULT ===
+4 IMPLEMENTATION_MISMATCHES → PATCHED
+6 already ALIGNED → NO CHANGE
+10/10 components now aligned.
+
+=== MANDATORY STATEMENTS ===
+READY_FOR_REAL_SSZ_CLAIM:      NO
+SSZ_SUPPORT_CLAIM_MADE:        NO
+SSZ_FALSIFICATION_CLAIM_MADE:  NO
+IMPLEMENTATION_ALIGNED:        YES
+
+=== OUTPUT FILES ===
+[OK] data_manifest/implementation_alignment_matrix.csv (14 rows)
+[OK] reports/progress/IMPLEMENTATION_ALIGNMENT_TEST.md
+[OK] logs/implementation_alignment_test.log (this file)
+
+=== COMPLETE ===

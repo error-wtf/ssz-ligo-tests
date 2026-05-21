@@ -1,0 +1,67 @@
+=== MINIMAL VERIFIED CORE PIPELINE — DERIVED_V1 RERUN ===
+Date: 2026-05-20 23:43 UTC
+Pipeline: run_strain_pipeline.py (patched, Step D → derived_waveform.py)
+Event: GW240925, H1 4kHz
+Command: cd E:/clone/ssz-ligo-tests && .venv/Scripts/python.exe scripts/run_strain_pipeline.py
+
+=== PROVENANCE ===
+[VERIFIED] HDF5 SHA256: 4da44bd2e5e17716608f0acbc8c631cce3d9738aa9d19e03d2738cced7aeed14
+[VERIFIED] Trigger GPS: 1411261107.984
+[VERIFIED] GPS start: 1411260416.0
+[VERIFIED] GPS end:   1411264512.0
+[VERIFIED] Trigger offset: 691.984s within file
+[VERIFIED] NaN/Inf: NONE
+
+=== FORWARD MODEL ===
+SSZ_FORWARD_MODE:       DERIVED_V1
+amplitude_source:       derived_amplitude.py (P_GW_SSZ Ch.31 Z.18696)
+phase_source:           derived_phase.py     (rdot_SSZ Ch.31 Z.18700)
+waveform_source:        derived_waveform.py  (deltaA + deltaPsi)
+V0_FALLBACK_USED:       NO
+FORMULA_STATUS:         DERIVED_V1_NOT_LOCKED_FINAL
+
+=== DERIVED_V1 CORRECTIONS ===
+deltaA range [20-800 Hz]:  [-6.9194e-01, -6.5077e-02]
+deltaA mean:               -4.8103e-01
+deltaPsi range [20-800 Hz]: [0.0598, 10.7595] rad
+deltaPsi mean:              0.3955 rad
+|h_SSZ| / |h_GR|:           0.754
+
+=== LIKELIHOOD ===
+lnL (GR control):          -3.2372e+07
+lnL (SSZ DERIVED_V1):      -3.2372e+07
+delta_lnL (SSZ−GR):        6.3404e-06
+delta_lnL < 1:             INDISTINGUISHABLE
+MF-SNR GR:                 39.92
+MF-SNR SSZ:                14.23
+
+=== COMPARISON WITH PREVIOUS V0 RUN ===
+delta_lnL:                 ~6e-6 (V0) → 6.34e-06 (DERIVED_V1) — essentially identical
+Key difference:            DERIVED_V1 correctly derived from Ch.31 sources
+                           V0 was heuristic (kappa=1.0 locked)
+
+=== FINAL STATUS ===
+PIPELINE_STATUS:           PASS_EXPLORATORY_STRAIN_PIPELINE_RAN
+PIPELINE_FORWARD_MODE:     DERIVED_V1
+IMPLEMENTATION_ALIGNED:    YES
+V0_FALLBACK_USED:          NO
+READY_FOR_REAL_SSZ_CLAIM:  NO
+CLAIM_LEVEL_LIGO:          NO
+
+=== BLOCKERS ===
+[BLOCKED] HJ S_r(r) integral (Ch.31 Z.18677) — not implemented
+[BLOCKED] epsilon_220 — BLOCKED_CONFLICT (3%/31%/39%)
+
+=== OUTPUTS ===
+reports/REAL_STRAIN_LOAD_REPORT.md
+reports/PSD_WELCH_REPORT.md
+reports/GR_CONTROL_WAVEFORM_REPORT.md
+reports/SSZ_FORWARD_APPLICATION_REPORT.md
+reports/RESIDUAL_LIKELIHOOD_REPORT.md
+reports/ANTI_CIRCULARITY_FINAL_GATE.md
+logs/full_strain_pipeline.log
+data_manifest/minimal_verified_core_pipeline_derived_v1.csv
+reports/progress/MINIMAL_VERIFIED_CORE_PIPELINE_DERIVED_V1_RERUN.md
+logs/minimal_verified_core_pipeline_derived_v1.log  (this file)
+
+=== COMPLETE ===

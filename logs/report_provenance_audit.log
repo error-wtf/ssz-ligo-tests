@@ -1,0 +1,42 @@
+2026-05-20 04:30 CEST — REPORT PROVENANCE AUDIT START
+============================================================
+Tool: Bingsi (Hermes Agent)
+Phase: STEP 03
+
+Filesystem scan complete:
+  reports/    75 files (.md, .txt)
+  scripts/    34 run_*.py files
+  data_manifest/  55 CSV files
+  logs/       62 log files
+
+Classification:
+  PROVENANCE_VERIFIED:     6  (DQ-Status, Interpretation-Lock, Anti-Circularity, 
+                               Provenance-Audit, Strain-Load, pytest-log-report)
+  PROVENANCE_PLAUSIBLE:   39  (Script+Log exist, CSV usually exists, 
+                               but NO HDF5-hash in logs)
+  PROVENANCE_LIMITED:      3  (Log exists but N=1 off-source or posterior data used)
+  SYNTHETIC_ONLY:          5  (No real HDF5, clearly labeled)
+  METHODOLOGY_DOC:        17  (Position papers, frameworks, readiness reports)
+  INVALID:                 4  (FINAL_EXECUTION_REPORT, AUDIT_STOP, INVALID.txt, SUPPRESSED.txt)
+  UNVERIFIED:              2  (L1_EXCLUDED, H1_ONLY_EXPLORATORY — no script/log)
+
+Key finding:
+  All 39 PROVENANCE_PLAUSIBLE reports share the same gap:
+  Script exists ✅, Log exists ✅, CSV usually exists ✅
+  BUT: No HDF5 SHA256 hash in any log file ❌
+  → Cannot distinguish real execution from Windsurf artifact
+  → All need re-execution with hash logging for PROVENANCE_VERIFIED
+
+Minimal relevant pipeline (5 reports):
+  REAL_STRAIN_LOAD_REPORT.md → Strain loaded ✅
+  PSD_WELCH_REPORT.md        → PSD estimated ✅
+  GR_CONTROL_WAVEFORM_REPORT.md → GR control ✅
+  SSZ_FORWARD_APPLICATION_REPORT.md → SSZ applied ✅
+  RESIDUAL_LIKELIHOOD_REPORT.md → lnL computed ✅
+
+Output files written:
+  reports/progress/REPORT_PROVENANCE_AUDIT.md  (15 KB)
+  data_manifest/report_provenance_index.csv     (9 KB)
+  logs/report_provenance_audit.log             (this file)
+
+END REPORT PROVENANCE AUDIT — 2026-05-20 05:15 CEST

@@ -1,0 +1,14 @@
+⚠️ INVALID_AUDIT_FINDING — 2026-05-20 Bingsi/Hermes ⚠️
+Der Trigger-GPS-Wert 1417240123 ist FALSCH (Windsurf-Artefakt).
+Korrekter Trigger: 1411261107.984 — liegt 691.984s IM HDF5-Fenster.
+Korrektur erfolgt nach Freigabe durch Lino. Siehe reports/progress/COMPLETE_PROJECT_REPORT.md
+
+--- ursprünglicher Inhalt (INVALID) ---
+
+STOP. All reports: UNVERIFIED_DERIVED_REPORT.
+CSV NOT primary evidence.
+Required: HDF5->Hash->Strain->Compute->CSV->Report chain.
+Current gap: HDF5 at GPS 1411260416, trigger at 1417240123 (80 days outside).
+Rule: HDF5-Hash missing = INVALID.
+
+--- ENDE ursprünglicher Inhalt ---
