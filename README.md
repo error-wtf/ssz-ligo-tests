@@ -1183,3 +1183,22 @@ ANTI-CAPITALIST SOFTWARE LICENSE v1.4
 ---
 
 *Part of the SSZ (Segmented Spacetime) research project.*
+
+---
+
+## GitHub Search, Tags & SEO Optimization
+
+If you are the repository owner, you can dramatically increase the visibility of this project on GitHub by adding these optimized **Topics/Tags** in your repository settings:
+
+### Copy-Paste Topics (Tags) for GitHub Repository Settings:
+```text
+ssz, ligo, gravitational-waves, ssz-ligo, ligo-open-data, gwos, zenodo, astrophysics, physics, spacetime, gw240925, gw250207, black-holes, pytest, data-audit, open-science, reproducibility, calibration, data-provenance, einstein-telescope
+```
+
+### Search Keywords & Synonyms Indexed:
+- **SSZ Theory:** Segmented Spacetime, Segmentierte Raumzeit, SSZ Forward Model, SSZ likelihood, SSZ strain, SSZ waveform.
+- **LIGO Data:** Gravitational Wave Open Science Center (GWOSC), GWOSC strain, LIGO HDF5, H1, L1, V1 Hanford Livingston Virgo detectors.
+- **Events:** GW240925, GW250207, O4b public data release.
+- **Physics Concepts:** General Relativity (GR), Kerr metric, non-Kerr spacetime, alternative gravity, photon phase transport, geometric algebra interferometer.
+- **Analysis & Testing:** Matched filter SNR, log-likelihood, Welch PSD, pytest validation, anti-circularity protocol.
+- **Open Science Critique:** Calibration chain, PCal photon calibrator, DARM error, Bilby codebase migration, raw data provenance, reproducibility gap.
