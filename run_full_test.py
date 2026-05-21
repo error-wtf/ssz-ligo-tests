@@ -39,7 +39,7 @@ def print_and_log(text=""):
 
 
 def run_command(cmd, description):
-    """Run command, log untruncated output, and return results."""
+    """Run command, stream output in real-time to console, and log to file."""
     header = (
         f"\n{'='*60}\n"
         f"Running: {description}\n"
@@ -52,24 +52,44 @@ def run_command(cmd, description):
     env = os.environ.copy()
     env["PYTHONPATH"] = os.path.abspath(os.path.join(REPO_ROOT, "src"))
 
-    result = subprocess.run(
+    process = subprocess.Popen(
         cmd,
         shell=True,
-        capture_output=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
         text=True,
         encoding='utf-8',
         errors='replace',
         env=env
     )
 
-    # Always log the full, untruncated output to log file
-    write_to_log(f"--- [UNTRUNCATED STDOUT for {description}] ---")
-    write_to_log(result.stdout if result.stdout else "[No stdout]")
-    write_to_log(f"--- [UNTRUNCATED STDERR for {description}] ---")
-    write_to_log(result.stderr if result.stderr else "[No stderr]")
-    write_to_log(f"Exit Code: {result.returncode}\n")
+    stdout_captured = []
+    stderr_captured = []
 
-    return result.returncode, result.stdout, result.stderr
+    # Stream stdout line-by-line in real-time
+    while True:
+        line = process.stdout.readline()
+        if not line and process.poll() is not None:
+            break
+        if line:
+            print(line, end="")
+            # Clean trailing newline before writing to log
+            write_to_log(line.rstrip("\n"))
+            stdout_captured.append(line)
+
+    # Read remaining stderr
+    remaining_err = process.stderr.read()
+    if remaining_err:
+        print(remaining_err, end="")
+        write_to_log(remaining_err.rstrip("\n"))
+        stderr_captured.append(remaining_err)
+
+    process.wait()
+
+    # Log summary of results
+    write_to_log(f"\n--- [COMPLETED: {description}] Exit Code: {process.returncode} ---\n")
+
+    return process.returncode, "".join(stdout_captured), "".join(stderr_captured)
 
 
 def main():
