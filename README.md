@@ -57,6 +57,48 @@ SSZ Core (Xi, D, s)
 
 ---
 
+## How to Start Guide
+
+If you are a new user, you can clone the repository, set up your environment, download/extract the raw scientific strain data, and run the entire validation suite with these quick commands:
+
+### 1. Clone and Enter the Repository
+```bash
+git clone https://github.com/error-wtf/ssz-ligo-tests.git
+cd ssz-ligo-tests
+```
+
+### 2. Set Up Virtual Environment
+```bash
+# Create virtual environment
+python -m venv .venv
+
+# Activate (Windows PowerShell)
+.\.venv\Scripts\Activate.ps1
+
+# Activate (Linux / macOS / Git Bash)
+source .venv/bin/activate
+```
+
+### 3. Install Dependencies
+```bash
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+### 4. Run the Integrated Main Runner
+Run the high-level orchestrator script. It handles everything for you automatically:
+```bash
+python run_full_test.py
+```
+
+**What this orchestrator does in the background:**
+1. **Fetch LIGO Strain Data (`scripts/fetch_data.py`):** Checks for the presence of the 6 official GW240925 HDF5 files. If missing, it downloads the official `GW240925-C00-Strain.tar` archive (~2.4 GB) directly from Zenodo (Record ID `18600070`) and extracts it.
+2. **HDF5 Provenance Audit (`scripts/run_hdf5_provenance_audit.py`):** Computes SHA256 checksums, validates the HDF5 internal metadata, and verifies that the trigger event GPS time is inside the 4096-second raw files.
+3. **Environment and Import Sanity Checks:** Ensures that packages can be resolved without path conflicts.
+4. **Pytest Suite Execution:** Discovers and executes all unit, integration, and validation tests (over 490 tests).
+
+---
+
 ## Reproducibility Critique
 
 This project documents, on the basis of verifiable primary sources, a structural
