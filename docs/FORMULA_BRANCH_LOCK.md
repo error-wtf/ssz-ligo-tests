@@ -15,7 +15,7 @@ Inner exponential / decay form (OPERATIVE g2 branch in segcalc, r/rs < 1.8):
   Xi_strong(r) = 1 - exp(-phi * r_s / r)
 
 Local saturation form (metric-pure / paper-local comparison):
-  Xi_sat(r)    = min(1 - exp(-phi * r / r_s), Xi_max)
+  Xi_sat(r)    = min(1 - exp(-phi * r_s / r), Xi_max)
 ```
 
 ### Branch Classification

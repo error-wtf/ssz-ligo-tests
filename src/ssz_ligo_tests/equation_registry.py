@@ -76,11 +76,11 @@ LOCKED_CORE_EQUATIONS = [
     ),
     Equation(
         name="XI_STRONG",
-        formula="min(1 - exp(-PHI * r / r_s), XI_MAX)",
+        formula="min(1 - exp(-PHI * r_s / r), XI_MAX)",
         variables=["PHI", "r", "r_s", "XI_MAX"],
         units="dimensionless",
         source_path="SSZ_BOOK_DE_CLEAN.md Ch.1",
-        source_excerpt="Ξ_strong(r) = min(1 - exp(-φr/r_s), Ξ_max)",
+        source_excerpt="Ξ_strong(r) = min(1 - exp(-φr_s / r), Ξ_max)",
         status=EquationStatus.LOCKED,
         usable_in_test=True,
         anti_circularity_risk="low - strong field regime"

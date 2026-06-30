@@ -264,7 +264,7 @@ but now with a clear derivation path from the interferometer physics.
 | D(r) = 1/(1+Ξ) | ssz_core.py | LOCKED |
 | s(r) = 1+Ξ | ssz_core.py | LOCKED |
 | Ξ_weak = r_s/2r | ssz_core.py | LOCKED |
-| Ξ_strong = 1-exp(-φ r/r_s) | ssz_core.py | LOCKED |
+| Ξ_strong = 1-exp(-φ r_s / r) | ssz_core.py | LOCKED |
 | rdot_SSZ = rdot_GR·D²/s⁴ | ssz_inspiral.py | LOCKED |
 | δΨ_SSZ(f) | derived_phase.py | DERIVED_V1_0PN_LOCKED |
 | δA_SSZ(f) = D²-1 | derived_amplitude.py | DERIVED_V0_INSPIRAL |

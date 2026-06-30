@@ -35,7 +35,7 @@ Source: ssz-complete-documentation/03_FORMULAS/formula_compendium.md §B.1
 ## Current ssz_core.py Audit
 
 - Function `xi_strong(r, rs)` uses: `1 - exp(-phi * rs/r)` → **DECAY FORM (DIDACTIC_COMPLEMENTARY)**
-- Comment says: `Formula: Ξ_strong(r) = min(1 - exp(-φr/r_s), Ξ_max)` → contradicts implementation
+- Comment says: `Formula: Ξ_strong(r) = min(1 - exp(-φr_s / r), Ξ_max)` → contradicts implementation
 - At r = rs: both forms give Xi = 0.802 → no error in past D_min tests
 - At other r: results DIFFER
 

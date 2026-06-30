@@ -26,7 +26,7 @@ def xi_strong(r: Union[float, np.ndarray],
     """Strong field regime formula with saturation.
     
     Source: SSZ_BOOK_DE_CLEAN.md Ch.1
-    Formula: Ξ_strong(r) = min(1 - exp(-φr/r_s), Ξ_max)
+    Formula: Ξ_strong(r) = min(1 - exp(-φr_s / r), Ξ_max)
     Valid for: r/r_s < 1.8 (inside blend zone)
     """
     xi = 1 - np.exp(-phi * r / rs)

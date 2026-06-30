@@ -39,7 +39,7 @@ Strong Field → RSG → Phase Accounting → Weak Field → δΨ(f) → h_I(f)
 ### Core (from Book Ch.1)
 - D_SSZ = 1/(1+Ξ) ✅
 - Ξ_weak = r_s/(2r) ✅
-- Ξ_strong = min(1-exp(-φr/r_s), Ξ_max) ✅
+- Ξ_strong = min(1-exp(-φr_s / r), Ξ_max) ✅
 - D_min = 0.555 ✅
 
 ### Inspiral (from Book Ch.31-32)

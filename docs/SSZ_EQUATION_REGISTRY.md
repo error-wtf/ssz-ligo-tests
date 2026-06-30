@@ -26,7 +26,7 @@
 - **Status:** LOCKED ✅
 
 ### XI_STRONG
-- **Formula:** `min(1 - exp(-PHI * r / r_s), XI_MAX)`
+- **Formula:** `min(1 - exp(-PHI * r_s / r), XI_MAX)`
 - **Source:** SSZ_BOOK_DE_CLEAN.md Ch.1
 - **Status:** LOCKED ✅
 

@@ -8,7 +8,7 @@ Forward model from SSZ theory to LIGO detector strain h(t).
 
 - D_SSZ(r) = 1/(1 + Ξ(r))
 - Ξ_weak(r) = r_s/(2r)
-- Ξ_strong(r) = min(1 - exp(-φr/r_s), Ξ_max)
+- Ξ_strong(r) = min(1 - exp(-φr_s / r), Ξ_max)
 - Ξ_max = 1 - exp(-φ) ≈ 0.802
 - D_min = 0.555
 
