@@ -12,7 +12,7 @@
 
 **Klärung aus perfected-Buch (Z.116-149):**
 ```
-Operative g₂-Definition: Ξ_strong(r) = min(1 − exp(−φ × r/r_s), Ξ_max)  ✅
+Operative g₂-Definition: Ξ_strong(r) = min(1 − exp(−φ × r_s / r), Ξ_max)  ✅
 Didaktische Form:       Ξ_dec(r) = 1 − exp(−φ × r_s/r)                   ℹ️
 ```
 

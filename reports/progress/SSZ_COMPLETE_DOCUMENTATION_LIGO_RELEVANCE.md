@@ -9,7 +9,7 @@
 | Formel | Wert/Gleichung | Quelle(n) | LIGO-Relevanz |
 |--------|---------------|-----------|---------------|
 | Ξ_weak(r) | r_s/(2r) | formula_compendium.md §A.2 | Fundament aller SSZ-Berechnungen |
-| Ξ_strong(r) | min(1−exp(−φ×r/r_s), Ξ_max) | formula_compendium.md §A.3 | Starkfeld, r/r_s < 1.8 |
+| Ξ_strong(r) | min(1−exp(−φ×r_s / r), Ξ_max) | formula_compendium.md §A.3 | Starkfeld, r_s/r < 1.8 |
 | D_SSZ(r) | 1/(1+Ξ(r)) | formula_compendium.md §A | Zeitdilatation |
 | s(r) | 1+Ξ(r) = 1/D(r) | scaling_factor.md | Skalierungsfaktor |
 | Ξ_max | 0.80171 | special_values.md | Sättigung bei r=r_s |

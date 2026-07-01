@@ -164,7 +164,7 @@ PSD estimated from off-source Welch (−500 s window, 64 s duration).
 ```python
 # Regime-dependent Xi
 Xi_weak(r)   = r_s / (2r)                           # r/r_s > 10
-Xi_strong(r) = min(1 - exp(-phi * r_s / r), Xi_max)   # r/r_s < 1.8  [CANONICAL]
+Xi_strong(r) = min(1 - exp(-phi * r_s / r), Xi_max)   # r_s/r < 1.8  [CANONICAL]
 Xi_blend(r)  = Hermite C2 interpolation              # 1.8 < r/r_s < 2.2
 
 # Metric functions

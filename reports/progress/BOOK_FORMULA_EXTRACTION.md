@@ -20,7 +20,7 @@
 
 | Form | Beschreibung | Verwendung | Status |
 |------|-------------|-----------|--------|
-| min(1−exp(−φ×r/r_s), Ξ_max) | Operative g₂-Definition | Konsolidiertes Paper, Buch | ✅ LOCKED |
+| min(1−exp(−φ×r_s / r), Ξ_max) | Operative g₂-Definition | Konsolidiertes Paper, Buch | ✅ LOCKED |
 | 1−exp(−φ×r_s/r) | Didaktische Zerfallsform | Nur Vergleich/Kontrast | ℹ️ DIDAKTISCH (nicht operativ) |
 
 ### 3. QNM / ε220

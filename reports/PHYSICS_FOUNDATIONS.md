@@ -75,7 +75,7 @@ ds²_SSZ = -1/D(r)² · c²dt² + D(r)² · dr² + r²dΩ²
 Where:
 D(r) = 1 / (1 + Ξ(r))
 Ξ(r) = r_s/(2r) for weak field
-Ξ(r) = 1 - exp(-φ·r/r_s) for strong field (blend)
+Ξ(r) = 1 - exp(-φ·r_s / r) for strong field (blend)
 ```
 
 **Key Difference:**

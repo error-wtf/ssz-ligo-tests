@@ -26,13 +26,13 @@
 
 ### Ξ_strong (Starkfeld, operativ)
 ```
-Ξ_strong(r) = min(1 − exp(−φ × r/r_s), Ξ_max)
+Ξ_strong(r) = min(1 − exp(−φ × r_s / r), Ξ_max)
 ```
 | Eigenschaft | Wert |
 |------------|------|
 | Quelle(n) | perfected-Buch Z.116-149, konsolidiertes Paper 11.02.2026 |
 | Status | ✅ LOCKED — operative g₂-Definition |
-| Regime | strong field (r/r_s < 1.8) |
+| Regime | strong field (r_s/r < 1.8) |
 | Schnittpunkt mit Ξ_weak | r*/r_s ≈ 1.387 |
 | LIGO-Relevanz | CAN_USE_NOW — nur wenn LIGO-Analyse in r/r_s < 3 eindringt |
 | Anmerkung | r/r_s (nicht r_s/r!) — r_s/r nur didaktisch |
@@ -50,7 +50,7 @@
 
 ### Ξ_sat (Lokale Sättigung)
 ```
-Ξ_sat(r) = min(1 − exp(−φ × r/r_s), Ξ_max)
+Ξ_sat(r) = min(1 − exp(−φ × r_s / r), Ξ_max)
 ```
 | Eigenschaft | Wert |
 |------------|------|

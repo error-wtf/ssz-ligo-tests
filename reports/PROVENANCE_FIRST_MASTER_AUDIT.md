@@ -74,7 +74,7 @@ Der kanonische Trigger **1411261107.984** liegt **innerhalb** des HDF5-Fensters 
 |--------|--------|----------------------|
 | Ξ_weak(r) = r_s/(2r) | LOCKED | Weak field |
 | Ξ_strong(r) = 1 - exp(-φ·r_s/r) | LOCKED | Strong field (g2/exponential) |
-| Ξ_sat(r) = min(1-exp(-φ·r/r_s), Ξ_max) | LOCKED | Local saturation (metric-pure) |
+| Ξ_sat(r) = min(1-exp(-φ·r_s / r), Ξ_max) | LOCKED | Local saturation (metric-pure) |
 | D(r) = 1/(1+Ξ(r)) | LOCKED | Time dilation |
 | s(r) = 1+Ξ(r) = 1/D(r) | LOCKED | Scaling factor |
 | D(r_s) = 0.55503 | LOCKED | Finite at Schwarzschild |

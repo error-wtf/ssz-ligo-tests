@@ -38,7 +38,7 @@ Kernthema behandelt.
 ```
 Operative g₂-Definition (konsolidiertes Paper 11.02.2026):
 
-Ξ_strong(r) = min(1 − exp(−φ × r/r_s), Ξ_max)
+Ξ_strong(r) = min(1 − exp(−φ × r_s / r), Ξ_max)
 
 mit Ξ_max = 1−e^(−φ) ≈ 0.802.
 Schnittpunkt mit Ξ_weak: r*/r_s ≈ 1.387.

@@ -47,7 +47,7 @@ D(r) = 1 / (1 + Ξ(r))               [Inverse scaling]
 
 **Strong Field (blend near r_s):**
 ```
-Ξ_strong(r) = 1 - exp(-φ · r/r_s)   [φ = (1+√5)/2 ≈ 1.618]
+Ξ_strong(r) = 1 - exp(-φ · r_s / r)   [φ = (1+√5)/2 ≈ 1.618]
 Ξ_blend(r) = Hermite(Ξ_weak, Ξ_strong)  [C² continuity]
 ```
 

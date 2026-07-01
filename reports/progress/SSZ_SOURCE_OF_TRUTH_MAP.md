@@ -69,7 +69,7 @@ HISTORICAL:
 **Kanonische Aussagen:**
 - Ξ_weak(r) = r_s / (2r) — LOCKED
 - Ξ_strong(r) = 1 - exp(-φ × r_s / r) — LOCKED (r_s/r im Exponenten!)
-- Ξ_sat(r) = min(1 - exp(-φ × r / r_s), Ξ_max) — LOCKED (r/r_s, lokale Sättigung)
+- Ξ_sat(r) = min(1 - exp(-φ × r_s / r), Ξ_max) — LOCKED (r/r_s, lokale Sättigung)
 - D_SSZ(r) = 1/(1+Ξ(r)) — LOCKED
 - D(r_s) = 0.55503 — LOCKED
 - PPN β=γ=1 — LOCKED
@@ -97,9 +97,9 @@ HISTORICAL:
 | Formel | Status | Quelle |
 |--------|--------|--------|
 | Ξ_weak(r) = r_s/(2r) | **LOCKED** | formula_compendium.md + Buch |
-| Ξ_strong(r) = min(1−exp(−φ×r/r_s), Ξ_max) | **LOCKED** (operativ) | perfected-Buch Z.116-149 |
+| Ξ_strong(r) = min(1−exp(−φ×r_s / r), Ξ_max) | **LOCKED** (operativ) | perfected-Buch Z.116-149 |
 | Ξ_dec(r) = 1−exp(−φ×r_s/r) | **ℹ️ DIDAKTISCH** (nicht operativ) | perfected-Buch Z.131-135 |
-| Ξ_sat(r) = min(1−exp(−φ×r/r_s), Ξ_max) | **LOCKED** | formula_compendium.md |
+| Ξ_sat(r) = min(1−exp(−φ×r_s / r), Ξ_max) | **LOCKED** | formula_compendium.md |
 | D_SSZ(r) = 1/(1+Ξ(r)) | **LOCKED** | formula_compendium.md + Buch |
 | s(r) = 1+Ξ(r) = 1/D(r) | **LOCKED** | formula_compendium.md + Buch |
 | z_SSZ = 1/D−1 = Ξ | **LOCKED** | formula_compendium.md |
@@ -171,7 +171,7 @@ Kapitel 31-32: 30 Formeln, alle "Undef Risk" — nicht als kanonisch geprüft.
 
 | Form | Formula | Quelle | Verwendung |
 |------|---------|--------|------------|
-| Operativ/Saturierend | Ξ_strong = min(1 − e^(−φ × r/r_s), Ξ_max) | perfected-Buch Z.116-149, 06_PAPERS Draft Z.100-103 | **Operative g₂-Definition** |
+| Operativ/Saturierend | Ξ_strong = min(1 − e^(−φ × r_s/r), Ξ_max) | perfected-Buch Z.116-149, 06_PAPERS Draft Z.100-103 | **Operative g₂-Definition** |
 | Didaktisch/Zerfall | Ξ_dec = 1 − e^(−φ × r_s/r) | perfected-Buch Z.131-135 | Nur pädagogischer Vergleich |
 
 **06_PAPERS-Final-Paper-Draft (Z.96-103):** "These are not contradictions; they are **regime‑appropriate descriptions**."

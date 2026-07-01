@@ -68,10 +68,10 @@ These are the SSZ foundation. Established across ALL sources (formula_compendium
 | ID | Formula | LIGO Role |
 |----|---------|-----------|
 | F001 | Ξ_weak = r_s/(2r) | Enters D(r), s(r) |
-| F002 | Ξ_strong = min(1−e^(−φr/r_s), Ξ_max) | Operative g2 branch |
+| F002 | Ξ_strong = min(1−e^(−φr_s/r), Ξ_max) | Operative g2 branch |
 | F003 | D(r) = 1/(1+Ξ) | Core metric component |
 | F004 | s(r) = 1+Ξ = 1/D | Effective refractive index |
-| F005 | Ξ_sat = min(1−e^(−φr/r_s), Ξ_max) | Saturation form (not operative g2) |
+| F005 | Ξ_sat = min(1−e^(−φr_s/r), Ξ_max) | Saturation form (not operative g2) |
 | F006 | r_s = 2GM/c² | Fundamental scale |
 | F015 | v_esc·v_fall = c² | Kinematic invariant |
 | F018 | Blend: Ξ_blend = H₅(t), 1.8≤r/r_s≤2.2 | Regime transition |
