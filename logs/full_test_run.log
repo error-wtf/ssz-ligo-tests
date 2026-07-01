@@ -1,5 +1,5 @@
 === SSZ-LIGO FULL TEST RUN LOG ===
-Timestamp: 2026-07-01T01:04:02.949599
+Timestamp: 2026-07-01T01:12:02.379119
 Repository Root: /home/error/physics/ssz-ligo-tests
 Python Executable: /root/miniconda3/bin/python3
 ============================================================
@@ -14,9 +14,8 @@ Command: "/root/miniconda3/bin/python3" scripts/fetch_data.py
 SSZ-LIGO DATA FETCH PIPELINE
 ============================================================
 Some or all GW240925 HDF5 files are missing. Starting fetch...
-Tar file exists but seems incomplete (74.0 MB). Re-downloading...
+Tar file exists but seems incomplete (211.0 MB). Re-downloading...
 Downloading GW240925 C00 Strain Tar from Zenodo...
 URL: https://zenodo.org/api/records/18600070/files/GW240925-C00-Strain.tar/content
 Dest: /home/error/physics/ligo-gw240925-gw250207-release/18600070/GW240925-C00-Strain.tar
   Downloaded: 100.0 MB / 2414.7 MB (4.1%)
-  Downloaded: 200.0 MB / 2414.7 MB (8.3%)
